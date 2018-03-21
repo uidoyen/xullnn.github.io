@@ -105,7 +105,7 @@ var store = [{
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/Authenticating-from-scratch-3/"
       },{
         "title": "Rubyist notes readme",
-        "excerpt":"这是我读《Rubyist》时做的笔记的整理稿。 原本只是想借这本书熟悉 ruby 中 regular expression 的用法，结果竟读完了整本书，也意外地成为了我读的第一本英文原版书。得益于作者优秀的写作水平和他对Ruby深厚的理解，这本书读起来并不会很吃力。 书中所有代码示例我都跟着做了一遍，有一些内容由于 Ruby 版本更新（看这本书的时候已经是2.5.0）会有所出入。起初所有代码示例都是截图，整理过程中会借 markdown 语法把示例尽量还原成文字。笔记并不会按照目录分级严格展开并覆盖到每一个末级标题，只会在大体内容上保持顺序的一致。 原书名：The Well-Grounded Rubyist - second edition 原书作者：David A. Black 书的封面： ![][https://ws1.sinaimg.cn/large/006tNc79gy1fnpoa5113mj30mw0sqh60.jpg] 书的目录： 1. Ruby foundations Chapter 1. Bootstrapping your Ruby literacy Chapter 2. Objects, methods, and local variables Chapter 3. Organizing objects with classes Chapter 4. Modules and...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"这是我读《Rubyist》时做的笔记的整理稿。 原本只是想借这本书熟悉 ruby 中 regular expression 的用法，结果竟读完了整本书，也意外地成为了我读的第一本英文原版书。得益于作者优秀的写作水平和他对Ruby深厚的理解，这本书读起来并不会很吃力。 书中所有代码示例我都跟着做了一遍，有一些内容由于 Ruby 版本更新（看这本书的时候已经是2.5.0）会有所出入。起初所有代码示例都是截图，整理过程中会借 markdown 语法把示例尽量还原成文字。笔记并不会按照目录分级严格展开并覆盖到每一个末级标题，只会在大体内容上保持顺序的一致。 原书名：The Well-Grounded Rubyist - second edition 原书作者：David A. Black 书的封面： 书的目录： 1. Ruby foundations Chapter 1. Bootstrapping your Ruby literacy Chapter 2. Objects, methods, and local variables Chapter 3. Organizing objects with classes Chapter 4. Modules and program...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Rubyist-reading-notes-readme/"
       },{

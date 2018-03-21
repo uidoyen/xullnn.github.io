@@ -16,7 +16,8 @@ tags: [Ruby & Rails, Notes of Rubyist]
 
 书的封面：
 
-![][https://ws1.sinaimg.cn/large/006tNc79gy1fnpoa5113mj30mw0sqh60.jpg]
+![](https://s3-ap-southeast-1.amazonaws.com/image-for-articles/image-bucket-1/rubyist_cover.png
+)
 
 ---
 
