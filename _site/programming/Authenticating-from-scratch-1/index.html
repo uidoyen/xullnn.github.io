@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Authenticating form scratch 1 - signup and login | Caven’s</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Authenticating form scratch 1 - signup and login" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="最初接触Rails时使用用户注册登录功能直接用的是devise。只需要安装好gem然后简单执行几步指令就可以开始使用注册登陆等各种功能了，对于很多页面都会用到的 current_user 也觉得很顺手很简单。这只是把devise当做了一个黑箱使用，刚好在一个rails的教材中有这样一部分内容，然后结合RailsCasts中的两个教学视频(1)signup&amp;login, (2)remember&amp;reset。用差不多半个月时间把这部分内容做了10遍，总体思路是，以cookies(和session)为验证基础，结合不同token栏位的设定实现这些功能。 整个过程不需要新建 model 在 user.rb 的基础上即可完成。" />
+<meta property="og:description" content="最初接触Rails时使用用户注册登录功能直接用的是devise。只需要安装好gem然后简单执行几步指令就可以开始使用注册登陆等各种功能了，对于很多页面都会用到的 current_user 也觉得很顺手很简单。这只是把devise当做了一个黑箱使用，刚好在一个rails的教材中有这样一部分内容，然后结合RailsCasts中的两个教学视频(1)signup&amp;login, (2)remember&amp;reset。用差不多半个月时间把这部分内容做了10遍，总体思路是，以cookies(和session)为验证基础，结合不同token栏位的设定实现这些功能。 整个过程不需要新建 model 在 user.rb 的基础上即可完成。" />
+<link rel="canonical" href="http://localhost:4000/programming/Authenticating-from-scratch-1/" />
+<meta property="og:url" content="http://localhost:4000/programming/Authenticating-from-scratch-1/" />
+<meta property="og:site_name" content="Caven’s" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-08-29T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/programming/Authenticating-from-scratch-1/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/Authenticating-from-scratch-1/"},"description":"最初接触Rails时使用用户注册登录功能直接用的是devise。只需要安装好gem然后简单执行几步指令就可以开始使用注册登陆等各种功能了，对于很多页面都会用到的 current_user 也觉得很顺手很简单。这只是把devise当做了一个黑箱使用，刚好在一个rails的教材中有这样一部分内容，然后结合RailsCasts中的两个教学视频(1)signup&amp;login, (2)remember&amp;reset。用差不多半个月时间把这部分内容做了10遍，总体思路是，以cookies(和session)为验证基础，结合不同token栏位的设定实现这些功能。 整个过程不需要新建 model 在 user.rb 的基础上即可完成。","@type":"BlogPosting","headline":"Authenticating form scratch 1 - signup and login","dateModified":"2017-08-29T00:00:00+08:00","datePublished":"2017-08-29T00:00:00+08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  authenticating-form-scratch-1-signup-and-login">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Record</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Authenticating form scratch 1 - signup and login
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2017-08-29T00:00:00+08:00"><a class="u-url" href="">August 29, 2017</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Programming</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Ruby & Rails</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>最初接触Rails时使用用户注册登录功能直接用的是<a href="https://github.com/plataformatec/devise">devise</a>。只需要安装好gem然后简单执行几步指令就可以开始使用注册登陆等各种功能了，对于很多页面都会用到的 <code class="highlighter-rouge">current_user</code> 也觉得很顺手很简单。这只是把devise当做了一个黑箱使用，刚好在一个rails的教材中有这样一部分内容，然后结合RailsCasts中的两个教学视频<a href="http://railscasts.com/episodes/250-authentication-from-scratch-revised">(1)signup&amp;login</a>, <a href="http://railscasts.com/episodes/274-remember-me-reset-password">(2)remember&amp;reset</a>。用差不多半个月时间把这部分内容做了10遍，总体思路是，<strong>以cookies(和session)为验证基础，结合不同token栏位的设定实现这些功能。</strong> 整个过程不需要新建 model 在 user.rb 的基础上即可完成。</p>
+
+<h3 id="1-sigup">1 Sigup</h3>
+<h4 id="11-建立-user-model-安装-bcrypt">1.1 建立 user Model， 安装 bcrypt</h4>
+<p>注册登录字面上很和谐，事实上注册实际是create一个user, 登录是建立 session ，分而视之。
+这一步需要 <code class="highlighter-rouge">rails g model user email:string</code> 先给一个 email 栏位，记得migrate。</p>
+
+<p>为了给 user 设定密码，在 user.rb 中加一行：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+
+  <span class="n">has_secure_password</span>
+
+</code></pre></div></div>
+
+<p>这么做产生了效果是：</p>
+<ul>
+  <li>赋予user一对虚拟属性，<code class="highlighter-rouge">:password</code> 和 <code class="highlighter-rouge">:password_confirmation</code>，新建user时会对这两个值进行存在性验证和匹配验证</li>
+  <li>允许我们使用 <code class="highlighter-rouge">:password_digest</code> 这个栏位来存储 bcrypt 加密后的密码摘要</li>
+  <li>user获得一个<code class="highlighter-rouge">authenticate</code>方法，用来验证键入密码是否正确</li>
+</ul>
+
+<p><code class="highlighter-rouge">password_digest</code> 这个栏位需要自己手工建立，所以 <code class="highlighter-rouge">rails g migration add_password_digest_to_users password_digest:string</code>，记得migrate。</p>
+
+<p><code class="highlighter-rouge">password_digest</code>栏位会用来存储加密后的密码摘要，而不会在数据库中存储用户真实的密码，这一点处于安全考虑。这个加密过程需要用到 <a href="https://github.com/codahale/bcrypt-ruby">bcrypt</a> 这个gem, gemfile文件中原本是有这个gem行的，只是被注释掉了。 安装好，重开。</p>
+
+<h4 id="12-建立注册的回路">1.2 建立注册的回路</h4>
+
+<p>新建一个 controller :</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rails</span> <span class="n">g</span> <span class="n">controller</span> <span class="n">users</span> <span class="n">new</span>
+</code></pre></div></div>
+<p>到routes.rb中删掉自动加上的 new 路径，然后加上 <code class="highlighter-rouge">resources :users</code></p>
+
+<p>到navbar 中加上 <code class="highlighter-rouge">&lt;%= link_to "Signup", new_user_path %&gt;</code></p>
+
+<p>到users_controller中定义好 views/users/new.html.erb 中会用到的 @user 变量：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UsersController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+   <span class="k">def</span> <span class="nf">new</span>
+     <span class="vi">@user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span>
+   <span class="k">end</span>
+</code></pre></div></div>
+
+<p>接着到new表单页面 views/users/new.html.erb 至少包含:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">%= form_for @user do |f| %&gt;
+
+    &lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">email_field</span> <span class="ss">:email</span><span class="p">,</span> <span class="ss">class: </span><span class="s2">"form-control"</span> <span class="o">%&gt;</span>
+
+    <span class="o">&lt;</span><span class="sx">%= f.password_field :password, class: "form-control" %&gt;
+
+    &lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">password_field</span> <span class="ss">:password_confirmation</span><span class="p">,</span> <span class="ss">class: </span><span class="s2">"form-control"</span> <span class="o">%&gt;</span>
+
+    <span class="o">&lt;</span><span class="sx">%= f.submit "Submit", class: "btn btn-primary" %&gt;
+
+&lt;% end %&gt;
+</span></code></pre></div></div>
+
+<p>然后到 users_controller 中新建 create 来接这里送出的数据</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UsersController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="k">def</span> <span class="nf">create</span>
+  <span class="vi">@user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">user_params</span><span class="p">)</span>
+  <span class="k">if</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">save</span>
+    <span class="n">redirect_to</span> <span class="n">root_path</span>
+    <span class="n">flash</span><span class="p">[</span><span class="ss">:notice</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Successfully signed up."</span>
+  <span class="k">else</span>
+    <span class="n">render</span> <span class="ss">:new</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="kp">private</span>
+  <span class="k">def</span> <span class="nf">user_params</span>
+    <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:user</span><span class="p">).</span><span class="nf">permit</span><span class="p">(</span><span class="ss">:email</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:password</span><span class="p">,</span> <span class="ss">:password_confirmation</span><span class="p">)</span>
+  <span class="k">end</span>
+</code></pre></div></div>
+
+<p>注册的回路到这里就完成了，可以试着新建一个user然后到 console 中看看 <code class="highlighter-rouge">User.last</code> 是不是你新建的那个，还有 <code class="highlighter-rouge">:password_digest</code> 栏位中是否有乱数。</p>
+
+<h3 id="2-login">2 Login</h3>
+
+<p>上面的步骤对于普通用户来说会很诡异，注册完了就只是把我的账号加到了数据库中，没有登录功能前面的工作也没意义。对于基本的登录功能会使用 cookies 中的 session 机制来处理，如果不清楚cookies以及session怎么工作的，可以先google一下，对他有个整体印象，然后多写几次验证的code会帮助理解。</p>
+
+<p>简单的说 cookies 用户浏览器端中用来存储一些信息的地方，比如 session 是cookies中包含的其中一种, 这些信息有可能是用户本机产生的，也有可能是用户发出request后服务器返回一些信息告诉浏览器让它存在 cookies 中的，这些信息都是临时的，会有各自的过期时间，但是我们可以让某些信息的过期时间很长，几乎永久。</p>
+
+<p>基础版的登陆实际就是使用 <code class="highlighter-rouge">session[:user_login] = user.id</code> 这样一个方法来生成一个基于 用户ID 的 session 值（也是一串乱数）存在浏览器中，其中像 <code class="highlighter-rouge">:user_login</code> 这个key的名称是可以自己定的，比如 user_id, user_auth 等都可以。由于这个session的值是基于用户的 ID 生成的，所以除非退出浏览器重新开，或者手动将其删除，他的值是暂时不会变的，所以我们可以反向解密 <code class="highlighter-rouge">:user_login</code> 的session值得到用户ID 然后到数据库中找到对应用户，这也是定义 <code class="highlighter-rouge">current_user</code>  method 的基础。</p>
+
+<h4 id="21-建立sessions_controller">2.1 建立sessions_controller</h4>
+<p>处理session不需要再新建model，因为session存在浏览器里，用来查找user的id存在users表中，因此只需要新建一个controller来处理这部分：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rails</span> <span class="n">g</span> <span class="n">controller</span> <span class="n">sessions</span> <span class="n">new</span>
+</code></pre></div></div>
+
+<p>同样的到 routes.rb 中删掉上一步自动添加的路由，然后加上 <code class="highlighter-rouge">resources :sessions</code></p>
+
+<p>接着到navbar文件中增加<code class="highlighter-rouge">&lt;%= link_to "Log In", new_session_path %&gt;</code></p>
+
+<h4 id="22-sessionsnew表单作为login页面">2.2 sessions#new表单作为login页面</h4>
+
+<p>views/sessions/new.html.erb 表单会作为登陆页面，建立一个表单至少包含：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">%= form_tag sessions_path do |f| %&gt;
+
+    &lt;%=</span> <span class="n">email_field_tag</span> <span class="ss">:email</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="ss">class: </span><span class="s2">"form-control"</span> <span class="o">%&gt;</span> <span class="c1"># 中间默认值那里需要一个空值占位符</span>
+
+    <span class="o">&lt;</span><span class="sx">%= password_field_tag :password, "", class: "form-control" %&gt;
+
+    &lt;%=</span> <span class="n">submit_tag</span> <span class="s2">"Log In"</span><span class="p">,</span> <span class="ss">class: </span><span class="s2">"btn btn-primary"</span> <span class="o">%&gt;</span>
+
+<span class="o">&lt;</span><span class="sx">% end </span><span class="o">%&gt;</span>
+</code></pre></div></div>
+
+<h4 id="23-到-sessions_controller-中的-create-中接手new表单传过去的数据">2.3 到 sessions_controller 中的 create 中接手new表单传过去的数据</h4>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SessionsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="k">def</span> <span class="nf">new</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">create</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find_by_email</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:email</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">user</span> <span class="o">&amp;&amp;</span> <span class="n">user</span><span class="p">.</span><span class="nf">authenticate</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:password</span><span class="p">])</span>
+      <span class="n">session</span><span class="p">[</span><span class="ss">:user_login</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">.</span><span class="nf">id</span> <span class="c1"># 生成对应user.id的session值存入browser</span>
+      <span class="n">redirect_to</span> <span class="n">root_path</span>
+      <span class="n">flash</span><span class="p">[</span><span class="ss">:notice</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Successfully logged in."</span>
+    <span class="k">else</span>
+      <span class="n">render</span> <span class="ss">:new</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+</code></pre></div></div>
+
+<p>到这一步只是生成了 session 存在了浏览器中，但是我们还需要从users数据库中取回具体的user，还需要一个能在每个页面都能在view层面调用这个user的method</p>
+
+<p>因此我们需要到 application_controller 中定义一个 helper_method <code class="highlighter-rouge">current_user</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="n">application_controller</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+
+  <span class="n">helper_method</span> <span class="ss">:current_user</span>
+
+  <span class="k">def</span> <span class="nf">current_user</span>
+    <span class="vi">@current_user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">session</span><span class="p">[</span><span class="ss">:user_login</span><span class="p">])</span> <span class="k">if</span> <span class="n">session</span><span class="p">[</span><span class="ss">:user_login</span><span class="p">]</span>
+  <span class="k">end</span>
+
+  <span class="c1"># 这里session[:user_login]相当于在做反向解密user id的工作</span>
+</code></pre></div></div>
+
+<p>这步完之后就可以到 navbar 文件中给 注册，登入，以及current_user的显示加上条件式，具体code就不列了，基本思路是：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">!</span><span class="n">current_user</span>
+  <span class="err">注册</span>
+  <span class="err">登陆</span>
+<span class="k">else</span>
+  <span class="n">current_user</span><span class="p">.</span><span class="nf">email</span>
+  <span class="err">登出</span><span class="p">(</span><span class="n">session_path</span><span class="p">(</span><span class="n">current_user</span><span class="p">),</span> <span class="ss">method: :delete</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>登出功能实际上就是把 <code class="highlighter-rouge">:user_login</code> 这个session删掉，因此到 sessions_controller 中：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">SessionsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+
+<span class="k">def</span> <span class="nf">destroy</span>
+  <span class="n">session</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="ss">:user_login</span><span class="p">)</span> <span class="c1"># 注意这里用的是 圆括号</span>
+  <span class="n">redirect_back</span><span class="p">(</span><span class="ss">fallback_location: </span><span class="n">root_path</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>这样一个基础版的注册和登陆还有登出功能就有了，不过默认情况退出浏览器后再进会发现需要重新登陆，实际使用情况中除了银行这类安全要求很高的网站，很多日常使用的网站在一段时间内都不需要我们每次都登陆，他会“记住”我们。在下一篇会写如何用 <code class="highlighter-rouge">cookies.permanent</code> 来实现记住用户的功能。</p>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FAuthenticating-from-scratch-1%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Authenticating+form+scratch+1+-+signup+and+login%20http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FAuthenticating-from-scratch-1%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FAuthenticating-from-scratch-1%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Authenticating+form+scratch+1+-+signup+and+login&url=http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FAuthenticating-from-scratch-1%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/programming/Authenticating-from-scratch-2/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Authenticating form scratch 2 - remember_me
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/programming/Authenticating-from-scratch-3/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Authenticating form scratch 3 - password resetting
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+  <!--<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div>-->
+
+  <div class="copyright">
+    
+    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+       Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  </body>
+
+</html>

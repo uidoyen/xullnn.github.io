@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>git checkout 用于版本查看 | Caven’s</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="git checkout 用于版本查看" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="使用git进行版本管理时，不免会遇到想要退回上一步或多步操作的情况。这类操作命令包含了git reset, git revert, git checkout，不同情况，不同目的下，具体使用哪一个指令，配合怎样的参数设置，需要时间来熟悉。" />
+<meta property="og:description" content="使用git进行版本管理时，不免会遇到想要退回上一步或多步操作的情况。这类操作命令包含了git reset, git revert, git checkout，不同情况，不同目的下，具体使用哪一个指令，配合怎样的参数设置，需要时间来熟悉。" />
+<link rel="canonical" href="http://localhost:4000/version%20control/git-checkout/" />
+<meta property="og:url" content="http://localhost:4000/version%20control/git-checkout/" />
+<meta property="og:site_name" content="Caven’s" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-06-01T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/version%20control/git-checkout/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/version%20control/git-checkout/"},"description":"使用git进行版本管理时，不免会遇到想要退回上一步或多步操作的情况。这类操作命令包含了git reset, git revert, git checkout，不同情况，不同目的下，具体使用哪一个指令，配合怎样的参数设置，需要时间来熟悉。","@type":"BlogPosting","headline":"git checkout 用于版本查看","dateModified":"2017-06-01T00:00:00+08:00","datePublished":"2017-06-01T00:00:00+08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  git-checkout-用于版本查看">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Record</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">git checkout 用于版本查看
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2017-06-01T00:00:00+08:00"><a class="u-url" href="">June 1, 2017</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Version Control</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Github</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>使用git进行版本管理时，不免会遇到想要退回上一步或多步操作的情况。这类操作命令包含了<code class="highlighter-rouge">git reset</code>, <code class="highlighter-rouge">git revert</code>, <code class="highlighter-rouge">git checkout</code>，不同情况，不同目的下，具体使用哪一个指令，配合怎样的参数设置，需要时间来熟悉。</p>
+
+<p>首先回到Git最基本的运作模型上，总体上可以分为三个部分：</p>
+
+<p>1.working directory: 也就是本地工作空间</p>
+
+<p>2.staged snapshot: 版本快照暂存区</p>
+
+<p>3.commit history: commit 历史线</p>
+
+<p><img src="/photos/postimages/01.svg" alt="" /></p>
+
+<blockquote>
+  <blockquote>
+    <p>图片来源：https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting</p>
+  </blockquote>
+</blockquote>
+
+<p>不断回顾整个基本模型，有利于我们理解不同指令的区别。</p>
+
+<p>在脑中回想我们在本地repo中的工作流程：1 修改了某些文件；2 通过<code class="highlighter-rouge">git add </code> 存入快照暂存区；3 <code class="highlighter-rouge">git commit </code> 确认加入commit。反过来我们的退回操作也可以相应地到达这三个不同的“深度”。再从时间/commit 历史上来看，我们可选择回退多少个commit点。总的来说回退操作中涉及到的两个方面就只有1深度2时间/commit跨度。</p>
+
+<p>同样只用旋转一下上面那个git基本工作模型的图就可以更直观地理解回退的这两个方面：</p>
+
+<p><img src="/photos/postimages/commit.jpg" alt="" /></p>
+
+<p>X 轴代表 时间/commit 跨度</p>
+
+<p>Y 轴代表回退深度</p>
+
+<h3 id="1-控制回退的-时间commit-跨度">1 控制回退的 时间/commit 跨度</h3>
+
+<p>理解了控制回退的两个方面，这里先说如何控制回退跨度。不管是使用reset,revert,或是checkout都需要指明需要回退多远，因为这只有你自己知道，因此也必须由你来指定。</p>
+
+<p>git 中用来控制回退多少个commit点的参数传入命令是 <code class="highlighter-rouge">HEAD~n</code> <strong>n</strong> 就是需要回退的 commit 步数。用checkout来进行演示：</p>
+
+<h5 id="比如-git-checkout-head-回退到当前commit点不会有任何变化">比如 <code class="highlighter-rouge">git checkout HEAD</code> 回退到当前commit点，不会有任何变化。</h5>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">checkout</span> <span class="no">HEAD</span>
+<span class="no">M</span>	<span class="n">file3</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">branch01</span>
+<span class="no">M</span>	<span class="n">file3</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span>
+<span class="no">Already</span> <span class="n">on</span> <span class="s1">'branch01'</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span>
+
+</code></pre></div></div>
+
+<h5 id="git-checkout-head1-会退回到倒数第二次-commit-时的状态"><code class="highlighter-rouge">git checkout HEAD~1</code> 会退回到倒数第二次 commit 时的状态:</h5>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">checkout</span> <span class="no">HEAD</span><span class="o">~</span><span class="mi">1</span>
+<span class="no">Note</span><span class="p">:</span> <span class="n">checking</span> <span class="n">out</span> <span class="s1">'HEAD~1'</span><span class="o">.</span>
+
+<span class="no">You</span> <span class="n">are</span> <span class="k">in</span> <span class="s1">'detached HEAD'</span> <span class="n">state</span><span class="o">.</span> <span class="no">You</span> <span class="n">can</span> <span class="n">look</span> <span class="n">around</span><span class="p">,</span> <span class="n">make</span> <span class="n">experimental</span>
+<span class="n">changes</span> <span class="n">and</span> <span class="n">commit</span> <span class="n">them</span><span class="p">,</span> <span class="n">and</span> <span class="n">you</span> <span class="n">can</span> <span class="n">discard</span> <span class="n">any</span> <span class="n">commits</span> <span class="n">you</span> <span class="n">make</span> <span class="k">in</span> <span class="n">this</span>
+<span class="n">state</span> <span class="n">without</span> <span class="n">impacting</span> <span class="n">any</span> <span class="n">branches</span> <span class="n">by</span> <span class="n">performing</span> <span class="n">another</span> <span class="n">checkout</span><span class="o">.</span>
+
+<span class="no">If</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">branch</span> <span class="n">to</span> <span class="n">retain</span> <span class="n">commits</span> <span class="n">you</span> <span class="n">create</span><span class="p">,</span> <span class="n">you</span> <span class="n">may</span>
+<span class="k">do</span> <span class="n">so</span> <span class="p">(</span><span class="n">now</span> <span class="n">or</span> <span class="n">later</span><span class="p">)</span> <span class="n">by</span> <span class="n">using</span> <span class="o">-</span><span class="n">b</span> <span class="n">with</span> <span class="n">the</span> <span class="n">checkout</span> <span class="n">command</span> <span class="n">again</span><span class="o">.</span> <span class="no">Example</span><span class="p">:</span>
+
+ <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="o">&lt;</span><span class="n">new</span><span class="o">-</span><span class="n">branch</span><span class="o">-</span><span class="nb">name</span><span class="o">&gt;</span>
+
+<span class="no">HEAD</span> <span class="n">is</span> <span class="n">now</span> <span class="n">at</span> <span class="n">d06928e</span><span class="o">...</span> <span class="n">add</span> <span class="n">some</span> <span class="n">again</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">➦</span> <span class="n">d06928e</span> <span class="err">⮀</span>
+</code></pre></div></div>
+
+<h5 id="如果不用head1-也可以直接指定-commit-点的版本号比如上面的-d06928e-所以也可以写-git-checkout-d06928e">如果不用HEAD~1 也可以直接指定 commit 点的版本号比如上面的 <strong>d06928e</strong> 。所以也可以写： <code class="highlighter-rouge">git checkout d06928e</code></h5>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">d06928e</span>
+<span class="no">Note</span><span class="p">:</span> <span class="n">checking</span> <span class="n">out</span> <span class="s1">'d06928e'</span><span class="o">.</span>
+
+<span class="no">You</span> <span class="n">are</span> <span class="k">in</span> <span class="s1">'detached HEAD'</span> <span class="n">state</span><span class="o">.</span> <span class="no">You</span> <span class="n">can</span> <span class="n">look</span> <span class="n">around</span><span class="p">,</span> <span class="n">make</span> <span class="n">experimental</span>
+<span class="n">changes</span> <span class="n">and</span> <span class="n">commit</span> <span class="n">them</span><span class="p">,</span> <span class="n">and</span> <span class="n">you</span> <span class="n">can</span> <span class="n">discard</span> <span class="n">any</span> <span class="n">commits</span> <span class="n">you</span> <span class="n">make</span> <span class="k">in</span> <span class="n">this</span>
+<span class="n">state</span> <span class="n">without</span> <span class="n">impacting</span> <span class="n">any</span> <span class="n">branches</span> <span class="n">by</span> <span class="n">performing</span> <span class="n">another</span> <span class="n">checkout</span><span class="o">.</span>
+
+<span class="no">If</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">branch</span> <span class="n">to</span> <span class="n">retain</span> <span class="n">commits</span> <span class="n">you</span> <span class="n">create</span><span class="p">,</span> <span class="n">you</span> <span class="n">may</span>
+<span class="k">do</span> <span class="n">so</span> <span class="p">(</span><span class="n">now</span> <span class="n">or</span> <span class="n">later</span><span class="p">)</span> <span class="n">by</span> <span class="n">using</span> <span class="o">-</span><span class="n">b</span> <span class="n">with</span> <span class="n">the</span> <span class="n">checkout</span> <span class="n">command</span> <span class="n">again</span><span class="o">.</span> <span class="no">Example</span><span class="p">:</span>
+
+ <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="o">&lt;</span><span class="n">new</span><span class="o">-</span><span class="n">branch</span><span class="o">-</span><span class="nb">name</span><span class="o">&gt;</span>
+
+<span class="no">HEAD</span> <span class="n">is</span> <span class="n">now</span> <span class="n">at</span> <span class="n">d06928e</span><span class="o">...</span> <span class="n">add</span> <span class="n">some</span> <span class="n">again</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">➦</span> <span class="n">d06928e</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">branch01</span>
+<span class="no">Previous</span> <span class="no">HEAD</span> <span class="n">position</span> <span class="n">was</span> <span class="n">d06928e</span><span class="o">...</span> <span class="n">add</span> <span class="n">some</span> <span class="n">again</span>
+<span class="no">Switched</span> <span class="n">to</span> <span class="n">branch</span> <span class="s1">'branch01'</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span>
+
+</code></pre></div></div>
+
+<p>可以看到效果是一样的，可以通过 git reflog来查看历史commit 的版本信息。当用checkout切回某一次commit的状态时，working directory里的文件也会回到当时的状态，这时想要切回最新状态，只需要 <code class="highlighter-rouge">git chekcout 最新branch</code>就可以了，如上图所示的那样。</p>
+
+<h4 id="所以有两种方式来传入回退步数">所以有两种方式来传入回退步数：</h4>
+<ol>
+  <li>使用 <code class="highlighter-rouge">HEAD~n</code> 指定回退步数；</li>
+  <li>直接传入commit版本号。
+对于reset, revert, checkout 来说，控制回退步数都是这样的，有一点不同的是checkout 还可以用于切换分支的操作，这是最常用的操作。</li>
+</ol>
+
+<h3 id="2-git-checkout-的不同参数设定控制回退范围">2 git checkout 的不同参数设定控制回退范围</h3>
+
+<p>文章开头提到，回退深度可以分为三个层次：1 仅改变 commit 历史；2 改变 commit + staged snapshot；3 同时改变 commit + staged snapshot + 本地文件working directory。</p>
+
+<p>这里还有一种增加精度的选择，指定(specify)只改变某一个文件对应的commit状态。比如我想让 file1.html.erb 回退到倒数第三个commit 的状态，但我不需要变动其他所有改过的文件，就属于这种情况。</p>
+
+<p><code class="highlighter-rouge">git checkout branch_name</code> 是常用的切换分支命令，他虽然会使working directory中的文件变更到指定分支的状态，但它并没有实际改变什么，它更像是一个版本查看器。</p>
+
+<p><strong>git checkout 用于整体回退</strong></p>
+
+<p>如果使用git checkout切回了某一个commit点，然后在这个commit 状态下进行文件修改并加入新的commit，这会出现commit分叉的情况，如果想丢掉之前commit线上”此commit点之后的变更”，可以这么操作，但不推荐，应该尽量保持 commit 历史的简单清晰。</p>
+
+<p>这种情况下git checkout的作用很单纯，整体回退版本，没有太多复杂的操作。</p>
+
+<p><strong>git checkout 用于指定文件的回退</strong></p>
+
+<p>举例来说我现在有两个文件 file1.html.erb 和 file2.html.erb，按顺序进行了以下操作：</p>
+
+<p>1 在file1中第一行加入一行代码，然后进行一次commit;<br />
+2 在file1中第二行加入一行代码，然后进行一次commit;<br />
+3 在file1中第三行加入一行代码，然后进行一次commit;<br />
+4 在file1中第四行加入一行代码，然后进行一次commit，同时在 file2 中第一行加入一行代码，进行一次commit。</p>
+
+<p>那么第4次的commit就包含了两个文件的修改。</p>
+
+<p>这种情况下如果我直接 <code class="highlighter-rouge">git checkout HEAD~2</code> 回退两步，那么会回到file1中有前两行代码，file2中没有代码的状态。</p>
+
+<p>现在我们尝试要做的是，保留file2中最后一次commit增加的代码，而让file1退回到第二次commit的状态。这就需要指定回退文件，使用： <code class="highlighter-rouge">git checkout HEAD~2 file1.html.erb</code>。</p>
+
+<p>这时file1会回到第二次commit完成时只有前两行代码的情况，file2中的代码没有变动。同时，终端会显示目前working directory的文件状态处于已经加入 快照缓存区 。如果要保留着这个状态，可以就此进行一次新的commit，但如果想要返回查看前面第4次 commit的状态，仍然可以使用 git checkout 加commit版本号来返回。这里的操作类似使用 git checkout 的方法来让git帮你修改特定文件回到某个commit状态，然后把这个文件状态存进新的commit并记录下来，所以实际上还是一次向前的 commit 操作，你将， 仍然处于 branch01 分支。</p>
+
+<p>整个过程如下：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">"first line"</span>   <span class="c1">#第1次 commit</span>
+<span class="p">[</span><span class="n">branch01</span> <span class="mi">73</span><span class="n">e5923</span><span class="p">]</span> <span class="n">first</span> <span class="n">line</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">"second line"</span>  <span class="c1">#第2次commit</span>
+<span class="p">[</span><span class="n">branch01</span> <span class="mo">01</span><span class="n">f6b91</span><span class="p">]</span> <span class="n">second</span> <span class="n">line</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">"third line"</span>  <span class="c1">#第3次commit</span>
+<span class="p">[</span><span class="n">branch01</span> <span class="mi">5</span><span class="n">bd9375</span><span class="p">]</span> <span class="n">third</span> <span class="n">line</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">"add last line in file1 and simultaneously add some in file2"</span>                                                                                                                                            <span class="c1">#第4次commit</span>
+<span class="p">[</span><span class="n">branch01</span> <span class="n">c206ae1</span><span class="p">]</span> <span class="n">add</span> <span class="n">last</span> <span class="n">line</span> <span class="k">in</span> <span class="n">file1</span> <span class="n">and</span> <span class="n">simultaneously</span> <span class="n">add</span> <span class="n">some</span> <span class="k">in</span> <span class="n">file2</span>
+ <span class="mi">2</span> <span class="n">files</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+
+ <span class="c1"># 下面是指定对 file1 的checkout 操作</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">checkout</span> <span class="no">HEAD</span><span class="o">~</span><span class="mi">2</span> <span class="n">file1</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span>
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">status</span>
+<span class="no">On</span> <span class="n">branch</span> <span class="n">branch01</span>
+<span class="no">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="ss">committed:
+  </span><span class="p">(</span><span class="n">use</span> <span class="s2">"git reset HEAD &lt;file&gt;..."</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+
+	<span class="ss">modified:   </span><span class="n">file1</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span>
+
+<span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">reset</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">"after checkout file1 to HEAD~2, I add this commit"</span>
+<span class="p">[</span><span class="n">branch01</span> <span class="n">b6307d0</span><span class="p">]</span> <span class="n">after</span> <span class="n">checkout</span> <span class="n">file1</span> <span class="n">to</span> <span class="no">HEAD</span><span class="o">~</span><span class="mi">2</span><span class="p">,</span> <span class="no">I</span> <span class="n">add</span> <span class="n">this</span> <span class="n">commit</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">deletions</span><span class="p">(</span><span class="o">-</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fversion%2520control%2Fgit-checkout%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=git+checkout+%E7%94%A8%E4%BA%8E%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B%20http%3A%2F%2Flocalhost%3A4000%2Fversion%2520control%2Fgit-checkout%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fversion%2520control%2Fgit-checkout%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=git+checkout+%E7%94%A8%E4%BA%8E%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B&url=http%3A%2F%2Flocalhost%3A4000%2Fversion%2520control%2Fgit-checkout%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/programming-basics/punctuation-markds/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Translations of Punctuation marks
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/version%20control/git-reset-and-revert/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        git reset 与 git revert 用于版本回退
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+  <!--<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div>-->
+
+  <div class="copyright">
+    
+    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+       Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  </body>
+
+</html>

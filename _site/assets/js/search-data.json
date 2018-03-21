@@ -1,0 +1,221 @@
+var store = [{
+        "title": "Ruby on Rails, 部署到heroku常见问题",
+        "excerpt":"这篇文章收录所有在Ruby on Rails下push到heroku过程中的常见问题及处理方法。这些问题有可能是由开发环境和生产环境的不同引起，或是由操作上的错误引起。 原则上一切问题还是以官方说明文档为准：heroku官方帮助文档 1 Gemfile 文件不正确导致的部署失败。 目前在ruby on rails框架下做的专案在部署到heroku前都会修改gemfile: 将文件中第7行左右的 gem 'sqlite3' 这一行剪切搬到40行左右的： group :development, :test do ... ... gem 'debug', platform :mri gem 'sqlite3'end此group最后一行，如上所示。 接着需要在末尾新增一个 group :production , 加入 pg 这个 gem : group :production do gem 'pg'end然后 command S 保存后执行 bundle install 然后 git add . 将更改加入暂存区...","categories": ["Programming-error records"],
+        "tags": ["Heroku","Ruby & Rails","Deploy"],
+        "url": "http://localhost:4000/programming-error%20records/Frequent-problems-when-deploying-to-heroku/"
+      },{
+        "title": "grep系列命令用以查找信息",
+        "excerpt":"grep是一个最初用于Unix操作系统的命令行工具。在给出文件列表或标准输入后，grep会对匹配一个或多个正则表达式的文本进行搜索，并只输出匹配（或者不匹配）的行或文本。 这里只引入几个简单的最常用的grep用法，关于更详细的说明可以点击查看wiki上的条目。 1 grep linux computer.text 这个例子中，grep会返回 computer.text 这个文件中所有包含 linux(小写) 的文本行。要注意的是这里grep不会返回 “Linux”, “liNux”, “LINuX” 这类文本的搜索结果，默认情况下会识别大小写。所以，grep会配合一些参数来设置搜索选项，比如上面的例子中如果要不区分大小写： grep -i linux computer.text 这里-i的意思是 “–ignore-case”忽略大小写的意思。 2 grep用于在git中查找信息 当我们新建专案时执行git init就将指定的所有文件加入了git的追踪。 使用git grep touch会列出所有git追踪下所有含touch(小写)的文本行： _includes/head.html: &lt;link rel=\"apple-touch-icon\" sizes=\"57x57\" href=\"images/favicons/apple-touch-icon-57x57.png\"&gt;_includes/head.html: &lt;link rel=\"apple-touch-icon\" sizes=\"60x60\" href=\"images/favicons/apple-touch-icon-60x60.png\"&gt;_includes/head.html: &lt;link rel=\"apple-touch-icon\" sizes=\"72x72\" href=\"images/favicons/apple-touch-icon-72x72.png\"&gt; sizes=\"60x60\"href=\"/images/favicons/apple-touch-icon-60x60.png\"&gt;_site/2016/welcome-to-jekyll/index.html: &lt;link rel=\"apple-touch-icon\"sizes=\"76x76\"href=\"/images/favicons/apple-touch-icon-76x76.png\"&gt;_site/2016/welcome-to-jekyll/index.html: &lt;link rel=\"apple-touch-icon\" sizes=\"114x114\" href=\"/images/favicons/apple-touch-icon-114x114.png\"&gt;_site/2016/welcome-to-jekyll/index.html: &lt;link rel=\"apple-touch-icon\"...","categories": ["Programming-basics"],
+        "tags": ["Ruby & Rails","Command Line"],
+        "url": "http://localhost:4000/programming-basics/Linux-command-grep/"
+      },{
+        "title": "Collection of errors when learning Ruby on Rails",
+        "excerpt":"这里集中所有在学习ruby on rails过程中遇到的错误，错误的按照报错信息的title归类，介于错误很多致使页面冗长，以后会考虑将不同种类错误拆分成独立的文章。 1 SyntaxError path/path/path/xxxxxxx.xxx :10: syntax error, unexpected keyword_ensure, expecting keyword_end /path/path/path/xxxxxxx.xxx :12: syntax error, unexpected end-of-input, expecting keyword_end 这种错误一般是由于漏掉了end 或者 &lt;% end %&gt; 引起的。 2 ActiveRecord::RecordNotFound in XxxController#method ActiveRecord指的是database，也就是数据资料没找到。这类错误明确指出错误在controller中，一般是由于foreign key如ID丢失。 比如下图中由于[params(:id)]中将符号写反——正确的是(params[:id])——导致rails不知道用什么找对象。 “Couldn’t find Job without an ID” Couldn’t find Xxx with ‘id’= 上图中没能够通过id这个键去找到一个Job，这是由于route中的resource :jobs——正确的是resources :jobs——少了s,没有把jobs作为一组资源对待。 ActiveRecord::RecordNotFound in...","categories": ["Programming-error records"],
+        "tags": ["Ruby & Rails"],
+        "url": "http://localhost:4000/programming-error%20records/Frequent-errors-when-learning-ruby-on-rails/"
+      },{
+        "title": "Bundle install 过程中的nokogiri错误",
+        "excerpt":"关于nokigiri的错误此前都是在执行bundle install过程中遇到的，一些报错信息有： An error occurred while installing nokogiri (1.7.0.1), and Bundler cannot continue.Make sure that `gem install nokogiri -v '1.7.0.1'` succeeds before bundling或是 fail to install nokogiri  Failed to build gem native extensionstackoverflow上的一个回答： 这类错误可能是由于Mac的系统升级破坏了xCod CLI。解决方法是重新安装xcode，步骤： gem uninstall nokogiri(可选) gem update --system xcode-select --install gem install nokogiri 详细的说明可以参考：   stackoverflow上的回答  Nokogiri官方还提供了更多可能的后续错误的的处理方式","categories": ["Programming-error records"],
+        "tags": ["Ruby & Rails","nokogiri"],
+        "url": "http://localhost:4000/programming-error%20records/fail-to-install-nokogiri-Failed-to-build-gem-native-extension/"
+      },{
+        "title": "How to ask(stackoverflow)",
+        "excerpt":"Welcome to Stack Overflow! 这是Stack Overflow上提前问的确认函，如何正确提问。 原文地址​We’d love to help you, but the reality is that not every question gets answered. To improve your chances, here are some tips: 我们乐意帮助你，但事实是，不是每个问题都能得到回答。为了增加你得到回答的几率，我们给出如下建议：​ Search, and research-搜索， 并且查究 ​Have you thoroughly searched for an answer before asking your question? Sharing your research helps everyone....","categories": ["Translations"],
+        "tags": ["Metaknowledge"],
+        "url": "http://localhost:4000/translations/How-to-ask/"
+      },{
+        "title": "MVC-Architecture",
+        "excerpt":"视频地址：https://www.youtube.com/watch?v=eTdVkgF_Slo In the last movie, I told you that rails is structured in such a way that it helps us to write dry code. Remember don’t repeat yourself. In this movie I want to take a closer look at that which is the MVC architecture that rails employs. It’s a...","categories": ["Translations"],
+        "tags": ["Ruby & Rails","MVC"],
+        "url": "http://localhost:4000/translations/MVC-Architecture/"
+      },{
+        "title": "Backup Mac with timemachine",
+        "excerpt":"背景说明： Timemachine是Mac自带的用来备份和恢复系统的工具，其主要特点有：1 选择好备份盘之后会定期备份不用操心设置；2 当备份盘空间占满后会自动删除最旧的备份；3 它能恢复的是所有已经安装的软件和文件。以往在window下的恢复会导致很多原来的软件无法使用，恢复过程中的一些引导操作也不够直白。 写这篇是自己购买mac时机器故障要换新，但是急用电脑于是去借了个mac，我需要在别人的电脑上恢复一个自己的系统供自己使用，也需要在归还别人时删掉我用的系统并且能保证当前进度能完整迁移到新的mac上。  目的： 由于没有相关经验，我阅读了关于Time Machine的官方指南，然后致电apple技术支持，询问具体方法。我想要在借的mac上达到的效果是：   1.备份的文件内容能完整迁移。  2.我安装过的app不需要再重新装过，像xcode这类巨大的app很费时间。  3.由于是借的mac，所以我想要新建一个账户，将所有文件恢复到这个账户下，当我退还mac时，我希望把我的账户下的资料包括这个账户全部抹掉。这是对借你电脑的朋友朋友的基本尊重。  4.Safari里的分类网址收藏。这个其实我不担心，我知道这是与apple账户关联的。其实最主要的目的就是我能接着我没做完的专案做，而不用从环境配置开始全部重来。 做法： 事实上有两种方法。 一种是登陆账户时会直接自动引导Time Machine进行迁移，前提是这个账户是新建立的。第二个是登入后使用[迁移助手]进行文件迁移，这个助手不仅可以用来恢复备份，还可以用来从另一台pc上迁移文件到mac（当然系统不同，迁移的文件类型肯定肯定是受限的）。不知道在迁移助手在哪里就直接在spotlight中搜索就出来了。  因为我有备份，所以就直接使用第一种方式。 Step 1 准备 需要注意的是，你无法用客人账户进行恢复。所以第一步，你需要新建一个管理员账户，这当然需要要到朋友的管理员账号密码。然后你需要先登入原有的一个管理员账户，然后在[系统偏好设置]/[用户与群组]中新建一个管理员账户。 另外，如果你的备份是在高版本系统中完成的，而当前mac的操作系统是旧的系统，你需要更新到相同的系统版本。不然系统会提示你由于系统版本差别你无法进行恢复，我在做的过程中就遇到了这个问题。 Step 2 当你建立新账户后，然后接入你原先备份备份的硬盘。接着注销当前账户或者重启以选择登陆你新建立的账户。 Step 3 当你输完账户密码登陆过程中会自动出现提示，问你是否需要从识别到的备份文件恢复到当前账号，并且会出现一个可选择的列表让你勾选需要恢复的文件。选好之后点击继续，就会开始文件的恢复传输。当然视备份文件大小所用的时间也会不同。 Step 4 恢复完成后，会提示重启。然后整个恢复过程就完成了。 结果：   1.首先检查了下app的情况，发现自己之前装过的都在。但是和原系统中的app混在了一起，而且发现Time Machine的新备份中也出现了这些多出的app。这只有以后将不要的删除。  2.检查了下finder中的文件夹，包括之前做的专案的文件夹，都在。  3.Safari中的网址收藏都在，意外的是许多网站都保持着登陆状态，不需要再输一次账号密码。Mac也好，Windows也好，找到适合你的工具，善用，善待，就好了。 ","categories": ["Computer literacy"],
+        "tags": ["Timemachine","Mac","Os"],
+        "url": "http://localhost:4000/computer%20literacy/Rivive-Mac-by-using-tiemmachine/"
+      },{
+        "title": "Everything You Thought You Knew About Learning Is Wrong",
+        "excerpt":"作者：Robert Bjork 原文题目：《Everything You Thought You Knew About Learning Is Wrong》 原文地址：https://www.wired.com/2012/01/everything-about-learning/Taking notes during class? Topic-focused study? A consistent learning environment? All are exactly opposite of the best strategies for learning. 在上课期间做笔记？主题聚焦式学习？保持稳定一致的学习环境？所有这些都完全与正确的学习策略相违背。 I recently had the good fortune to interview Robert Bjork, the director of the UCLA Learning and Forgetting...","categories": ["Translations"],
+        "tags": ["Metaknowledge"],
+        "url": "http://localhost:4000/translations/everything-you-thought-you-knew-about-learning-is-wrong/"
+      },{
+        "title": "Building Ruby on Rails environment on Mac",
+        "excerpt":"简单记录下如何在Mac上一步步搭建Ruby on Rails的开发环境，建议随时使用TimeMachine给Mac备份。 先梳理所有步骤的时间线： Xcode ===&gt; Command Line Tools ===&gt; Homebrew ===&gt; Git ===&gt; ImageMagick ===&gt; PostgreSQL ===&gt; RVM ===&gt; Ruby ===&gt; Rails ===&gt; Atom. 1 Xcode 什么是Xcode ? Xcode是苹果公司向开发人员提供的集成开发环境，用于开发macOS、iOS、WatchOS和tvOS的应用程序。 安装步骤： 到 Apple 的 App Store里搜索到 Xcode 然后直接安装。 2 Command Line Tools 什么是Command Line Tools ? Xcode is a large...","categories": ["Programming-basics"],
+        "tags": ["Ruby & Rails","environment"],
+        "url": "http://localhost:4000/programming-basics/Build-environ-for-RoR/"
+      },{
+        "title": "Note of Learning how to learn",
+        "excerpt":"Learning how to learn 是 Coursera 上的的一门课程，主讲是：Dr. Barbara Oakley 和 Dr. Terrence Sejnowski，特别是Barbara，她的经历也很励志，有兴趣可以了解。这篇是我学习时做的笔记。 课程分成4周，但实际每节课很少有超过10分钟的。当然这也保证了老师讲话足够精炼，所有视频加起来大约只有3到4个小时，不过信息浓度很高，想一天消化还是有点难。很多视频后面都有几道选择题帮你复习，都很简单，字幕也很全，各种语言都有（建议看英文字幕，然后看完后用自己的话总结）。 主要内容有：专注模式与发散模式，组块式学习，战胜拖延，如何提高记忆能力等等。不是空泛的讲道理，而是以脑神经科学和认知科学原理为基础，介绍了基础、实用、操作性强的一些技巧和做法。 课程可以缴费学习考试通过后获得相应证书，也可以免费学习。 需要单独提出来说的是，每周课程后的名人采访是极好的学习资源，不要错过，认真看。 点击这里Learning How to Learn来进入课程主页，希望有所收获。 再写一次地址：https://www.coursera.org/learn/learning-how-to-learn/home/welcome 1 Focus versus Diffuse Thinking Using the Focus and Diffuse Modes–Or, a little Dali(Salvador Dali) will do you 介绍Dali的作画方式，坐在凳子上放松地漫无目的的想着之前的画作，同时在手上拿着一串钥匙，当他很放松将要睡着时，钥匙突然掉落在地上，声音将他惊醒。然后他会马上将他在发散模式中得到的联想和点子记录下来，接着再带着这些想法进入专注模式。 爱迪生，也是在椅子上放松，在手上玩弄轴承球，当他睡着时发生同样的情况。 我们的大脑在学习一些困难的东西时，需要练习在两种模式中切换，将这种练习泛化到平时生活中，你需要时间来学习和练习这种切换，最后你的大脑会慢慢习得这种能力，类似Meditation。 ——Dr. Terrence Sejnowski 人脑在某些方面的学习不如电脑，如下棋，但是对于电脑来说人最基本的一些身体动作却是极难学会的。 传统观点认为只要大脑的发育完成，人脑的认知模式就无法改变。 我们已经观测到经过睡眠和学习的神经细胞会长出新的突触。 睡一觉甚至打个盹儿，你就不再是原来的那个自己了。也就是说，一觉过后，你的大脑就升级了。...","categories": ["Learning Notes"],
+        "tags": ["Metaknowledge"],
+        "url": "http://localhost:4000/learning%20notes/learning-how-to-learn-note/"
+      },{
+        "title": "Difference between Model.new and models.new",
+        "excerpt":"今天发现在一个 one to many 的 association 中， 一个 model 中出现了 models.new 的用法。通常能见到的是 Model.new 这种用法。 背景说明： 有 Product, Cart, CartItem, 三个 model , 他们的关系如下： cart.rb class Cart &lt; ApplicationRecord has_many :cart_items has_many :products, :through =&gt; :cart_items, :source =&gt; :product def add_product_to_cart(product) ci = CartItem.new # ----- 疑问就在这一行 ----- ci.cart_id = self.id...","categories": ["Programming"],
+        "tags": ["Ruby & Rails"],
+        "url": "http://localhost:4000/programming/Model-new-vs-models-new/"
+      },{
+        "title": "Customize url in Rails",
+        "excerpt":"Rails中如果我们用 resources :users 这种路由写法，那么user的show页面网址一般都是 /users/24 , /users/108 … 这样，这样有一个坏处是很容易猜到有多少笔user的资料。 Notably, the Rails routing system calls to_param on models to get a value for the :id placeholder. ActiveRecord::Base#to_param returns the id of a model, but you can redefine that method in your models. For example, given class User def to_param \"#{id}-#{name.parameterize}\"...","categories": ["Programming"],
+        "tags": ["Ruby & Rails"],
+        "url": "http://localhost:4000/programming/customize-url/"
+      },{
+        "title": "Translations of Punctuation marks",
+        "excerpt":"收集整理英文标点的对应名称，提高阅读文档的效率。 标点 对应英文 备注 ( ) parentheses, round brackets, soft brackets, first brackets or circle brackets /pə'rɛnθəsɪz/ , /'brækɪt/ [ ] square brackets, closed brackets, hard brackets, second brackets, crotchets, or brackets (US) { } curly brackets, curly braces &lt; &gt; angle quotes, angle brackets /ˈæŋɡəl/ / slash /slæʃ/, 注意方向...","categories": ["Programming-basics"],
+        "tags": ["Ruby & Rails"],
+        "url": "http://localhost:4000/programming-basics/punctuation-markds/"
+      },{
+        "title": "git checkout 用于版本查看",
+        "excerpt":"使用git进行版本管理时，不免会遇到想要退回上一步或多步操作的情况。这类操作命令包含了git reset, git revert, git checkout，不同情况，不同目的下，具体使用哪一个指令，配合怎样的参数设置，需要时间来熟悉。 首先回到Git最基本的运作模型上，总体上可以分为三个部分： 1.working directory: 也就是本地工作空间 2.staged snapshot: 版本快照暂存区 3.commit history: commit 历史线 图片来源：https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting 不断回顾整个基本模型，有利于我们理解不同指令的区别。 在脑中回想我们在本地repo中的工作流程：1 修改了某些文件；2 通过git add 存入快照暂存区；3 git commit 确认加入commit。反过来我们的退回操作也可以相应地到达这三个不同的“深度”。再从时间/commit 历史上来看，我们可选择回退多少个commit点。总的来说回退操作中涉及到的两个方面就只有1深度2时间/commit跨度。 同样只用旋转一下上面那个git基本工作模型的图就可以更直观地理解回退的这两个方面： X 轴代表 时间/commit 跨度 Y 轴代表回退深度 1 控制回退的 时间/commit 跨度 理解了控制回退的两个方面，这里先说如何控制回退跨度。不管是使用reset,revert,或是checkout都需要指明需要回退多远，因为这只有你自己知道，因此也必须由你来指定。 git 中用来控制回退多少个commit点的参数传入命令是 HEAD~n n 就是需要回退的 commit 步数。用checkout来进行演示： 比如 git checkout...","categories": ["Version Control"],
+        "tags": ["Github"],
+        "url": "http://localhost:4000/version%20control/git-checkout/"
+      },{
+        "title": "git reset 与 git revert 用于版本回退",
+        "excerpt":"git revert 和 git reset 都可以用来撤销更改，二者间最重要的区别在于：git reset 会更改 commit 历史， git revert 不更改之前的commit 历史， 而是向前新增一个commit 点来记录此次revert的操作。 介绍二者用法前提到这个重要区别的原因是，在多人协作中，一定要考虑好是否要去更改commit历史。如果本地更改了 commit 历史，而其他人pull的是更改之前的版本，之后的操作会造成许多冲突的情况。 git reset git reset 可以退回到指定 commit 的版本，如果指定了文件，可以更加精确地限制更改的目标。注意使用 git commit 会改写 commit 历史，操作前一定确认是否有其他人同样在此分支上工作。 git reset 有三个设置选项： –soft 只撤销 commit 快照区staging area 会处于 ready to commit 状态 –mixed 撤销 commit 和 快照区staging area...","categories": ["Version control"],
+        "tags": ["Github"],
+        "url": "http://localhost:4000/version%20control/git-reset-and-revert/"
+      },{
+        "title": "理解基本的HTML Forms",
+        "excerpt":"一个web app中，表单是用户与app交换信息最重要的部分之一，rails有自己的form helper ，此外还有很多gem帮助我们简化、实现表单，比如simple_form。 1 HTML Forms 总体来看html表单会有 form 相关的标签(element) 和每个标签对应的诸多属性(attributes) 构成。 a. 一个完整的 HTML 表单会由第一级的 &lt;form&gt; 标签和它的各种 attributes 包裹; b. 在&lt;form&gt;基础上，第二级的 &lt;input&gt;, &lt;select&gt; 这些标签和它们的各种 attributes 搭建表单的主体； 在构成表单的所有标签中 &lt;input&gt;是最重要的一个，使用这个标签配合 type 属性的设置，可以实现多种类型的数据输入。 以下是html form 相关的element: TagDescription&lt;form&gt; Defines an HTML form for user input&lt;input&gt;Defines an input control&lt;textarea&gt;Defines a multiline input control (text...","categories": ["Programming-basics"],
+        "tags": ["Ruby & Rails","HTML"],
+        "url": "http://localhost:4000/programming-basics/basic-form-1/"
+      },{
+        "title": "Difference between gets and gets.chomp",
+        "excerpt":"Ruby 中 gets, gets.chomp, gets.chomp() 的区别。 2.3.1 :002 &gt;2.3.1 :003 &gt; name = getscaven =&gt; \"caven\\n\" # gets 会将接收到的数据转换为string 并在末尾换行 '\\n'2.3.1 :004 &gt; name = gets.chomp caven =&gt; \"caven\" # gets带chomp 则会默认“吃”掉换行符号2.3.1 :005 &gt; day = getsmonday =&gt; \"monday\\n\"2.3.1 :006 &gt; day.chomp =&gt; \"monday\"2.3.1 :007 &gt; day.chomp(\"ay\\n\") =&gt; \"mond\" #...","categories": ["Programming-basics"],
+        "tags": ["Command Line"],
+        "url": "http://localhost:4000/programming-basics/diff-btw-gets-wether-chomp/"
+      },{
+        "title": "Be straight",
+        "excerpt":"这篇分享两个小点：   找到镜头  把横线拍横，把竖线拍竖1. 找到镜头 对于单反相机和多数卡片机来说，镜头在哪儿呢？：：那么手机呢？：：当我们拿起手机看到屏幕里的画面，不经思考的大脑会默认镜头在哪儿？ ——手机的镜头不在手机背面的中心，它在机身背后的角落处。:: 但这有什么影响？你有没有模糊的记得，有时你在拍东西——尤其是近距离地拍一些东西时，手机对准主体打开相机的一瞬间，感觉位置不对，但又不确切的知道哪里不对，于是你略作调整后完成了拍摄。很多时候，这就是你的“默认镜头位置”让你感觉不对的原因。现在假设我们把手机放大15倍，那么这个手机就和一个真人差不多高，这时镜头位置的差异对拍摄效果的影响就比较明显了，正立着手机拍，横着手机拍，倒立着手机拍，镜头的位置就发生了巨大差异。   正立的拍，人会显得比较矮。  横着拍，人呈现的身体比例最接近真实情况。  倒着拍，你发现腿变长了。（这就是为什么很多摄影师拍美女时会蹲下来或者甚至趴在地上）当你用手机拍摄小物件时，情况也一样。怎么使用这点来让自己拍出的照片和别人看起来不一样呢？一是记得上面说的意识到镜头实际在哪里，以及镜头位置的影响；二是接下来的这一点——不把东西拍变形的能力——把横线拍横，把竖线拍竖。 2. 把横线拍横，把竖线拍竖 思考一下：   给你一条直线，你可以把他拍得水平吗？  给你一个直角的两条边，你可以把两条边拍得垂直吗？  给你一个矩形，你可以把四条边拍得与照片的四条边都平行吗？可以感觉这好像很简单又有点不简单。 将一条直线拍平很简单，只要不断调整让这条直线与画面的一条边平行即可。将直角的两条边拍垂直就难一些了，只有当你的手机平面与直角所在面完全平行时，你才有可能。而真实还原一个矩形，在第2点的基础上还需要加上一点——把镜头置于矩形的中心位置。 让我们以用手机拍一本书为例，简单演示。如果我手上有一本书，我想把他拍成规整的矩形怎么做。 先来看看多数人的默认做法以及结果如下 你得到的是什么呢——书的一个角。 正确的步骤包含前面说的两个点   将镜头置于书的中心点  保持手机平面与书本平面的平行，以及手机任一边框与对应书的一边的平行。得到的结果如下 其实将镜头置于中心很好做，但第二点其实很难，实际操作的时候需要不断地调整不断地观察，不信你真的可以试试。如果把手机换成相机，第二点就要说成让镜头平面与书本平面平行。 关于一本书的拍法当然不只是这一种，我们可以有无数个拍摄角度，说不完的构图，想不尽的布光，以及各种布景。但这种横平竖直的拍法，可以给我们的照片带来稳定感以及一种平面设计的既视感。人类天生喜欢平衡和对称，不管是哪种形式的平衡，视觉的、听觉的、甚至是引力上的平衡，这些都可以不明显的带给人一种舒适和安全的感觉。当你在拍摄中使用这个方法时，你的画面会变得稳定，如果你运用得好还可以给你的画面注入气势。 在多数用手机拍照的人群中，你做了一点简单但多数人都不会做的事情，你拍出来的照片自然就与其他人不同了。 我们可以来欣赏一下一位摄影师对这种方法的运用：###： ###：  ###：  ###：  ###：  ###：以上图片来自摄影师 Ovidiu Tutunaru ###：不仅在风景主题中，在人物拍摄中也有很多时候融入了这一点，只是我们很多时候没有注意到而已。来看看下面的这些。  ###：  上面两张摄影师是Георгий Чернядьев (Georgiy Chernyadyev) ###： ###：  上面两张摄影师是 Roman Filippov ","categories": ["Photography"],
+        "tags": [],
+        "url": "http://localhost:4000/photography/shoot-with-mobile-phone-1/"
+      },{
+        "title": "Authenticating form scratch 2 - remember_me",
+        "excerpt":"remember me 功能的实现在回路上和login极类似，只在其中两个环节有所不同 1 login使用的是session，是临时性的，而 remember me 用到的是 cookies ，可以将指定信息长时间存储在cookies中即使关机也不会影响；2 session使用的是 user.id 作为加密对象，remember me 这里会重新用一个栏位专用的 remember_token 来生成 cookies 中对应的值。 1 准备工作 在sessions/new(login)页面加上 remember me 链接 &lt;%= label_tag \"Remember me.\" %&gt;&lt;%= check_box_tag :remember_me, 1, class: \"form-control\" %&gt;登陆时如果勾选，会多送出一组数据 :rememeber_me =&gt; \"1\" 增加一个 remember_token 栏位来储存生成 cookies 要用的摘要，记得migrate rails g migration add_remember_token_to_users remember_token:string写一个function来生成相应栏位token class...","categories": ["Programming"],
+        "tags": ["Ruby & Rails"],
+        "url": "http://localhost:4000/programming/Authenticating-from-scratch-2/"
+      },{
+        "title": "Authenticating form scratch 1 - signup and login",
+        "excerpt":"最初接触Rails时使用用户注册登录功能直接用的是devise。只需要安装好gem然后简单执行几步指令就可以开始使用注册登陆等各种功能了，对于很多页面都会用到的 current_user 也觉得很顺手很简单。这只是把devise当做了一个黑箱使用，刚好在一个rails的教材中有这样一部分内容，然后结合RailsCasts中的两个教学视频(1)signup&amp;login, (2)remember&amp;reset。用差不多半个月时间把这部分内容做了10遍，总体思路是，以cookies(和session)为验证基础，结合不同token栏位的设定实现这些功能。 整个过程不需要新建 model 在 user.rb 的基础上即可完成。 1 Sigup 1.1 建立 user Model， 安装 bcrypt 注册登录字面上很和谐，事实上注册实际是create一个user, 登录是建立 session ，分而视之。这一步需要 rails g model user email:string 先给一个 email 栏位，记得migrate。 为了给 user 设定密码，在 user.rb 中加一行： class User &lt; ApplicationRecord has_secure_password这么做产生了效果是： 赋予user一对虚拟属性，:password 和 :password_confirmation，新建user时会对这两个值进行存在性验证和匹配验证 允许我们使用 :password_digest 这个栏位来存储 bcrypt 加密后的密码摘要 user获得一个authenticate方法，用来验证键入密码是否正确password_digest 这个栏位需要自己手工建立，所以 rails...","categories": ["Programming"],
+        "tags": ["Ruby & Rails"],
+        "url": "http://localhost:4000/programming/Authenticating-from-scratch-1/"
+      },{
+        "title": "Authenticating form scratch 3 - password resetting",
+        "excerpt":"重置密码实际上就是对user的 password 栏位进行更新，常遇到的情景是用户在登陆页面点击“忘记密码链接”，然后会要求输入自己注册时的邮箱，如果邮箱确实存在会发一封重置邮件到邮箱，邮件内容会包含一个重置链接，在一定时限内点击这个链接可以进入到修改密码页面，修改密码成功后这个重置链接应该即刻失效。 这中间涉及到的验证环节是重置链接，用户不会知道自己账号在数据库中的id，而且直接在重置链接中包含用户id也不安全。因此需要单独生成一个key来验证链接的正确性并能用这个key到数据中定位到具体的用户，所以这里会生成一个新的 reset_token 栏位来处理这个会在链接中包含的乱数。 由于出现这种情况，有人输入了别人的邮箱或者用户误操作输入了别人的邮箱，这同样会发送重置邮件到别人的邮箱。为了安全起见一是应该在邮件里说明这种情况，二是给重置链接设定时效。因此还需要一个 reseted_at 栏位来存储发出链接的时间，后面才好规定时限问题。 这部分回路不涉及到session，不需要新的model,但需要新建一个controller来接管。 1 准备工作 生成一个 password_resets_controller: rails g controller password_resets new edit # new页面用户填邮箱，edit页面用来修改密码。 # create 会用来完成定位邮箱，生成token并发送重置邮件的工作到routes.rb中删掉新生成的两行，加上 resources :password_resets 到sessions/new(login)页面加上忘记密码的链接，导向password_resets/new页面： &lt;%= link_to \"Forget Password?\", new_password_reset_path %&gt;然后点一下这个链接看是否会进入到password_resets/new页面 建立reset_token和reseted_at栏位 rails g migration add_reset_token_to_users reset_token:string reseted_at:datetime# 这个token栏位同样可以使用之前写的 generate_token(column) function来处理migrate 2 邮箱定位用户, 注入数据到重置相关栏位 先写好password_resets/new 接受用户输入的邮箱信息 &lt;%=...","categories": ["Programming"],
+        "tags": ["Ruby & Rails"],
+        "url": "http://localhost:4000/programming/Authenticating-from-scratch-3/"
+      },{
+        "title": "Rubyist note preview",
+        "excerpt":"这是我读《Rubyist》时做的笔记的整理稿。 原本只是想借这本书熟悉 ruby 中 regular expression 的用法，结果竟读完了整本书，也意外地成为了我读的第一本英文原版书。得益于作者优秀的写作水平和他对Ruby深厚的理解，这本书读起来并不会很吃力。 书中所有代码示例我都跟着做了一遍，有一些内容由于 Ruby 版本更新（看这本书的时候已经是2.5.0）会有所出入。起初所有代码示例都是截图，整理过程中会借 markdown 语法把示例尽量还原成文字。笔记并不会按照目录分级严格展开并覆盖到每一个末级标题，只会在大体内容上保持顺序的一致。 原书名：The Well-Grounded Rubyist - second edition 原书作者：David A. Black 书的封面： ![][https://ws1.sinaimg.cn/large/006tNc79gy1fnpoa5113mj30mw0sqh60.jpg] 书的目录： 1. Ruby foundations Chapter 1. Bootstrapping your Ruby literacy Chapter 2. Objects, methods, and local variables Chapter 3. Organizing objects with classes Chapter 4. Modules and...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Rubyist-reading-notes-readme/"
+      },{
+        "title": "Rubyist-c1: Bootstrapping your ruby literacy",
+        "excerpt":"Ruby 中不同 scope 的 variable: local_variable @instance_variable @@class_variable $global_variable local variable 通常不带前缀， instance variable 前面带 @ ， global variable 前带 $ 且字母大写。 Keywords Ruby has numerous keywords: predefined, reserved terms associated with specific programming tasks and contexts. Keywords include def (for method definitions), class (for class definitions), if (conditional execution),...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-1-Bootstrapping-your-ruby-literacy/"
+      },{
+        "title": "Rubyist-c2-Objects methods and local variables",
+        "excerpt":"— But throughout, writing a Ruby program is largely a matter of engineering your objects so that each object plays a clear role and can perform actions related to that role. 我们对 object 所作的，总体上可以归为 1 向object 发出一段信息； 2 让object 执行某个动作。 写ruby程式更像是一场策划，导演。把合适的角色分配给合适的 object ， 并明确各个角色的职责，让他们各司其职。 In most object-oriented languages, including Ruby,...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-2-Objects-methods-and-local-variables/"
+      },{
+        "title": "Rubyist-c3-Organizing objects with classes",
+        "excerpt":"Talking about classes doesn’t mean you’re not talking about objects; that’s why this chapter has the title it has, rather than, say, “Ruby classes.” Much of what we’ll look at here pertains to objects and methods—but that’s because classes are, at heart, a way to organize objects and methods. We’ll...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-3-Organizing-objects-with-classes/"
+      },{
+        "title": "Rubyist-c4-Modules and program organization",
+        "excerpt":"A module encapsulating stacklikeness As you may know from previous studies,” a stack is a data structure that operates on the last in, first out (LIFO) principle. The classic example is a (physical) stack of plates. The first plate to be used is the last one placed on the stack....","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-4-modules-and-program-organization/"
+      },{
+        "title": "Rubyist-c5-The default object scope and visibility",
+        "excerpt":"This chapter covers • The role of the current or default object, self `self` 作为当前默认对象的角色• Scoping rules for local, global, and class variables 各类变量的作用域• Constant lookup and visibility 常量的查询以及可见性• Method-access rules 方法的可见层级- In describing and discussing computer programs, we often use spatial and, sometimes, human metaphors. We talk about being...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-5-The-default-object-scope-and-visibility/"
+      },{
+        "title": "Rubyist-c10-Collection central Enumerable and Enumerator",
+        "excerpt":"This chapter covers Mixing Enumerable into your classes将 Enumerable module 混入 class The use of Enumerable methods in collection objects在collection objects上使用枚举相关的methods Strings as quasi-enumerable objectsstring作为准枚举对象 Sorting enumerables with the Comparable module引入 Comparable module 来对可枚举对象进行内部排序 Enumeratorsenumerator 作为具有枚举知识的对象 - All collection objects aren’t created equal—but an awful lot of them have many...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-10-Collection-central-Enumerable-and-Enumerator/"
+      },{
+        "title": "Rubyist-c11-Regular expressions and regexp based string operations",
+        "excerpt":"This chapter covers Regular expression syntax Pattern-matching operations The MatchData class Built-in methods based on pattern matching In this chapter, we’ll explore Ruby’s facilities for pattern matching and text processing, centering around the use of regular expressions. A regular expression in Ruby serves the same purposes it does in other...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-11-Regular-expressions-and-regexp-based-string-operations/"
+      },{
+        "title": "Rubyist-c6-Control flow techniques",
+        "excerpt":"This chapter covers  Conditional execution条件式执行 Loops and looping techniques循环以及循环技术 Iterators迭代器 Exceptions and error handling例外以及错误处理 Ruby’s control-flow techniques include the following:ruby的分支流程控制技术包括下面这些： Conditional execution —Execution depends on the truth of an expression.基于true of false的条件控制 Looping —A single segment of code is executed repeatedly.循环-重复执行一个代码片段 Iteration —A call to a method is supplemented with a...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-6-Control-flow-techniques/"
+      },{
+        "title": "Rubyist-c7-Built in essentials",
+        "excerpt":"Part 2. Built-in classes and modules In part 2, we come to the heart of the Ruby language: built-in classes and modules.这部分将进入 Ruby 的核心内容： 内建的 classes 和 modules A great deal of what you’ll do as a Rubyist will involve Ruby’s built-ins. You’ve already seen examples involving many of them:...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-7-Built-in-essentials/"
+      },{
+        "title": "Rubyist-c8-Strings symbols and other scalar objects",
+        "excerpt":"This chapter covers String object creation and manipulationstring对象的建立和操作 Methods for transforming stringsstring的变换方法 Symbol semanticssymbol 语义 String/symbol comparisonstring 和 symbol 的比较 Integers and floats整数和浮点数 Time and date objects时间相关的对象 The term scalar means one-dimensional. Here, it refers to objects that represent single values, as opposed to collection or container objects that hold...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-8-Strings-symbols-and-other-scalar-objects/"
+      },{
+        "title": "Rubyist-c9-Collection and container objects",
+        "excerpt":"Chapter 9 Collection and container objects Sequentially ordered collections with arrays作为有序集合体的 array Keyed collections with hashes带有key的hash Inclusion and membership tests with rangesrange 的内含测试 Unique, unordered collections with sets作为唯一的，无序的集合体—— sets Named arguments using hash syntax使用hash 语法的 被命名的参数 — Ruby represents collections of objects by putting them inside container objects. In Ruby,...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-9-Collection-and-container-objects/"
+      },{
+        "title": "Rubyist-c13-Object individuation",
+        "excerpt":"part 3. Ruby dynamics Ruby is dynamic, like human nature. Matz, at RubyConf 2001 The phrase Ruby dynamics is almost redundant: everything about Ruby is dynamic. Variables don’t care what class of object you bind them to, which means you don’t have to (indeed, you can’t) declare their type in...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-13-Object-individuation/"
+      },{
+        "title": "Rubyist-c14-Callable and runnable objects",
+        "excerpt":"This chapter covers Proc objects as anonymous functions 作为匿名函数的 Proc 对象 The lambda method for generating functions 用来生成函数的 lambda 方法 Code blocks { code block } The Symbol#to_proc method Symbol class 中的 to_proc 方法 Method objects 作为方法的对象 Bindings 捆绑 The eval family of methods 方法的 eval 家族 Threads 线程 Executing...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-14-Callable-and-runnable-objects/"
+      },{
+        "title": "Rubyist-c12-File and IO operations",
+        "excerpt":"This chapter covers  Keyboard input and screen output键盘输入与屏幕输出 The IO and File classesIO 与 File 类 Standard library file facilities, including FileUtils and Pathnamestandard library 中的文件处理功能，包裹 FileUtils 和 Pathname The StringIO and open-uri library featuresStringIO 与 open-uri 库 As you’ll see once you dive in, Ruby keeps even file and...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/chapter-12-File-and-I-O-operations/"
+      },{
+        "title": "Rubyist-c15-Callbacks hooks and runtime introspection",
+        "excerpt":"This chapter covers Runtime callbacks: inherited, included, and more 运行中的回呼方法： inherited included … The respond_to? and method_missing methods Introspection of object and class method lists 对象的反身检视和 class methods 清单 Trapping unresolved constant references 固定未解决的常量引用 Examining in-scope variables and constants in-scope 变量和 常量 Parsing caller and stack trace information 解析堆栈轨迹信息 In...","categories": ["Learning Notes","Programming"],
+        "tags": ["Ruby & Rails","Notes of Rubyist"],
+        "url": "http://localhost:4000/learning%20notes/programming/Chapter-15-Callbacks-hooks-and-runtime-introspection/"
+      },{
+        "title": "Command Line Basics",
+        "excerpt":"Core conceptions command line interface 命令行接口，即指用文字命令的方式操作计算机（本地 或 远端）。 与 CLI 对应的另一种操作计算机的方式是图形用户界面即 Graphical User Interface(GUI)。 不同操作系统的 CLI 指令会有所不同。Mac 和 Linux 都是 Unix-like 操作系统，所以类似。Basic behaviors Humans use command line interface to interact with computers in terminal through different shells。 Discrimination of terms Terminal, Console, ShellTerminal 指 CLI 输入与输出的界面程序 Shell 理解为不同的与计算机交互的指令集，有不同的种类如bash zsh， Unix...","categories": ["Programming-basics"],
+        "tags": ["Command Line"],
+        "url": "http://localhost:4000/programming-basics/cml-basics/"
+      },{
+        "title": "Cascading Style Sheets - CSS Basics",
+        "excerpt":"Core conceptions selector type(tag,element) selector class selector id selector attribute select exmaple: img[src] Selects &lt;img src=\"myimage.png\"&gt; but not all &lt;img&gt; pseudo-class selector example: a:hover Selects &lt;a&gt;, but only when the mouse pointer is hovering over the link. image from MDN properties &amp; property values CSS box model padding border margin...","categories": ["Programming-basics"],
+        "tags": ["Front end"],
+        "url": "http://localhost:4000/programming-basics/css_basics/"
+      },{
+        "title": "GitHub Baiscs",
+        "excerpt":"Core conceptions Version Control 版本控制From git-scm.com: What is “version control”, and why should you care? Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. 版本控制系统基于时间线记录文件变化，在各个时间点生成对应的version，并且能回到特定version进行操作。 GitFrom git-scm.com: Git is a free and open source...","categories": ["Programming-basics","Version Control"],
+        "tags": ["Github"],
+        "url": "http://localhost:4000/programming-basics/version%20control/git-basics/"
+      },{
+        "title": "HTML Basics",
+        "excerpt":"Core conceptions HTML(Hypertext Markup Language) is a markup language the browser uses to present information to users, like text, links, images, and videos. It’s the basic component from which all websites and applications on the web are built.HTML 是__浏览器__用来标记和呈现内容给用户的一种标记语言(markup language)。 浏览器网页可拆分出的三个层面 content layer - HTML标记的内容层面 presentation layer - CSS修饰的表现层面 behavior...","categories": ["Programming-basics"],
+        "tags": ["Front end"],
+        "url": "http://localhost:4000/programming-basics/html_basics/"
+      },{
+        "title": "JavaScript and DOM",
+        "excerpt":"Core conceptions window object - 作为网页最底层的对象，可以把一个打开的浏览器页面视作一个 window object。w3s: The window object represents an open window in a browser. MDN: The window object represents a window containing a DOM document; the document property points to the DOM document loaded in that window. 在 dev tool 的 console 中，执行 alert(\"something\") 或者 document.location.href...","categories": ["Programming-basics"],
+        "tags": ["Front end","JavaScript","HTML"],
+        "url": "http://localhost:4000/programming-basics/js_and_dom/"
+      },{
+        "title": "JavaScript Baiscs",
+        "excerpt":"From wikipedia JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as JS, is a high-level, interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content engineering. It is used...","categories": ["Programming-basics"],
+        "tags": ["Javascript"],
+        "url": "http://localhost:4000/programming-basics/js_basics/"
+      },{
+        "title": "SQL Baiscs",
+        "excerpt":"主要数据库类型 Relational database - 关系型数据库。 SQLite MySQL PostgreSQL Oracle Microsoft SQL … NoSQL 类型数据库。 MongoDB CouchBase Redis … 区别： 关系型数据需要使用 SQL Structured Query Language 进行查询。 NoSQL 可以不使用 SQL 进行查询后者用不同的分类标准又分为很多种类型 From wikipedia: NoSQL systems are also sometimes called “Not only SQL” to emphasize that they may support SQL-like query languages 基本操作类型...","categories": ["Programming-basics"],
+        "tags": ["SQL","Database"],
+        "url": "http://localhost:4000/programming-basics/sql_basics/"
+      }]

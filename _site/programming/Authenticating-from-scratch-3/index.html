@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Authenticating form scratch 3 - password resetting | Caven’s</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Authenticating form scratch 3 - password resetting" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="重置密码实际上就是对user的 password 栏位进行更新，常遇到的情景是用户在登陆页面点击“忘记密码链接”，然后会要求输入自己注册时的邮箱，如果邮箱确实存在会发一封重置邮件到邮箱，邮件内容会包含一个重置链接，在一定时限内点击这个链接可以进入到修改密码页面，修改密码成功后这个重置链接应该即刻失效。" />
+<meta property="og:description" content="重置密码实际上就是对user的 password 栏位进行更新，常遇到的情景是用户在登陆页面点击“忘记密码链接”，然后会要求输入自己注册时的邮箱，如果邮箱确实存在会发一封重置邮件到邮箱，邮件内容会包含一个重置链接，在一定时限内点击这个链接可以进入到修改密码页面，修改密码成功后这个重置链接应该即刻失效。" />
+<link rel="canonical" href="http://localhost:4000/programming/Authenticating-from-scratch-3/" />
+<meta property="og:url" content="http://localhost:4000/programming/Authenticating-from-scratch-3/" />
+<meta property="og:site_name" content="Caven’s" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-08-30T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/programming/Authenticating-from-scratch-3/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/Authenticating-from-scratch-3/"},"description":"重置密码实际上就是对user的 password 栏位进行更新，常遇到的情景是用户在登陆页面点击“忘记密码链接”，然后会要求输入自己注册时的邮箱，如果邮箱确实存在会发一封重置邮件到邮箱，邮件内容会包含一个重置链接，在一定时限内点击这个链接可以进入到修改密码页面，修改密码成功后这个重置链接应该即刻失效。","@type":"BlogPosting","headline":"Authenticating form scratch 3 - password resetting","dateModified":"2017-08-30T00:00:00+08:00","datePublished":"2017-08-30T00:00:00+08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  authenticating-form-scratch-3-password-resetting">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Record</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Authenticating form scratch 3 - password resetting
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2017-08-30T00:00:00+08:00"><a class="u-url" href="">August 30, 2017</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Programming</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Ruby & Rails</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>重置密码实际上就是对user的 password 栏位进行更新，常遇到的情景是用户在登陆页面点击“忘记密码链接”，然后会要求输入自己注册时的邮箱，如果邮箱确实存在会发一封重置邮件到邮箱，邮件内容会包含一个重置链接，在一定时限内点击这个链接可以进入到修改密码页面，修改密码成功后这个重置链接应该即刻失效。</p>
+
+<p>这中间涉及到的验证环节是重置链接，用户不会知道自己账号在数据库中的id，而且直接在重置链接中包含用户id也不安全。因此需要单独生成一个key来验证链接的正确性并能用这个key到数据中定位到具体的用户，所以这里会生成一个新的 <code class="highlighter-rouge">reset_token</code> 栏位来处理这个会在链接中包含的乱数。</p>
+
+<p>由于出现这种情况，有人输入了别人的邮箱或者用户误操作输入了别人的邮箱，这同样会发送重置邮件到别人的邮箱。为了安全起见一是应该在邮件里说明这种情况，二是给重置链接设定时效。因此还需要一个 <code class="highlighter-rouge">reseted_at</code> 栏位来存储发出链接的时间，后面才好规定时限问题。</p>
+
+<p>这部分回路不涉及到session，不需要新的model,但需要新建一个controller来接管。</p>
+
+<h4 id="1-准备工作">1 准备工作</h4>
+
+<p>生成一个 password_resets_controller:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rails</span> <span class="n">g</span> <span class="n">controller</span> <span class="n">password_resets</span> <span class="n">new</span> <span class="n">edit</span>
+ <span class="c1"># new页面用户填邮箱，edit页面用来修改密码。</span>
+ <span class="c1"># create 会用来完成定位邮箱，生成token并发送重置邮件的工作</span>
+</code></pre></div></div>
+
+<p>到routes.rb中删掉新生成的两行，加上 <code class="highlighter-rouge">resources :password_resets</code></p>
+
+<p>到sessions/new(login)页面加上忘记密码的链接，导向password_resets/new页面：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="sx">%= link_to "Forget Password?", new_password_reset_path %&gt;
+</span></code></pre></div></div>
+<p>然后点一下这个链接看是否会进入到password_resets/new页面</p>
+
+<p>建立reset_token和reseted_at栏位</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="n">add_reset_token_to_users</span> <span class="n">reset_token</span><span class="ss">:string</span> <span class="n">reseted_at</span><span class="ss">:datetime</span>
+<span class="c1"># 这个token栏位同样可以使用之前写的 generate_token(column) function来处理</span>
+</code></pre></div></div>
+<p>migrate</p>
+
+<h4 id="2-邮箱定位用户-注入数据到重置相关栏位">2 邮箱定位用户, 注入数据到重置相关栏位</h4>
+
+<p>先写好password_resets/new 接受用户输入的邮箱信息</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">%= form_tag password_resets_path do |f| %&gt;
+  &lt;div class=</span><span class="s2">"form-group"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="sx">%= label_tag :Email%&gt;
+    &lt;%=</span> <span class="n">email_field_tag</span> <span class="ss">:email</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="ss">class: </span><span class="s2">"form-control"</span> <span class="o">%&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;%= submit_tag "Submit", class: "btn btn-primary" %&gt;
+  &lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sx">% end </span><span class="o">%&gt;</span>
+</code></pre></div></div>
+<p>create接手送来的邮箱：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PasswordResetsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+
+  <span class="k">def</span> <span class="nf">create</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find_by_email</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:email</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">user</span>
+      <span class="n">user</span><span class="p">.</span><span class="nf">send_reset_email</span> <span class="c1"># 这个method到user.rb中写</span>
+      <span class="n">redirect_to</span> <span class="n">root_url</span>
+      <span class="n">flash</span><span class="p">[</span><span class="ss">:notice</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Reset email has been sent."</span>
+    <span class="k">else</span>
+      <span class="n">redirect_to</span> <span class="n">new_password_reset_path</span>
+    <span class="k">end</span>
+
+  <span class="k">end</span>
+</code></pre></div></div>
+<p>写好send_reset_email，发送email前要先生成reset_token和reseted_at栏位信息</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="k">def</span> <span class="nf">send_reset_email</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">generate_token</span><span class="p">(</span><span class="ss">:reset_token</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">reseted_at</span> <span class="o">=</span> <span class="no">Time</span><span class="p">.</span><span class="nf">zone</span><span class="p">.</span><span class="nf">now</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">save</span>
+    <span class="no">UserMailer</span><span class="p">.</span><span class="nf">password_reset</span><span class="p">(</span><span class="nb">self</span><span class="p">).</span><span class="nf">deliver</span>
+    <span class="c1"># 这里要把user传到mailer中</span>
+    <span class="c1"># 因为后面的重置连接中会用到user的reset_token</span>
+  <span class="k">end</span>
+</code></pre></div></div>
+
+<h4 id="3-送出包含reset_token的链接">3 送出包含reset_token的链接</h4>
+
+<p>先生成user.rb中提到的UserMailer</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rails</span> <span class="n">g</span> <span class="n">mailer</span> <span class="n">user_mailer</span> <span class="n">password_reset</span>
+</code></pre></div></div>
+
+<p>到config/environments/development.rb中设定默认邮件发送域名</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">+</span> <span class="n">config</span><span class="p">.</span><span class="nf">action_mailer</span><span class="p">.</span><span class="nf">default_url_options</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">host: </span><span class="s2">"localhost:3000"</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>重开server生效。到mailer的.rb文件中定义好 password_reset method
+app/mailers/user_mailer.rb:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">password_reset</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="c1"># 这里接受前面送来的 'self'</span>
+    <span class="vi">@user</span> <span class="o">=</span> <span class="n">user</span>
+    <span class="n">mail</span> <span class="ss">to: </span><span class="vi">@user</span><span class="p">.</span><span class="nf">email</span><span class="p">,</span> <span class="ss">subject: </span><span class="s2">"password reset"</span>
+  <span class="k">end</span>
+</code></pre></div></div>
+
+<p>然后到邮件的view页面中添加重置链接，这个链接中包含两个关键点，1 包含reset_token 2 导向 password_resets/edit 页面。app/views/user_mailer/password_reset.html.erb,略去关于重置密码的安全说明，需要包含的是：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">%= link_to "Click here to reset your password", edit_password_reset_url(@user.reset_token)%&gt;
+</span></code></pre></div></div>
+<p><strong>注意这里要用url才能送出正确网址</strong></p>
+
+<p>这样用户点击的时候会生成类似
+<code class="highlighter-rouge">http://localhost:3000/password_resets/8XlMJNlU2P50saOM9baxkg/edit</code>
+的链接。中间的就是reset_token待会会用来去数据库抓用户。</p>
+
+<p>一切正常的话点这个链接会进入 password_resets/edit页面，观察网址就是上面那种形式。网址中并不是 reset_token=8XlMJNlU2P50saOM9baxkg 这种形式，所以下一步拿这个token使用的是 params[:id]。</p>
+
+<p>controller中写好edit接手的对象：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">class</span> <span class="nc">PasswordResetsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+    <span class="k">def</span> <span class="nf">edit</span>
+      <span class="vi">@user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find_by_reset_token</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+    <span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>写好edit页面，让用户输入新密码</strong> （只保留了必须内容）
+password_resets/edit:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="sx">%= form_for @user, url: password_reset_path, method: :patch do |f| %&gt;
+    &lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">password_field</span> <span class="ss">:password</span><span class="o">%&gt;</span>
+    <span class="o">&lt;</span><span class="sx">%= f.password_field :password_confirmation%&gt;
+    &lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">submit</span> <span class="s2">"Submit"</span><span class="p">,</span> <span class="ss">class: </span><span class="s2">"btn btn-primary"</span> <span class="o">%&gt;</span>
+  <span class="o">&lt;</span><span class="sx">% end </span><span class="o">%&gt;</span>
+</code></pre></div></div>
+
+<h4 id="4-进入重置环节">4 进入重置环节</h4>
+
+<p>edit页面送出的只有密码信息，我们还需要reset_token所以使用params[:id]从网址中抓，所以在update中我们会先用reset_token验证链接是否合法，然后再着手修改密码，当然在这之前先会检查token的时效。</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">class</span> <span class="nc">PasswordResetsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+
+    <span class="k">def</span> <span class="nf">update</span>
+      <span class="vi">@user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find_by_reset_token</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+      <span class="k">if</span> <span class="vi">@user</span> <span class="o">&amp;&amp;</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">reseted_at</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">.</span><span class="nf">hours</span><span class="p">.</span><span class="nf">ago</span>
+        <span class="vi">@user</span><span class="p">.</span><span class="nf">update!</span><span class="p">(</span><span class="n">reset_params</span><span class="p">)</span> <span class="c1"># 接收的数据写到下面</span>
+        <span class="vi">@user</span><span class="p">.</span><span class="nf">reset_token</span> <span class="o">=</span> <span class="kp">nil</span> <span class="c1"># 更新之后即刻失效</span>
+        <span class="vi">@user</span><span class="p">.</span><span class="nf">save</span>
+        <span class="n">redirect_to</span> <span class="n">root_url</span>
+        <span class="n">flash</span><span class="p">[</span><span class="ss">:notice</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Password has been reseted, try login again."</span>
+      <span class="k">else</span>
+        <span class="n">render</span> <span class="ss">:edit</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="kp">private</span>
+
+      <span class="k">def</span> <span class="nf">reset_params</span>
+        <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:user</span><span class="p">).</span><span class="nf">permit</span><span class="p">(</span><span class="ss">:password_confirmation</span><span class="p">,</span> <span class="ss">:password</span><span class="p">)</span>
+      <span class="k">end</span>
+</code></pre></div></div>
+
+<p>到这里就实现重置功能了，为了让用户送出错误链接地址时知道自己错在哪里了，可以改一下 edit 动作</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">class</span> <span class="nc">PasswordResetsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+    <span class="k">def</span> <span class="nf">edit</span>
+      <span class="vi">@user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find_by_reset_token</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+      <span class="k">if</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">reseted_at</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">.</span><span class="nf">hours</span><span class="p">.</span><span class="nf">ago</span>
+        <span class="n">redirect_to</span> <span class="n">root_path</span>
+        <span class="n">flassh</span><span class="p">[</span><span class="ss">:notice</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Reset link expired."</span>
+      <span class="k">elsif</span> <span class="o">!</span><span class="vi">@user</span>
+        <span class="n">redirect_to</span> <span class="n">root_path</span>
+        <span class="n">flash</span><span class="p">[</span><span class="ss">:notice</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Invalid resetting link."</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>除了注册用户环节，登陆，记住用户，以及重置密码的基本思路都很类似，需要注意的只是其中几个送出和接受数据的细节，考虑常见的使用情景。这只是基础版本的功能，安全性不高，但拓展功能也是在这个思路上进行改进。</p>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FAuthenticating-from-scratch-3%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Authenticating+form+scratch+3+-+password+resetting%20http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FAuthenticating-from-scratch-3%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FAuthenticating-from-scratch-3%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Authenticating+form+scratch+3+-+password+resetting&url=http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FAuthenticating-from-scratch-3%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/programming/Authenticating-from-scratch-1/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Authenticating form scratch 1 - signup and login
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/learning%20notes/programming/Rubyist-reading-notes-readme/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Rubyist note preview
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+  <!--<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div>-->
+
+  <div class="copyright">
+    
+    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+       Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>HTML Basics | Caven’s</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="HTML Basics" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Core conceptions" />
+<meta property="og:description" content="Core conceptions" />
+<link rel="canonical" href="http://localhost:4000/programming-basics/html_basics/" />
+<meta property="og:url" content="http://localhost:4000/programming-basics/html_basics/" />
+<meta property="og:site_name" content="Caven’s" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-21T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/programming-basics/html_basics/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming-basics/html_basics/"},"description":"Core conceptions","@type":"BlogPosting","headline":"HTML Basics","dateModified":"2018-02-21T00:00:00+08:00","datePublished":"2018-02-21T00:00:00+08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  html-basics">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Record</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">HTML Basics
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2018-02-21T00:00:00+08:00"><a class="u-url" href="">February 21, 2018</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Programming-basics</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Front end</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><strong>Core conceptions</strong></p>
+
+<ul>
+  <li>HTML(Hypertext Markup Language) is a markup language the browser uses to present information to users, like text, links, images, and videos. It’s the basic component from which all websites and applications on the web are built.</li>
+</ul>
+
+<p>HTML 是__浏览器__用来标记和呈现内容给用户的一种标记语言(markup language)。</p>
+
+<ul>
+  <li>浏览器网页可拆分出的三个层面
+    <ul>
+      <li>content layer - HTML标记的内容层面</li>
+      <li>presentation layer - CSS修饰的表现层面</li>
+      <li>behavior layer - Js控制的行为层，也可以理解为interactive层级</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fpax2jgesdj30l50bkdj4.jpg" alt="" /></p>
+
+<ul>
+  <li>HTML elements - 被 html tag 对标记的一段内容，被视作一个element
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">Inline elements</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">Block-level elements</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<p><strong>Basic behaviors</strong></p>
+
+<p>HTML 使用 tag 标记特定内容，并以结构化方式搭建起网页的DOM(Document Object Model)结构，成为css和js工作的基础。</p>
+
+<p><strong>Discrimination of terms</strong></p>
+
+<ul>
+  <li>tags 指所有tags</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics">semantic</a> tags 指那些并不具有实际(或明显)修改内容形式的标签，但这些标签在语义上很直白，他们的主要功能就是以更容易识别(understandable,logical)和记忆的方式标记某些内容。比如 <code class="highlighter-rouge">&lt;header&gt;, &lt;footer&gt;, &lt;section&gt;, &lt;aside&gt;...</code></li>
+</ul>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fpayqps47dj30ky0bqdhc.jpg" alt="" /></p>
+<ul>
+  <li>attributes - 注意属性和 css 是不同的概念
+    <ul>
+      <li>All HTML elements can have attributes 所有元素都可以有属性</li>
+      <li>Attributes provide additional information about an element 属性在html层面提供一些关于该元素的额外信息，也可能部分改变元素的呈现形式</li>
+      <li>Attributes are always specified in the start tag 属性都在起始标签里</li>
+      <li>Attributes usually come in name/value pairs like: name=”value” 属性通常以键值对方式出现</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<p><strong>HTML 页面的 global structure</strong></p>
+
+<p>这是一个典型的 html 页面宏观结构</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>My test page<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is my page<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>从内部看分成了 <code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code> 和 <code class="highlighter-rouge">&lt;body&gt;&lt;/body&gt;</code> 两部分</p>
+
+<p><a href="What’s in the head? Metadata in HTML">What’s in the head? Metadata in HTML</a></p>
+
+<ul>
+  <li>
+    <p>head 标签</p>
+
+    <p>The head of an HTML document is the part that is not displayed in the web browser when the page is loaded. It contains information such as the page <code class="highlighter-rouge">&lt;title&gt;</code>, links to CSS (if you want to style your HTML content with CSS), links to custom favicons, and other metadata (data about the HTML, such as who wrote it, and important keywords that describe the document.)</p>
+
+    <p>head 标签并不会实际出现在网页上。他内部包含的是页面的标题 <code class="highlighter-rouge">&lt;title&gt;</code>， CSS 和 js 文件的来源以及 metadata 等信息。</p>
+  </li>
+  <li>
+    <p>metadata</p>
+
+    <p>Data about the HTML, such as who wrote it, and important keywords that describe the document.</p>
+
+    <p>关于HTML页面的一些配置信息，或理解为元信息。比如这个页面谁写的，描述这个页面的关键词（搜索引擎可能会用到），页面字符使用的编码标准（比如<code class="highlighter-rouge">&lt;meta charset="utf-8"&gt;</code>）等。</p>
+  </li>
+</ul>
+
+<hr />
+
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main">main 标签</a></strong></p>
+
+<p><code class="highlighter-rouge">&lt;main&gt;&lt;/main&gt;</code> 用来标记一个网页中的主要内容，如果需要，可以在一个页面中使用多个 <code class="highlighter-rouge">&lt;main&gt;</code> 元素。</p>
+
+<hr />
+
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">div 标签</a></strong></p>
+
+<p><code class="highlighter-rouge">&lt;div&gt;&lt;/div&gt;</code> 可以视作一个纯净的容器，在添加任何css样式前他不会给内容带来任何形式的改变。</p>
+
+<hr />
+
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header">header</a> 和 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer">footer</a> 标签</strong></p>
+
+<p>header 和 footer 的作用是用来包裹一节内容的题目部分信息和注脚部分信息。他们可以在一个页面中出现多次，并不限于标记整个页面。</p>
+
+<hr />
+
+<p><strong>页面内分段导航</strong></p>
+
+<ul>
+  <li>用id属性跳转</li>
+  <li>1 给指定内容主体设置id作为锚点</li>
+  <li>2 给跳转链接设置 <code class="highlighter-rouge">href</code> 指向目标id元素</li>
+</ul>
+
+<p>example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>This is a <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#sample"</span><span class="nt">&gt;</span>sample<span class="nt">&lt;/a&gt;</span> paragraph.<span class="nt">&lt;/p&gt;</span>
+.
+.
+.
+<span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">"sample"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<p>点击段落中的 sample 链接就或跳转到对应id的section</p>
+
+<p><strong>Back to top</strong></p>
+
+<p>使用 <code class="highlighter-rouge">#</code> 作为目标id</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Back to top<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>HTML内容中的特殊字符溢出</strong></p>
+
+<p>通常使用 <code class="highlighter-rouge">&amp;commat;</code> 这样的语法来表示</p>
+
+<p><a href="https://dev.w3.org/html5/html-author/charref">特殊字符对照表</a></p>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fpb2lwo32aj30vx0g0764.jpg" alt="" /></p>
+
+<hr />
+
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre">pre 标签</a></strong></p>
+
+<p>The HTML <code class="highlighter-rouge">&lt;pre&gt;</code> element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional (“monospace”) font. Whitespace inside this element is displayed as written.</p>
+
+<p><code class="highlighter-rouge">&lt;pre&gt;&lt;/pre&gt;</code> 容器内写什么就呈现什么，不受html规则约束，比如空格的数量不会被合并，html tag 也不会解析。</p>
+
+<hr />
+
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">form 标签</a></strong></p>
+
+<p>from MDN:</p>
+<blockquote>
+  <p>The HTML <code class="highlighter-rouge">&lt;form&gt;</code> element represents a document section that contains interactive controls for submitting information to a web server.</p>
+</blockquote>
+
+<p>from w3s:</p>
+<blockquote>
+  <p>The HTML <code class="highlighter-rouge">&lt;form&gt;</code> element defines a form that is used to collect user input.</p>
+</blockquote>
+
+<p><code class="highlighter-rouge">&lt;form&gt;&lt;/form&gt;</code> 用来标记会提交数据给 server 端的小节。</p>
+
+<ul>
+  <li>form 中的 action 属性规定了数据提交到服务器端的具体地址</li>
+  <li>form 中的 method 属性规定了数据提交到服务器端使用的是 get 还是</li>
+</ul>
+
+<p>-</p>
+
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">The <code class="highlighter-rouge">&lt;input&gt;</code> Element</a></strong></p>
+
+<p>The <code class="highlighter-rouge">&lt;input&gt;</code> element is the most important form element.</p>
+
+<p>The <code class="highlighter-rouge">&lt;input&gt;</code> element can be displayed in several ways, depending on the type attribute.</p>
+
+<p>在 <code class="highlighter-rouge">&lt;form&gt;&lt;/form&gt;</code> 中，最重要的是 input 标签，这是定义输入区域的元素，其中 type 属性可以约束提交信息的形式，比如输入框，下拉选单，勾选选项，文件上传等</p>
+
+<ul>
+  <li>input 标签的attributes定义了数据输入的形式</li>
+</ul>
+
+<p><code class="highlighter-rouge">&lt;input&gt;</code> type 属性</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"color"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"date"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"datetime"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"datetime-local"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"image"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"month"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"range"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"reset"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"search"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"tel"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"time"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"url"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"week"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>默认情况 input 会是一个空白输入框 <input /></p>
+
+<ul>
+  <li>
+    <p>input 必须有一个 name 属性，比如 name=”age”，用来指明这个输入框提交数据的key，类似hash中的key</p>
+  </li>
+  <li>
+    <p>input 的value属性可以设置提交数据的默认值（可选）</p>
+  </li>
+</ul>
+
+<p>综合来看，form标签中的action属性可以视作rails中的route指明数据送到哪个controller的哪个method， method 属性指明method的htttp verb类型，一个 input 中的name对应提交数据中的一个 key，一个 value 则是对应key的值，注意value可以是默认的或是用户填写后submit的值。</p>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fprogramming-basics%2Fhtml_basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=HTML+Basics%20http%3A%2F%2Flocalhost%3A4000%2Fprogramming-basics%2Fhtml_basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fprogramming-basics%2Fhtml_basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=HTML+Basics&url=http%3A%2F%2Flocalhost%3A4000%2Fprogramming-basics%2Fhtml_basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/programming-basics/version%20control/git-basics/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> GitHub Baiscs
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/programming-basics/js_and_dom/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        JavaScript and DOM
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+  <!--<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div>-->
+
+  <div class="copyright">
+    
+    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+       Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  </body>
+
+</html>

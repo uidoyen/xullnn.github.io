@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Difference between Model.new and models.new | Caven’s</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Difference between Model.new and models.new" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="今天发现在一个 one to many 的 association 中， 一个 model 中出现了 models.new 的用法。通常能见到的是 Model.new 这种用法。" />
+<meta property="og:description" content="今天发现在一个 one to many 的 association 中， 一个 model 中出现了 models.new 的用法。通常能见到的是 Model.new 这种用法。" />
+<link rel="canonical" href="http://localhost:4000/programming/Model-new-vs-models-new/" />
+<meta property="og:url" content="http://localhost:4000/programming/Model-new-vs-models-new/" />
+<meta property="og:site_name" content="Caven’s" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-10T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/programming/Model-new-vs-models-new/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/Model-new-vs-models-new/"},"description":"今天发现在一个 one to many 的 association 中， 一个 model 中出现了 models.new 的用法。通常能见到的是 Model.new 这种用法。","@type":"BlogPosting","headline":"Difference between Model.new and models.new","dateModified":"2017-05-10T00:00:00+08:00","datePublished":"2017-05-10T00:00:00+08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  difference-between-model-new-and-models-new">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Record</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Difference between Model.new and models.new
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2017-05-10T00:00:00+08:00"><a class="u-url" href="">May 10, 2017</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Programming</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Ruby & Rails</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>今天发现在一个 one to many 的 association 中， 一个 model 中出现了 <code class="highlighter-rouge">models.new</code> 的用法。通常能见到的是 <code class="highlighter-rouge">Model.new</code> 这种用法。</p>
+
+<h2 id="背景说明">背景说明：</h2>
+
+<p>有 Product, Cart, CartItem, 三个 model , 他们的关系如下：</p>
+
+<p><strong>cart.rb</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Cart</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">has_many</span> <span class="ss">:cart_items</span>
+  <span class="n">has_many</span> <span class="ss">:products</span><span class="p">,</span> <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:cart_items</span><span class="p">,</span> <span class="ss">:source</span> <span class="o">=&gt;</span> <span class="ss">:product</span>
+
+  <span class="k">def</span> <span class="nf">add_product_to_cart</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+    <span class="n">ci</span> <span class="o">=</span> <span class="no">CartItem</span><span class="p">.</span><span class="nf">new</span>   <span class="c1"># ----- 疑问就在这一行 -----</span>
+    <span class="n">ci</span><span class="p">.</span><span class="nf">cart_id</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">id</span>
+    <span class="n">ci</span><span class="p">.</span><span class="nf">product</span> <span class="o">=</span> <span class="n">product</span>
+    <span class="n">ci</span><span class="p">.</span><span class="nf">number</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">ci</span><span class="p">.</span><span class="nf">save</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p><strong>cart_item.rb</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CartItem</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">belongs_to</span> <span class="ss">:cart</span>
+  <span class="n">belongs_to</span> <span class="ss">:product</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>cart_items的主要栏位 <strong>db/schema.rb</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_table</span> <span class="s2">"cart_items"</span><span class="p">,</span> <span class="ss">force: :cascade</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+
+   <span class="n">t</span><span class="p">.</span><span class="nf">integer</span>  <span class="s2">"cart_id"</span>
+   <span class="n">t</span><span class="p">.</span><span class="nf">integer</span>  <span class="s2">"product_id"</span>
+   <span class="n">t</span><span class="p">.</span><span class="nf">integer</span>  <span class="s2">"number"</span><span class="p">,</span>     <span class="ss">default: </span><span class="mi">1</span>
+   <span class="o">...</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>然后在 console 中操作：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="nb">p</span> <span class="o">=</span> <span class="no">Product</span><span class="p">.</span><span class="nf">first</span>
+<span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="no">Cart</span><span class="p">.</span><span class="nf">create</span>
+<span class="o">&gt;&gt;</span> <span class="n">c</span><span class="p">.</span><span class="nf">add_product_to_cart</span><span class="p">(</span><span class="nb">p</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="no">CartItem</span><span class="p">.</span><span class="nf">last</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>在cart.rb 中的 <code class="highlighter-rouge">add_product_to_cart</code> 这个method的第一行：</p>
+
+<p>原来使用的是 <code class="highlighter-rouge">ci = cart_items.new</code> 之前没有注意到这里，在拥有一对多关系的model中用这种写法来新建object。当我在console中测试后发现一切正常,最后执行 <code class="highlighter-rouge">CartItem.last</code> 检查下刚刚建立的那个 cart_item, 返回的信息：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#&lt;CartItem:0x007fd1902c8490&gt; {</span>
+               <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="ss">:cart_id</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">,</span>
+       <span class="ss">:product_id</span> <span class="o">=&gt;</span> <span class="mi">8</span><span class="p">,</span>
+           <span class="ss">:number</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+       <span class="ss">:created_at</span> <span class="o">=&gt;</span> <span class="o">...</span>
+       <span class="ss">:updated_at</span> <span class="o">=&gt;</span> <span class="o">...</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p>但是如果把第一行换成 <code class="highlighter-rouge">ci = CartItem.new</code> ,然后在 console 中执行相同的操作，返回的信息是：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#&lt;CartItem:0x007fd1902c86c0&gt; {</span>
+               <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="ss">:cart_id</span> <span class="o">=&gt;</span> <span class="kp">nil</span><span class="p">,</span>
+       <span class="ss">:product_id</span> <span class="o">=&gt;</span> <span class="mi">8</span><span class="p">,</span>
+           <span class="ss">:number</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+       <span class="ss">:created_at</span> <span class="o">=&gt;</span> <span class="o">...</span>
+       <span class="ss">:updated_at</span> <span class="o">=&gt;</span> <span class="o">...</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p>可以看到 <code class="highlighter-rouge">:cart_id =&gt; nil</code> 这次cart_item 没有抓到，cart_id 。</p>
+
+<p>困惑的是，以前只见过 <code class="highlighter-rouge">Model.new</code> 这种写法， 这种写法在这里明显漏掉了什么环节。查了一段时间资料没能找到答案，后来到stackoverflow去提问，得到了一个<a href="http://stackoverflow.com/questions/43952096/in-an-one-to-many-association-whats-the-difference-between-model-new-and-model">说得通的答案</a>。</p>
+
+<p>要点有：</p>
+
+<ul>
+  <li>
+    <p>当我在 cart.rb 中写 <code class="highlighter-rouge">ci = cart_items.new</code> 的时候， 这里相当于给出了一个“沉默的前提”，告诉rails直接新建了一个belongs_to 当前这个cart的 cart_item, 同时也就把 :cart_id 这个资料暂存进了这个 cart_item 的 <code class="highlighter-rouge">:cart_id</code> 这个栏位。这种写法是行得通的。</p>
+  </li>
+  <li>
+    <p>当使用 <code class="highlighter-rouge">ci = CartItem.new</code> 的时候，只是让rails造了一个新的cart_item, 当然就少了上面说的那个前提，这只是个空的 cart_item。所以save之后 <code class="highlighter-rouge">:cart_id</code> 这个栏位是 nil 。</p>
+  </li>
+</ul>
+
+<p><strong>受到这个答案的启发，我尝试这么写：</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_product_to_cart</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+  <span class="n">ci</span> <span class="o">=</span> <span class="no">CartItem</span><span class="p">.</span><span class="nf">new</span>
+  <span class="n">ci</span><span class="p">.</span><span class="nf">cart_id</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">id</span>  <span class="c1"># 加了这一行</span>
+  <span class="n">ci</span><span class="p">.</span><span class="nf">product</span> <span class="o">=</span> <span class="n">product</span>
+  <span class="n">ci</span><span class="p">.</span><span class="nf">number</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">ci</span><span class="p">.</span><span class="nf">save</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>使用 <code class="highlighter-rouge">CartItem.new</code> 但是加了一行 <code class="highlighter-rouge">ci.cart_id = self.id</code> 把 <code class="highlighter-rouge">:cart_id</code> 给了 cart_item 。</p>
+
+<p>在 console 中测试，没有报错也可以抓到 <code class="highlighter-rouge">:cart_id</code> 。</p>
+
+<hr />
+<p>在console中 执行 <code class="highlighter-rouge">Cart.methods</code>，可以看到返回了696个method。 其中包含一个<code class="highlighter-rouge">new</code> method：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">[</span><span class="mi">448</span><span class="p">]</span>    <span class="n">new</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>          <span class="no">Class</span> <span class="p">(</span><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Inheritance</span><span class="o">::</span><span class="no">ClassMethods</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>在console中 执行 <code class="highlighter-rouge">CartItem.methods</code>，可以看到返回了672个method, 其中也包含一个与上面相同的 <code class="highlighter-rouge">new</code> method。</p>
+
+<p>在console中 执行 <code class="highlighter-rouge">Cart.last.cart_items.methods</code>，可以看到返回了387个method, 其中包含一个 <code class="highlighter-rouge">new</code> method:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">229</span><span class="p">]</span>       <span class="n">new</span><span class="p">(</span><span class="o">*</span><span class="n">attributes</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>    <span class="no">CartItem</span><span class="o">::</span><span class="no">ActiveRecord_Associations_CollectionProxy</span> <span class="p">(</span><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Associations</span><span class="o">::</span><span class="no">CollectionProxy</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>在console中 执行 <code class="highlighter-rouge">Cart.last.cart_items.last.methods</code>，可以看到返回了428个method, 其中<strong>没有</strong>再包含一个 <code class="highlighter-rouge">new</code> method。</p>
+
+<blockquote>
+  <p><strong>在第三种情况中的new方法和第一种中的出现了明显的差异，写的是 CartItem::ActiveRecord_Associations_CollectionProxy (ActiveRecord::Associations::CollectionProxy)</strong></p>
+</blockquote>
+
+<blockquote>
+  <p>暂译为 “关联集合代理” 的method，在<a href="http://api.rubyonrails.org/classes/ActiveRecord/Associations/CollectionProxy.html">rails 的 api 说明中专门有提到这一类方法</a>，其中的讲 <code class="highlighter-rouge">build</code> 的地方就可以对应到这里的 <code class="highlighter-rouge">new</code> 。</p>
+</blockquote>
+
+<p>其中一段说得很清楚了：</p>
+
+<blockquote>
+  <p>（在这种一对多的关联model中, build/new） Returns a new object of the collection type that has been instantiated with attributes and linked to this object, but have not yet been saved. You can pass an array of attributes hashes, this will return an array with the new objects.</p>
+</blockquote>
+
+<p>has been instantiated with attributes and linked to this object。说得很清楚了，当然用create也是可以的。</p>
+
+<p>下面也用一个简短的例子来说明了这种用法的效果：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="n">has_many</span> <span class="ss">:pets</span>
+<span class="k">end</span>
+
+<span class="n">person</span><span class="p">.</span><span class="nf">pets</span><span class="p">.</span><span class="nf">build</span>
+<span class="c1"># =&gt; #&lt;Pet id: nil, name: nil, person_id: 1&gt;</span>
+
+<span class="n">person</span><span class="p">.</span><span class="nf">pets</span><span class="p">.</span><span class="nf">build</span><span class="p">(</span><span class="ss">name: </span><span class="s1">'Fancy-Fancy'</span><span class="p">)</span>
+<span class="c1"># =&gt; #&lt;Pet id: nil, name: "Fancy-Fancy", person_id: 1&gt;</span>
+
+<span class="n">person</span><span class="p">.</span><span class="nf">pets</span><span class="p">.</span><span class="nf">build</span><span class="p">([{</span><span class="ss">name: </span><span class="s1">'Spook'</span><span class="p">},</span> <span class="p">{</span><span class="ss">name: </span><span class="s1">'Choo-Choo'</span><span class="p">},</span> <span class="p">{</span><span class="ss">name: </span><span class="s1">'Brain'</span><span class="p">}])</span>
+<span class="c1"># =&gt; [</span>
+<span class="c1">#      #&lt;Pet id: nil, name: "Spook", person_id: 1&gt;,</span>
+<span class="c1">#      #&lt;Pet id: nil, name: "Choo-Choo", person_id: 1&gt;,</span>
+<span class="c1">#      #&lt;Pet id: nil, name: "Brain", person_id: 1&gt;</span>
+<span class="c1">#    ]</span>
+
+<span class="n">person</span><span class="p">.</span><span class="nf">pets</span><span class="p">.</span><span class="nf">size</span>  <span class="c1"># =&gt; 5 # size of the collection</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">pets</span><span class="p">.</span><span class="nf">count</span> <span class="c1"># =&gt; 0 # count from database</span>
+<span class="no">Also</span> <span class="n">aliased</span> <span class="ss">as: </span><span class="n">new</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="总结">总结：</h4>
+
+<p>在一对多的关系中，在 has_many 一方的model.rb中写 <code class="highlighter-rouge">models.new</code>(这个是前者has的model)可以默认地告诉rails新建的后者默认属于前者并注入关联的外部键。</p>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FModel-new-vs-models-new%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Difference+between+Model.new+and+models.new%20http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FModel-new-vs-models-new%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FModel-new-vs-models-new%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Difference+between+Model.new+and+models.new&url=http%3A%2F%2Flocalhost%3A4000%2Fprogramming%2FModel-new-vs-models-new%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/learning%20notes/learning-how-to-learn-note/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Note of Learning how to learn
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/programming/customize-url/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Customize url in Rails
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+  <!--<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div>-->
+
+  <div class="copyright">
+    
+    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+       Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  </body>
+
+</html>
