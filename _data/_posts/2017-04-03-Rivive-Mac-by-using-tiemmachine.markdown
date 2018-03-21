@@ -11,7 +11,7 @@ Timemachine是Mac自带的用来备份和恢复系统的工具，其主要特点
 
 写这篇是自己购买mac时机器故障要换新，但是急用电脑于是去借了个mac，我需要在别人的电脑上恢复一个自己的系统供自己使用，也需要在归还别人时删掉我用的系统并且能保证当前进度能完整迁移到新的mac上。
 
-![](/photos/postimages/dwQnBIkAQga77ZOuG59Z_屏幕快照 2016-12-25 下午2.08.26.png)
+![](/images/post_images/dwQnBIkAQga77ZOuG59Z_屏幕快照 2016-12-25 下午2.08.26.png)
 
 ---
 
@@ -35,7 +35,7 @@ Timemachine是Mac自带的用来备份和恢复系统的工具，其主要特点
 一种是登陆账户时会直接自动引导Time Machine进行迁移，前提是这个账户是新建立的。
 第二个是登入后使用[迁移助手]进行文件迁移，这个助手不仅可以用来恢复备份，还可以用来从另一台pc上迁移文件到mac（当然系统不同，迁移的文件类型肯定肯定是受限的）。不知道在迁移助手在哪里就直接在spotlight中搜索就出来了。
 
-![](/photos/postimages/XqHdzqmhTGCgLCDGicBD_屏幕快照 2016-12-25 下午2.09.04副本.png)
+![](/images/post_images/XqHdzqmhTGCgLCDGicBD_屏幕快照 2016-12-25 下午2.09.04副本.png)
 
 因为我有备份，所以就直接使用第一种方式。
 

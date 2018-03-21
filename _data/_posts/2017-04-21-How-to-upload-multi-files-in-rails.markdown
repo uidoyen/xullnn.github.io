@@ -229,7 +229,7 @@ end
 
 来看看调用的效果:
 
-![](/photos/postimages/call images-s.jpg)
+![](/images/post_images/call images-s.jpg)
 
 #### products/ 页面调用
 
@@ -249,7 +249,7 @@ end
 
 效果会是这样：
 
-![](/photos/postimages/Snip20170422_1.png)
+![](/images/post_images/Snip20170422_1.png)
 
 #### products/:id/edit 页面调用
 
@@ -274,7 +274,7 @@ end
 
 调用效果如下
 
-![](/photos/postimages/Snip20170422_3.png)
+![](/images/post_images/Snip20170422_3.png)
 
 
 ---
@@ -283,7 +283,7 @@ end
 
 > 此案例中我们在uploader.rb中把存储地址设为了本地，图片会默认在app/public/uploads下
 
-![](/photos/postimages/dir.jpg)
+![](/images/post_images/dir.jpg)
 
 ---
 

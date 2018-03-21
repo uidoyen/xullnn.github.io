@@ -42,7 +42,7 @@ gem 'figaro'
 记得 `figaro install`
 > 这一步会生成一个文件 **config/application.yml** 并将其自动添加到 .gitignore 档中这样这个文件就只会留在本地，以后各个服务商提供的各种服务比如邮件发送，云储存的密钥都会存在这个文件中，然后通过规定的语法在对应的.rb设置文件中安全的调用密钥。而不是将密钥写在不同的.rb文件中最后push的满地都是。
 
-![](/photos/postimages/Snip20170426_13.png)
+![](/images/post_images/Snip20170426_13.png)
 
 执行`cp config/application.yml config/application.yml.example`
 
@@ -72,7 +72,7 @@ gem 'figaro'
 
 **这里的aws_region指的是：**
 
-![](/photos/postimages/Snip20170426_15.png)
+![](/images/post_images/Snip20170426_15.png)
 
 可到这里查看[s3的region列表](http://docs.aws.amazon.com/zh_cn/general/latest/gr/rande.html#s3_region)
 
@@ -148,7 +148,7 @@ end
 
 执行 `figaro heroku:set -e production` ，将production环境下的密钥信息同步到heroku上，如果想查看目前heroku上设置的所有密钥信息可以执行`heroku config`
 
-![](/photos/postimages/屏幕快照 2017-04-26 下午8.02.33.jpg)
+![](/images/post_images/屏幕快照 2017-04-26 下午8.02.33.jpg)
 
 
 如果以后新增了什么服务，往config/application.yml中添加了新的密钥，记得要再次执行 `figaro heroku:set -e production` 将里面的内容同步到heroku，不然新增的服务会因无法通过验证而无法使用。
@@ -164,6 +164,6 @@ end
 
 到amazon上找到新建的存储桶，一层一层地点，会发现里面的文件结构和本地是一模一样的，仍然是: uploads ---> photo ---> insert ---> 12345678..... ---> 同一张图的不同尺寸 .
 
-![](/photos/postimages/Snip20170426_16.png)
+![](/images/post_images/Snip20170426_16.png)
 
 其实可以把你的bucket就看做 public这个文件夹，但存储桶中的情况和我们所见到也许并不一样，[阿里云的一篇说明文](https://help.aliyun.com/document_detail/31827.html?spm=5176.doc31834.6.565.nYvOTf)档很好地解释了关于对象存储的一些基本概念。

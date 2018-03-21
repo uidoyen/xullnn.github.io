@@ -14,17 +14,17 @@ tags: [Github]
 
 3.commit history: commit 历史线
 
-![](/photos/postimages/01.svg)
+![](/images/post_images/01.svg)
 
->> 图片来源：https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting
+图片来源：https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting
 
 不断回顾整个基本模型，有利于我们理解不同指令的区别。
 
-在脑中回想我们在本地repo中的工作流程：1 修改了某些文件；2 通过`git add ` 存入快照暂存区；3 `git commit ` 确认加入commit。反过来我们的退回操作也可以相应地到达这三个不同的“深度”。再从时间/commit 历史上来看，我们可选择回退多少个commit点。总的来说回退操作中涉及到的两个方面就只有1深度2时间/commit跨度。
+回想我们在本地repo中的工作流程：1 修改了某些文件；2 通过`git add ` 存入快照暂存区；3 `git commit ` 确认加入commit。反过来我们的退回操作也可以相应地到达这三个不同的“深度”。再从时间/commit 历史上来看，我们可选择回退多少个commit点。总的来说回退操作中涉及到的两个方面就只有1深度2时间/commit跨度。
 
 同样只用旋转一下上面那个git基本工作模型的图就可以更直观地理解回退的这两个方面：
 
-![](/photos/postimages/commit.jpg)
+![](/images/post_images/commit.jpg)
 
 X 轴代表 时间/commit 跨度
 
@@ -91,7 +91,7 @@ Switched to branch 'branch01'
 
 ```
 
-可以看到效果是一样的，可以通过 git reflog来查看历史commit 的版本信息。当用checkout切回某一次commit的状态时，working directory里的文件也会回到当时的状态，这时想要切回最新状态，只需要 `git chekcout 最新branch`就可以了，如上图所示的那样。
+可以看到效果是一样的，可以通过 git flog来查看历史commit 的版本信息。当用checkout切回某一次commit的状态时，working directory里的文件也会回到当时的状态，这时想要切回最新状态，只需要 `git chekcout 最新branch`就可以了，如上图所示的那样。
 
 #### 所以有两种方式来传入回退步数：
 1. 使用 `HEAD~n` 指定回退步数；

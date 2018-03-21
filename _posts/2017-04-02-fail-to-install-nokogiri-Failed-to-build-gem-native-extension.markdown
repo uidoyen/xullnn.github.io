@@ -17,7 +17,7 @@ fail to install nokogiri  Failed to build gem native extension
 ```
 
 stackoverflow上的一个回答：
-![](/photos/postimages/Snip20170402_15.png)
+![](/images/post_images/Snip20170402_15.png)
 
 
 

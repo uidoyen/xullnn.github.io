@@ -115,7 +115,6 @@ b. 在<form>基础上，第二级的 `<input>`, `<select>` 这些标签和它们
 
 对于输入数据行，value在这里并不是必须的，它只是设定了一个送出数据的默认值，所以如果是用户自己需要输入的内容，我们其实可以不写value。但如果是`name="_method" value="patch"` 这类表达request类型的 value 则是很重要的内容。
 
-<br><br>
 #### 试试直接将这段 html form 搬到rails app中：
 
 新建一个简单的rails app，然后`rails g scaffold user name:string country:string age:integer specialty:string`
@@ -136,26 +135,19 @@ Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.2ms)
 ```
 
 **第一行，告诉我们送出表单使用的是 GET 动作；**
+
 **第三行，可以看到我们以hash的形式送出了数据, key 就是我们在 name="" 后写的内容， value 就是我们在输入框里输入的内容。**
 
-
-<br><br>
-
 ### 2 Rails form helpers - form_tag
-
-
-<br>
 
 还是使用之前的html form代码，我们引入rails form helper中的 `form_tag` 试试，它与`form_for`的主要区别是它可以不关联任何对象或资料表,而`form_for`需要制定送出资料的对象。 使用`form_tag`或`form_for` rails 都会自动帮我们生成 `<form> </form>` 标签，所以下面会省去这个标签
 
 ```ruby
-
 <%= form_tag do %>
     First name:
     <input type="text" name="nick_name" value="Your Name"><br>
     <input type="submit" value="提交表单">
 <% end %>
-
 ```
 
 用chrome 检查生成的html代码会多出这几行：
@@ -173,7 +165,7 @@ Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.2ms)
 
 ```
 
-可以看到Rails帮我们“额外”增加了许多代码：
+可以看到Rails帮我们"额外"增加了许多代码：
 
 #### 1 在form标签行
 

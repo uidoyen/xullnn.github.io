@@ -74,7 +74,7 @@ end
 
 这是在做carbolowdrate时遇到的问题，由于我们写了很“重”的seed档，里面引用大量的图片导致文件体积剧增达到了458.6 Mb
 
-![](/photos/postimages/9pAGUycQm4FBJVdvAQlQ_屏幕快照 2017-03-02 上午9.53.43.png)
+![](/images/post_images/9pAGUycQm4FBJVdvAQlQ_屏幕快照 2017-03-02 上午9.53.43.png)
 
 解决方法是批量压缩图片或者以其他方式减小体量，然后再尝试push。
 
@@ -99,7 +99,7 @@ DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 
 然后按提示再次输入app名称就可以执行成功，drop掉之前部署网站的资料。
 
-![](/photos/postimages/WyF3qZZZRiznDllaM9dw_屏幕快照 2017-03-02 下午10.55.11.png)
+![](/images/post_images/WyF3qZZZRiznDllaM9dw_屏幕快照 2017-03-02 下午10.55.11.png)
 
 后续再操作 `rake db:migrate`
 
@@ -113,7 +113,7 @@ DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 
 仔细看了终端返回的信息：
 
-![](/photos/postimages/QOaMolZ7TcuBEFqiM2mD_屏幕快照 2017-03-09 下午2.28.53.png)
+![](/images/post_images/QOaMolZ7TcuBEFqiM2mD_屏幕快照 2017-03-09 下午2.28.53.png)
 
 倒数第六行：
 
@@ -171,7 +171,7 @@ ExecJs::ProgramError: Unexpected character '@' (line: 12830, col: 0, pos: 387012
 
 ```
 
-![](/photos/postimages/屏幕快照 2017-05-03 下午2.21.02.png)
+![](/images/post_images/屏幕快照 2017-05-03 下午2.21.02.png)
 google后有人出现过类似问题：
 
 - [类似问题1](http://stackoverflow.com/questions/23438448/unable-to-push-to-heroku-after-being-able-to-do-do)

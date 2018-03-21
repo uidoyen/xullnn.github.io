@@ -177,7 +177,7 @@ c.默认情况下 revert 会尝试自动帮你 commit（如果没有冲突）, c
 
 因此，执行 git revert 撤销某一个或多个 commit 的更改后，会容易引起 conflict。 唯一不会引起 conflict 的操作是 `git revert HEAD` 执行这个指令后会跳出 commit 信息编辑器，让你修改 commit 信息，如果默认给出的message 就可以的话键入 `:wq` 保存退出commit 编辑视窗，此时查看 `git log` 就可以看到刚刚的 commit，而之前的commit历史没有任何改变。
 
-![](/photos/postimages/Snip20170608_9.png)
+![](/images/post_images/Snip20170608_9.png)
 
 
 #### 1 git revert HEAD~2
@@ -196,7 +196,7 @@ hint: and commit the result with 'git commit'
 
 此时查看 本地文件：
 
-![](/photos/postimages/Snip20170608_10.png)
+![](/images/post_images/Snip20170608_10.png)
 
 git 标注出了file1中冲突部分，需要手动调整代码。但注意一下 file2 并没有变化，因为HEAD~2 指定的实际上是倒数第三个commit，这个commit中没有包含修改 file2 代码的操作（file2的代码是在最后一次commit 时提交的，也就是 HEAD）。所以并不会影响file2中的内容。
 

@@ -4,7 +4,7 @@ categories: [Programming]
 tags: [Ruby & Rails]
 ---
 
-最初接触Rails时使用用户注册登录功能直接用的是[devise](https://github.com/plataformatec/devise)。只需要安装好gem然后简单执行几步指令就可以开始使用注册登陆等各种功能了，对于很多页面都会用到的 `current_user` 也觉得很顺手很简单。这只是把devise当做了一个黑箱使用，刚好在一个rails的教材中有这样一部分内容，然后结合RailsCasts中的两个教学视频[(1)signup&login](http://railscasts.com/episodes/250-authentication-from-scratch-revised), [(2)remember&reset](http://railscasts.com/episodes/274-remember-me-reset-password)。用差不多半个月时间把这部分内容做了10遍，总体思路是，**以cookies(和session)为验证基础，结合不同token栏位的设定实现这些功能。** 整个过程不需要新建 model 在 user.rb 的基础上即可完成。
+最初接触Rails时使用用户注册登录功能直接用的是[devise](https://github.com/plataformatec/devise)。只需要安装好gem然后简单执行几步指令就可以开始使用注册登陆等各种功能了，对于很多页面都会用到的 `current_user` 也是直接用。这只是把devise当做了一个黑箱使用，刚好在一个rails的教材中有这样一部分内容，然后结合RailsCasts中的两个教学视频[(1)signup&login](http://railscasts.com/episodes/250-authentication-from-scratch-revised), [(2)remember&reset](http://railscasts.com/episodes/274-remember-me-reset-password)。用差不多半个月时间把这部分内容做了10遍，总体思路是，**以cookies(和session)为验证基础，结合不同token栏位的设定实现这些功能。** 整个过程不需要新建 model 在 user.rb 的基础上即可完成。
 
 ### 1 Sigup
 #### 1.1 建立 user Model， 安装 bcrypt
@@ -85,11 +85,11 @@ private
 
 ### 2 Login
 
-上面的步骤对于普通用户来说会很诡异，注册完了就只是把我的账号加到了数据库中，没有登录功能前面的工作也没意义。对于基本的登录功能会使用 cookies 中的 session 机制来处理，如果不清楚cookies以及session怎么工作的，可以先google一下，对他有个整体印象，然后多写几次验证的code会帮助理解。
+上面的步骤对于普通用户来说会很诡异，注册完了就只是把我的账号加到了数据库中，没有登录功能前面的工作也没意义。对于基本的登录功能会使用 cookies 中的 session 机制来处理，如果不清楚cookies以及session怎么工作的，可以先google一下，有个整体印象，然后多写几次验证的code会帮助理解。
 
 简单的说 cookies 用户浏览器端中用来存储一些信息的地方，比如 session 是cookies中包含的其中一种, 这些信息有可能是用户本机产生的，也有可能是用户发出request后服务器返回一些信息告诉浏览器让它存在 cookies 中的，这些信息都是临时的，会有各自的过期时间，但是我们可以让某些信息的过期时间很长，几乎永久。
 
-基础版的登陆实际就是使用 `session[:user_login] = user.id` 这样一个方法来生成一个基于 用户ID 的 session 值（也是一串乱数）存在浏览器中，其中像 `:user_login` 这个key的名称是可以自己定的，比如 user_id, user_auth 等都可以。由于这个session的值是基于用户的 ID 生成的，所以除非退出浏览器重新开，或者手动将其删除，他的值是暂时不会变的，所以我们可以反向解密 `:user_login` 的session值得到用户ID 然后到数据库中找到对应用户，这也是定义 `current_user`  method 的基础。
+基础版的登陆实际就是使用 `session[:user_login] = user.id` 这样一个方法来生成一个基于 用户ID 的 session 值（也是一串乱数）存在浏览器中，其中像 `:user_login` 这个key的名称是可以自己定的，比如 user_id, user_auth 等都可以。由于这个session的值是基于用户的 ID 生成的，所以除非退出浏览器重新开，或者手动将其删除，他的值是暂时不会变的，所以我们可以反向让rails通过 `:user_login` 的session值得到用户ID 然后到数据库中找到对应用户，这也是定义 `current_user`  method 的基础。可以把 cookies 和 session 都视作一个(nested) hash。
 
 #### 2.1 建立sessions_controller
 处理session不需要再新建model，因为session存在浏览器里，用来查找user的id存在users表中，因此只需要新建一个controller来处理这部分：

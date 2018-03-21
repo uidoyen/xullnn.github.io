@@ -67,7 +67,7 @@ New jekyll site installed in /Users/caven/demo/my-blog.
 
 在终端执行 `jekyll s` 就可以让你的blog在本地跑起来了，下面会给你地址（一般会是：http://localhost:4000）。点进去就可以看到blog的主页了！默认的原始页面是这样的：
 
-![](/photos/postimages/屏幕快照 2017-05-02 下午1.36.34.png)
+![](/images/post_images/屏幕快照 2017-05-02 下午1.36.34.png)
 
 ### Step 4 将进度push到Git pages的仓库并查看blog网址
 先去你刚刚新建的Git pages的仓库取得仓库地址，然后 `git remote add origin xxxxxxx仓库地址xxxxxxx.git` 将远端地址设置好，接着`git push origin master`
@@ -80,7 +80,7 @@ New jekyll site installed in /Users/caven/demo/my-blog.
 
 终端`atom .` 打开文件夹可以看到这样的结构
 
-![](/photos/postimages/Snip20170502_6.png)
+![](/images/post_images/Snip20170502_6.png)
 
 **格式要求：**
 
@@ -105,15 +105,15 @@ categories: jekyll update
 
 我们在_posts/路径下写的文章会被自动转译成html文件并放到_site/文件路径下的某个地方，然后再呈现在网页上。
 
-![](/photos/postimages/Snip20170502_9.png)
+![](/images/post_images/Snip20170502_9.png)
 
 atom里保存后可以在本地看到主页已经有了新文章的链接。
 
-![](/photos/postimages/Snip20170502_10.png)
+![](/images/post_images/Snip20170502_10.png)
 
 点进去看：
 
-![](/photos/postimages/Snip20170502_11.png)
+![](/images/post_images/Snip20170502_11.png)
 
 
 **到这里，你应该大概知道jekyll和Github pages是怎么配合工作来生成blog的了。简而言之就是jekyll以一个构架来帮你转译文章，Github pages为你提供服务器支持。**
@@ -140,17 +140,17 @@ atom里保存后可以在本地看到主页已经有了新文章的链接。
 
 可以找到[一个提供jekyll theme的网站](https://jekyllthemes.io)，有的主题是收费的，有的是免费的。接着下载这个theme,比如：
 
-![](/photos/postimages/Snip20170502_19.png)
+![](/images/post_images/Snip20170502_19.png)
 
 
 下载到本地的可能是个压缩文件，也可能直接是个文件夹，总之打开后会发现里面的文件结构跟之前我们  `jekyll new` 建立起来的文件夹很像，但通常带主题的文件夹里面内容会多一些。
 
 比如上面那个theme下载到本地直接是个文件夹：
-![](/photos/postimages/屏幕快照 2017-05-02 下午8.23.33.png)
+![](/images/post_images/屏幕快照 2017-05-02 下午8.23.33.png)
 
 对比下文件结构：
 
-![](/photos/postimages/Snip20170502_21.png)
+![](/images/post_images/Snip20170502_21.png)
 
 
 #### 2. 使用主题
@@ -163,7 +163,7 @@ atom里保存后可以在本地看到主页已经有了新文章的链接。
 
 首先找到放css的文件,可能不同主题会有所不同。以这个主题为例：
 
-![](/photos/postimages/Snip20170502_22.png)
+![](/images/post_images/Snip20170502_22.png)
 
 找到后就可以按照自己的需要进行修改了。
 
@@ -171,7 +171,7 @@ atom里保存后可以在本地看到主页已经有了新文章的链接。
 
 **可以看到有个layout文件夹，里面会对不同页面的整体排版进行控制，通常layout里面的文件还会使用 include xxx.html 这样的语句来引用 _includes/路径下的html文件，这些可以慢慢探索，关系也不复杂。**
 
-![](/photos/postimages/Snip20170502_24.png)
+![](/images/post_images/Snip20170502_24.png)
 
 #### 5. 修改配置
 

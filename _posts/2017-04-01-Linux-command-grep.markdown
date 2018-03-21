@@ -132,8 +132,6 @@ config/initializers/new_framework_defaults.rb:18:Rails.application.config.active
 ---
 
 
-
-
 关于grep的用法还有很多，参数设置也细分了很多种，加上组合使用方法就更加复杂。
 这里有可供参考的网站：
 

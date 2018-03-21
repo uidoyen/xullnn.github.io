@@ -13,7 +13,7 @@ tags: [Ruby on Rails, Error record]
 
 这种错误一般是由于漏掉了`end` 或者 `<% end %>` 引起的。
 
-![](/photos/postimages/5f6DhbETT7yWDHW9HYA2_屏幕快照 2017-01-01 下午10.22.00.png)
+![](/images/post_images/5f6DhbETT7yWDHW9HYA2_屏幕快照 2017-01-01 下午10.22.00.png)
 
 ---
 
@@ -25,13 +25,13 @@ ActiveRecord指的是database，也就是数据资料没找到。这类错误明
 比如下图中由于`[params(:id)]`中将符号写反——正确的是`(params[:id])`——导致rails不知道用什么找对象。
 > “Couldn't find Job without an ID”
 
-![](/photos/postimages/tnhoDTMTni5jzHlhyXFY_屏幕快照 2017-01-07 下午8.50.24.png)
+![](/images/post_images/tnhoDTMTni5jzHlhyXFY_屏幕快照 2017-01-07 下午8.50.24.png)
 
 ---
 
 > Couldn't find Xxx with 'id'=
 
-![](/photos/postimages/hJcmJTFmQTGQ2ymO3aCp_屏幕快照 2017-01-09 下午4.39.41-2.png)
+![](/images/post_images/hJcmJTFmQTGQ2ymO3aCp_屏幕快照 2017-01-09 下午4.39.41-2.png)
 
 上图中没能够通过id这个键去找到一个Job，这是由于route中的`resource :jobs`——正确的是`resources :jobs`——少了s,没有把jobs作为一组资源对待。
 
@@ -40,7 +40,7 @@ ActiveRecord指的是database，也就是数据资料没找到。这类错误明
 > ActiveRecord::RecordNotFound in CommentsController#create
 Couldn't find Prodcut without an ID
 
-![](/photos/postimages/V7VNFBUZTrug08oCsblE_屏幕快照 2017-02-24 下午3.17.16.png)
+![](/images/post_images/V7VNFBUZTrug08oCsblE_屏幕快照 2017-02-24 下午3.17.16.png)
 
 没有ID就找不到Prodcut...
 
@@ -62,7 +62,7 @@ Couldn't find Prodcut without an ID
 > ActiveRecord::StatementInvalid in CommentsController#create
 SQLite3::SQLException: no such column: products.product_id: SELECT "products".*FROM "products" WHERE "products"."product_id" IS NULL LIMIT?*
 
-![](/photos/postimages/vP5ZaiUCTImGczaDKWkx_屏幕快照 2017-02-24 下午6.07.10.png)
+![](/images/post_images/vP5ZaiUCTImGczaDKWkx_屏幕快照 2017-02-24 下午6.07.10.png)
 
 
 这个错误出在这一行:
@@ -98,7 +98,7 @@ end
 
 自变数(参数)错误，给出的是0，期望的是1
 
-![](/photos/postimages/ADqbCT2KRECamKQdioyk_屏幕快照 2017-01-09 下午5.47.29.png)
+![](/images/post_images/ADqbCT2KRECamKQdioyk_屏幕快照 2017-01-09 下午5.47.29.png)
 
 这个错误是由于有关post或patch的method后面没有跟上需要传的参数——上面的例子中是漏掉了`(job_params)`，rails希望得到一个参数，但是这里没有给出所以是“given 0, expected 1”。在其他情况下也有可能是"given 1, expected 3" 这种情况下就本应该传3组parameters，但是只给出了一组。
 
@@ -108,7 +108,7 @@ end
 
 string与0的比较失败。
 
-![](/photos/postimages/fn8g3i8LTpeh73pGXhpG_屏幕快照 2017-02-08 下午4.43.59.png)
+![](/images/post_images/fn8g3i8LTpeh73pGXhpG_屏幕快照 2017-02-08 下午4.43.59.png)
 
 错误出在这一行:
 ```ruby
@@ -141,7 +141,7 @@ end
 > showing /path/path/.../views/order_mailer/notify_placed.html.erb where line # 16 raised:
 Missing host to link to : Pleaese provide the :host parameter, set default_url_options[:host], or set :only_path to true
 
-![](/photos/postimages/qMIMxrWSCGMnAmITjEAD_屏幕快照 2017-03-03 上午11.51.43.png)
+![](/images/post_images/qMIMxrWSCGMnAmITjEAD_屏幕快照 2017-03-03 上午11.51.43.png)
 
 这个错误的原因是在config/environments/development.rb中缺少了：
 ```ruby
@@ -154,7 +154,7 @@ config.action_mailer.default_url_options = {host: 'localhost:3000'}
 
 > wrong number of arguments (given 1, expected 0)
 
-![](/photos/postimages/EbAeUzBbSKWLUogmZYg1_屏幕快照 2017-03-26 下午10.07.57.png)
+![](/images/post_images/EbAeUzBbSKWLUogmZYg1_屏幕快照 2017-03-26 下午10.07.57.png)
 
 这类参数错误一般都是后面少了（或多了）需要传的参数，这里的错误是helpers/orders_helper.rb中定义helper method时少了参数，但是`<%= render_order_paid_state(@order)%>`在调用这个helper时却裹了参数，所以是given 1 , expected 0。
 
@@ -171,7 +171,7 @@ config.action_mailer.default_url_options = {host: 'localhost:3000'}
 
 > undefined method 'update（job_params）' for # <Job:0xx0xxxxx> Did you mean? xxx
 
-![](/photos/postimages/jCVyoW74SGSRxpMw7oRR_屏幕快照 2017-01-09 下午6.31.43.png)
+![](/images/post_images/jCVyoW74SGSRxpMw7oRR_屏幕快照 2017-01-09 下午6.31.43.png)
 
 这个错误从显示层面可以看出是符号错误，括号写成了中文格式。
 
@@ -180,7 +180,7 @@ config.action_mailer.default_url_options = {host: 'localhost:3000'}
 > undefined method 'any' for #<actionDispatch::Flash::FlashHash:000xxx00x>
 Did you mean? any?
 
-![](/photos/postimages/JLKMONQmTxK9j5KvZg1m_屏幕快照 2017-01-29 下午10.18.59.png)
+![](/images/post_images/JLKMONQmTxK9j5KvZg1m_屏幕快照 2017-01-29 下午10.18.59.png)
 
 这里的错误是`<% if flash.any %>` 这一行中的any少了问号，正确的是`any?`
 
@@ -190,13 +190,13 @@ Did you mean? any?
 > undefined method 'cart_item' for #<Cart:0x00...>
 Did you mean? cart_items , cart_items=
 
-![](/photos/postimages/qYTDIqBHSmON4FkzNxvf_屏幕快照 2017-02-07 下午3.58.20.png)
+![](/images/post_images/qYTDIqBHSmON4FkzNxvf_屏幕快照 2017-02-07 下午3.58.20.png)
 
 这里给出了明显的提示`cart_items`应该是复数，在包含`each do `这个method的回圈中，对象是多个，不是单独的，一般都是复数。
 
 > undefined method 'user=' for #<Order:00xx0xx...> Did you mean? user_id+
 
-![](/photos/postimages/pyaxnhDoRWiYbGWq8jEB_屏幕快照 2017-02-11 下午11.03.18.png)
+![](/images/post_images/pyaxnhDoRWiYbGWq8jEB_屏幕快照 2017-02-11 下午11.03.18.png)
 
 显然这里rails 把`user =` 视作了`@order`的一个method，但实际这里是想去抓order的user_id这个外部键。这个错误的发生是由于models/order.rb中漏写了`belongs_to :user`,所以两个model没能关联起来。
 
@@ -204,7 +204,7 @@ Did you mean? cart_items , cart_items=
 
 > undefined method 'before_action' for #<Class:00x00x...> Did you mean? before_commit
 
-![](/photos/postimages/4h9jPb4USFeFoIu7Wllk_屏幕快照 2017-02-12 下午2.18.47.png)
+![](/images/post_images/4h9jPb4USFeFoIu7Wllk_屏幕快照 2017-02-12 下午2.18.47.png)
 
 指出错误在：
 ```ruby
@@ -218,7 +218,7 @@ before_action :generate_token
 
 > undefined method 'first' for nil:NilClass
 
-![](/photos/postimages/6jvg1kOeSpGkmtBDoq82_屏幕快照 2017-03-11 下午2.01.30.png)
+![](/images/post_images/6jvg1kOeSpGkmtBDoq82_屏幕快照 2017-03-11 下午2.01.30.png)
 
 问题在这一行:
 
@@ -234,7 +234,7 @@ first是一个选择动作，所以应该放在votes后面，正确的写法是`
 undefined method 'post_path' for #<#<Class:0xx0x....>:000xx0xx>
 Did you mean? font_path, root_path
 
-![](/photos/postimages/oJsD3gIvQFCb7mdHETyU_屏幕快照 2017-03-14 下午6.43.49.png)
+![](/images/post_images/oJsD3gIvQFCb7mdHETyU_屏幕快照 2017-03-14 下午6.43.49.png)
 
 错误信息中提到的'post_path'在这个erb文件中并没有出现，但rails说是又这里引起的。
 之前定义了post是belongs_to :group的，所以其实对post的修改会传两个参数，一个是group_id ， 另一个就是自己的id
@@ -246,13 +246,13 @@ post的edit这个method的路径在view中会是`edit_group_post_path(post.group
 <% simple_form for [@group, @post] do |p| %>
 ```
 一个直观的说明是...
-![](/photos/postimages/p0Bj8oWnR4WuAA0xwDlm_Snip20170314_26.png)
+![](/images/post_images/p0Bj8oWnR4WuAA0xwDlm_Snip20170314_26.png)
 
 ---
 
 > undefined method 'job=' for nil:NilClass
 
-![](/photos/postimages/DXhHnGQpQr2ep1Ll6tHh_屏幕快照 2017-03-17 上午10.58.02.png)
+![](/images/post_images/DXhHnGQpQr2ep1Ll6tHh_屏幕快照 2017-03-17 上午10.58.02.png)
 
 这里rails把job=当做了一个method，也许会猜是resume和job在model中的关系没挂上，但不是。原因是`Resume.new`的位置不对，它的位置被放在了最后，但是在这之前就在去定位这个resume的job_id， 不能给还没有的对象裹外部键。所以这里正确的写法是：
 ```ruby
@@ -266,7 +266,7 @@ post的edit这个method的路径在view中会是`edit_group_post_path(post.group
 
 > undefined method 'product_path' for #<#<Class:0x00xx..>:0xx032..>
 
-![](/photos/postimages/TIbuI0x8RB6Xjw7Z4TLF_Snip20170322_13.png)
+![](/images/post_images/TIbuI0x8RB6Xjw7Z4TLF_Snip20170322_13.png)
 
 这里的代码本身是没有错误的，但问题是 produt_path 对应的controller应该是products_controller，但错误信息指明这个路径定位到admin/products_controller中去了。
 
@@ -276,7 +276,7 @@ post的edit这个method的路径在view中会是`edit_group_post_path(post.group
 
 > undefined method 'model_name' for nil:NilClass
 
-![](/photos/postimages/屏幕快照 2017-04-07 下午11.00.45.png)
+![](/images/post_images/屏幕快照 2017-04-07 下午11.00.45.png)
 
 报错title指向jobs_controller 中的 new 这个method, 下面的报错快照显示的是 views/new.html.erb 这个文件引起的。错误指出 `model_name` 是空，意思是 new 页面中 `@job` 这里没有get到东西。到controller里发现是在 第一个method的下面多了个 `end` 导致controller在这里提前被结束，后面的内容失效，new页面呼叫对象失败。
 
@@ -333,7 +333,7 @@ def index
 end
 ```
 
-![](/photos/postimages/屏幕快照 2017-04-18 上午11.05.55.png)
+![](/images/post_images/屏幕快照 2017-04-18 上午11.05.55.png)
 
 报错显示是没能抓到`@jobs`的资料，最后发现是在用when定义不同触发情况时出现了问题，范例中原来对三种情况的划分用的是`when when else`
 而我改成了`when when when`，这导致了一个问题就是没能覆盖的所有情况，原先最后一个用`else`其实涵盖了用时间倒序排列和余下不排序的情况，也就是说直接进/jobs/页面不点任何排序也是会用时间倒序排列的。但是如果三个都用`when`那么就只划定了三种触发方式下会去抓的资料类型，剩下的rails就不知道了，所以抓不到，因为没有定义除了这三种情况以外的情况。
@@ -348,7 +348,7 @@ else "by_updated_time"
 
 > undefined method `clean_up' for #<Cart:0x007fc87d4afce8> Did you mean? clean!
 
-![](/photos/postimages/屏幕快照 2017-04-24 下午3.03.01.png)
+![](/images/post_images/屏幕快照 2017-04-24 下午3.03.01.png)
 
 错误在这个orders_controller中被触发：
 
@@ -415,7 +415,7 @@ class Cart < ApplicationRecord
 
 > Unable to autoload Order_record, expected /path/path/.../models/Order_record.rb to define it
 
-![](/photos/postimages/NnOJMHUHQEeiD7ele5u2_屏幕快照 2017-03-24 下午10.02.59.png)
+![](/images/post_images/NnOJMHUHQEeiD7ele5u2_屏幕快照 2017-03-24 下午10.02.59.png)
 
 错误出在这一行(orders_controller)：
 ```ruby
@@ -437,7 +437,7 @@ order_record = OrderRecord.new
 
 > no route matches {:action=>"show", :controller =>"admin/jobs"} missing required keys: [:id]
 
-![](/photos/postimages/3tz8wozkTHWBwBN1ThOH_屏幕快照 2017-03-15 下午8.52.00.png)
+![](/images/post_images/3tz8wozkTHWBwBN1ThOH_屏幕快照 2017-03-15 下午8.52.00.png)
 
 缺少了 id 这个 key， 正确的写法是：
 
@@ -449,7 +449,7 @@ order_record = OrderRecord.new
 
 > no route matches{:action=> "show", :controller=>"movies"}missing required keys: [:id]
 
-![](/photos/postimages/屏幕快照 2017-04-10 下午9.46.20.png)
+![](/images/post_images/屏幕快照 2017-04-10 下午9.46.20.png)
 
 问题出在 movies_controller.rb中的 create, redirect那一行缺少了key,rails不知道要呼叫哪个movie
 
@@ -472,7 +472,7 @@ end
 
 > no route matches {:action=> ”edit”, :controller=>"comments", :id=>nil, :movie_id=>"5"} missing required keys: [:id]
 
-![](/photos/postimages/屏幕快照 2017-04-10 下午11.15.15.png)
+![](/images/post_images/屏幕快照 2017-04-10 下午11.15.15.png)
 
 comment 是 belongs_to movie的，这里返回的信息说缺少了 [:id]，那就是controller中对应的method里没有抓到comment的key,所以到comments_controller对应的method中的 `@comment = Comment.find(params[:id])`这一行的某个地方出错
 
@@ -482,7 +482,7 @@ comment 是 belongs_to movie的，这里返回的信息说缺少了 [:id]，那�
 
 > Account::MoivesController#index is missing a template for this request format and variant. request.formats: ["text/html"] request.variant: [] NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
 
-![](/photos/postimages/Snip20170412_20.png)
+![](/images/post_images/Snip20170412_20.png)
 
 
 ---
@@ -492,7 +492,7 @@ comment 是 belongs_to movie的，这里返回的信息说缺少了 [:id]，那�
 > Shwoing /path/views/carts/index.html.erb where line 47 raised:
 undefined local variable or method 'cart' for #<Cart:0x00...>
 
-![](/photos/postimages/7X4zyChCTC27MXNmAtj3_屏幕快照 2017-02-14 下午3.40.19.png)
+![](/images/post_images/7X4zyChCTC27MXNmAtj3_屏幕快照 2017-02-14 下午3.40.19.png)
 
 这个错误在models/cart.rb中，由这一行引起：
 ```ruby
@@ -512,7 +512,7 @@ cart_items.each do |cart_item|
 
 > undefined method 'current_cart' for class '#<Class:ApplicationController>'
 
-![](/photos/postimages/PtqkNBBgTbqMJ8zUFMh8_屏幕快照 2017-02-14 下午3.01.28.png)
+![](/images/post_images/PtqkNBBgTbqMJ8zUFMh8_屏幕快照 2017-02-14 下午3.01.28.png)
 
 这个错误虽然title指向route，但实际错误不在routes.rb中
 
@@ -540,7 +540,7 @@ missing template order_mailer/apply_cancel with "mailer", Searched in : * "order
 
 这类错误一般是method对应的表单文件(erb文件)不匹配，有可能是没有对应名称的erb，或文件放的路径不对，或文件名有错字，或生成文件的时候缺少拓展名或者拓展名有误。
 
-![](/photos/postimages/GdDzZtJHSNOd4HSXNWbN_屏幕快照 2017-02-16 下午11.06.45.png)
+![](/images/post_images/GdDzZtJHSNOd4HSXNWbN_屏幕快照 2017-02-16 下午11.06.45.png)
 
 上面的例子中的app/controllers/order_controller.rb中有个apply_to_cancel的method，里面还有一个在OrderMailerl中定义的method`apply_cancel`。
 
@@ -571,7 +571,7 @@ app/mailers/order_mailer.rb
 
 在OrderMailer中的 apply_cancel(order) 这个method需要一个邮件模板，对应的erb应该是 app/views/order_mailer/apply_cancel.html.erb
 
-![](/photos/postimages/Snip20170402_16.png)
+![](/images/post_images/Snip20170402_16.png)
 
 这里的错误在于生成erb文件时写的是`touch app/views/order_mailer/apply_to_cancel.html.erb` 而实际上需要模板的是`apply_cancel`这个mailer中的method，名称也应该对应。
 
@@ -617,7 +617,7 @@ has_many :products, through: :cart_items, sources: :product
 
 ### 12 Others
 
-![](/photos/postimages/t6WWuQyQT2sUTSGhFc9Q_Snip20170317_41.png)
+![](/images/post_images/t6WWuQyQT2sUTSGhFc9Q_Snip20170317_41.png)
 
 admin/jobs/:id/resumes 这个页面最下方会出现所有resume的详细信息，显示方式和console中的显示方式一致。
 
@@ -636,11 +636,11 @@ admin/jobs/:id/resumes 这个页面最下方会出现所有resume的详细信息
 
  导致错误的写法是：
 
- ![](/photos/postimages/5nT6kCQGQMGSYc1OZRkQ_Snip20170326_62.png)
+ ![](/images/post_images/5nT6kCQGQMGSYc1OZRkQ_Snip20170326_62.png)
 
  报错信息一大片：
 
- ![](/photos/postimages/XzDNb8W1SCCVeoUp9QCf_Snip20170326_63.png)
+ ![](/images/post_images/XzDNb8W1SCCVeoUp9QCf_Snip20170326_63.png)
 
  这个错误就是由于多了一个空行引起的...去掉空行后恢复正常。
 

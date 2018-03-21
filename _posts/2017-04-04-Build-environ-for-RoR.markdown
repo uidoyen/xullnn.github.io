@@ -153,7 +153,7 @@ command line tools实际上是Xcode的一部分。
 
 点击atom菜单栏的**Atom**菜单 ===> 点击 **Install Shell Commands**
 
-![](/photos/postimages/Snip20170405_1.png)
+![](/images/post_images/Snip20170405_1.png)
 
 ---
 

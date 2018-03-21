@@ -18,7 +18,7 @@ end
 ```
 > we get:
 >`user_path(@user) # => "/users/357-john-smith"`
->>[Rails Guide 出处](http://guides.rubyonrails.org/active_support_core_extensions.html)
+> [Rails Guide 出处](http://guides.rubyonrails.org/active_support_core_extensions.html)
 
 在Rails中，默认使用 `to_param` method处理 `params[:id]` 以及 `@user` 拿到的数据是什么样子。Rails内建默认的`to_param`的method是 `"self.id"`,上面的例子中我们在需要修改url的Model中重新定义了这个method以达到改写目的。
 
@@ -35,7 +35,7 @@ end
 `@user = User.find_by_member_id(params[:id])`(等同于`@user = User.find_by(member_id: params[:id])`)
 
 这种查找object的方法，一个重点是 `find` 这个方法会[默认对将要拿去query资料的字串（比如 params[:id]传来的字串）先进行 `to_i` 处理：](http://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html#method-i-find)
->> Find by id - This can either be a specific id (1), a list of ids (1, 5, 6), or an array of ids ([5, 6, 10]). If one or more records can not be found for the requested ids, then RecordNotFound will be raised. If the primary key is an integer, find by id coerces its arguments using to_i.
+> Find by id - This can either be a specific id (1), a list of ids (1, 5, 6), or an array of ids ([5, 6, 10]). If one or more records can not be found for the requested ids, then RecordNotFound will be raised. If the primary key is an integer, find by id coerces its arguments using to_i.
 
 ```ruby
 2.3.1 :004 > "6ytg89k03re".to_i

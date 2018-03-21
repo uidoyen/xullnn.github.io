@@ -235,7 +235,6 @@ The <code class="highlighter-rouge">&lt;input&gt;</code> element can be displaye
 
 <p>对于输入数据行，value在这里并不是必须的，它只是设定了一个送出数据的默认值，所以如果是用户自己需要输入的内容，我们其实可以不写value。但如果是<code class="highlighter-rouge">name="_method" value="patch"</code> 这类表达request类型的 value 则是很重要的内容。</p>
 
-<p><br /><br /></p>
 <h4 id="试试直接将这段-html-form-搬到rails-app中">试试直接将这段 html form 搬到rails app中：</h4>
 
 <p>新建一个简单的rails app，然后<code class="highlighter-rouge">rails g scaffold user name:string country:string age:integer specialty:string</code></p>
@@ -254,24 +253,19 @@ The <code class="highlighter-rouge">&lt;input&gt;</code> element can be displaye
 <span class="no">Completed</span> <span class="mi">200</span> <span class="no">OK</span> <span class="k">in</span> <span class="mi">20</span><span class="n">ms</span> <span class="p">(</span><span class="no">Views</span><span class="p">:</span> <span class="mf">18.1</span><span class="n">ms</span> <span class="o">|</span> <span class="no">ActiveRecord</span><span class="p">:</span> <span class="mf">0.2</span><span class="n">ms</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><strong>第一行，告诉我们送出表单使用的是 GET 动作；</strong>
-<strong>第三行，可以看到我们以hash的形式送出了数据, key 就是我们在 name=”” 后写的内容， value 就是我们在输入框里输入的内容。</strong></p>
+<p><strong>第一行，告诉我们送出表单使用的是 GET 动作；</strong></p>
 
-<p><br /><br /></p>
+<p><strong>第三行，可以看到我们以hash的形式送出了数据, key 就是我们在 name=”” 后写的内容， value 就是我们在输入框里输入的内容。</strong></p>
 
 <h3 id="2-rails-form-helpers---form_tag">2 Rails form helpers - form_tag</h3>
 
-<p><br /></p>
-
 <p>还是使用之前的html form代码，我们引入rails form helper中的 <code class="highlighter-rouge">form_tag</code> 试试，它与<code class="highlighter-rouge">form_for</code>的主要区别是它可以不关联任何对象或资料表,而<code class="highlighter-rouge">form_for</code>需要制定送出资料的对象。 使用<code class="highlighter-rouge">form_tag</code>或<code class="highlighter-rouge">form_for</code> rails 都会自动帮我们生成 <code class="highlighter-rouge">&lt;form&gt; &lt;/form&gt;</code> 标签，所以下面会省去这个标签</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="o">&lt;</span><span class="sx">%= form_tag do %&gt;
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">%= form_tag do %&gt;
     First name:
     &lt;input type=</span><span class="s2">"text"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"nick_name"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"Your Name"</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"submit"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"提交表单"</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="sx">% end </span><span class="o">%&gt;</span>
-
 </code></pre></div></div>
 
 <p>用chrome 检查生成的html代码会多出这几行：</p>
@@ -288,7 +282,7 @@ The <code class="highlighter-rouge">&lt;input&gt;</code> element can be displaye
 
 </span></code></pre></div></div>
 
-<p>可以看到Rails帮我们“额外”增加了许多代码：</p>
+<p>可以看到Rails帮我们”额外”增加了许多代码：</p>
 
 <h4 id="1-在form标签行">1 在form标签行</h4>
 

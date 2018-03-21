@@ -4,19 +4,13 @@ categories: [Learning Notes]
 tags: [Metaknowledge]
 ---
 
-Learning how to learn 是 Coursera 上的的一门课程，主讲是：Dr. Barbara Oakley 和 Dr. Terrence Sejnowski，特别是Barbara，她的经历也很励志，有兴趣可以了解。这篇是我学习时做的笔记。
+Learning how to learn 是 Coursera 上的的一门课程，主讲是：Dr. Barbara Oakley 和 Dr. Terrence Sejnowski，特别是Barbara，这是我学习时做的笔记。
 
-课程分成4周，但实际每节课很少有超过10分钟的。当然这也保证了老师讲话足够精炼，所有视频加起来大约只有3到4个小时，不过信息浓度很高，想一天消化还是有点难。很多视频后面都有几道选择题帮你复习，都很简单，字幕也很全，各种语言都有（建议看英文字幕，然后看完后用自己的话总结）。
+主要内容有：专注模式与发散模式，组块式学习，战胜拖延，如何提高记忆能力等。
 
-主要内容有：专注模式与发散模式，组块式学习，战胜拖延，如何提高记忆能力等等。不是空泛的讲道理，而是以脑神经科学和认知科学原理为基础，介绍了基础、实用、操作性强的一些技巧和做法。
+每周课程后的名人采访是极好的学习资源，不要错过。
 
-课程可以缴费学习考试通过后获得相应证书，也可以免费学习。
-
-需要单独提出来说的是，每周课程后的名人采访是极好的学习资源，不要错过，认真看。
-
-点击这里[Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn/home/welcome)来进入课程主页，希望有所收获。
-
-再写一次地址：https://www.coursera.org/learn/learning-how-to-learn/home/welcome
+[Learning How to Learn 地址](https://www.coursera.org/learn/learning-how-to-learn/home/welcome)
 
 ### 1 Focus versus Diffuse Thinking
 

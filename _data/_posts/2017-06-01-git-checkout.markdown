@@ -15,7 +15,7 @@ tags: [Github, git back]
 
 3.commit history: commit 历史线
 
-![](/photos/postimages/01.svg)
+![](/images/post_images/01.svg)
 
 >> 图片来源：https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting
 
@@ -25,7 +25,7 @@ tags: [Github, git back]
 
 同样只用旋转一下上面那个git基本工作模型的图就可以更直观地理解回退的这两个方面：
 
-![](/photos/postimages/commit.jpg)
+![](/images/post_images/commit.jpg)
 
 X 轴代表 时间/commit 跨度
 

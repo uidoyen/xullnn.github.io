@@ -138,10 +138,8 @@
 <span class="k">end</span>
 </code></pre></div>  </div>
   <p>we get:
-<code class="highlighter-rouge">user_path(@user) # =&gt; "/users/357-john-smith"</code></p>
-  <blockquote>
-    <p><a href="http://guides.rubyonrails.org/active_support_core_extensions.html">Rails Guide 出处</a></p>
-  </blockquote>
+<code class="highlighter-rouge">user_path(@user) # =&gt; "/users/357-john-smith"</code>
+<a href="http://guides.rubyonrails.org/active_support_core_extensions.html">Rails Guide 出处</a></p>
 </blockquote>
 
 <p>在Rails中，默认使用 <code class="highlighter-rouge">to_param</code> method处理 <code class="highlighter-rouge">params[:id]</code> 以及 <code class="highlighter-rouge">@user</code> 拿到的数据是什么样子。Rails内建默认的<code class="highlighter-rouge">to_param</code>的method是 <code class="highlighter-rouge">"self.id"</code>,上面的例子中我们在需要修改url的Model中重新定义了这个method以达到改写目的。</p>
@@ -159,9 +157,7 @@
 
 <p>这种查找object的方法，一个重点是 <code class="highlighter-rouge">find</code> 这个方法会<a href="http://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html#method-i-find">默认对将要拿去query资料的字串（比如 params[:id]传来的字串）先进行 <code class="highlighter-rouge">to_i</code> 处理：</a></p>
 <blockquote>
-  <blockquote>
-    <p>Find by id - This can either be a specific id (1), a list of ids (1, 5, 6), or an array of ids ([5, 6, 10]). If one or more records can not be found for the requested ids, then RecordNotFound will be raised. If the primary key is an integer, find by id coerces its arguments using to_i.</p>
-  </blockquote>
+  <p>Find by id - This can either be a specific id (1), a list of ids (1, 5, 6), or an array of ids ([5, 6, 10]). If one or more records can not be found for the requested ids, then RecordNotFound will be raised. If the primary key is an integer, find by id coerces its arguments using to_i.</p>
 </blockquote>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.3</span><span class="o">.</span><span class="mi">1</span> <span class="p">:</span><span class="mo">004</span> <span class="o">&gt;</span> <span class="s2">"6ytg89k03re"</span><span class="p">.</span><span class="nf">to_i</span>
@@ -318,10 +314,10 @@
 
         <nav class="page-pagination" role="navigation">
   
-    <a class="page-previous" href="/programming/Model-new-vs-models-new/">
+    <a class="page-previous" href="/learning%20notes/learning-how-to-learn-note/">
       <h4 class="page-pagination-label">Previous</h4>
       <span class="page-pagination-title">
-        <i class="fas fa-arrow-left"></i> Difference between Model.new and models.new
+        <i class="fas fa-arrow-left"></i> Note of Learning how to learn
 
       </span>
     </a>

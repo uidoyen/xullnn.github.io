@@ -135,7 +135,7 @@
 
 <p>这种错误一般是由于漏掉了<code class="highlighter-rouge">end</code> 或者 <code class="highlighter-rouge">&lt;% end %&gt;</code> 引起的。</p>
 
-<p><img src="/photos/postimages/5f6DhbETT7yWDHW9HYA2_屏幕快照 2017-01-01 下午10.22.00.png" alt="" /></p>
+<p><img src="/images/post_images/5f6DhbETT7yWDHW9HYA2_屏幕快照 2017-01-01 下午10.22.00.png" alt="" /></p>
 
 <hr />
 
@@ -148,7 +148,7 @@
   <p>“Couldn’t find Job without an ID”</p>
 </blockquote>
 
-<p><img src="/photos/postimages/tnhoDTMTni5jzHlhyXFY_屏幕快照 2017-01-07 下午8.50.24.png" alt="" /></p>
+<p><img src="/images/post_images/tnhoDTMTni5jzHlhyXFY_屏幕快照 2017-01-07 下午8.50.24.png" alt="" /></p>
 
 <hr />
 
@@ -156,7 +156,7 @@
   <p>Couldn’t find Xxx with ‘id’=</p>
 </blockquote>
 
-<p><img src="/photos/postimages/hJcmJTFmQTGQ2ymO3aCp_屏幕快照 2017-01-09 下午4.39.41-2.png" alt="" /></p>
+<p><img src="/images/post_images/hJcmJTFmQTGQ2ymO3aCp_屏幕快照 2017-01-09 下午4.39.41-2.png" alt="" /></p>
 
 <p>上图中没能够通过id这个键去找到一个Job，这是由于route中的<code class="highlighter-rouge">resource :jobs</code>——正确的是<code class="highlighter-rouge">resources :jobs</code>——少了s,没有把jobs作为一组资源对待。</p>
 
@@ -167,7 +167,7 @@
 Couldn’t find Prodcut without an ID</p>
 </blockquote>
 
-<p><img src="/photos/postimages/V7VNFBUZTrug08oCsblE_屏幕快照 2017-02-24 下午3.17.16.png" alt="" /></p>
+<p><img src="/images/post_images/V7VNFBUZTrug08oCsblE_屏幕快照 2017-02-24 下午3.17.16.png" alt="" /></p>
 
 <p>没有ID就找不到Prodcut…</p>
 
@@ -188,7 +188,7 @@ Couldn’t find Prodcut without an ID</p>
 SQLite3::SQLException: no such column: products.product_id: SELECT “products”.<em>FROM “products” WHERE “products”.”product_id” IS NULL LIMIT?</em></p>
 </blockquote>
 
-<p><img src="/photos/postimages/vP5ZaiUCTImGczaDKWkx_屏幕快照 2017-02-24 下午6.07.10.png" alt="" /></p>
+<p><img src="/images/post_images/vP5ZaiUCTImGczaDKWkx_屏幕快照 2017-02-24 下午6.07.10.png" alt="" /></p>
 
 <p>这个错误出在这一行:</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@comment</span><span class="p">.</span><span class="nf">product</span> <span class="o">=</span> <span class="no">Product</span><span class="p">.</span><span class="nf">find_by</span><span class="p">(</span><span class="ss">product_id: </span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
@@ -223,7 +223,7 @@ SQLite3::SQLException: no such column: products.product_id: SELECT “products�
 
 <p>自变数(参数)错误，给出的是0，期望的是1</p>
 
-<p><img src="/photos/postimages/ADqbCT2KRECamKQdioyk_屏幕快照 2017-01-09 下午5.47.29.png" alt="" /></p>
+<p><img src="/images/post_images/ADqbCT2KRECamKQdioyk_屏幕快照 2017-01-09 下午5.47.29.png" alt="" /></p>
 
 <p>这个错误是由于有关post或patch的method后面没有跟上需要传的参数——上面的例子中是漏掉了<code class="highlighter-rouge">(job_params)</code>，rails希望得到一个参数，但是这里没有给出所以是“given 0, expected 1”。在其他情况下也有可能是”given 1, expected 3” 这种情况下就本应该传3组parameters，但是只给出了一组。</p>
 
@@ -235,7 +235,7 @@ SQLite3::SQLException: no such column: products.product_id: SELECT “products�
 
 <p>string与0的比较失败。</p>
 
-<p><img src="/photos/postimages/fn8g3i8LTpeh73pGXhpG_屏幕快照 2017-02-08 下午4.43.59.png" alt="" /></p>
+<p><img src="/images/post_images/fn8g3i8LTpeh73pGXhpG_屏幕快照 2017-02-08 下午4.43.59.png" alt="" /></p>
 
 <p>错误出在这一行:</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">% if </span><span class="vi">@product</span><span class="p">.</span><span class="nf">quantity</span><span class="p">.</span><span class="nf">present?</span> <span class="o">&amp;&amp;</span> <span class="vi">@product</span><span class="p">.</span><span class="nf">quantity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">%&gt;</span>
@@ -267,7 +267,7 @@ SQLite3::SQLException: no such column: products.product_id: SELECT “products�
 Missing host to link to : Pleaese provide the :host parameter, set default_url_options[:host], or set :only_path to true</p>
 </blockquote>
 
-<p><img src="/photos/postimages/qMIMxrWSCGMnAmITjEAD_屏幕快照 2017-03-03 上午11.51.43.png" alt="" /></p>
+<p><img src="/images/post_images/qMIMxrWSCGMnAmITjEAD_屏幕快照 2017-03-03 上午11.51.43.png" alt="" /></p>
 
 <p>这个错误的原因是在config/environments/development.rb中缺少了：</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="p">.</span><span class="nf">action_mailer</span><span class="p">.</span><span class="nf">default_url_options</span> <span class="o">=</span> <span class="p">{</span><span class="ss">host: </span><span class="s1">'localhost:3000'</span><span class="p">}</span>
@@ -281,7 +281,7 @@ Missing host to link to : Pleaese provide the :host parameter, set default_url_o
   <p>wrong number of arguments (given 1, expected 0)</p>
 </blockquote>
 
-<p><img src="/photos/postimages/EbAeUzBbSKWLUogmZYg1_屏幕快照 2017-03-26 下午10.07.57.png" alt="" /></p>
+<p><img src="/images/post_images/EbAeUzBbSKWLUogmZYg1_屏幕快照 2017-03-26 下午10.07.57.png" alt="" /></p>
 
 <p>这类参数错误一般都是后面少了（或多了）需要传的参数，这里的错误是helpers/orders_helper.rb中定义helper method时少了参数，但是<code class="highlighter-rouge">&lt;%= render_order_paid_state(@order)%&gt;</code>在调用这个helper时却裹了参数，所以是given 1 , expected 0。</p>
 
@@ -298,7 +298,7 @@ Missing host to link to : Pleaese provide the :host parameter, set default_url_o
   <p>undefined method ‘update（job_params）’ for # <Job:0xx0xxxxx> Did you mean? xxx</Job:0xx0xxxxx></p>
 </blockquote>
 
-<p><img src="/photos/postimages/jCVyoW74SGSRxpMw7oRR_屏幕快照 2017-01-09 下午6.31.43.png" alt="" /></p>
+<p><img src="/images/post_images/jCVyoW74SGSRxpMw7oRR_屏幕快照 2017-01-09 下午6.31.43.png" alt="" /></p>
 
 <p>这个错误从显示层面可以看出是符号错误，括号写成了中文格式。</p>
 
@@ -309,7 +309,7 @@ Missing host to link to : Pleaese provide the :host parameter, set default_url_o
 Did you mean? any?</actionDispatch::Flash::FlashHash:000xxx00x></p>
 </blockquote>
 
-<p><img src="/photos/postimages/JLKMONQmTxK9j5KvZg1m_屏幕快照 2017-01-29 下午10.18.59.png" alt="" /></p>
+<p><img src="/images/post_images/JLKMONQmTxK9j5KvZg1m_屏幕快照 2017-01-29 下午10.18.59.png" alt="" /></p>
 
 <p>这里的错误是<code class="highlighter-rouge">&lt;% if flash.any %&gt;</code> 这一行中的any少了问号，正确的是<code class="highlighter-rouge">any?</code></p>
 
@@ -320,7 +320,7 @@ Did you mean? any?</actionDispatch::Flash::FlashHash:000xxx00x></p>
 Did you mean? cart_items , cart_items=</Cart:0x00...></p>
 </blockquote>
 
-<p><img src="/photos/postimages/qYTDIqBHSmON4FkzNxvf_屏幕快照 2017-02-07 下午3.58.20.png" alt="" /></p>
+<p><img src="/images/post_images/qYTDIqBHSmON4FkzNxvf_屏幕快照 2017-02-07 下午3.58.20.png" alt="" /></p>
 
 <p>这里给出了明显的提示<code class="highlighter-rouge">cart_items</code>应该是复数，在包含<code class="highlighter-rouge">each do </code>这个method的回圈中，对象是多个，不是单独的，一般都是复数。</p>
 
@@ -328,7 +328,7 @@ Did you mean? cart_items , cart_items=</Cart:0x00...></p>
   <p>undefined method ‘user=’ for #<Order:00xx0xx...> Did you mean? user_id+</Order:00xx0xx...></p>
 </blockquote>
 
-<p><img src="/photos/postimages/pyaxnhDoRWiYbGWq8jEB_屏幕快照 2017-02-11 下午11.03.18.png" alt="" /></p>
+<p><img src="/images/post_images/pyaxnhDoRWiYbGWq8jEB_屏幕快照 2017-02-11 下午11.03.18.png" alt="" /></p>
 
 <p>显然这里rails 把<code class="highlighter-rouge">user =</code> 视作了<code class="highlighter-rouge">@order</code>的一个method，但实际这里是想去抓order的user_id这个外部键。这个错误的发生是由于models/order.rb中漏写了<code class="highlighter-rouge">belongs_to :user</code>,所以两个model没能关联起来。</p>
 
@@ -338,7 +338,7 @@ Did you mean? cart_items , cart_items=</Cart:0x00...></p>
   <p>undefined method ‘before_action’ for #<Class:00x00x...> Did you mean? before_commit</Class:00x00x...></p>
 </blockquote>
 
-<p><img src="/photos/postimages/4h9jPb4USFeFoIu7Wllk_屏幕快照 2017-02-12 下午2.18.47.png" alt="" /></p>
+<p><img src="/images/post_images/4h9jPb4USFeFoIu7Wllk_屏幕快照 2017-02-12 下午2.18.47.png" alt="" /></p>
 
 <p>指出错误在：</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">before_action</span> <span class="ss">:generate_token</span>
@@ -353,7 +353,7 @@ Did you mean? cart_items , cart_items=</Cart:0x00...></p>
   <p>undefined method ‘first’ for nil:NilClass</p>
 </blockquote>
 
-<p><img src="/photos/postimages/6jvg1kOeSpGkmtBDoq82_屏幕快照 2017-03-11 下午2.01.30.png" alt="" /></p>
+<p><img src="/images/post_images/6jvg1kOeSpGkmtBDoq82_屏幕快照 2017-03-11 下午2.01.30.png" alt="" /></p>
 
 <p>问题在这一行:</p>
 
@@ -370,7 +370,7 @@ undefined method ‘post_path’ for #&lt;#<Class:0xx0x....>:000xx0xx&gt;
 Did you mean? font_path, root_path</Class:0xx0x....></p>
 </blockquote>
 
-<p><img src="/photos/postimages/oJsD3gIvQFCb7mdHETyU_屏幕快照 2017-03-14 下午6.43.49.png" alt="" /></p>
+<p><img src="/images/post_images/oJsD3gIvQFCb7mdHETyU_屏幕快照 2017-03-14 下午6.43.49.png" alt="" /></p>
 
 <p>错误信息中提到的’post_path’在这个erb文件中并没有出现，但rails说是又这里引起的。
 之前定义了post是belongs_to :group的，所以其实对post的修改会传两个参数，一个是group_id ， 另一个就是自己的id</p>
@@ -381,7 +381,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">% simple_form </span><span class="k">for</span> <span class="p">[</span><span class="vi">@group</span><span class="p">,</span> <span class="vi">@post</span><span class="p">]</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="sx">%&gt;
 </span></code></pre></div></div>
 <p>一个直观的说明是…
-<img src="/photos/postimages/p0Bj8oWnR4WuAA0xwDlm_Snip20170314_26.png" alt="" /></p>
+<img src="/images/post_images/p0Bj8oWnR4WuAA0xwDlm_Snip20170314_26.png" alt="" /></p>
 
 <hr />
 
@@ -389,7 +389,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
   <p>undefined method ‘job=’ for nil:NilClass</p>
 </blockquote>
 
-<p><img src="/photos/postimages/DXhHnGQpQr2ep1Ll6tHh_屏幕快照 2017-03-17 上午10.58.02.png" alt="" /></p>
+<p><img src="/images/post_images/DXhHnGQpQr2ep1Ll6tHh_屏幕快照 2017-03-17 上午10.58.02.png" alt="" /></p>
 
 <p>这里rails把job=当做了一个method，也许会猜是resume和job在model中的关系没挂上，但不是。原因是<code class="highlighter-rouge">Resume.new</code>的位置不对，它的位置被放在了最后，但是在这之前就在去定位这个resume的job_id， 不能给还没有的对象裹外部键。所以这里正确的写法是：</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@resume</span> <span class="o">=</span> <span class="no">Resume</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">resume_params</span><span class="p">)</span>
@@ -404,7 +404,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
   <p>undefined method ‘product_path’ for #&lt;#<Class:0x00xx..>:0xx032..&gt;</Class:0x00xx..></p>
 </blockquote>
 
-<p><img src="/photos/postimages/TIbuI0x8RB6Xjw7Z4TLF_Snip20170322_13.png" alt="" /></p>
+<p><img src="/images/post_images/TIbuI0x8RB6Xjw7Z4TLF_Snip20170322_13.png" alt="" /></p>
 
 <p>这里的代码本身是没有错误的，但问题是 produt_path 对应的controller应该是products_controller，但错误信息指明这个路径定位到admin/products_controller中去了。</p>
 
@@ -416,7 +416,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
   <p>undefined method ‘model_name’ for nil:NilClass</p>
 </blockquote>
 
-<p><img src="/photos/postimages/屏幕快照 2017-04-07 下午11.00.45.png" alt="" /></p>
+<p><img src="/images/post_images/屏幕快照 2017-04-07 下午11.00.45.png" alt="" /></p>
 
 <p>报错title指向jobs_controller 中的 new 这个method, 下面的报错快照显示的是 views/new.html.erb 这个文件引起的。错误指出 <code class="highlighter-rouge">model_name</code> 是空，意思是 new 页面中 <code class="highlighter-rouge">@job</code> 这里没有get到东西。到controller里发现是在 第一个method的下面多了个 <code class="highlighter-rouge">end</code> 导致controller在这里提前被结束，后面的内容失效，new页面呼叫对象失败。</p>
 
@@ -472,7 +472,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p><img src="/photos/postimages/屏幕快照 2017-04-18 上午11.05.55.png" alt="" /></p>
+<p><img src="/images/post_images/屏幕快照 2017-04-18 上午11.05.55.png" alt="" /></p>
 
 <p>报错显示是没能抓到<code class="highlighter-rouge">@jobs</code>的资料，最后发现是在用when定义不同触发情况时出现了问题，范例中原来对三种情况的划分用的是<code class="highlighter-rouge">when when else</code>
 而我改成了<code class="highlighter-rouge">when when when</code>，这导致了一个问题就是没能覆盖的所有情况，原先最后一个用<code class="highlighter-rouge">else</code>其实涵盖了用时间倒序排列和余下不排序的情况，也就是说直接进/jobs/页面不点任何排序也是会用时间倒序排列的。但是如果三个都用<code class="highlighter-rouge">when</code>那么就只划定了三种触发方式下会去抓的资料类型，剩下的rails就不知道了，所以抓不到，因为没有定义除了这三种情况以外的情况。</p>
@@ -488,7 +488,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
   <p>undefined method `clean_up’ for #<Cart:0x007fc87d4afce8> Did you mean? clean!</Cart:0x007fc87d4afce8></p>
 </blockquote>
 
-<p><img src="/photos/postimages/屏幕快照 2017-04-24 下午3.03.01.png" alt="" /></p>
+<p><img src="/images/post_images/屏幕快照 2017-04-24 下午3.03.01.png" alt="" /></p>
 
 <p>错误在这个orders_controller中被触发：</p>
 
@@ -554,7 +554,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
   <p>Unable to autoload Order_record, expected /path/path/…/models/Order_record.rb to define it</p>
 </blockquote>
 
-<p><img src="/photos/postimages/NnOJMHUHQEeiD7ele5u2_屏幕快照 2017-03-24 下午10.02.59.png" alt="" /></p>
+<p><img src="/images/post_images/NnOJMHUHQEeiD7ele5u2_屏幕快照 2017-03-24 下午10.02.59.png" alt="" /></p>
 
 <p>错误出在这一行(orders_controller)：</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Order_record</span> <span class="o">=</span> <span class="no">Order_record</span><span class="p">.</span><span class="nf">new</span>
@@ -572,7 +572,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
   <p>no route matches {:action=&gt;”show”, :controller =&gt;”admin/jobs”} missing required keys: [:id]</p>
 </blockquote>
 
-<p><img src="/photos/postimages/3tz8wozkTHWBwBN1ThOH_屏幕快照 2017-03-15 下午8.52.00.png" alt="" /></p>
+<p><img src="/images/post_images/3tz8wozkTHWBwBN1ThOH_屏幕快照 2017-03-15 下午8.52.00.png" alt="" /></p>
 
 <p>缺少了 id 这个 key， 正确的写法是：</p>
 
@@ -585,7 +585,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
   <p>no route matches{:action=&gt; “show”, :controller=&gt;”movies”}missing required keys: [:id]</p>
 </blockquote>
 
-<p><img src="/photos/postimages/屏幕快照 2017-04-10 下午9.46.20.png" alt="" /></p>
+<p><img src="/images/post_images/屏幕快照 2017-04-10 下午9.46.20.png" alt="" /></p>
 
 <p>问题出在 movies_controller.rb中的 create, redirect那一行缺少了key,rails不知道要呼叫哪个movie</p>
 
@@ -609,7 +609,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
   <p>no route matches {:action=&gt; ”edit”, :controller=&gt;”comments”, :id=&gt;nil, :movie_id=&gt;”5”} missing required keys: [:id]</p>
 </blockquote>
 
-<p><img src="/photos/postimages/屏幕快照 2017-04-10 下午11.15.15.png" alt="" /></p>
+<p><img src="/images/post_images/屏幕快照 2017-04-10 下午11.15.15.png" alt="" /></p>
 
 <p>comment 是 belongs_to movie的，这里返回的信息说缺少了 [:id]，那就是controller中对应的method里没有抓到comment的key,所以到comments_controller对应的method中的 <code class="highlighter-rouge">@comment = Comment.find(params[:id])</code>这一行的某个地方出错</p>
 
@@ -621,7 +621,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
   <p>Account::MoivesController#index is missing a template for this request format and variant. request.formats: [“text/html”] request.variant: [] NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you’re loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we’re showing an error to be extra-clear. If you expect 204 No Content, carry on. That’s what you’ll get from an XHR or API request. Give it a shot.</p>
 </blockquote>
 
-<p><img src="/photos/postimages/Snip20170412_20.png" alt="" /></p>
+<p><img src="/images/post_images/Snip20170412_20.png" alt="" /></p>
 
 <hr />
 
@@ -632,7 +632,7 @@ Did you mean? font_path, root_path</Class:0xx0x....></p>
 undefined local variable or method ‘cart’ for #<Cart:0x00...></Cart:0x00...></p>
 </blockquote>
 
-<p><img src="/photos/postimages/7X4zyChCTC27MXNmAtj3_屏幕快照 2017-02-14 下午3.40.19.png" alt="" /></p>
+<p><img src="/images/post_images/7X4zyChCTC27MXNmAtj3_屏幕快照 2017-02-14 下午3.40.19.png" alt="" /></p>
 
 <p>这个错误在models/cart.rb中，由这一行引起：</p>
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cart</span><span class="p">.</span><span class="nf">cart_items</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">cart_item</span><span class="o">|</span>
@@ -651,7 +651,7 @@ undefined local variable or method ‘cart’ for #<Cart:0x00...></Cart:0x00...>
   <p>undefined method ‘current_cart’ for class ‘#<Class:ApplicationController>'</Class:ApplicationController></p>
 </blockquote>
 
-<p><img src="/photos/postimages/PtqkNBBgTbqMJ8zUFMh8_屏幕快照 2017-02-14 下午3.01.28.png" alt="" /></p>
+<p><img src="/images/post_images/PtqkNBBgTbqMJ8zUFMh8_屏幕快照 2017-02-14 下午3.01.28.png" alt="" /></p>
 
 <p>这个错误虽然title指向route，但实际错误不在routes.rb中</p>
 
@@ -679,7 +679,7 @@ missing template order_mailer/apply_cancel with “mailer”, Searched in : * �
 
 <p>这类错误一般是method对应的表单文件(erb文件)不匹配，有可能是没有对应名称的erb，或文件放的路径不对，或文件名有错字，或生成文件的时候缺少拓展名或者拓展名有误。</p>
 
-<p><img src="/photos/postimages/GdDzZtJHSNOd4HSXNWbN_屏幕快照 2017-02-16 下午11.06.45.png" alt="" /></p>
+<p><img src="/images/post_images/GdDzZtJHSNOd4HSXNWbN_屏幕快照 2017-02-16 下午11.06.45.png" alt="" /></p>
 
 <p>上面的例子中的app/controllers/order_controller.rb中有个apply_to_cancel的method，里面还有一个在OrderMailerl中定义的method<code class="highlighter-rouge">apply_cancel</code>。</p>
 
@@ -708,7 +708,7 @@ missing template order_mailer/apply_cancel with “mailer”, Searched in : * �
 
 <p>在OrderMailer中的 apply_cancel(order) 这个method需要一个邮件模板，对应的erb应该是 app/views/order_mailer/apply_cancel.html.erb</p>
 
-<p><img src="/photos/postimages/Snip20170402_16.png" alt="" /></p>
+<p><img src="/images/post_images/Snip20170402_16.png" alt="" /></p>
 
 <p>这里的错误在于生成erb文件时写的是<code class="highlighter-rouge">touch app/views/order_mailer/apply_to_cancel.html.erb</code> 而实际上需要模板的是<code class="highlighter-rouge">apply_cancel</code>这个mailer中的method，名称也应该对应。</p>
 
@@ -753,7 +753,7 @@ missing template order_mailer/apply_cancel with “mailer”, Searched in : * �
 
 <h3 id="12-others">12 Others</h3>
 
-<p><img src="/photos/postimages/t6WWuQyQT2sUTSGhFc9Q_Snip20170317_41.png" alt="" /></p>
+<p><img src="/images/post_images/t6WWuQyQT2sUTSGhFc9Q_Snip20170317_41.png" alt="" /></p>
 
 <p>admin/jobs/:id/resumes 这个页面最下方会出现所有resume的详细信息，显示方式和console中的显示方式一致。</p>
 
@@ -772,11 +772,11 @@ missing template order_mailer/apply_cancel with “mailer”, Searched in : * �
 
 <p>导致错误的写法是：</p>
 
-<p><img src="/photos/postimages/5nT6kCQGQMGSYc1OZRkQ_Snip20170326_62.png" alt="" /></p>
+<p><img src="/images/post_images/5nT6kCQGQMGSYc1OZRkQ_Snip20170326_62.png" alt="" /></p>
 
 <p>报错信息一大片：</p>
 
-<p><img src="/photos/postimages/XzDNb8W1SCCVeoUp9QCf_Snip20170326_63.png" alt="" /></p>
+<p><img src="/images/post_images/XzDNb8W1SCCVeoUp9QCf_Snip20170326_63.png" alt="" /></p>
 
 <p>这个错误就是由于多了一个空行引起的…去掉空行后恢复正常。</p>
 
