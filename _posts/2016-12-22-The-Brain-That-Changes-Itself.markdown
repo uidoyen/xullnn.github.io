@@ -1,5 +1,5 @@
 ---
-title:  "Notes of <The Brain That Changes Itself>"
+title:  "Notes of The Brain That Changes Itself"
 categories: [Learning notes]
 tags: [Metaknowledge]
 ---
