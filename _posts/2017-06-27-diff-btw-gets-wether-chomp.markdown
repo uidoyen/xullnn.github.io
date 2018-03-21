@@ -1,6 +1,6 @@
 ---
 title:  "Difference between gets and gets.chomp"
-categories: [Programming-basics]
+categories: [Command Line ℗]
 tags: [Command Line]
 ---
 

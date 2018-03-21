@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c14-Callable and runnable objects"
-categories: [Learning Notes, Programming]
+categories: [Ruby/Rails ℗, Learning Notes ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

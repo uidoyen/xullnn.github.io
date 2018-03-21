@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c5-The default object scope and visibility"
-categories: [Learning Notes, Programming]
+categories: [Ruby/Rails ℗, Learning Notes ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

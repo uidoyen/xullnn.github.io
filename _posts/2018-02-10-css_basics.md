@@ -1,6 +1,6 @@
 ---
 title:  "Cascading Style Sheets - CSS Basics"
-categories: [Programming-basics]
+categories: [Front end ℗]
 tags: [Front end]
 ---
 

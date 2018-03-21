@@ -1,6 +1,6 @@
 ---
 title:  "Ruby on Rails, 部署到heroku常见问题"
-categories: [Programming-error records]
+categories: [Error records ℗]
 tags: [Heroku, Ruby & Rails, Deploy]
 ---
 

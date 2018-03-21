@@ -1,6 +1,6 @@
 ---
 title:  "Translations of Punctuation marks"
-categories: [Programming-basics]
+categories: [Computer literacy]
 tags: [Ruby & Rails]
 ---
 

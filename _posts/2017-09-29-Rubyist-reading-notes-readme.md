@@ -1,6 +1,6 @@
 ---
-title:  "Rubyist note preview"
-categories: [Learning Notes, Programming]
+title:  "Rubyist notes readme"
+categories: [Ruby/Rails ℗, Learning Notes ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Collection of errors when learning Ruby on Rails | Caven’s</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Collection of errors when learning Ruby on Rails" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="这里集中所有在学习ruby on rails过程中遇到的错误，错误的按照报错信息的title归类，介于错误很多致使页面冗长，以后会考虑将不同种类错误拆分成独立的文章。" />
+<meta property="og:description" content="这里集中所有在学习ruby on rails过程中遇到的错误，错误的按照报错信息的title归类，介于错误很多致使页面冗长，以后会考虑将不同种类错误拆分成独立的文章。" />
+<link rel="canonical" href="http://localhost:4000/error%20records%20%E2%84%97/Frequent-errors-when-learning-ruby-on-rails/" />
+<meta property="og:url" content="http://localhost:4000/error%20records%20%E2%84%97/Frequent-errors-when-learning-ruby-on-rails/" />
+<meta property="og:site_name" content="Caven’s" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-02T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/error%20records%20%E2%84%97/Frequent-errors-when-learning-ruby-on-rails/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/error%20records%20%E2%84%97/Frequent-errors-when-learning-ruby-on-rails/"},"description":"这里集中所有在学习ruby on rails过程中遇到的错误，错误的按照报错信息的title归类，介于错误很多致使页面冗长，以后会考虑将不同种类错误拆分成独立的文章。","@type":"BlogPosting","headline":"Collection of errors when learning Ruby on Rails","dateModified":"2017-04-02T00:00:00+08:00","datePublished":"2017-04-02T00:00:00+08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  collection-of-errors-when-learning-ruby-on-rails">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Record</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Collection of errors when learning Ruby on Rails
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2017-04-02T00:00:00+08:00"><a class="u-url" href="">April 2, 2017</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Error records ℗</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Ruby & Rails</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>这里集中所有在学习ruby on rails过程中遇到的错误，错误的按照报错信息的title归类，介于错误很多致使页面冗长，以后会考虑将不同种类错误拆分成独立的文章。</p>
+
+<h3 id="1-syntaxerror">1 SyntaxError</h3>
+
+<blockquote>
+  <p>path/path/path/xxxxxxx.xxx :10: syntax error, unexpected keyword_ensure, expecting keyword_end /path/path/path/xxxxxxx.xxx :12: syntax error, unexpected end-of-input, expecting keyword_end</p>
+</blockquote>
+
+<p>这种错误一般是由于漏掉了<code class="highlighter-rouge">end</code> 或者 <code class="highlighter-rouge">&lt;% end %&gt;</code> 引起的。</p>
+
+<p><img src="/images/post_images/5f6DhbETT7yWDHW9HYA2_屏幕快照 2017-01-01 下午10.22.00.png" alt="" /></p>
+
+<hr />
+
+<h3 id="2-activerecordrecordnotfound-in-xxxcontrollermethod">2 ActiveRecord::RecordNotFound in XxxController#method</h3>
+
+<p>ActiveRecord指的是database，也就是数据资料没找到。这类错误明确指出错误在controller中，一般是由于foreign key如ID丢失。</p>
+
+<p>比如下图中由于<code class="highlighter-rouge">[params(:id)]</code>中将符号写反——正确的是<code class="highlighter-rouge">(params[:id])</code>——导致rails不知道用什么找对象。</p>
+<blockquote>
+  <p>“Couldn’t find Job without an ID”</p>
+</blockquote>
+
+<p><img src="/images/post_images/tnhoDTMTni5jzHlhyXFY_屏幕快照 2017-01-07 下午8.50.24.png" alt="" /></p>
+
+<hr />
+
+<blockquote>
+  <p>Couldn’t find Xxx with ‘id’=</p>
+</blockquote>
+
+<p><img src="/images/post_images/hJcmJTFmQTGQ2ymO3aCp_屏幕快照 2017-01-09 下午4.39.41-2.png" alt="" /></p>
+
+<p>上图中没能够通过id这个键去找到一个Job，这是由于route中的<code class="highlighter-rouge">resource :jobs</code>——正确的是<code class="highlighter-rouge">resources :jobs</code>——少了s,没有把jobs作为一组资源对待。</p>
+
+<hr />
+
+<blockquote>
+  <p>ActiveRecord::RecordNotFound in CommentsController#create
+Couldn’t find Prodcut without an ID</p>
+</blockquote>
+
+<p><img src="/images/post_images/V7VNFBUZTrug08oCsblE_屏幕快照 2017-02-24 下午3.17.16.png" alt="" /></p>
+
+<p>没有ID就找不到Prodcut…</p>
+
+<p>当时是做一个关于product的评论功能，新建了一个model叫comment，这个creat的method是在comment的controller中的。因为comment既属于user也属于product，所以在create时需要包裹这两个外部键，问题出在语法上。报错的这一行:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@product</span> <span class="o">=</span> <span class="no">Product</span><span class="p">.</span><span class="nf">find</span><span class="p">[</span><span class="ss">:id</span><span class="p">]</span>
+</code></pre></div></div>
+<p>这个写法不管在哪里都是错误的，至少都应该是<code class="highlighter-rouge">(params[:id])</code>但是由于这是在comments_controller中，而不是在products_controller里所以在这里要说明这个id是谁的，所以这一行正确的写法是：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@product</span> <span class="o">=</span> <span class="no">Product</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:product_id</span><span class="p">])</span>
+<span class="vi">@comment</span><span class="p">.</span><span class="nf">product</span> <span class="o">=</span> <span class="vi">@product</span>
+</code></pre></div></div>
+
+<p>或者直接写</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@comment</span><span class="p">.</span><span class="nf">product</span> <span class="o">=</span> <span class="no">Product</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:prodcut_id</span><span class="p">])</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>ActiveRecord::StatementInvalid in CommentsController#create
+SQLite3::SQLException: no such column: products.product_id: SELECT “products”.<em>FROM “products” WHERE “products”.”product_id” IS NULL LIMIT?</em></p>
+</blockquote>
+
+<p><img src="/images/post_images/vP5ZaiUCTImGczaDKWkx_屏幕快照 2017-02-24 下午6.07.10.png" alt="" /></p>
+
+<p>这个错误出在这一行:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@comment</span><span class="p">.</span><span class="nf">product</span> <span class="o">=</span> <span class="no">Product</span><span class="p">.</span><span class="nf">find_by</span><span class="p">(</span><span class="ss">product_id: </span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>这也是尝试解决上面那个问题时的失败尝试，这里返回的错误信息提到了SQLite3，说明是查询问题，no such column:product_id ，这一句说明rails把product_id 作为了product的一个单独的column，因为在product后加上了冒号。</p>
+
+<p>在这个comments_controller中create的正确写法是：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create</span>
+
+  <span class="vi">@comment</span> <span class="o">=</span> <span class="no">Comment</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">comment_params</span><span class="p">)</span>
+  <span class="vi">@comment</span><span class="p">.</span><span class="nf">user</span> <span class="o">=</span> <span class="n">current_user</span>
+  <span class="vi">@comment</span><span class="p">.</span><span class="nf">product</span> <span class="o">=</span> <span class="no">Product</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:product_id</span><span class="p">])</span>
+
+  <span class="k">if</span> <span class="vi">@comment</span><span class="p">.</span><span class="nf">save</span>
+    <span class="n">redirect_to</span> <span class="ss">:back</span>
+  <span class="k">else</span>
+    <span class="n">render</span> <span class="ss">:newe</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="3-argumenterror-in-xxxcontrollermethod">3 ArgumentError in XxxController#method</h3>
+
+<blockquote>
+  <p>Wrong number of arguments (given 0, expected 1)</p>
+</blockquote>
+
+<p>自变数(参数)错误，给出的是0，期望的是1</p>
+
+<p><img src="/images/post_images/ADqbCT2KRECamKQdioyk_屏幕快照 2017-01-09 下午5.47.29.png" alt="" /></p>
+
+<p>这个错误是由于有关post或patch的method后面没有跟上需要传的参数——上面的例子中是漏掉了<code class="highlighter-rouge">(job_params)</code>，rails希望得到一个参数，但是这里没有给出所以是“given 0, expected 1”。在其他情况下也有可能是”given 1, expected 3” 这种情况下就本应该传3组parameters，但是只给出了一组。</p>
+
+<hr />
+
+<blockquote>
+  <p>conparison of string with 0 failed</p>
+</blockquote>
+
+<p>string与0的比较失败。</p>
+
+<p><img src="/images/post_images/fn8g3i8LTpeh73pGXhpG_屏幕快照 2017-02-08 下午4.43.59.png" alt="" /></p>
+
+<p>错误出在这一行:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">% if </span><span class="vi">@product</span><span class="p">.</span><span class="nf">quantity</span><span class="p">.</span><span class="nf">present?</span> <span class="o">&amp;&amp;</span> <span class="vi">@product</span><span class="p">.</span><span class="nf">quantity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">%&gt;</span>
+</code></pre></div></div>
+<p>原因是之前建立product的资料表时，qantity这个attribute的style是 string，不是integer，而string和integer是不可以直接比较的。</p>
+
+<p>解决方法有两种，一种是在这一行中把quantity临时转换为integer:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">% if </span><span class="vi">@product</span><span class="p">.</span><span class="nf">quantity</span><span class="p">.</span><span class="nf">present?</span> <span class="o">&amp;&amp;</span> <span class="vi">@product</span><span class="p">.</span><span class="nf">quantity</span><span class="p">.</span><span class="nf">to_i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">%&gt;</span>
+</code></pre></div></div>
+
+<p>另一个方式是去资料表把quantity这个attribute的style永久性地改为integer:</p>
+
+<p><code class="highlighter-rouge">rails g migration change_product_quantiy_to_integer</code></p>
+
+<p>然后修改migrate文件</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ChangeProductQuantityToInteger</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mf">5.0</span><span class="p">]</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">change_column</span> <span class="ss">:products</span><span class="p">,</span> <span class="ss">:quantity</span><span class="p">,</span> <span class="ss">:integer</span><span class="p">,</span> <span class="ss">default: </span><span class="mi">1</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>接着 <code class="highlighter-rouge">rake db:migrate</code></p>
+
+<hr />
+
+<blockquote>
+  <p>showing /path/path/…/views/order_mailer/notify_placed.html.erb where line # 16 raised:
+Missing host to link to : Pleaese provide the :host parameter, set default_url_options[:host], or set :only_path to true</p>
+</blockquote>
+
+<p><img src="/images/post_images/qMIMxrWSCGMnAmITjEAD_屏幕快照 2017-03-03 上午11.51.43.png" alt="" /></p>
+
+<p>这个错误的原因是在config/environments/development.rb中缺少了：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="p">.</span><span class="nf">action_mailer</span><span class="p">.</span><span class="nf">default_url_options</span> <span class="o">=</span> <span class="p">{</span><span class="ss">host: </span><span class="s1">'localhost:3000'</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>加上这一行应该是设定在development环境下默认的发送邮件的地址，<a href="http://stackoverflow.com/questions/7219732/missing-host-to-link-to-please-provide-host-parameter-or-set-default-url-optio">一个stackoverflow上的回答说明了这点</a>。</p>
+
+<hr />
+
+<blockquote>
+  <p>wrong number of arguments (given 1, expected 0)</p>
+</blockquote>
+
+<p><img src="/images/post_images/EbAeUzBbSKWLUogmZYg1_屏幕快照 2017-03-26 下午10.07.57.png" alt="" /></p>
+
+<p>这类参数错误一般都是后面少了（或多了）需要传的参数，这里的错误是helpers/orders_helper.rb中定义helper method时少了参数，但是<code class="highlighter-rouge">&lt;%= render_order_paid_state(@order)%&gt;</code>在调用这个helper时却裹了参数，所以是given 1 , expected 0。</p>
+
+<p>正确的写法应该在helper中def这行最后加上<code class="highlighter-rouge">(order)</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">render_order_paid_state</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+    <span class="o">......</span>
+  <span class="k">end</span>
+</code></pre></div></div>
+<hr />
+
+<h3 id="4-nomethoderror-in-xxxcontrollermethod">4 NoMethodError in XxxController#method</h3>
+
+<blockquote>
+  <p>undefined method ‘update（job_params）’ for # <Job:0xx0xxxxx> Did you mean? xxx</Job:0xx0xxxxx></p>
+</blockquote>
+
+<p><img src="/images/post_images/jCVyoW74SGSRxpMw7oRR_屏幕快照 2017-01-09 下午6.31.43.png" alt="" /></p>
+
+<p>这个错误从显示层面可以看出是符号错误，括号写成了中文格式。</p>
+
+<hr />
+
+<blockquote>
+  <p>undefined method ‘any’ for #<actionDispatch::Flash::FlashHash:000xxx00x>
+Did you mean? any?</actionDispatch::Flash::FlashHash:000xxx00x></p>
+</blockquote>
+
+<p><img src="/images/post_images/JLKMONQmTxK9j5KvZg1m_屏幕快照 2017-01-29 下午10.18.59.png" alt="" /></p>
+
+<p>这里的错误是<code class="highlighter-rouge">&lt;% if flash.any %&gt;</code> 这一行中的any少了问号，正确的是<code class="highlighter-rouge">any?</code></p>
+
+<hr />
+
+<blockquote>
+  <p>undefined method ‘cart_item’ for #<Cart:0x00...>
+Did you mean? cart_items , cart_items=</Cart:0x00...></p>
+</blockquote>
+
+<p><img src="/images/post_images/qYTDIqBHSmON4FkzNxvf_屏幕快照 2017-02-07 下午3.58.20.png" alt="" /></p>
+
+<p>这里给出了明显的提示<code class="highlighter-rouge">cart_items</code>应该是复数，在包含<code class="highlighter-rouge">each do </code>这个method的回圈中，对象是多个，不是单独的，一般都是复数。</p>
+
+<blockquote>
+  <p>undefined method ‘user=’ for #<Order:00xx0xx...> Did you mean? user_id+</Order:00xx0xx...></p>
+</blockquote>
+
+<p><img src="/images/post_images/pyaxnhDoRWiYbGWq8jEB_屏幕快照 2017-02-11 下午11.03.18.png" alt="" /></p>
+
+<p>显然这里rails 把<code class="highlighter-rouge">user =</code> 视作了<code class="highlighter-rouge">@order</code>的一个method，但实际这里是想去抓order的user_id这个外部键。这个错误的发生是由于models/order.rb中漏写了<code class="highlighter-rouge">belongs_to :user</code>,所以两个model没能关联起来。</p>
+
+<hr />
+
+<blockquote>
+  <p>undefined method ‘before_action’ for #<Class:00x00x...> Did you mean? before_commit</Class:00x00x...></p>
+</blockquote>
+
+<p><img src="/images/post_images/4h9jPb4USFeFoIu7Wllk_屏幕快照 2017-02-12 下午2.18.47.png" alt="" /></p>
+
+<p>指出错误在：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">before_action</span> <span class="ss">:generate_token</span>
+</code></pre></div></div>
+<p>这一行。
+这一行代码是写在Model中而不是controller中的，本意是让rails在create新的order前要生成token乱码。
+错误是应该写<code class="highlighter-rouge">before_create</code>而不是<code class="highlighter-rouge">before_action</code>。这个错误有一点不同的是反馈信息中是”for #<Class:00xx...>"，也就是说在Model中定义的`before_xxxxx`必须是class method，但`before_action`不是一个class method，应该是instance method 所以它都被写在controller里。</Class:00xx...></p>
+
+<hr />
+
+<blockquote>
+  <p>undefined method ‘first’ for nil:NilClass</p>
+</blockquote>
+
+<p><img src="/images/post_images/6jvg1kOeSpGkmtBDoq82_屏幕快照 2017-03-11 下午2.01.30.png" alt="" /></p>
+
+<p>问题在这一行:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@topic</span><span class="p">.</span><span class="nf">votes</span><span class="p">.</span><span class="nf">destroy</span><span class="p">.</span><span class="nf">first</span>
+</code></pre></div></div>
+
+<p>first是一个选择动作，所以应该放在votes后面，正确的写法是<code class="highlighter-rouge">@topic.votes.first.destroy</code></p>
+
+<hr />
+
+<blockquote>
+  <p>showing /path/path/…/views/prosts/edit.html.erb where line #5 raised
+undefined method ‘post_path’ for #&lt;#<Class:0xx0x....>:000xx0xx&gt;
+Did you mean? font_path, root_path</Class:0xx0x....></p>
+</blockquote>
+
+<p><img src="/images/post_images/oJsD3gIvQFCb7mdHETyU_屏幕快照 2017-03-14 下午6.43.49.png" alt="" /></p>
+
+<p>错误信息中提到的’post_path’在这个erb文件中并没有出现，但rails说是又这里引起的。
+之前定义了post是belongs_to :group的，所以其实对post的修改会传两个参数，一个是group_id ， 另一个就是自己的id</p>
+
+<p>post的edit这个method的路径在view中会是<code class="highlighter-rouge">edit_group_post_path(post.group, post)</code>，可以看到后面也裹了两个参数。</p>
+
+<p>所以这里正确的写法是:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">% simple_form </span><span class="k">for</span> <span class="p">[</span><span class="vi">@group</span><span class="p">,</span> <span class="vi">@post</span><span class="p">]</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="sx">%&gt;
+</span></code></pre></div></div>
+<p>一个直观的说明是…
+<img src="/images/post_images/p0Bj8oWnR4WuAA0xwDlm_Snip20170314_26.png" alt="" /></p>
+
+<hr />
+
+<blockquote>
+  <p>undefined method ‘job=’ for nil:NilClass</p>
+</blockquote>
+
+<p><img src="/images/post_images/DXhHnGQpQr2ep1Ll6tHh_屏幕快照 2017-03-17 上午10.58.02.png" alt="" /></p>
+
+<p>这里rails把job=当做了一个method，也许会猜是resume和job在model中的关系没挂上，但不是。原因是<code class="highlighter-rouge">Resume.new</code>的位置不对，它的位置被放在了最后，但是在这之前就在去定位这个resume的job_id， 不能给还没有的对象裹外部键。所以这里正确的写法是：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@resume</span> <span class="o">=</span> <span class="no">Resume</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">resume_params</span><span class="p">)</span>
+
+<span class="vi">@resume</span><span class="p">.</span><span class="nf">job</span> <span class="o">=</span> <span class="no">Job</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:job_id</span><span class="p">])</span> <span class="c1">#这是在resumes_controller里，所以要指明id是谁的</span>
+<span class="vi">@resume</span><span class="p">.</span><span class="nf">user</span> <span class="o">=</span> <span class="n">current_user</span>
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <p>undefined method ‘product_path’ for #&lt;#<Class:0x00xx..>:0xx032..&gt;</Class:0x00xx..></p>
+</blockquote>
+
+<p><img src="/images/post_images/TIbuI0x8RB6Xjw7Z4TLF_Snip20170322_13.png" alt="" /></p>
+
+<p>这里的代码本身是没有错误的，但问题是 produt_path 对应的controller应该是products_controller，但错误信息指明这个路径定位到admin/products_controller中去了。</p>
+
+<p>原因是还没有生成product的controller。聪明的rails会去匹配其他能够匹配到products_controller的文件，于是找到了admin/products_controller.rb中去。</p>
+
+<hr />
+
+<blockquote>
+  <p>undefined method ‘model_name’ for nil:NilClass</p>
+</blockquote>
+
+<p><img src="/images/post_images/屏幕快照 2017-04-07 下午11.00.45.png" alt="" /></p>
+
+<p>报错title指向jobs_controller 中的 new 这个method, 下面的报错快照显示的是 views/new.html.erb 这个文件引起的。错误指出 <code class="highlighter-rouge">model_name</code> 是空，意思是 new 页面中 <code class="highlighter-rouge">@job</code> 这里没有get到东西。到controller里发现是在 第一个method的下面多了个 <code class="highlighter-rouge">end</code> 导致controller在这里提前被结束，后面的内容失效，new页面呼叫对象失败。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">JobsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+
+  <span class="n">before_action</span> <span class="ss">:authenticate_user!</span> <span class="ss">except: </span><span class="p">[</span><span class="ss">:show</span><span class="p">,</span> <span class="ss">:index</span><span class="p">]</span>
+
+  <span class="k">def</span> <span class="nf">index</span>
+    <span class="vi">@jobs</span> <span class="o">=</span> <span class="no">Job</span><span class="p">.</span><span class="nf">all</span>
+  <span class="k">end</span>
+
+  <span class="k">end</span>  <span class="c1">#就是此处多出的end导致错误</span>
+
+  <span class="k">def</span> <span class="nf">new</span>
+  <span class="o">...</span>
+  <span class="o">...</span>
+  <span class="o">...</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+<hr />
+
+<blockquote>
+  <p>undefined method ‘each’ for nil:NilClass</p>
+</blockquote>
+
+<p>这个错误发生在对多个对象进行排序时controller中引发的错误。</p>
+
+<p>在view页面设置了3种排序触发方式：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">ul</span> <span class="k">class</span><span class="o">=</span><span class="s2">"dropdown-menu"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="sx">%= link_to("按薪资下限", jobs_path(order: "by_lower_bound"))%&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;%=</span> <span class="n">link_to</span><span class="p">(</span><span class="s2">"按薪资上限"</span><span class="p">,</span> <span class="n">jobs_path</span><span class="p">(</span><span class="ss">order: </span><span class="s2">"by_upper_bound"</span><span class="p">))</span><span class="o">%&gt;&lt;</span><span class="sr">/li&gt;
+    &lt;li&gt;&lt;%= link_to("按更新时间", jobs_path(order: "by_updated_time"))%&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sr">/ul&gt;
+</span></code></pre></div></div>
+
+<p>然后在对应的controller中定义好每个网址去资料库抓什么资料：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">index</span>
+  <span class="vi">@jobs</span> <span class="o">=</span> <span class="k">case</span> <span class="n">params</span><span class="p">[</span><span class="ss">:order</span><span class="p">]</span>
+
+  <span class="k">when</span> <span class="s2">"by_lower_bound"</span>
+    <span class="no">Job</span><span class="p">.</span><span class="nf">visible</span><span class="p">.</span><span class="nf">order</span><span class="p">(</span><span class="s2">"wage_lower_bound desc"</span><span class="p">)</span>
+
+  <span class="k">when</span> <span class="s2">"by_upper_bound"</span>
+    <span class="no">Job</span><span class="p">.</span><span class="nf">visible</span><span class="p">.</span><span class="nf">order</span><span class="p">(</span><span class="s2">"wage_upper_bound desc"</span><span class="p">)</span>
+
+  <span class="k">when</span> <span class="s2">"by_updated_time"</span>
+    <span class="no">Job</span><span class="p">.</span><span class="nf">visible</span><span class="p">.</span><span class="nf">order</span><span class="p">(</span><span class="s2">"updated_at desc"</span><span class="p">)</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><img src="/images/post_images/屏幕快照 2017-04-18 上午11.05.55.png" alt="" /></p>
+
+<p>报错显示是没能抓到<code class="highlighter-rouge">@jobs</code>的资料，最后发现是在用when定义不同触发情况时出现了问题，范例中原来对三种情况的划分用的是<code class="highlighter-rouge">when when else</code>
+而我改成了<code class="highlighter-rouge">when when when</code>，这导致了一个问题就是没能覆盖的所有情况，原先最后一个用<code class="highlighter-rouge">else</code>其实涵盖了用时间倒序排列和余下不排序的情况，也就是说直接进/jobs/页面不点任何排序也是会用时间倒序排列的。但是如果三个都用<code class="highlighter-rouge">when</code>那么就只划定了三种触发方式下会去抓的资料类型，剩下的rails就不知道了，所以抓不到，因为没有定义除了这三种情况以外的情况。</p>
+
+<p>因此，解决方式是把最后一个<code class="highlighter-rouge">when</code>改成<code class="highlighter-rouge">else</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">else</span> <span class="s2">"by_updated_time"</span>
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <p>undefined method `clean_up’ for #<Cart:0x007fc87d4afce8> Did you mean? clean!</Cart:0x007fc87d4afce8></p>
+</blockquote>
+
+<p><img src="/images/post_images/屏幕快照 2017-04-24 下午3.03.01.png" alt="" /></p>
+
+<p>错误在这个orders_controller中被触发：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">OrdersController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+
+<span class="k">def</span> <span class="nf">create</span>
+    <span class="vi">@order</span> <span class="o">=</span> <span class="no">Order</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">order_params</span><span class="p">)</span>
+    <span class="vi">@order</span><span class="p">.</span><span class="nf">user</span> <span class="o">=</span> <span class="n">current_user</span>
+    <span class="vi">@order</span><span class="p">.</span><span class="nf">total_money</span> <span class="o">=</span> <span class="n">current_cart</span><span class="p">.</span><span class="nf">total_price</span>
+
+
+    <span class="k">if</span> <span class="vi">@order</span><span class="p">.</span><span class="nf">save</span>
+      <span class="n">current_cart</span><span class="p">.</span><span class="nf">cart_items</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">cart_item</span><span class="o">|</span>
+          <span class="n">purchase_item</span> <span class="o">=</span> <span class="no">PurchaseItem</span><span class="p">.</span><span class="nf">new</span>
+          <span class="n">purchase_item</span><span class="p">.</span><span class="nf">order</span> <span class="o">=</span> <span class="vi">@order</span>
+          <span class="n">purchase_item</span><span class="p">.</span><span class="nf">product_name</span> <span class="o">=</span> <span class="n">cart_item</span><span class="p">.</span><span class="nf">product</span><span class="p">.</span><span class="nf">title</span>
+          <span class="n">purchase_item</span><span class="p">.</span><span class="nf">purchase_price</span> <span class="o">=</span> <span class="n">cart_item</span><span class="p">.</span><span class="nf">product</span><span class="p">.</span><span class="nf">price</span>
+          <span class="n">purchase_item</span><span class="p">.</span><span class="nf">purchase_quantity</span> <span class="o">=</span> <span class="n">cart_item</span><span class="p">.</span><span class="nf">number</span>
+          <span class="n">purchase_item</span><span class="p">.</span><span class="nf">save</span>
+      <span class="k">end</span>
+          <span class="n">current_cart</span><span class="p">.</span><span class="nf">clean_up</span>          <span class="c1">#错误发生在这一行，本意是想在建立order之后清空当前cart中的所有条目</span>
+          <span class="no">OrderMailer</span><span class="p">.</span><span class="nf">notify_order_placed</span><span class="p">(</span><span class="vi">@order</span><span class="p">).</span><span class="nf">deliver!</span>
+          <span class="n">redirect_to</span> <span class="n">order_path</span><span class="p">(</span><span class="vi">@order</span><span class="p">.</span><span class="nf">token</span><span class="p">)</span>
+    <span class="k">else</span>
+          <span class="n">render</span> <span class="s1">'carts/checkout'</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>carts_controller中对clean_up这个动作有定义，但不能使用：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CartsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+
+  <span class="k">def</span> <span class="nf">clean_up</span>
+      <span class="n">current_cart</span><span class="p">.</span><span class="nf">clean!</span>
+      <span class="n">flash</span><span class="p">[</span><span class="ss">:notice</span><span class="p">]</span><span class="o">=</span><span class="s2">"已清空购物车"</span>
+      <span class="n">redirect_to</span> <span class="n">carts_path</span>
+  <span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>其中的 <code class="highlighter-rouge">clean!</code> 重构到了models/cart.rb中：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Cart</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+
+  <span class="k">def</span> <span class="nf">clean!</span>
+  <span class="n">cart_items</span><span class="p">.</span><span class="nf">destroy_all</span>
+  <span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>看看执行流程 current_cart –&gt; clean_up –&gt; clean!</p>
+
+<p>= current_cart.current_cart.clean!
+= current_cart.current_cart.cart_items.destory_all</p>
+
+<p>前面的current_cart其实被要求执行了两次，修正这个错误可以改成： <code class="highlighter-rouge">current_cart.clean!</code> 直接执行model中的method, 或者： <code class="highlighter-rouge">current_cart.cart_items.destroy_all</code> 这样稍微直观但会复杂一些。</p>
+
+<hr />
+
+<h3 id="5-loaderror-in-xxxxcontrollermethod">5 LoadError in XxxxController#method</h3>
+
+<blockquote>
+  <p>Unable to autoload Order_record, expected /path/path/…/models/Order_record.rb to define it</p>
+</blockquote>
+
+<p><img src="/images/post_images/NnOJMHUHQEeiD7ele5u2_屏幕快照 2017-03-24 下午10.02.59.png" alt="" /></p>
+
+<p>错误出在这一行(orders_controller)：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Order_record</span> <span class="o">=</span> <span class="no">Order_record</span><span class="p">.</span><span class="nf">new</span>
+</code></pre></div></div>
+<p>controller里的加载错误，无法自动加载 常量 “Order_record” ，期望 order_record.rb 对其进行定义，显然是 <code class="highlighter-rouge">order_record</code>这个东西没有被认可。
+<code class="highlighter-rouge">new</code>是一个class method，前面跟的应该是一个model名称，但model名称只会在文件名中带有连字号，代码中的model名称是首字母大写且没有间隔的，所以这里正确的写法是</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">order_record</span> <span class="o">=</span> <span class="no">OrderRecord</span><span class="p">.</span><span class="nf">new</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="6-actioncontrollerurlgenerationerror-in-xxxxxxmethod">6 ActionController::UrlGenerationError in Xxx::Xxx#method</h3>
+
+<blockquote>
+  <p>no route matches {:action=&gt;”show”, :controller =&gt;”admin/jobs”} missing required keys: [:id]</p>
+</blockquote>
+
+<p><img src="/images/post_images/3tz8wozkTHWBwBN1ThOH_屏幕快照 2017-03-15 下午8.52.00.png" alt="" /></p>
+
+<p>缺少了 id 这个 key， 正确的写法是：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="sx">%= link_to(job.title, admin_job_path(job))%&gt;&lt;/td&gt;
+</span></code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <p>no route matches{:action=&gt; “show”, :controller=&gt;”movies”}missing required keys: [:id]</p>
+</blockquote>
+
+<p><img src="/images/post_images/屏幕快照 2017-04-10 下午9.46.20.png" alt="" /></p>
+
+<p>问题出在 movies_controller.rb中的 create, redirect那一行缺少了key,rails不知道要呼叫哪个movie</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create</span>
+  <span class="vi">@movie</span> <span class="o">=</span> <span class="no">Movie</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">movie_params</span><span class="p">)</span>
+  <span class="vi">@movie</span><span class="p">.</span><span class="nf">user</span> <span class="o">=</span> <span class="n">current_user</span>
+
+  <span class="k">if</span> <span class="vi">@movie</span><span class="p">.</span><span class="nf">save</span>
+    <span class="n">redirect_to</span> <span class="n">movie_path</span> <span class="c1">#这一行缺少了 :id 这个 key</span>
+  <span class="k">else</span>
+    <span class="n">render</span> <span class="ss">:new</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>所以正确的写法是在 <code class="highlighter-rouge">redirect_to movie_path</code> 后面加上 <code class="highlighter-rouge">(@movie)</code> 也就是前面新建的movie</p>
+
+<hr />
+
+<blockquote>
+  <p>no route matches {:action=&gt; ”edit”, :controller=&gt;”comments”, :id=&gt;nil, :movie_id=&gt;”5”} missing required keys: [:id]</p>
+</blockquote>
+
+<p><img src="/images/post_images/屏幕快照 2017-04-10 下午11.15.15.png" alt="" /></p>
+
+<p>comment 是 belongs_to movie的，这里返回的信息说缺少了 [:id]，那就是controller中对应的method里没有抓到comment的key,所以到comments_controller对应的method中的 <code class="highlighter-rouge">@comment = Comment.find(params[:id])</code>这一行的某个地方出错</p>
+
+<hr />
+
+<h3 id="actioncontrollerunknownformat-in-xxxxxxxscontrollermethod">ActionController::UnknownFormat in Xxx::XxxxsController#method</h3>
+
+<blockquote>
+  <p>Account::MoivesController#index is missing a template for this request format and variant. request.formats: [“text/html”] request.variant: [] NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you’re loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we’re showing an error to be extra-clear. If you expect 204 No Content, carry on. That’s what you’ll get from an XHR or API request. Give it a shot.</p>
+</blockquote>
+
+<p><img src="/images/post_images/Snip20170412_20.png" alt="" /></p>
+
+<hr />
+
+<h3 id="7-nameerror-in-xxxxmethod">7 NameError in Xxxx#method</h3>
+
+<blockquote>
+  <p>Shwoing /path/views/carts/index.html.erb where line 47 raised:
+undefined local variable or method ‘cart’ for #<Cart:0x00...></Cart:0x00...></p>
+</blockquote>
+
+<p><img src="/images/post_images/7X4zyChCTC27MXNmAtj3_屏幕快照 2017-02-14 下午3.40.19.png" alt="" /></p>
+
+<p>这个错误在models/cart.rb中，由这一行引起：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cart</span><span class="p">.</span><span class="nf">cart_items</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">cart_item</span><span class="o">|</span>
+</code></pre></div></div>
+<p>错误在于这本身已经在cart的model文件里，默认动作都是针对cart展开，所以之前的<code class="highlighter-rouge">cart.</code>引起了rails的困惑。</p>
+
+<p>正确的写法是：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cart_items</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">cart_item</span><span class="o">|</span>
+</code></pre></div></div>
+
+<hr />
+<h3 id="8-routing-error">8 Routing Error</h3>
+
+<blockquote>
+  <p>undefined method ‘current_cart’ for class ‘#<Class:ApplicationController>'</Class:ApplicationController></p>
+</blockquote>
+
+<p><img src="/images/post_images/PtqkNBBgTbqMJ8zUFMh8_屏幕快照 2017-02-14 下午3.01.28.png" alt="" /></p>
+
+<p>这个错误虽然title指向route，但实际错误不在routes.rb中</p>
+
+<p>之前因为需要在view页面中调用<code class="highlighter-rouge">current_cart</code>，这是一个属于controller的method，不同于 product.title 这类可以在view中调用的键值，所以要先在application_controller.rb中加入一行</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+<span class="o">...</span>
+  <span class="n">helper_method</span> <span class="ss">:current_cart</span>
+<span class="o">...</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>声明它是helper_method才能在view中使用它。</p>
+
+<p>这里的错误是在application_controller中helper和method之间少了连字号：</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">helper</span> <span class="nb">method</span> <span class="ss">:current_cart</span>   <span class="c1">#错误的写法</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="9-template-error">9 Template error</h3>
+
+<blockquote>
+  <p>Template is missing
+missing template order_mailer/apply_cancel with “mailer”, Searched in : * “order_mailer”</p>
+</blockquote>
+
+<p>这类错误一般是method对应的表单文件(erb文件)不匹配，有可能是没有对应名称的erb，或文件放的路径不对，或文件名有错字，或生成文件的时候缺少拓展名或者拓展名有误。</p>
+
+<p><img src="/images/post_images/GdDzZtJHSNOd4HSXNWbN_屏幕快照 2017-02-16 下午11.06.45.png" alt="" /></p>
+
+<p>上面的例子中的app/controllers/order_controller.rb中有个apply_to_cancel的method，里面还有一个在OrderMailerl中定义的method<code class="highlighter-rouge">apply_cancel</code>。</p>
+
+<p>app/controllers/orders_controller.rb</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+  <span class="k">def</span> <span class="nf">apply_to_cancel</span>
+    <span class="vi">@order</span> <span class="o">=</span> <span class="no">Order</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+    <span class="no">OrderMailer</span><span class="p">.</span><span class="nf">apply_cancel</span><span class="p">(</span><span class="vi">@order</span><span class="p">).</span><span class="nf">deliver!</span>
+    <span class="n">flash</span><span class="p">[</span><span class="ss">:notice</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"已提交申请"</span>
+    <span class="n">redirect_to</span> <span class="ss">:back</span>
+  <span class="k">end</span>
+<span class="o">...</span>
+</code></pre></div></div>
+
+<p>app/mailers/order_mailer.rb</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+  <span class="k">def</span> <span class="nf">apply_cancel</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+    <span class="vi">@order</span>       <span class="o">=</span> <span class="n">order</span>
+    <span class="vi">@user</span>        <span class="o">=</span> <span class="n">order</span><span class="p">.</span><span class="nf">user</span>
+    <span class="vi">@product_lists</span> <span class="o">=</span> <span class="vi">@order</span><span class="p">.</span><span class="nf">product_lists</span>
+
+    <span class="n">mail</span><span class="p">(</span><span class="ss">to: </span><span class="s2">"admin@test.com"</span> <span class="p">,</span> <span class="ss">subject: </span><span class="s2">"[JDStore] 用户</span><span class="si">#{</span><span class="n">order</span><span class="p">.</span><span class="nf">user</span><span class="p">.</span><span class="nf">email</span><span class="si">}</span><span class="s2">申请取消订单 </span><span class="si">#{</span><span class="n">order</span><span class="p">.</span><span class="nf">token</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="o">...</span>
+</code></pre></div></div>
+
+<p>在OrderMailer中的 apply_cancel(order) 这个method需要一个邮件模板，对应的erb应该是 app/views/order_mailer/apply_cancel.html.erb</p>
+
+<p><img src="/images/post_images/Snip20170402_16.png" alt="" /></p>
+
+<p>这里的错误在于生成erb文件时写的是<code class="highlighter-rouge">touch app/views/order_mailer/apply_to_cancel.html.erb</code> 而实际上需要模板的是<code class="highlighter-rouge">apply_cancel</code>这个mailer中的method，名称也应该对应。</p>
+
+<hr />
+
+<h3 id="10-本地server运行app失败">10 本地server运行app失败</h3>
+
+<p><strong>本地server运行中未先<code class="highlighter-rouge">control C</code>终止程序就退出终端，导致再次<code class="highlighter-rouge">rails s</code>时报错</strong></p>
+
+<p>这类错误的信息一般是:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">path</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">xxx</span><span class="p">.</span><span class="nf">xx</span> <span class="n">rb</span><span class="p">:</span><span class="mi">268</span> <span class="k">in</span> <span class="s1">'innitialize'</span><span class="p">:</span> <span class="no">Address</span> <span class="n">already</span> <span class="k">in</span> <span class="n">use</span> <span class="o">-</span> <span class="n">bind</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="s2">"::1"</span> <span class="n">port</span> <span class="mi">3000</span> <span class="p">(</span><span class="no">Errno</span><span class="o">::</span><span class="no">EADDRINUSE</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>处理方式是：</p>
+
+<p><code class="highlighter-rouge"> kill -9 $(lsof -i tcp:3000 -t)</code></p>
+
+<p>然后重新跑server</p>
+
+<hr />
+
+<h3 id="11-errors-in-console">11 Errors in Console</h3>
+
+<blockquote>
+  <p>在console中执行<code class="highlighter-rouge">Cart.creat</code>时</p>
+</blockquote>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">ArgumentError</span><span class="p">:</span> <span class="no">Unknown</span> <span class="ss">key: :sources</span><span class="o">.</span> <span class="no">Valid</span> <span class="n">keys</span> <span class="ss">are: :class_name</span><span class="p">,</span> <span class="ss">:anonymous_class</span><span class="p">,</span> <span class="ss">:foreign_key</span><span class="p">,</span> <span class="ss">:validate</span><span class="p">,</span> <span class="ss">:autosave</span><span class="p">,</span> <span class="ss">:table_name</span><span class="p">,</span> <span class="ss">:before_add</span><span class="p">,</span> <span class="ss">:after_add</span><span class="p">,</span> <span class="ss">:before_remove</span><span class="p">,</span> <span class="ss">:after_remove</span><span class="p">,</span> <span class="ss">:extend</span><span class="p">,</span> <span class="ss">:primary_key</span><span class="p">,</span> <span class="ss">:dependent</span><span class="p">,</span> <span class="ss">:as</span><span class="p">,</span> <span class="ss">:through</span><span class="p">,</span> <span class="ss">:source</span><span class="p">,</span> <span class="ss">:source_type</span><span class="p">,</span> <span class="ss">:inverse_of</span><span class="p">,</span> <span class="ss">:counter_cache</span><span class="p">,</span> <span class="ss">:join_table</span><span class="p">,</span> <span class="ss">:foreign_type</span><span class="p">,</span> <span class="ss">:index_errors</span>
+</code></pre></div></div>
+
+<p>参数错误，未知键 :sources 有效的key有：:class_name, :anonymous_class, :foreign_key, :validate…</p>
+
+<p>这里的错误在models/cart.rb中</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">has_many</span> <span class="ss">:products</span><span class="p">,</span> <span class="ss">through: :cart_items</span><span class="p">,</span> <span class="ss">sources: :product</span>
+</code></pre></div></div>
+
+<p>这一行中的<code class="highlighter-rouge">sources</code>应该是单数<code class="highlighter-rouge">source</code>。同时也告诉了有哪些有效的键值。</p>
+
+<hr />
+
+<h3 id="12-others">12 Others</h3>
+
+<p><img src="/images/post_images/t6WWuQyQT2sUTSGhFc9Q_Snip20170317_41.png" alt="" /></p>
+
+<p>admin/jobs/:id/resumes 这个页面最下方会出现所有resume的详细信息，显示方式和console中的显示方式一致。</p>
+
+<p>错误出在这一行（app/views/admin/resumes/index.html.erb）:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">%= @job.resumes.each do |r| %&gt;
+</span></code></pre></div></div>
+<p>这一行中多了等号，让所有resume的详细信息在<code class="highlighter-rouge">&lt;% end %&gt;</code>那个位置显示出来。</p>
+
+<ul>
+  <li><a href="http://stackoverflow.com/questions/6946206/ruby-on-rails-3-each-do-problem">stackoverflow上有一个关于这类错误的解释</a></li>
+</ul>
+
+<hr />
+
+<p><strong>由于多了一个空行导致的报错s。</strong></p>
+
+<p>导致错误的写法是：</p>
+
+<p><img src="/images/post_images/5nT6kCQGQMGSYc1OZRkQ_Snip20170326_62.png" alt="" /></p>
+
+<p>报错信息一大片：</p>
+
+<p><img src="/images/post_images/XzDNb8W1SCCVeoUp9QCf_Snip20170326_63.png" alt="" /></p>
+
+<p>这个错误就是由于多了一个空行引起的…去掉空行后恢复正常。</p>
+
+<p>app/views/admin/orders/_state_option.html.erb</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">"padding:10px; float:right;"</span><span class="o">&gt;</span>
+
+   <span class="o">&lt;</span><span class="sx">% case </span><span class="n">order</span><span class="p">.</span><span class="nf">aasm_state</span> <span class="sx">%&gt;
+   &lt;% when "order_placed" %&gt;</span>
+     <span class="o">&lt;</span><span class="sx">%= link_to("取消订单",
+                 cancel_admin_order_path(order),
+                 class: "btn btn-default btn-sm", method: :post) %&gt;
+
+   &lt;% when "paid" %&gt;
+   ......
+
+ &lt;/div&gt;
+</span></code></pre></div></div>
+
+        </div>
+
+        <!-- 
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ferror%2520records%2520%25E2%2584%2597%2FFrequent-errors-when-learning-ruby-on-rails%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Collection+of+errors+when+learning+Ruby+on+Rails%20http%3A%2F%2Flocalhost%3A4000%2Ferror%2520records%2520%25E2%2584%2597%2FFrequent-errors-when-learning-ruby-on-rails%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ferror%2520records%2520%25E2%2584%2597%2FFrequent-errors-when-learning-ruby-on-rails%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Collection+of+errors+when+learning+Ruby+on+Rails&url=http%3A%2F%2Flocalhost%3A4000%2Ferror%2520records%2520%25E2%2584%2597%2FFrequent-errors-when-learning-ruby-on-rails%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+         -->
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/command%20line%20%E2%84%97/Linux-command-grep/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> grep系列命令用以查找信息
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/error%20records%20%E2%84%97/fail-to-install-nokogiri-Failed-to-build-gem-native-extension/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Bundle install 过程中的nokogiri错误
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+  <!--<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div>-->
+
+  <div class="copyright">
+    
+    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+       Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c10-Collection central Enumerable and Enumerator"
-categories: [Learning Notes, Programming]
+categories: [Ruby/Rails ℗, Learning Notes ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

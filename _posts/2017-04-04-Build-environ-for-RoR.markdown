@@ -1,6 +1,6 @@
 ---
 title:  "Building Ruby on Rails environment on Mac"
-categories: [Programming-basics]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails, environment]
 ---
 

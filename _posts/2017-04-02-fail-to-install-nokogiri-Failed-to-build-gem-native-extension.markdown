@@ -1,6 +1,6 @@
 ---
 title:  "Bundle install 过程中的nokogiri错误"
-categories: [Programming-error records]
+categories: [Error records ℗]
 tags: [Ruby & Rails, nokogiri]
 ---
 

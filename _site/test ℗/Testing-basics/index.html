@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>What’s the difference between unit, integration, and functional tests | Caven’s</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="What’s the difference between unit, integration, and functional tests" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="测试可以分为：单元测试，集成测试，功能测试… 这些术语读慢一点就会发现相互之间有语义重叠。" />
+<meta property="og:description" content="测试可以分为：单元测试，集成测试，功能测试… 这些术语读慢一点就会发现相互之间有语义重叠。" />
+<link rel="canonical" href="http://localhost:4000/test%20%E2%84%97/Testing-basics/" />
+<meta property="og:url" content="http://localhost:4000/test%20%E2%84%97/Testing-basics/" />
+<meta property="og:site_name" content="Caven’s" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-02T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/test%20%E2%84%97/Testing-basics/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/test%20%E2%84%97/Testing-basics/"},"description":"测试可以分为：单元测试，集成测试，功能测试… 这些术语读慢一点就会发现相互之间有语义重叠。","@type":"BlogPosting","headline":"What’s the difference between unit, integration, and functional tests","dateModified":"2018-03-02T00:00:00+08:00","datePublished":"2018-03-02T00:00:00+08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  what-s-the-difference-between-unit-integration-and-functional-tests">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Record</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">What’s the difference between unit, integration, and functional tests
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2018-03-02T00:00:00+08:00"><a class="u-url" href="">March 2, 2018</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Test ℗</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Rails Tests</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><a href="https://en.wikipedia.org/wiki/Software_testing">测试</a>可以分为：单元测试，集成测试，功能测试… 这些术语读慢一点就会发现相互之间有语义重叠。</p>
+
+<p><a href="http://guides.rubyonrails.org/testing.html">Rails guides 中关于测试的章节导言中提到:</a></p>
+
+<blockquote>
+  <p>How to write unit, functional, integration, and system tests for your application.</p>
+</blockquote>
+
+<p>如何区分这类术语？</p>
+
+<p>先看了下Wikipedia上各个术语的定义:</p>
+
+<ul>
+  <li>1.<a href="https://en.wikipedia.org/wiki/Unit_testing">Unit testing</a></li>
+  <li>2.<a href="https://en.wikipedia.org/wiki/Integration_testing">Integration testing</a></li>
+  <li>3.<a href="https://en.wikipedia.org/wiki/Functional_testing">Functional testing</a></li>
+</ul>
+
+<p>说的相对宽泛，且又牵涉到更多的测试术语，不好理解。找到两个stackoverflow上的高分回答：</p>
+
+<p>1.<a href="https://stackoverflow.com/questions/4904096/whats-the-difference-between-unit-functional-acceptance-and-integration-test">回答一(+1220票)</a>
+2.<a href="https://stackoverflow.com/questions/5357601/whats-the-difference-between-unit-tests-and-integration-tests">回答二(+441票)</a></p>
+
+<p>综合一下</p>
+
+<h3 id="1-unit-testing">1 Unit testing</h3>
+
+<p>Unit Testing 单元测试即测试程式中最小功能单位的测试，比如一个method。它应该</p>
+<ul>
+  <li>针对具体的功能点</li>
+  <li>测试过程在内存中就可以完成不会动到数据库</li>
+  <li>不需要找其他开发者配合</li>
+  <li>不需要接入实际网络连接</li>
+  <li>不会动到文件系统</li>
+  <li>不会新开线程</li>
+  <li>等等…</li>
+</ul>
+
+<p>核心原则是尽量小，容易debug，可靠性高（因为排除了外部因素干扰），执行速度快，能在你将小功能整合之前测试程式中的最小单元是否正确工作。</p>
+
+<p>单元测试的缺点(或说使用范围的限制)是，当这些独立的小测试单独测试时一切正常，但被测试到的小功能串起来的时候就可能出问题。这就引出了集成测试，Integration testing。</p>
+
+<h3 id="2-integration-testing">2 Integration testing</h3>
+
+<p>Integration testing 集成测试即测试多个功能单元联合工作时是否正常，或说对app中重要的workflow的测试。</p>
+
+<p>集成测试和单元测试的一个重要区别在于测试时的环境，前面提到单元测试要尽量小，除了自身不动用其他资源。但集成测试则要求尽量模拟真实的 production 环境，应该尽量用到在生产环境中会用到的资源，比如：</p>
+
+<ul>
+  <li>线程</li>
+  <li>进入数据库读写</li>
+  <li>用到(实际会需要的)硬盘，或者其他硬件</li>
+</ul>
+
+<p>核心原则是模拟尽量贴近生产环境的测试条件。</p>
+
+<p>集成测试的优点是可以测试到单元测试不能测试到的内容，单元测试聚焦于点，集成测试可以覆盖到点与点之间的联系与互动，也能测试到单元测试不能测试到的environment存在的问题。集成测试的缺点是代码会比较冗长，’集成’带来的可靠性下降，以及不容易debug，也不那么好维护。</p>
+
+<h3 id="3-functional-testing">3 Functional testing</h3>
+
+<p>Functional testing 功能测试通常是针对特定功能的测试，测试范围介于单元测试和集成测试之间。但重要的区别是，功能测试只看重结果，即特定的输入是否能得到想要的结果，而过程怎么样则不关心。</p>
+
+<p>From wikipedia:</p>
+
+<blockquote>
+  <p>Functional testing is a quality assurance (QA) process and a type of <strong>black-box</strong> testing that bases its test cases on the specifications of the software component under test. Functions are tested by feeding them input and examining the output, and internal program structure is rarely considered (unlike white-box testing). Functional testing usually describes <strong>what the system does</strong>.</p>
+</blockquote>
+
+<p>类似有一个复杂的算法 algorithm_x(a,b)，我只关心(测试)传入数据后是否能拿到想要的结果，置于内部实现多复杂则不管。</p>
+
+<h4 id="另外还提到-acceptance-testing-验收测试">另外还提到 Acceptance testing 验收测试</h4>
+
+<p>先看wiki上滤去编程背景的定义:</p>
+
+<blockquote>
+  <p>In engineering and its various subdisciplines, acceptance testing is a test conducted to determine if the requirements of a specification or contract are met. It may involve chemical tests, physical tests, or performance tests.</p>
+</blockquote>
+
+<p>在工程学以及其不同的子学科中，验收测试是用来验证一项工作(工程)是否符合约定规格或合同要求的侧四。可能包含化学、物理测试，或者表现(性能)测试。</p>
+
+<p>验收测试应该有一个 <strong>验收标准</strong>，对于商业合同，这个标准可能相对明确。但对于程序开发，标准可能更侧重于过程约束，以及对预期结果的一个定义。这类验收涉及到的人员可能就不止该项目的开发人员，可能还包括其他开发人员，以及参与项目的其他非开发人员。验收测试还可能基于user story来模拟使用场景，跟着用户行为动线使用app，看是否符合当初story想要的结果。当然由于验收主体不同，可能使用到的方法不同。</p>
+
+        </div>
+
+        <!-- 
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftest%2520%25E2%2584%2597%2FTesting-basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=What%27s+the+difference+between+unit%2C+integration%2C+and+functional+tests%20http%3A%2F%2Flocalhost%3A4000%2Ftest%2520%25E2%2584%2597%2FTesting-basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftest%2520%25E2%2584%2597%2FTesting-basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=What%27s+the+difference+between+unit%2C+integration%2C+and+functional+tests&url=http%3A%2F%2Flocalhost%3A4000%2Ftest%2520%25E2%2584%2597%2FTesting-basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+         -->
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/javascript%20%E2%84%97/js_basics/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> JavaScript Baiscs
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/database%20%E2%84%97/sql_basics/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        SQL Baiscs
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+  <!--<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div>-->
+
+  <div class="copyright">
+    
+    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+       Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c8-Strings symbols and other scalar objects"
-categories: [Learning Notes, Programming]
+categories: [Ruby/Rails ℗, Learning Notes ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

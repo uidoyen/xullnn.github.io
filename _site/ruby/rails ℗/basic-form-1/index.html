@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>理解基本的HTML Forms | Caven’s</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="理解基本的HTML Forms" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="一个web app中，表单是用户与app交换信息最重要的部分之一，rails有自己的form helper ，此外还有很多gem帮助我们简化、实现表单，比如simple_form。" />
+<meta property="og:description" content="一个web app中，表单是用户与app交换信息最重要的部分之一，rails有自己的form helper ，此外还有很多gem帮助我们简化、实现表单，比如simple_form。" />
+<link rel="canonical" href="http://localhost:4000/ruby/rails%20%E2%84%97/basic-form-1/" />
+<meta property="og:url" content="http://localhost:4000/ruby/rails%20%E2%84%97/basic-form-1/" />
+<meta property="og:site_name" content="Caven’s" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-06-11T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/ruby/rails%20%E2%84%97/basic-form-1/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ruby/rails%20%E2%84%97/basic-form-1/"},"description":"一个web app中，表单是用户与app交换信息最重要的部分之一，rails有自己的form helper ，此外还有很多gem帮助我们简化、实现表单，比如simple_form。","@type":"BlogPosting","headline":"理解基本的HTML Forms","dateModified":"2017-06-11T00:00:00+08:00","datePublished":"2017-06-11T00:00:00+08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  理解基本的html-forms">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Record</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">理解基本的HTML Forms
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2017-06-11T00:00:00+08:00"><a class="u-url" href="">June 11, 2017</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Ruby/Rails ℗</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Ruby & Rails</li><li class="page-taxonomy">HTML</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>一个web app中，表单是用户与app交换信息最重要的部分之一，rails有自己的form helper ，此外还有很多gem帮助我们简化、实现表单，比如<a href="https://github.com/plataformatec/simple_form">simple_form</a>。<br /></p>
+
+<h3 id="1-html-forms">1 HTML Forms</h3>
+
+<hr />
+
+<p>总体来看html表单会有 form 相关的标签<strong>(element)</strong> 和每个标签对应的诸多属性<strong>(attributes)</strong> 构成。</p>
+
+<p>a. 一个完整的 HTML 表单会由第一级的 <code class="highlighter-rouge">&lt;form&gt;</code> 标签和它的各种 attributes 包裹;<br /></p>
+
+<p>b. 在&lt;form&gt;基础上，第二级的 <code class="highlighter-rouge">&lt;input&gt;</code>, <code class="highlighter-rouge">&lt;select&gt;</code> 这些标签和它们的各种 attributes 搭建表单的主体；<br /></p>
+
+<p><em>在构成表单的所有标签中 <code class="highlighter-rouge">&lt;input&gt;</code>是最重要的一个，使用这个标签配合  <code class="highlighter-rouge">type</code> 属性的设置，可以实现多种类型的数据输入。</em> 以下是html form 相关的element:</p>
+
+<table class="w3-table-all notranslate" style="position: center">
+<tbody><tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><a href="/tags/tag_form.asp">&lt;form&gt;</a></td>
+<td> Defines an HTML form for user input</td>
+</tr>
+<tr>
+<td><a href="/tags/tag_input.asp">&lt;input&gt;</a></td>
+<td>Defines an input control</td>
+</tr>
+<tr>
+<td><a href="/tags/tag_textarea.asp">&lt;textarea&gt;</a></td>
+<td>Defines a multiline input control (text area)</td>
+</tr>
+<tr>
+<td><a href="/tags/tag_label.asp">&lt;label&gt;</a></td>
+<td>Defines a label for an &lt;input&gt; element</td>
+</tr>
+<tr>
+<td><a href="/tags/tag_fieldset.asp">&lt;fieldset&gt;</a></td>
+<td>Groups related elements in a form</td>
+</tr>
+<tr>
+<td><a href="/tags/tag_legend.asp">&lt;legend&gt;</a></td>
+<td>Defines a caption for a &lt;fieldset&gt; element</td>
+</tr>
+<tr>
+<td><a href="/tags/tag_select.asp">&lt;select&gt;</a></td>
+<td>Defines a drop-down list</td>
+</tr>
+<tr>
+<td><a href="/tags/tag_optgroup.asp">&lt;optgroup&gt;</a></td>
+<td>Defines a group of related options in a drop-down list</td>
+</tr>
+<tr>
+<td><a href="/tags/tag_option.asp">&lt;option&gt;</a></td>
+<td>Defines an option in a drop-down list</td>
+</tr>
+<tr>
+<td><a href="/tags/tag_button.asp">&lt;button&gt;</a></td>
+<td>Defines a clickable button</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="/tags/tag_datalist.asp">&lt;datalist&gt;</a></td>
+<td>Specifies a list of pre-defined options for input controls</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="/tags/tag_keygen.asp">&lt;keygen&gt;</a></td>
+<td>Defines a key-pair generator field (for forms)</td>
+</tr>
+<tr>
+<td class="html5badge"><a href="/tags/tag_output.asp">&lt;output&gt;</a></td>
+<td>Defines the result of a calculation</td>
+</tr>
+</tbody></table>
+
+<p><a href="https://www.w3schools.com/html/html_form_elements.asp">表格引自w3school.com</a>:</p>
+
+<blockquote>
+  <p>The most important form element is the <code class="highlighter-rouge">&lt;input&gt;</code> element.s
+The <code class="highlighter-rouge">&lt;input&gt;</code> element can be displayed in several ways, depending on the type attribute.</p>
+</blockquote>
+
+<p>甚至在我写上面这一段时没有使用markdown 包裹code的符号将 <code class="highlighter-rouge">&lt;input&gt;</code> 包起来，页面上直接出现了<input />一个这样的输入框。</p>
+
+<p><br /></p>
+
+<p><strong>来看一个最简单的html form：</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">form</span><span class="o">&gt;</span>
+  <span class="no">First</span> <span class="ss">name:
+    </span><span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"nick_name"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"Your Name"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"submit"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"提交表单"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sr">/form&gt;
+</span></code></pre></div></div>
+<p><br /></p>
+
+<form>
+  First name:
+    <input type="text" name="nick_name" value="Your Name" /><br />
+    <input type="submit" value="提交表单" />
+</form>
+
+<p><br /></p>
+<ul>
+  <li>当直接点击 “提交表单” 后，网页刷新了下但未跳转，网址后面多了 <code class="highlighter-rouge">?nick_name=Your+Name</code></li>
+  <li>当删掉输入框中的文字后再输入 Caven, 点击 “提交表单”，网址后面变成了 <code class="highlighter-rouge">?nick_name=Caven</code></li>
+  <li>两种情况下，页面刷新后输入框里的内容都会再次回到原来的 Your Name</li>
+</ul>
+
+<p>网址中的问号 <code class="highlighter-rouge">?</code> 代表这是一次query( <a href="http://edgeguides.rubyonrails.org/action_controller_overview.html#parameters">The query string is everything after “?” in the URL. </a> )。这里用户以hash的形式送出了一组数据，发出了一次 <strong>get</strong> 的request。</p>
+
+<p>对于输入数据行，value在这里并不是必须的，它只是设定了一个送出数据的默认值，所以如果是用户自己需要输入的内容，我们其实可以不写value。但如果是<code class="highlighter-rouge">name="_method" value="patch"</code> 这类表达request类型的 value 则是很重要的内容。</p>
+
+<h4 id="试试直接将这段-html-form-搬到rails-app中">试试直接将这段 html form 搬到rails app中：</h4>
+
+<p>新建一个简单的rails app，然后<code class="highlighter-rouge">rails g scaffold user name:string country:string age:integer specialty:string</code></p>
+
+<p>现在我们把上面那段html表单代码原封不动复制到 app/views/users/index.html.erb 页面:</p>
+
+<p>然后点击 “提交表单”, 出现的网址是 “http://localhost:3000/?nick_name=Your+Name” ，其他状况也与前面一样。查看下本地server返回的信息</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="no">Started</span> <span class="no">GET</span> <span class="s2">"/?nick_name=Your+Name"</span> <span class="k">for</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="n">at</span> <span class="mi">2017</span><span class="o">-</span><span class="mo">06</span><span class="o">-</span><span class="mi">14</span> <span class="mi">22</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">25</span> <span class="o">+</span><span class="mi">0800</span>
+<span class="no">Processing</span> <span class="n">by</span> <span class="no">UsersController</span><span class="c1">#index as HTML</span>
+  <span class="no">Parameters</span><span class="p">:</span> <span class="p">{</span><span class="s2">"nick_name"</span><span class="o">=&gt;</span><span class="s2">"Your Name"</span><span class="p">}</span>
+  <span class="no">Rendering</span> <span class="n">users</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span> <span class="n">within</span> <span class="n">layouts</span><span class="o">/</span><span class="n">application</span>
+  <span class="no">User</span> <span class="no">Load</span> <span class="p">(</span><span class="mf">0.2</span><span class="n">ms</span><span class="p">)</span>  <span class="no">SELECT</span> <span class="s2">"users"</span><span class="p">.</span><span class="nf">*</span> <span class="no">FROM</span> <span class="s2">"users"</span>
+  <span class="no">Rendered</span> <span class="n">users</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span> <span class="n">within</span> <span class="n">layouts</span><span class="o">/</span><span class="n">application</span> <span class="p">(</span><span class="mf">2.8</span><span class="n">ms</span><span class="p">)</span>
+<span class="no">Completed</span> <span class="mi">200</span> <span class="no">OK</span> <span class="k">in</span> <span class="mi">20</span><span class="n">ms</span> <span class="p">(</span><span class="no">Views</span><span class="p">:</span> <span class="mf">18.1</span><span class="n">ms</span> <span class="o">|</span> <span class="no">ActiveRecord</span><span class="p">:</span> <span class="mf">0.2</span><span class="n">ms</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>第一行，告诉我们送出表单使用的是 GET 动作；</strong></p>
+
+<p><strong>第三行，可以看到我们以hash的形式送出了数据, key 就是我们在 name=”” 后写的内容， value 就是我们在输入框里输入的内容。</strong></p>
+
+<h3 id="2-rails-form-helpers---form_tag">2 Rails form helpers - form_tag</h3>
+
+<p>还是使用之前的html form代码，我们引入rails form helper中的 <code class="highlighter-rouge">form_tag</code> 试试，它与<code class="highlighter-rouge">form_for</code>的主要区别是它可以不关联任何对象或资料表,而<code class="highlighter-rouge">form_for</code>需要制定送出资料的对象。 使用<code class="highlighter-rouge">form_tag</code>或<code class="highlighter-rouge">form_for</code> rails 都会自动帮我们生成 <code class="highlighter-rouge">&lt;form&gt; &lt;/form&gt;</code> 标签，所以下面会省去这个标签</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">%= form_tag do %&gt;
+    First name:
+    &lt;input type=</span><span class="s2">"text"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"nick_name"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"Your Name"</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"submit"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"提交表单"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sx">% end </span><span class="o">%&gt;</span>
+</code></pre></div></div>
+
+<p>用chrome 检查生成的html代码会多出这几行：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">"/"</span> <span class="n">accept</span><span class="o">-</span><span class="n">charset</span><span class="o">=</span><span class="s2">"UTF-8"</span> <span class="nb">method</span><span class="o">=</span><span class="s2">"post"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">input</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"utf8"</span> <span class="n">type</span><span class="o">=</span><span class="s2">"hidden"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"✓"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"hidden"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"authenticity_token"</span>
+           <span class="n">value</span><span class="o">=</span><span class="s2">"F2q5XFxlmIl1fXSbGOfVl+phm5YH/Uzhb/F4RKS1zDzBBlKSqJQFB2UAlt33l7+r0y8koWH73MhK2C1Olk90nA=="</span><span class="o">&gt;</span>
+    <span class="no">First</span> <span class="ss">name:
+    </span><span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"nick_name"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"Your Name"</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"submit"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"提交表单"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sr">/form&gt;
+
+</span></code></pre></div></div>
+
+<p>可以看到Rails帮我们”额外”增加了许多代码：</p>
+
+<h4 id="1-在form标签行">1 在form标签行</h4>
+
+<h5 id="a多了-action">a.多了 <code class="highlighter-rouge">action="/"</code></h5>
+
+<p><a href="https://www.w3schools.com/tags/att_form_action.asp">action</a>是 form 的一个attribute，它用来指定整个表单中，用户发出的 request 送往的地址或路径。</p>
+
+<blockquote>
+  <p>The form_tag helper accepts 2 arguments: the path for the action and an options hash. This hash specifies the method of form submission and HTML options such as the form element’s class.<br />
+– sRails Guides</p>
+</blockquote>
+
+<p><strong>action的用法 <code class="highlighter-rouge">action = "URL"</code></strong></p>
+<blockquote>
+  <p>URL : Where to send the form-data when the form is submitted.</p>
+
+  <p>Possible values :</p>
+  <ul>
+    <li>An absolute URL - points to another web site (like action=”http://www.example.com/example.html”)</li>
+    <li>A relative URL - points to a file within a web site (like action=”example.html”)</li>
+  </ul>
+</blockquote>
+
+<h5 id="b多了-method--post">b.多了 method = “post”</h5>
+
+<p><a href="https://www.w3schools.com/tags/att_form_method.asp">method</a>同样是form 标签的一个 attribute 用来指定请求的动作类型，rails这里默认的是 post (html默认的是get)</p>
+
+<p>另外在form标签行，多了 accept-charset=”UTF-8”。<a href="https://www.w3schools.com/tags/att_form_accept_charset.asp">accept-charset</a>同样是 form 标签的一个 attribute 用来指定表单接受的字符集。</p>
+
+<p>如果这里我们点击提交，网页会跳转到 “http://localhost:3000/”，然后抛出错误 <strong>“Routing Error
+No route matches [POST] “/”“</strong>, 查看页面下方的 Parameters:</p>
+
+<blockquote>
+  <p>{<br />
+  “utf8” =&gt; “✓”, “authenticity_token”=&gt;”Oie2B6ReHG2oswb/Sg+cFpwuYy5k16BZoNPvBoCmOgXsS13JUK+B47jO5Lmlf/YqpWDcGQLRMHCF+roMslyCpQ==”, “nick_name”=&gt;”Your Name”<br />
+}</p>
+</blockquote>
+
+<p><br /></p>
+<h4 id="2-自动生成了4行input代码">2 自动生成了4行input代码</h4>
+
+<h5 id="前两行input">前两行<code class="highlighter-rouge">&lt;input&gt;</code></h5>
+
+<p><code class="highlighter-rouge">&lt;input name="utf8" type="hidden" value="✓"&gt;</code><br />
+<code class="highlighter-rouge">&lt;input type="hidden" name="authenticity_token" value="F2q5XFxlmIl1fXSbGOfVl+phm5YH/Uzhb/F4RKS1zDzBBlKSqJQFB2UAlt33l7+r0y8koWH73MhK2C1Olk90nA=="&gt;</code></p>
+
+<p>由于 type = “hidden” 所以在页面上并不可见，是一些默认的安全参数。</p>
+
+<h5 id="后两行input">后两行<code class="highlighter-rouge">&lt;input&gt;</code></h5>
+
+<p><code class="highlighter-rouge">First name:</code><br />
+<code class="highlighter-rouge">&lt;input type="text" name="nick_name" value="Your Name"&gt;</code><br />
+<code class="highlighter-rouge">&lt;input type="submit" value="提交表单"&gt;</code></p>
+
+<p>这两行是没有变化的。<br />
+上面的例子中，<code class="highlighter-rouge">form_tag</code> 帮我们做的是：</p>
+
+<ul>
+  <li>给form行加上了 method = “post”</li>
+  <li>给form行加上了 action = “/” 指定了送出request的目的地</li>
+  <li>新增了2行input包裹了一些其他设置</li>
+</ul>
+
+<p>到这里我们基本可以知道一个form发出request的几个重要的attributes：</p>
+
+<ul>
+  <li>1 form 标签行的 method=”” 和 action=””, 他们分别决定送出request的 动作类型 与 送出地址；</li>
+  <li>2 input 标签航的 type=””, name=”” 和 value=””, 他们分别决定了送出输出数据的类型，以及送出数据内容（name对应key,value对应value）</li>
+</ul>
+
+<p>记住这几个重要的属性，接下来看看完全使用 rails form helper <code class="highlighter-rouge">form_for</code> 并涉及到model资料的情形。</p>
+
+<h3 id="3-rails-form-helpers---form_for">3 Rails form helpers - form_for</h3>
+
+<p>在 app/views/users/edit.html.erb 中写：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="sx">%= form_for @user do |user| %&gt;
+  &lt;%=</span> <span class="n">user</span><span class="p">.</span><span class="nf">text_field</span> <span class="ss">:nick_name</span> <span class="o">%&gt;</span>
+  <span class="o">&lt;</span><span class="sx">%= user.submit_tag "确认提交"%&gt;
+&lt;% end %&gt;
+</span></code></pre></div></div>
+
+<p>到浏览器端查看生成的代码：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="n">form</span> <span class="k">class</span><span class="o">=</span><span class="s2">"edit_user"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"edit_user_2"</span> <span class="n">action</span><span class="o">=</span><span class="s2">"/users/2"</span> <span class="n">accept</span><span class="o">-</span><span class="n">charset</span><span class="o">=</span><span class="s2">"UTF-8"</span> <span class="nb">method</span><span class="o">=</span><span class="s2">"post"</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">input</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"utf8"</span> <span class="n">type</span><span class="o">=</span><span class="s2">"hidden"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"✓"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"hidden"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"_method"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"patch"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"hidden"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"authenticity_token"</span>  
+           <span class="n">value</span><span class="o">=</span><span class="s2">"bQG9quFxo/7sWtWu36z9qFGcUlFhTTZ3Wn7FYl4c4tXyqjtTTCipVxAKrU5DM0kyRvZHUKdAME6uRFRTY6HH+Q=="</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"user[nick_name]"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"user_nick_name"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"submit"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"commit"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"确认提交"</span> <span class="n">data</span><span class="o">-</span><span class="n">disable</span><span class="o">-</span><span class="n">with</span><span class="o">=</span><span class="s2">"确认提交"</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="sr">/form&gt;
+
+</span></code></pre></div></div>
+
+<p>在这个表单中我们是在新建(修改)user实例，生成的html代码中比起之前比起无对象的form_tag：</p>
+
+<ul>
+  <li>form 标签行多了 class=””, id=””, method 仍然是 post</li>
+  <li>form 标签行的 action的值从 “/” 变成了 “/users/2”</li>
+  <li>input 新增了一行 <code class="highlighter-rouge">&lt;input type="hidden" name="_method" value="patch"&gt;</code> 这样请求送出后，rails server 知道这是一个patch类型的请求</li>
+  <li>input 第4行中的 name 从之前单纯的 “nick_name” 变成了 “user[nick_name]”(实际代表的是user实例的nick_name这个attribute)</li>
+  <li>input 第3行中新增了id=”“。</li>
+</ul>
+
+<p>这里的class 和 id 都是 Rails 自动生成的：</p>
+
+<blockquote>
+  <p>Rails will also automatically set the class and id of the form appropriately: a form creating an article would have id and class new_article. If you were editing the article with id 23, the class would be set to edit_article and the id to edit_article_23.</p>
+</blockquote>
+
+<h3 id="4-simple_form">4 simple_form</h3>
+
+<p>仍然是在上面的 app/views/users/edit.html.erb 中</p>
+
+<p>如果装了 <a href="https://github.com/plataformatec/simple_form">simple_form</a></p>
+
+<p>我们只需要这样写就可以实现同样的表单：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="sx">%= simple_form_for @user do |user| %&gt;
+    &lt;%=</span> <span class="n">user</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:nick_name</span> <span class="o">%&gt;</span>
+    <span class="o">&lt;</span><span class="sx">%= user.submit "确认提交"%&gt;
+&lt;% end %&gt;
+</span></code></pre></div></div>
+
+<p>看看生成的html代码：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">novalidate</span><span class="o">=</span><span class="s2">"novalidate"</span> <span class="k">class</span><span class="o">=</span><span class="s2">"simple_form edit_user"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"edit_user_2"</span> <span class="n">action</span><span class="o">=</span><span class="s2">"/users/2"</span> <span class="n">accept</span><span class="o">-</span><span class="n">charset</span><span class="o">=</span><span class="s2">"UTF-8"</span> <span class="nb">method</span><span class="o">=</span><span class="s2">"post"</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">input</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"utf8"</span> <span class="n">type</span><span class="o">=</span><span class="s2">"hidden"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"✓"</span><span class="o">&gt;&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"hidden"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"_method"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"patch"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"hidden"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"authenticity_token"</span>
+           <span class="n">value</span><span class="o">=</span><span class="s2">"zxUru+4gCn2A2OocF7yQU69H+YKVPQUvYs3X/uXFdJcZecB1GtGX85ClCFr4zPpvlglGtfM7lQZH5IL01z/MNw=="</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"input string optional user_nick_name"</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">label</span> <span class="k">class</span><span class="o">=</span><span class="s2">"string optional"</span> <span class="k">for</span><span class="o">=</span><span class="s2">"user_nick_name"</span><span class="o">&gt;</span><span class="no">Nick</span> <span class="nb">name</span><span class="o">&lt;</span><span class="sr">/label&gt;
+          &lt;input class="string optional" type="text" name="user[nick_name]" id="user_nick_name"&gt;
+    &lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"submit"</span> <span class="nb">name</span><span class="o">=</span><span class="s2">"commit"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"确认提交"</span> <span class="n">data</span><span class="o">-</span><span class="n">disable</span><span class="o">-</span><span class="n">with</span><span class="o">=</span><span class="s2">"确认提交"</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="sr">/form&gt;
+
+</span></code></pre></div></div>
+
+<p>表面上看起来好像simple_form只是新增了一些class 多了 for 标签，没有太重大的变化。但实际上不管我们要传的数据类型是什么，都只用写 user.input， 不管我们要传的是日期，数字还是字串，simple_form 都会跑到users的资料表中去拿到对应的style,然后自动生成 type=”” 这个html属性值。举例来说比如user有一个attribute是birthday，style是date:</p>
+
+<ul>
+  <li>
+    <p>a.如果使用rails form helper 的写法，就要写 <code class="highlighter-rouge">&lt;%= user.date_field :birthday %&gt;</code> 继续使用text_field的写法就不行</p>
+  </li>
+  <li>
+    <p>b.而使用simple_form 则仍然可以写 <code class="highlighter-rouge">&lt;%= user.input :birthday %&gt;</code></p>
+  </li>
+</ul>
+
+<p>关于<a href="http://guides.rubyonrails.org/form_helpers.html#other-helpers-of-interest">不同数据类型对应的 rails form helper 写法可以看这里。</a></p>
+
+<p>&lt;%= text_area_tag(:message, “Hi, nice site”, size: “24x6”) %&gt;<br />
+&lt;%= password_field_tag(:password) %&gt;<br />
+&lt;%= hidden_field_tag(:parent_id, “5”) %&gt;<br />
+&lt;%= search_field(:user, :name) %&gt;<br />
+&lt;%= telephone_field(:user, :phone) %&gt;<br />
+&lt;%= date_field(:user, :born_on) %&gt;<br />
+&lt;%= datetime_local_field(:user, :graduation_day) %&gt;<br />
+&lt;%= month_field(:user, :birthday_month) %&gt;<br />
+&lt;%= week_field(:user, :birthday_week) %&gt;<br />
+&lt;%= url_field(:user, :homepage) %&gt;<br />
+&lt;%= email_field(:user, :address) %&gt;<br />
+&lt;%= color_field(:user, :favorite_color) %&gt;<br />
+&lt;%= time_field(:task, :started_at) %&gt;<br />
+&lt;%= number_field(:product, :price, in: 1.0..20.0, step: 0.5) %&gt;<br />
+&lt;%= range_field(:product, :discount, in: 1..100) %&gt;<br /></p>
+
+<p>simple_form 帮我们简化了这部分内容，使得在rails中写表单变得更加简单。
+<br />
+<br /></p>
+
+<h4 id="html-forms-vs-rails-form-helpers-vs-simple_form-vs-bootstrap">HTML Forms vs Rails Form Helpers vs simple_form vs bootstrap</h4>
+
+<p>自下而上地看，<a href="https://www.w3schools.com/html/html_forms.asp">HTML forms</a> 是这几个角色中相对恒定的一个。</p>
+
+<ul>
+  <li>不管是<a href="http://guides.rubyonrails.org/form_helpers.html#how-do-forms-with-patch-put-or-delete-methods-work-questionmark">rails form helper</a>中的 <code class="highlighter-rouge">form_tag</code>, <code class="highlighter-rouge">form_for</code>, <code class="highlighter-rouge">text_field</code>, <code class="highlighter-rouge">check_box_tag</code>, <code class="highlighter-rouge">labal_tag</code>, <code class="highlighter-rouge">radio_button_tag</code>….</li>
+  <li>还是 simple_form 中的 <code class="highlighter-rouge">f.label</code>, <code class="highlighter-rouge">f.input</code>, <code class="highlighter-rouge">f.submit</code>, <code class="highlighter-rouge">f.association</code>…</li>
+</ul>
+
+<p>都是在以某种逻辑简化表单，帮助我们自动生成基础的 HTML 代码。</p>
+
+<p>注：bootstrap 中提供的 <code class="highlighter-rouge">class="btn-primary"</code>, <code class="highlighter-rouge">class="form-control"</code> 等各种样式只是在处理presentation层面的工作，没有涉及到数据层面，而rails的form helper 和 simple_form 则覆盖到了这部分内容。</p>
+
+<p><strong>总的来说:</strong></p>
+
+<p>1 HTML 是表单页中最底层的代码，不管使用了什么工具来生成表单，html会是最终落地的那一个；<br />
+2 Rails 需要送出数据及请求，而 rails form helper 则是在简化写html表单代码的工作；<br />
+3 simple_form 则是对rails form helper 的进一步简化，它甚至会到资料表里去拿资料的type,识别之后自动生成对应的 html input element中的 type;<br />
+4 bootstrap 提供的是外观层面的样式，包好了很多 css ，所以它可以被rails 直接拿来用，也可以被 simple_form 直接拿来用。</p>
+
+<p>这些工具在帮助我们简化代码的同时，也遮蔽了很多表单背后的东西，如果这些工具的用法发生变化，我们就要去追赶新的用法，或者新的gem。因此我们应该找出表单中比较稳定且更基础的东西，那就是 <a href="https://www.w3schools.com/html/html_intro.asp">HTML</a>。以此为出发点来更好地理解这些表单工具在做什么。</p>
+
+        </div>
+
+        <!-- 
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fruby%2Frails%2520%25E2%2584%2597%2Fbasic-form-1%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%E7%90%86%E8%A7%A3%E5%9F%BA%E6%9C%AC%E7%9A%84HTML+Forms%20http%3A%2F%2Flocalhost%3A4000%2Fruby%2Frails%2520%25E2%2584%2597%2Fbasic-form-1%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fruby%2Frails%2520%25E2%2584%2597%2Fbasic-form-1%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=%E7%90%86%E8%A7%A3%E5%9F%BA%E6%9C%AC%E7%9A%84HTML+Forms&url=http%3A%2F%2Flocalhost%3A4000%2Fruby%2Frails%2520%25E2%2584%2597%2Fbasic-form-1%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+         -->
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/version%20control%20%E2%84%97/git-reset-and-revert/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> git reset 与 git revert 用于版本回退
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/command%20line%20%E2%84%97/diff-btw-gets-wether-chomp/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Difference between gets and gets.chomp
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+  <!--<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div>-->
+
+  <div class="copyright">
+    
+    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+       Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  </body>
+
+</html>

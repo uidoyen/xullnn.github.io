@@ -1,6 +1,6 @@
 ---
 title:  "Authenticating form scratch 2 - remember_me"
-categories: [Programming]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails]
 ---
 

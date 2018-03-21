@@ -1,6 +1,6 @@
 ---
 title:  "Customize url in Rails"
-categories: [Programming]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails]
 ---
 

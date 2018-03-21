@@ -1,6 +1,6 @@
 ---
 title:  "SQL Baiscs"
-categories: [Programming-basics]
+categories: [Database ℗]
 tags: [SQL, Database]
 ---
 

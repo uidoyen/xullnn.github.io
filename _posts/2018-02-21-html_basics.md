@@ -1,6 +1,6 @@
 ---
 title:  "HTML Basics"
-categories: [Programming-basics]
+categories: [Front end ℗]
 tags: [Front end]
 ---
 

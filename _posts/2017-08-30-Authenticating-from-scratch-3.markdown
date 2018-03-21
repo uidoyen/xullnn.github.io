@@ -1,6 +1,6 @@
 ---
 title:  "Authenticating form scratch 3 - password resetting"
-categories: [Programming]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails]
 ---
 

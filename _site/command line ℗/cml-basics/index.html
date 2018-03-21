@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Command Line Basics | Caven’s</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Command Line Basics" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Core conceptions" />
+<meta property="og:description" content="Core conceptions" />
+<link rel="canonical" href="http://localhost:4000/command%20line%20%E2%84%97/cml-basics/" />
+<meta property="og:url" content="http://localhost:4000/command%20line%20%E2%84%97/cml-basics/" />
+<meta property="og:site_name" content="Caven’s" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-02T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/command%20line%20%E2%84%97/cml-basics/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/command%20line%20%E2%84%97/cml-basics/"},"description":"Core conceptions","@type":"BlogPosting","headline":"Command Line Basics","dateModified":"2018-02-02T00:00:00+08:00","datePublished":"2018-02-02T00:00:00+08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  command-line-basics">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Record</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Command Line Basics
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2018-02-02T00:00:00+08:00"><a class="u-url" href="">February 2, 2018</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Command Line ℗</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Command Line</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><strong>Core conceptions</strong></p>
+
+<ul>
+  <li>command line interface 命令行接口，即指用文字命令的方式操作计算机（本地 或 远端）。</li>
+  <li>与 CLI 对应的另一种操作计算机的方式是图形用户界面即 Graphical User Interface(GUI)。</li>
+  <li>不同操作系统的 CLI 指令会有所不同。Mac 和 Linux 都是 <a href="https://zh.wikipedia.org/wiki/%E7%B1%BBUnix%E7%B3%BB%E7%BB%9F">Unix-like</a> 操作系统，所以类似。</li>
+</ul>
+
+<hr />
+
+<p><strong>Basic behaviors</strong></p>
+
+<p>Humans use <code class="highlighter-rouge">command line interface</code> to interact with computers in <code class="highlighter-rouge">terminal</code> through different <code class="highlighter-rouge">shell</code>s。</p>
+
+<hr />
+
+<p><strong>Discrimination of terms</strong></p>
+
+<ul>
+  <li>Terminal, Console, Shell</li>
+</ul>
+
+<p>Terminal 指 CLI 输入与输出的界面<strong>程序</strong></p>
+
+<p><a href="https://en.wikipedia.org/wiki/Shell_(computing)">Shell</a> 理解为不同的与计算机交互的指令集，有不同的种类如bash zsh， Unix 上常见的是 Bash Shell ， Mac 也默认用 Bash。 Shell 也可以当做是 Shell command 作为一种编程语言使用。</p>
+
+<p>Console 指特定的指令语言环境，如 mysql console, irb console, rails console…</p>
+
+<hr />
+
+<p><strong>Tips &amp; Shortcuts</strong></p>
+
+<ul>
+  <li>Terminal 视窗技巧
+    <ul>
+      <li><code class="highlighter-rouge">Control+c</code> 取消目前指令</li>
+      <li><code class="highlighter-rouge">Control+z</code> 中断目前指令</li>
+      <li><code class="highlighter-rouge">Control+a</code> 跳到指令最前面</li>
+      <li><code class="highlighter-rouge">Control+e</code> 跳到指令最后面</li>
+      <li><code class="highlighter-rouge">Control+l</code> 清除画面 (或用 <code class="highlighter-rouge">clear</code> 指令)</li>
+    </ul>
+  </li>
+  <li>常见 CLI 命令
+    <ul>
+      <li><code class="highlighter-rouge">date</code> 显示当前时间</li>
+      <li><code class="highlighter-rouge">uname -a</code> 显示系统版本信息</li>
+      <li><code class="highlighter-rouge">uptime</code> 显示计算机开机运行时长</li>
+      <li><code class="highlighter-rouge">history</code> 显示最近执行过的命令清单</li>
+      <li><code class="highlighter-rouge">history n</code> 显示最近执行过的 n 条指令，比如history 8</li>
+      <li><code class="highlighter-rouge">mkdir dirname</code> make a new directory named ‘dirname’</li>
+      <li><code class="highlighter-rouge">touch filename</code> 建立名为filename的新文件</li>
+      <li><code class="highlighter-rouge">cp source target</code> 复制’source’ 到 ‘target’</li>
+      <li><code class="highlighter-rouge">mv source target</code> 将 ‘source’ move 到 ‘target’ （可以同时更名）</li>
+      <li><code class="highlighter-rouge">pwd</code> 查看当前所在路径</li>
+      <li><code class="highlighter-rouge">nano abc.txt</code> 打开 <a href="https://en.wikipedia.org/wiki/GNU_nano#Control_keys">nano</a> editor</li>
+      <li><code class="highlighter-rouge">cat filename</code> 在terminal 中印出 filename 中的内容</li>
+      <li><code class="highlighter-rouge">diff file1 file2</code> 对比两个文件的不同</li>
+      <li><code class="highlighter-rouge">which something</code> 查看 something 在系统中的什么位置，比如<code class="highlighter-rouge">which curl</code>, <code class="highlighter-rouge">which ruby</code></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="一些需要展开的command-line用法">一些需要展开的command line用法</h4>
+
+<hr />
+
+<h5 id="1-cd-相关命令">1. cd 相关命令</h5>
+
+<ul>
+  <li><code class="highlighter-rouge">cd</code> 是 change directory 的缩写</li>
+  <li><code class="highlighter-rouge">.</code> 代表 current directory</li>
+  <li><code class="highlighter-rouge">..</code> 代表上一级directory</li>
+  <li><code class="highlighter-rouge">cd directory</code> 基于当前路径中包含的文件夹切换路径</li>
+  <li><code class="highlighter-rouge">cd /directory</code> 基于根目录中包含的文件夹切换路径</li>
+</ul>
+
+<h5 id="2-rm-相关命令">2. rm 相关命令</h5>
+
+<ul>
+  <li><code class="highlighter-rouge">rm</code> 是 remove 的缩写</li>
+  <li><code class="highlighter-rouge">rm file</code> 移除 file 文件</li>
+  <li><code class="highlighter-rouge">rm &lt;directory&gt;</code>  Remove (empty) dir 移除（空）文件夹</li>
+  <li><code class="highlighter-rouge">rm -rf &lt;directory&gt;</code> Remove dir &amp; contents 移除文件夹以及里面的所有内容</li>
+</ul>
+
+<hr />
+
+<h5 id="3-ls-相关命令">3. ls 相关命令</h5>
+
+<ul>
+  <li><code class="highlighter-rouge">ls</code> 列出当前路径下的所有文件夹/文件</li>
+  <li><code class="highlighter-rouge">ls -l</code> 在 ls 基础上列出每个文件夹/文件的 权限，拥有者等详细信息</li>
+  <li><code class="highlighter-rouge">ls -a</code>	List all (including hidden)</li>
+  <li><code class="highlighter-rouge">ls Jan*</code> 列出所有以 Jan 开头的文件夹/文件，类似rexp的匹配用法</li>
+  <li><code class="highlighter-rouge">ls -abc</code> 相当于 <code class="highlighter-rouge">ls -a -b -c</code> 3个options的效果</li>
+  <li><code class="highlighter-rouge">ls -rtl</code> list long by reverse modification time</li>
+</ul>
+
+<p>列出文件夹的树状结构 <code class="highlighter-rouge">tree .</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ~/coursera ⮀ tree .
+.
+└── Introduction\ to\ Mathematical\ Thinking
+   ├── assignments
+   │   └── _b3b6ca270030af26de6920fedd0c2eb9_Assignment-1.pdf
+   └── reading\ material
+       ├── 1-background\ reading.pdf
+       └── 1-background_reading.md
+
+3 directories, 3 files
+</code></pre></div></div>
+
+<hr />
+
+<h5 id="4-curl">4. curl</h5>
+
+<p>From wikipedia:</p>
+
+<blockquote>
+  <p><a href="https://en.wikipedia.org/wiki/CURL">cURL</a> (/kɝl/ or /kə:l/) is a computer software project providing <strong>a library and command-line tool for transferring data using various protocols</strong>. The cURL project produces two products, libcurl and cURL. It was first released in 1997. The name originally stood for “see URL”. The original author and lead developer is the Swedish developer Daniel Stenberg.</p>
+</blockquote>
+
+<p><a href="https://curl.haxx.se/">Official website</a></p>
+
+<ul>
+  <li>curl 是命令行中用来从网络中获取信息的工具(指令)。</li>
+</ul>
+
+<p>Examples:</p>
+
+<ul>
+  <li>使用 <code class="highlighter-rouge">which curl</code> 查看curl在系统中的位置，如果没有，需要安装后使用</li>
+  <li><code class="highlighter-rouge">curl www.google.com</code> 获取 www.google.com 页面的源码信息</li>
+  <li><code class="highlighter-rouge">curl -I www.google.com</code> 获取 www.google.com 页面的 HTTP header 信息</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">⮀</span> <span class="n">curl</span> <span class="o">-</span><span class="no">I</span> <span class="n">www</span><span class="p">.</span><span class="nf">google</span><span class="p">.</span><span class="nf">com</span>
+<span class="no">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="no">OK</span>
+<span class="no">Date</span><span class="p">:</span> <span class="no">Mon</span><span class="p">,</span> <span class="mi">12</span> <span class="no">Mar</span> <span class="mi">2018</span> <span class="mo">07</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mi">12</span> <span class="no">GMT</span>
+<span class="no">Expires</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+<span class="no">Cache</span><span class="o">-</span><span class="no">Control</span><span class="p">:</span> <span class="kp">private</span><span class="p">,</span> <span class="n">max</span><span class="o">-</span><span class="n">age</span><span class="o">=</span><span class="mi">0</span>
+<span class="no">Content</span><span class="o">-</span><span class="no">Type</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="no">ISO</span><span class="o">-</span><span class="mi">8859</span><span class="o">-</span><span class="mi">1</span>
+<span class="no">P3P</span><span class="p">:</span> <span class="no">CP</span><span class="o">=</span><span class="s2">"This is not a P3P policy! See g.co/p3phelp for more info."</span>
+<span class="no">Server</span><span class="p">:</span> <span class="n">gws</span>
+<span class="no">X</span><span class="o">-</span><span class="no">XSS</span><span class="o">-</span><span class="no">Protection</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="n">mode</span><span class="o">=</span><span class="n">block</span>
+<span class="no">X</span><span class="o">-</span><span class="no">Frame</span><span class="o">-</span><span class="no">Options</span><span class="p">:</span> <span class="no">SAMEORIGIN</span>
+<span class="no">Set</span><span class="o">-</span><span class="no">Cookie</span><span class="p">:</span> <span class="mi">1</span><span class="no">P_JAR</span><span class="o">=</span><span class="mi">2018</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mo">07</span><span class="p">;</span> <span class="n">expires</span><span class="o">=</span><span class="no">Wed</span><span class="p">,</span> <span class="mi">11</span><span class="o">-</span><span class="no">Apr</span><span class="o">-</span><span class="mi">2018</span> <span class="mo">07</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mi">12</span> <span class="no">GMT</span><span class="p">;</span> <span class="n">path</span><span class="o">=</span><span class="sr">/; domain=.google.com
+Set-Cookie: NID=125=MEEoaa41fWbXKIvt0T-jEuAGPYO7znJLZm2riHMKcRKQyGf99rYFoBXQptSGnMyoZzmWKDMdm2S5DfFIh2E0KzmU41WvAm5w2DV-ix5hxIaqyJksScHIuGxmX0r45P_O; expires=Tue, 11-Sep-2018 07:49:12 GMT; path=/</span><span class="p">;</span> <span class="n">domain</span><span class="o">=</span><span class="p">.</span><span class="nf">google</span><span class="p">.</span><span class="nf">com</span><span class="p">;</span> <span class="no">HttpOnly</span>
+<span class="no">Transfer</span><span class="o">-</span><span class="no">Encoding</span><span class="p">:</span> <span class="n">chunked</span>
+<span class="no">Accept</span><span class="o">-</span><span class="no">Ranges</span><span class="p">:</span> <span class="n">none</span>
+<span class="no">Vary</span><span class="p">:</span> <span class="no">Accept</span><span class="o">-</span><span class="no">Encoding</span>
+</code></pre></div></div>
+
+<hr />
+
+<h5 id="5-head-与-tail-加上-wc">5. head 与 tail 加上 wc</h5>
+
+<ul>
+  <li><code class="highlighter-rouge">head filename</code> 显示 filename 的前10行</li>
+  <li><code class="highlighter-rouge">tail filename</code> 与 head 相对</li>
+  <li><code class="highlighter-rouge">wc</code> 是 wordcount 的缩写，用来度量给出对象总共有多少行(lines)，多少单词(words)， 多少字节(bytes)。</li>
+</ul>
+
+<p>Examples:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">⮀</span> <span class="n">wc</span> <span class="n">sonnets</span><span class="p">.</span><span class="nf">txt</span>
+   <span class="mi">2620</span>   <span class="mi">17670</span>   <span class="mi">95635</span> <span class="n">sonnets</span><span class="p">.</span><span class="nf">txt</span>
+</code></pre></div></div>
+<p>sonnects.txt 这个文件一共有 2620行，17670个单词，95635字节。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">⮀</span> <span class="n">head</span> <span class="n">sonnets</span><span class="p">.</span><span class="nf">txt</span>
+<span class="no">Shake</span><span class="o">-</span><span class="n">speare</span><span class="s1">'s Sonnets
+
+I
+
+From fairest creatures we desire increase,
+That thereby beauty'</span><span class="n">s</span> <span class="no">Rose</span> <span class="n">might</span> <span class="n">never</span> <span class="n">die</span><span class="p">,</span>
+<span class="no">But</span> <span class="n">as</span> <span class="n">the</span> <span class="n">riper</span> <span class="n">should</span> <span class="n">by</span> <span class="n">time</span> <span class="n">decease</span><span class="p">,</span>
+<span class="no">His</span> <span class="n">tender</span> <span class="n">heir</span> <span class="n">might</span> <span class="n">bear</span> <span class="n">his</span> <span class="ss">memory:
+</span><span class="no">But</span> <span class="n">thou</span> <span class="n">contracted</span> <span class="n">to</span> <span class="n">thine</span> <span class="n">own</span> <span class="n">bright</span> <span class="n">eyes</span><span class="p">,</span>
+<span class="no">Feed</span><span class="s1">'st thy light'</span><span class="n">s</span> <span class="n">flame</span> <span class="n">with</span> <span class="nb">self</span><span class="o">-</span><span class="n">substantial</span> <span class="n">fuel</span><span class="p">,</span>
+
+<span class="err">⮀</span> <span class="n">tail</span> <span class="n">sonnets</span><span class="p">.</span><span class="nf">txt</span> <span class="o">|</span> <span class="n">wc</span>
+     <span class="mi">10</span>      <span class="mi">77</span>     <span class="mi">425</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">head sonnets.txt</code> 印出了该文件前10行</p>
+
+<p><code class="highlighter-rouge">tail sonnets.txt | wc</code> 是串联了 pipe <code class="highlighter-rouge">|</code> 的用法，拿到对象的末尾10行，接着进行 <code class="highlighter-rouge">wc</code> 操作。</p>
+
+<hr />
+
+<h5 id="6-grep">6. grep</h5>
+
+<ul>
+  <li><code class="highlighter-rouge">grep</code> 用来查找内容</li>
+</ul>
+
+<p>Examples:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">⮀</span> <span class="n">grep</span> <span class="n">rose</span> <span class="n">sonnets</span><span class="p">.</span><span class="nf">txt</span>
+<span class="no">The</span> <span class="n">rose</span> <span class="n">looks</span> <span class="n">fair</span><span class="p">,</span> <span class="n">but</span> <span class="n">fairer</span> <span class="n">we</span> <span class="n">it</span> <span class="n">deem</span>
+<span class="no">As</span> <span class="n">the</span> <span class="n">perfumed</span> <span class="n">tincture</span> <span class="n">of</span> <span class="n">the</span> <span class="n">roses</span><span class="o">.</span>
+<span class="no">Die</span> <span class="n">to</span> <span class="n">themselves</span><span class="o">.</span> <span class="no">Sweet</span> <span class="n">roses</span> <span class="k">do</span> <span class="n">not</span> <span class="n">so</span><span class="p">;</span>
+<span class="no">Roses</span> <span class="n">of</span> <span class="n">shadow</span><span class="p">,</span> <span class="n">since</span> <span class="n">his</span> <span class="n">rose</span> <span class="n">is</span> <span class="kp">true</span><span class="p">?</span>
+<span class="no">Which</span><span class="p">,</span> <span class="n">like</span> <span class="n">a</span> <span class="n">canker</span> <span class="k">in</span> <span class="n">the</span> <span class="n">fragrant</span> <span class="n">rose</span><span class="p">,</span>
+<span class="no">Nor</span> <span class="n">praise</span> <span class="n">the</span> <span class="n">deep</span> <span class="n">vermilion</span> <span class="k">in</span> <span class="n">the</span> <span class="n">rose</span><span class="p">;</span>
+<span class="no">The</span> <span class="n">roses</span> <span class="n">fearfully</span> <span class="n">on</span> <span class="n">thorns</span> <span class="n">did</span> <span class="n">stand</span><span class="p">,</span>
+ <span class="no">Save</span> <span class="n">thou</span><span class="p">,</span> <span class="n">my</span> <span class="n">rose</span><span class="p">,</span> <span class="k">in</span> <span class="n">it</span> <span class="n">thou</span> <span class="n">art</span> <span class="n">my</span> <span class="n">all</span><span class="o">.</span>
+<span class="no">I</span> <span class="n">have</span> <span class="n">seen</span> <span class="n">roses</span> <span class="n">damask</span><span class="err">'</span><span class="n">d</span><span class="p">,</span> <span class="n">red</span> <span class="n">and</span> <span class="n">white</span><span class="p">,</span>
+<span class="no">But</span> <span class="n">no</span> <span class="n">such</span> <span class="n">roses</span> <span class="n">see</span> <span class="no">I</span> <span class="k">in</span> <span class="n">her</span> <span class="n">cheeks</span><span class="p">;</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">grep rose sonnets.txt</code> 会拿到所有含有 rose 的行，然后印出每一行</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">⮀</span> <span class="n">grep</span> <span class="n">rose</span> <span class="n">sonnets</span><span class="p">.</span><span class="nf">txt</span> <span class="o">|</span> <span class="n">wc</span>
+     <span class="mi">10</span>      <span class="mi">82</span>     <span class="mi">419</span>
+</code></pre></div></div>
+
+<p>pipe <code class="highlighter-rouge">|</code> 在语法上的含义类似ruby中的点号<code class="highlighter-rouge">.</code>，可以将命令串起来执行</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">⮀</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="n">rose</span> <span class="n">sonnets</span><span class="p">.</span><span class="nf">txt</span> <span class="o">|</span> <span class="n">wc</span>
+     <span class="mi">12</span>      <span class="mi">96</span>     <span class="mi">508</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">grep</code> 还对应有许多options，比如 <code class="highlighter-rouge">-i</code> 代表 ignore-case 不区分大小写。</p>
+
+<p>查看 <code class="highlighter-rouge">grep</code> 的其他用法可以先输入 <code class="highlighter-rouge">man grep</code> 然后 <code class="highlighter-rouge">/case</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="n">ignore</span><span class="o">-</span><span class="k">case</span>
+        <span class="no">Perform</span> <span class="k">case</span> <span class="n">insensitive</span> <span class="n">matching</span><span class="o">.</span>  <span class="no">By</span> <span class="n">default</span><span class="o">...</span>
+<span class="o">--</span><span class="kp">include</span>
+        <span class="no">If</span> <span class="n">specified</span><span class="p">,</span> <span class="n">only</span> <span class="n">files</span> <span class="n">matching</span> <span class="n">the</span> <span class="n">given</span> <span class="n">filename</span><span class="o">...</span>
+<span class="o">--</span><span class="kp">include</span><span class="o">-</span><span class="n">dir</span>
+        <span class="no">If</span> <span class="o">-</span><span class="no">R</span> <span class="n">is</span> <span class="n">specified</span><span class="p">,</span> <span class="n">only</span> <span class="n">directories</span> <span class="n">matching</span> <span class="n">the</span> <span class="n">given</span><span class="o">...</span>
+<span class="o">-</span><span class="no">J</span><span class="p">,</span> <span class="o">--</span><span class="n">bz2decompress</span>
+        <span class="no">Decompress</span> <span class="n">the</span> <span class="n">bzip2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">compressed</span> <span class="n">file</span> <span class="n">before</span> <span class="n">looking</span> <span class="k">for</span><span class="o">...</span>
+<span class="o">-</span><span class="no">L</span><span class="p">,</span> <span class="o">--</span><span class="n">files</span><span class="o">-</span><span class="n">without</span><span class="o">-</span><span class="n">match</span>
+        <span class="no">Only</span> <span class="n">the</span> <span class="n">names</span> <span class="n">of</span> <span class="n">files</span> <span class="n">not</span> <span class="n">containing</span> <span class="n">selected</span> <span class="n">lines</span> <span class="n">are</span> <span class="o">...</span>
+</code></pre></div></div>
+
+<p>一个包含pipe的command chain用法</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>⮀ curl -I https://www.google.com
+HTTP/2 200
+date: Mon, 12 Mar 2018 08:20:27 GMT
+expires: -1
+cache-control: private, max-age=0
+content-type: text/html; charset=ISO-8859-1
+p3p: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+server: gws
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+set-cookie: 1P_JAR=2018-03-12-08; expires=Wed, 11-Apr-2018 08:20:27 GMT; path=/; domain=.google.com
+set-cookie: NID=125=uunagSTk2dtx9gNecdSyP-3eF6HDUNIsGOtFMIo2oOARSZvO2KDanwo1r2JOsI81qlYUOnDvQ2UoOBDz485Na-Pqa6V-cruuW7mf_kqaiTvhhbkiHYT7DuQ2H4b9y_qZ; expires=Tue, 11-Sep-2018 08:20:27 GMT; path=/; domain=.google.com; HttpOnly
+alt-svc: hq=":443"; ma=2592000; quic=51303431; quic=51303339; quic=51303335,quic=":443"; ma=2592000; v="41,39,35"
+accept-ranges: none
+vary: Accept-Encoding
+
+⮀ curl -I https://www.google.com | grep -i http
+ % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                Dload  Upload   Total   Spent    Left  Speed
+ 0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+HTTP/2 200
+set-cookie: NID=125=Bp-8t_5iO9EIGHK3l_-TezXFQkPveAREfavYWMkYjfORTBv88JOqKyeMl3HyLRtAyHIgLenCCCTCLBsvy3iHqvIcWt68zTIuJ0fjBojF85LK1Qbuon68Dji94R6JHxN0; expires=Tue, 11-Sep-2018 08:20:34 GMT; path=/; domain=.google.com; HttpOnly
+
+⮀ curl -I https://www.google.com | grep -i http | wc
+ % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                Dload  Upload   Total   Spent    Left  Speed
+ 0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+      2      11     240
+⮀
+</code></pre></div></div>
+
+<p>注意上面每一步加上的 pipe line 和后续的指令</p>
+
+<hr />
+
+<h5 id="附">附：</h5>
+
+<ul>
+  <li>常用键盘功能按键的符号表示</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Key</th>
+      <th style="text-align: center">Symbol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Command</td>
+      <td style="text-align: center">⌘</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Control</td>
+      <td style="text-align: center">⌃</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Shift</td>
+      <td style="text-align: center">⇧</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Option</td>
+      <td style="text-align: center">⌥</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Up, down, left, right</td>
+      <td style="text-align: center">↑ ↓ ← →</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Enter/Return</td>
+      <td style="text-align: center">↵</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Tab</td>
+      <td style="text-align: center">⇥</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Delete</td>
+      <td style="text-align: center">⌫</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+
+        <!-- 
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcommand%2520line%2520%25E2%2584%2597%2Fcml-basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Command+Line+Basics%20http%3A%2F%2Flocalhost%3A4000%2Fcommand%2520line%2520%25E2%2584%2597%2Fcml-basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcommand%2520line%2520%25E2%2584%2597%2Fcml-basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Command+Line+Basics&url=http%3A%2F%2Flocalhost%3A4000%2Fcommand%2520line%2520%25E2%2584%2597%2Fcml-basics%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+         -->
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-15-Callbacks-hooks-and-runtime-introspection/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Rubyist-c15-Callbacks hooks and runtime introspection
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/front%20end%20%E2%84%97/css_basics/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Cascading Style Sheets - CSS Basics
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+  <!--<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div>-->
+
+  <div class="copyright">
+    
+    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+       Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  </body>
+
+</html>

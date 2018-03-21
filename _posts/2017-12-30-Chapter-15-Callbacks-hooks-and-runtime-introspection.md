@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c15-Callbacks hooks and runtime introspection"
-categories: [Learning Notes, Programming]
+categories: [Ruby/Rails ℗, Learning Notes ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

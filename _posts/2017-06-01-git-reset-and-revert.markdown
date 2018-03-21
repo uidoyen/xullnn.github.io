@@ -1,6 +1,6 @@
 ---
 title:  "git reset 与 git revert 用于版本回退"
-categories: [Version control]
+categories: [Version control ℗]
 tags: [Github]
 ---
 

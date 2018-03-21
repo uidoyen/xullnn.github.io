@@ -1,6 +1,6 @@
 ---
 title:  "grep系列命令用以查找信息"
-categories: [Programming-basics]
+categories: [Command Line ℗]
 tags: [Ruby & Rails, Command Line]
 ---
 

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>JavaScript and DOM | Caven’s</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="JavaScript and DOM" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Core conceptions" />
+<meta property="og:description" content="Core conceptions" />
+<link rel="canonical" href="http://localhost:4000/front%20end%20%E2%84%97/js_and_dom/" />
+<meta property="og:url" content="http://localhost:4000/front%20end%20%E2%84%97/js_and_dom/" />
+<meta property="og:site_name" content="Caven’s" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-26T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/front%20end%20%E2%84%97/js_and_dom/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/front%20end%20%E2%84%97/js_and_dom/"},"description":"Core conceptions","@type":"BlogPosting","headline":"JavaScript and DOM","dateModified":"2018-02-26T00:00:00+08:00","datePublished":"2018-02-26T00:00:00+08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  javascript-and-dom">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Record</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">JavaScript and DOM
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2018-02-26T00:00:00+08:00"><a class="u-url" href="">February 26, 2018</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Front end ℗</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Front end</li><li class="page-taxonomy">JavaScript</li><li class="page-taxonomy">HTML</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p><strong>Core conceptions</strong></p>
+
+<ul>
+  <li>window object - 作为网页最底层的对象，可以把一个打开的浏览器页面视作一个 window object。</li>
+</ul>
+
+<p>w3s:</p>
+
+<blockquote>
+  <p>The window object represents an open window in a browser.</p>
+</blockquote>
+
+<p>MDN:</p>
+<blockquote>
+  <p>The window object represents a window containing a DOM document; the <code class="highlighter-rouge">document</code> property points to the DOM document loaded in that window.</p>
+</blockquote>
+
+<p>在 dev tool 的 console 中，执行 <code class="highlighter-rouge">alert("something")</code> 或者 <code class="highlighter-rouge">document.location.href</code> 这类js代码，都是属于 window object 层面的对象或方法。</p>
+
+<ul>
+  <li>document obejct - 它是 window 对象的 child。也是我们常用来选择页面元素进行操作的对象层级。
+    <ul>
+      <li><a href="https://stackoverflow.com/questions/9895202/what-is-the-difference-between-window-screen-and-document-in-javascript">关于window, document对象的说明1</a></li>
+      <li><a href="https://javascript.tutorialhorizon.com/2016/03/28/window-vs-document/">关于window, document对象的说明2</a></li>
+    </ul>
+  </li>
+  <li>DOM - DOM stands for Document Object Model.</li>
+</ul>
+
+<hr />
+
+<p><strong>Core behaviors</strong></p>
+
+<ul>
+  <li>Selecting elements on the page</li>
+  <li>Manipulating elements</li>
+  <li>Listening for user actions</li>
+</ul>
+
+<hr />
+
+<p><strong>What we ‘get’?</strong></p>
+
+<ul>
+  <li>
+    <p>document.getElementById 等 ‘getElement’ 的操作拿到的是一个单独的element</p>
+  </li>
+  <li>
+    <p>document.getElementsByTagName, document.getElementsById 等’getElements’操作拿到的是 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection">HTMLCollection</a>。类似一个 array， 实际是一个 js object，有对应的property，也是后续操作的基础。</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>The HTMLCollection interface represents a generic collection (array-like object similar to arguments) of elements (in document order) and offers methods and properties for selecting from the list.</p>
+</blockquote>
+
+<blockquote>
+  <p>An HTMLCollection in the HTML DOM is live; it is automatically updated when the underlying document is changed.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'h1'</span><span class="p">)</span>
+<span class="c1">// =&gt; undefined</span>
+<span class="nx">obj</span>
+<span class="c1">// =&gt; HTMLCollection [h1.public]</span>
+</code></pre></div></div>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fpcngdglm2j30t505pq45.jpg" alt="" /></p>
+
+<p>exmaple</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myHeading</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'h1'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">myButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myButton'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">myTextInput</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myTextInput'</span><span class="p">);</span>
+
+<span class="nx">myButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                            <span class="nx">myHeading</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">myTextInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+                          <span class="p">});</span>
+</code></pre></div></div>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fpcrua587ej30vm0d23zd.jpg" alt="" /></p>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fpcrx92965j30u70ezzlm.jpg" alt="" /></p>
+
+<p>基于上面的内容使用 for loop 将所有 li 元素变为紫色</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'li'</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">myList</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">myList</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">'purple'</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>如果通过 <code class="highlighter-rouge">document.getElementsByTagName</code> 拿到的 HTMLcollection 中只有一个 HTML element 那么要用索引 <code class="highlighter-rouge">[0]</code> 将其拿出。这适用于某个只在页面出现一次的tag。</p>
+
+<p><strong>Using CSS Queries to Select Page Elements</strong></p>
+
+<p>这个功能让我们可以直接使用写css文件时用到的selector，包括pseudo class， nth-child 这些相对进阶的selector</p>
+
+<ul>
+  <li>document.querySelector()</li>
+  <li>document.querySelectorAll()</li>
+</ul>
+
+<p>前者只拿到他第一个遇到的 HTML element，后者拿到所有</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fpd9lisnbxj30ie05awf5.jpg" alt="" /></p>
+
+<p>下面的两种写法拿到的是同样的 HTML element</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myId'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">myElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#myId'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">('nav a')</code> 会选到 nav 中所有的 a 链接元素</p>
+
+<p><code class="highlighter-rouge">('ul #gallery img')</code> 会选到 id 为 gallery 的ul列表下所有的 img 元素</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">evens</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'li:nth-child(odd)'</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">evens</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">evens</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'lightgrey'</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>上面例子中的 <code class="highlighter-rouge">li:nth-child(odd)</code> 选择到了所有 li 元素中的奇数位置的元素，简化了很多操作。</p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors">MDN上关于selector的页面</a></p>
+
+<p><strong>如何使用 DOM’s <code class="highlighter-rouge">textContent</code> and <code class="highlighter-rouge">innerHTML</code> 属性</strong></p>
+
+<p>这两个都是文字内容相关的properties。</p>
+
+<ul>
+  <li>textContent 针对文本 content 内容</li>
+  <li>innerHTML 可以替换掉选定元素整体，包括tag</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">)</span>
+<span class="kc">undefined</span>
+<span class="nx">ul</span><span class="p">.</span><span class="nx">innerHTML</span>
+<span class="c1">// =&gt;</span>
+<span class="s2">"
+      &lt;li&gt;grapes&lt;/li&gt;
+      &lt;li&gt;amethyst&lt;/li&gt;
+      &lt;li&gt;lavender&lt;/li&gt;
+      &lt;li&gt;plums&lt;/li&gt;
+    "</span>
+<span class="nx">ul</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"&lt;h2&gt;Hello world!&lt;/h2&gt;"</span>
+<span class="c1">// =&gt;</span>
+<span class="s2">"&lt;h2&gt;Hello world!&lt;/h2&gt;"</span>
+</code></pre></div></div>
+
+<p><strong>Element.attribute 和 style</strong></p>
+
+<ul>
+  <li>
+    <p>attribute如 class, 用于定位和修改 HTML 元素的 attribute，比如 type, class, action, autocomplete 等 指的是一个 HTML element 自身所具有的属性。 不同element所具有的属性是不同的，比如 action 属性 就只有 <code class="highlighter-rouge">&lt;form&gt;</code> 元素才有；autoplay 属性只有 <code class="highlighter-rouge">&lt;audio&gt;</code> 和 <code class="highlighter-rouge">&lt;video&gt;</code> 元素有； align 属性则可以被十几种元素使用；class 则是 Global attribute 所有元素都可以有。</p>
+  </li>
+  <li>
+    <p>style 指的是一个 HTML element 外观上的风格样式</p>
+  </li>
+</ul>
+
+<p>attribute 属性的例子</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'button'</span><span class="p">).</span><span class="nx">id</span>
+<span class="c1">// =&gt;</span>
+<span class="s2">"toggleList"</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'button'</span><span class="p">).</span><span class="nx">type</span>
+<span class="c1">// =&gt;</span>
+<span class="s2">"submit"</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'button'</span><span class="p">).</span><span class="nx">action</span>
+<span class="c1">// =&gt;</span>
+<span class="kc">undefined</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'button'</span><span class="p">).</span><span class="nx">className</span>
+<span class="c1">// =&gt;</span>
+<span class="s2">""</span>
+</code></pre></div></div>
+
+<p>如果该元素没有这个属性则返回 undefined</p>
+
+<p>如果元素有这个属性但没有指定 返回空字串 “”</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">input</span><span class="p">.</span><span class="nx">type</span>
+<span class="s2">"text"</span>
+<span class="nx">input</span><span class="p">.</span><span class="nx">className</span>
+<span class="s2">"description"</span>
+<span class="nx">input</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'checkbox'</span>
+<span class="s2">"checkbox"</span>
+</code></pre></div></div>
+
+<p>注意定位一个 HTML element 的class用的不是 element.class 而是 element.className</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fpdbzfnuuzj30s70ex0tz.jpg" alt="" /></p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes">HTML 元素的attribute清单</a></p>
+
+<p>element.style 则包含很多 css style declaration 样式声明</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'button'</span><span class="p">).</span><span class="nx">style</span>
+<span class="c1">// =&gt;</span>
+<span class="nx">CSSStyleDeclaration</span><span class="err"> </span><span class="p">{</span><span class="nl">alignContent</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="nx">alignItems</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="nx">alignSelf</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="nx">alignmentBaseline</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="nx">all</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span><span class="err"> …</span><span class="p">}</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'button'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span>
+<span class="c1">// =&gt;</span>
+<span class="s2">""</span>
+</code></pre></div></div>
+
+<p><strong>document.createElement()</strong></p>
+
+<p>用来新建 HTML element</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">addItemButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'li'</span><span class="p">);</span>
+  <span class="nx">li</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">addItemInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p>点击按键时新建一个 li 元素，将li中的文本内容设置为按键前输入框输入的内容。这一步只是新建一个元素，并不会在页面中显示。</p>
+
+<p><strong>Inserting element in DOM</strong></p>
+
+<p>Node.appendChild(childElement)  在DOM结构中的指定节点(内部末尾)插入元素</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">addItemButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="kd">let</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'li'</span><span class="p">);</span>
+  <span class="nx">li</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">addItemInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="nx">ul</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+                               <span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>Removing element</strong></p>
+
+<p>Node.removeChild(childElement)</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">removeItemButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'button.removeItemButton'</span><span class="p">);</span>
+
+<span class="nx">removeItemButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="kd">let</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'li:last-child'</span><span class="p">);</span>             
+  <span class="nx">ul</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="events">Events</h3>
+
+<p>比较具象的有 click, mousedown, keydown, mousemove 等</p>
+
+<p>抽象的比如 cut copy paste, load, seeking 等</p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Events">MDN上的events列表</a></p>
+
+<p>event的作用通常是用来作为某些功能或操作的触发点。</p>
+
+<p><strong>Functions as parameters, anonymous function</strong></p>
+
+<p>把function对象作为参数</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">say</span><span class="p">(</span><span class="nx">something</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">something</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">exec</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">func</span><span class="p">(</span><span class="nx">arg</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">exec</span><span class="p">(</span><span class="nx">say</span><span class="p">,</span> <span class="s2">"Hello World!"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>演化步骤1</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">exec</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">func</span><span class="p">(</span><span class="nx">arg</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// exec(say, "Hello World!");</span>
+<span class="nx">exec</span><span class="p">(</span><span class="kd">function</span> <span class="nx">say</span><span class="p">(</span><span class="nx">something</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">something</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">"Hello World!"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>演化步骤2</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">exec</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">func</span><span class="p">(</span><span class="nx">arg</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// exec(say, "Hello World!");</span>
+<span class="nx">exec</span><span class="p">((</span><span class="nx">something</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">something</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">"Hello World!"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>这即是js中anonymous function的形式</p>
+
+<p>如果一个function接受另一个function作为参数，那么就可以使用js中匿名函数的形式传入</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">what</span> <span class="k">this</span> <span class="nx">anonymous</span> <span class="kd">function</span> <span class="k">do</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>可以类比 ruby 中的  proc object 理解，block是句法中的一部分，但是单独的一个 block 不能完全指代一个匿名函数</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">say</span><span class="p">(</span><span class="nx">func</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">);</span> <span class="nx">func</span><span class="p">()</span> <span class="p">}</span>
+<span class="c1">// =&gt;</span>
+<span class="kc">undefined</span>
+<span class="nx">say</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"bye bye"</span><span class="p">)})</span>
+<span class="c1">// =&gt;</span>
+<span class="nx">hello</span>
+<span class="nx">bye</span> <span class="nx">bye</span>
+</code></pre></div></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+<span class="o">&gt;</span>   <span class="nb">puts</span> <span class="s2">"Hello"</span>
+<span class="o">&gt;</span>   <span class="n">block</span><span class="p">.</span><span class="nf">call</span>
+<span class="o">&gt;</span> <span class="k">end</span>
+ <span class="o">=&gt;</span> <span class="ss">:say</span>
+<span class="o">&gt;</span> <span class="n">say</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s2">"bye bye"</span> <span class="p">}</span>
+<span class="no">Hello</span>
+<span class="n">bye</span> <span class="n">bye</span>
+ <span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="o">&gt;</span> <span class="n">say</span> <span class="k">do</span>
+<span class="o">&gt;</span>   <span class="nb">puts</span> <span class="s2">"bye bye"</span>
+<span class="o">&gt;</span> <span class="k">end</span>
+<span class="no">Hello</span>
+<span class="n">bye</span> <span class="n">bye</span>
+ <span class="o">=&gt;</span> <span class="kp">nil</span>
+</code></pre></div></div>
+
+<p><strong><a href="https://teamtreehouse.com/library/delaying-execution-with-settimeout">Delaying Execution with setTimeout() function</a> 使用 setTimeout() 延迟执行时间</strong></p>
+
+<p>The <strong>window object</strong> has a setTimeout function we can use to delay the execution of a function.</p>
+
+<p>注意是 window object 的函数</p>
+
+<p>???
+something 指代传入匿名函数的参数？ 第3个参数又传回给了第一个参数使用；</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">((</span><span class="nx">something</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+                  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">something</span><span class="p">);</span>
+                  <span class="p">},</span> <span class="mi">5000</span><span class="p">,</span> <span class="s1">'Hello world.'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>Listening for Events with addEventListener()</strong></p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">EventTarget.addEventListener()</a></p>
+
+<p>基本句法:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">target</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">[,</span> <span class="nx">options</span><span class="p">]);</span>
+<span class="nx">target</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">[,</span> <span class="nx">useCapture</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">type</code> 指的是用string表示的 事件类型</p>
+
+<p>通常的用法是</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">EventTarget</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'event'</span><span class="p">,</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="c1">// handle event</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>鼠标扫过时把li中的文本变为大写</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">listItems</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'li'</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">listItems</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">listItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'mouseover'</span><span class="p">,</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+                           <span class="nx">listItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">listItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+                           <span class="p">});</span>
+<span class="nx">listItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'mouseout'</span><span class="p">,</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+                           <span class="nx">listItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">listItems</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+                           <span class="p">});</span>
+
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fpdki5enjmj30qe0bddgb.jpg" alt="" /></p>
+
+<p>但这个操作只对现存的 li 元素有效，如果即时新增了 li 元素则对新元素不起作用。如果另外写代码来处理这种情况可能会变得更加复杂，如果用到 event 对象来处理则会简化很多。</p>
+
+<p><strong>event object</strong></p>
+
+<blockquote>
+  <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event"><code class="highlighter-rouge">Event</code></a> interface represents any event which takes place in the DOM…<code class="highlighter-rouge">Event</code> itself contains the properties and methods which are common to all events.</p>
+</blockquote>
+
+<p>上面情况中的新增li失效的问题可以使用 event 的 target 属性解决。</p>
+
+<p>基本思路是选中实际要操作的 element 的其中一个 ancestor element， 将 event 对象传入匿名函数，在block里使用 event.target 就可以定位到 event 实际发生的 element 。由于整个listener是针对上级element的，所以不管ancestor element内部element发生了什么变化，事件都是有效的。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">EventTarget</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'event'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="c1">// event passed into as an object which containing info and methods</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="c1">//handling</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>前面 li 的例子可以先定位到所有li元素ancestor element中的一个 div 容器，把它作为listener目标，然后使用event+target，进行操作。最后加上 if 条件限制实际效果只在 tagName 为 ‘LI’ 的元素上触发。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">listDiv</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'mouseover'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">tagName</span> <span class="o">==</span> <span class="s2">"LI"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="p">});</span>
+<span class="nx">listDiv</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'mouseout'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">tagName</span> <span class="o">==</span> <span class="s2">"LI"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+  <span class="p">}</span>                         
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p>注意 event object 不一定使用 <code class="highlighter-rouge">event</code> 表示，也可以使用其他字母</p>
+
+<hr />
+
+<h3 id="dom-traversing">DOM traversing</h3>
+
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode">Using parentNode to Traverse Up the DOM</a></strong></p>
+
+<blockquote>
+  <p>parentNode is the parent of the current node. The parent of an element is an Element node, a Document node, or a DocumentFragment node.</p>
+</blockquote>
+
+<p>parentNode父节点就是当前元素的上一级ancestor element。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">listDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'.list'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">listUl</span> <span class="o">=</span> <span class="nx">listDiv</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">);</span>
+
+<span class="nx">listUl</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">tagName</span> <span class="o">==</span> <span class="s2">"BUTTON"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">li</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nx">li</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+  <span class="nx">ul</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fpdmo0dhqdj30vz09idgd.jpg" alt="" /></p>
+
+<p>基本思路是从 current element 出发用 parentNode 找到上一级 parent element， 然后反过来向下对内部的元素进行操作。</p>
+
+<p>与前面先去html找目标 element 的ancestor标签不同，这种方法不需要去DOM中寻找选择合适的 ancestor element。</p>
+
+<p><strong>Using <a href="https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling">previousElementSibling</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore">insertBefore</a></strong></p>
+
+<ul>
+  <li>previousElementSibling 拿到同级结构中的前一个 sibling element</li>
+  <li>parentNode.insertBefore(newNode, referenceNode) 选中一个父节点，传入一个新的用来注入的元素(节点)newNode，将其放置在父节点下的指定节点referenceNode之前。如果newNode和reference是紧邻的，那么相当于在互换位置。</li>
+</ul>
+
+<p><code class="highlighter-rouge">parentNode.insertBefore(newNode, referenceNode)</code> 可以理解为在父节点的指定子节点前注入给定元素。</p>
+
+<p>注意当 referenceNode 是父节点中第一个元素时（也就是说referenceNode.previousElementSibling 是 null 时），会把注入的元素排到最后。</p>
+
+<p>下面的例子是点击 up 按键将元素上移的效果</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">listUl</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">tagName</span> <span class="o">==</span> <span class="s2">"BUTTON"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">className</span> <span class="o">==</span> <span class="s1">'remove'</span><span class="p">)</span> <span class="p">{</span>
+     <span class="kd">let</span> <span class="nx">li</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+     <span class="kd">let</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nx">li</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+     <span class="nx">ul</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+     <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">className</span> <span class="o">==</span> <span class="s1">'up'</span><span class="p">)</span> <span class="p">{</span>
+     <span class="kd">let</span> <span class="nx">li</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+     <span class="kd">let</span> <span class="nx">prevLi</span> <span class="o">=</span> <span class="nx">li</span><span class="p">.</span><span class="nx">previousElementSibling</span><span class="p">;</span>
+     <span class="kd">let</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nx">li</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+       <span class="k">if</span> <span class="p">(</span><span class="nx">prevLi</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">ul</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">li</span><span class="p">,</span><span class="nx">prevLi</span><span class="p">);</span>
+       <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p>注意最后用条件式<code class="highlighter-rouge">if (prevLi) { }</code> 限制了最上面的元素不会跳到最下面，点击它不会产生变化。</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fpdxz1iga9j30hv05zweq.jpg" alt="" /></p>
+
+<p>对应 previousElementSibling 的是 <code class="highlighter-rouge">nextElementSibling</code></p>
+
+<p>并不存在一个 insertAfter 方法</p>
+
+<p>上面例子中如果增加一个 down 按钮下移元素那么使用 <code class="highlighter-rouge">nextElementSibling</code> + <code class="highlighter-rouge">insertBefore</code> 关键在最后要调换 newNode 和 reference 的位置</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">className</span> <span class="o">==</span> <span class="s1">'down'</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">li</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+   <span class="kd">let</span> <span class="nx">nextLi</span> <span class="o">=</span> <span class="nx">li</span><span class="p">.</span><span class="nx">nextElementSibling</span><span class="p">;</span>
+   <span class="kd">let</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nx">li</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+     <span class="k">if</span> <span class="p">(</span><span class="nx">nextLi</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nx">ul</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">nextLi</span><span class="p">,</span> <span class="nx">li</span><span class="p">);</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children">Getting All Children of a Node with children</a></strong></p>
+
+<p>基本句法：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ParentNode</span><span class="p">.</span><span class="nx">children</span>
+</code></pre></div></div>
+
+<p><strong>Getting the first and last Child</strong></p>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild">ParentNode.firstElementChild</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild">ParentNode.lastElementChild</a></li>
+</ul>
+
+<hr />
+
+<p><strong>句法的组合互换</strong></p>
+
+<p>selector 方法很多，有向上，有向下，也有平行，等。有时同样的效果可以用不同的组合实现。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ul</span><span class="p">.</span><span class="nx">removeElement</span><span class="p">(</span><span class="nx">ul</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="c1">// equals to</span>
+<span class="nx">ul</span><span class="p">.</span><span class="nx">removeElement</span><span class="p">(</span><span class="nx">ul</span><span class="p">.</span><span class="nx">firstElementChild</span><span class="p">);</span>
+</code></pre></div></div>
+
+        </div>
+
+        <!-- 
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ffront%2520end%2520%25E2%2584%2597%2Fjs_and_dom%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=JavaScript+and+DOM%20http%3A%2F%2Flocalhost%3A4000%2Ffront%2520end%2520%25E2%2584%2597%2Fjs_and_dom%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ffront%2520end%2520%25E2%2584%2597%2Fjs_and_dom%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=JavaScript+and+DOM&url=http%3A%2F%2Flocalhost%3A4000%2Ffront%2520end%2520%25E2%2584%2597%2Fjs_and_dom%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+         -->
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/front%20end%20%E2%84%97/html_basics/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> HTML Basics
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/javascript%20%E2%84%97/js_basics/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        JavaScript Baiscs
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+  <!--<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div>-->
+
+  <div class="copyright">
+    
+    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+       Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  </body>
+
+</html>

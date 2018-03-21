@@ -1,6 +1,6 @@
 ---
 title:  "理解基本的HTML Forms"
-categories: [Programming-basics]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails, HTML]
 ---
 

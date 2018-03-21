@@ -1,6 +1,6 @@
 ---
 title:  "Command Line Basics"
-categories: [Programming-basics]
+categories: [Command Line ℗]
 tags: [Command Line]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title:  "GitHub Baiscs"
-categories: [Programming-basics, Version Control]
+categories: [Version Control ℗]
 tags: [Github]
 ---
 

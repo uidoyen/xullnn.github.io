@@ -1,6 +1,6 @@
 ---
 title:  "git checkout 用于版本查看"
-categories: [Version Control]
+categories: [Version Control ℗]
 tags: [Github]
 ---
 

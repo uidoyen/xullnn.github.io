@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c12-File and IO operations"
-categories: [Learning Notes, Programming]
+categories: [Ruby/Rails ℗, Learning Notes ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title:  "Authenticating form scratch 1 - signup and login"
-categories: [Programming]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails]
 ---
 

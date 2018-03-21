@@ -1,6 +1,6 @@
 ---
 title:  "Collection of errors when learning Ruby on Rails"
-categories: [Programming-error records]
+categories: [Error records ℗]
 tags: [Ruby & Rails]
 ---
 
