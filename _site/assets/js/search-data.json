@@ -110,77 +110,77 @@ var store = [{
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Rubyist-reading-notes-readme/"
       },{
         "title": "Rubyist-c1: Bootstrapping your ruby literacy",
-        "excerpt":"这一系列文章是《The Well-Grounded Rubyist》的学习笔记。点击查看笔记引导页 Ruby 中不同 scope 的 variable: local_variable @instance_variable @@class_variable $global_variable local variable 通常不带前缀， instance variable 前面带 @ ， global variable 前带 $ 且字母大写。 Keywords Ruby has numerous keywords: predefined, reserved terms associated with specific programming tasks and contexts. Keywords include def (for method definitions), class (for class definitions),...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 Ruby 中不同 scope 的 variable: local_variable @instance_variable @@class_variable $global_variable local variable 通常不带前缀， instance variable 前面带 @ ， global variable 前带 $ 且字母大写。 Keywords Ruby has numerous keywords: predefined, reserved terms associated with specific programming tasks and contexts. Keywords include def (for method definitions), class (for...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-1-Bootstrapping-your-ruby-literacy/"
       },{
         "title": "Rubyist-c2-Objects methods and local variables",
-        "excerpt":"— But throughout, writing a Ruby program is largely a matter of engineering your objects so that each object plays a clear role and can perform actions related to that role. 我们对 object 所作的，总体上可以归为 1 向object 发出一段信息； 2 让object 执行某个动作。 写ruby程式更像是一场策划，导演。把合适的角色分配给合适的 object ， 并明确各个角色的职责，让他们各司其职。 In most object-oriented languages, including Ruby,...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 But throughout, writing a Ruby program is largely a matter of engineering your objects so that each object plays a clear role and can perform actions related to that role. 我们对 object 所作的，总体上可以归为 1 向object 发出一段信息； 2 让object 执行某个动作。 写ruby程式更像是一场策划，导演。把合适的角色分配给合适的 object ， 并明确各个角色的职责，让他们各司其职。 In most...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-2-Objects-methods-and-local-variables/"
       },{
         "title": "Rubyist-c3-Organizing objects with classes",
-        "excerpt":"Talking about classes doesn’t mean you’re not talking about objects; that’s why this chapter has the title it has, rather than, say, “Ruby classes.” Much of what we’ll look at here pertains to objects and methods—but that’s because classes are, at heart, a way to organize objects and methods. We’ll...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 Talking about classes doesn’t mean you’re not talking about objects; that’s why this chapter has the title it has, rather than, say, “Ruby classes.” Much of what we’ll look at here pertains to objects and methods—but that’s because classes are, at heart, a way to...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-3-Organizing-objects-with-classes/"
       },{
         "title": "Rubyist-c4-Modules and program organization",
-        "excerpt":"A module encapsulating stacklikeness As you may know from previous studies,” a stack is a data structure that operates on the last in, first out (LIFO) principle. The classic example is a (physical) stack of plates. The first plate to be used is the last one placed on the stack....","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 A module encapsulating stacklikeness As you may know from previous studies,” a stack is a data structure that operates on the last in, first out (LIFO) principle. The classic example is a (physical) stack of plates. The first plate to be used is the last...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-4-modules-and-program-organization/"
       },{
         "title": "Rubyist-c5-The default object scope and visibility",
-        "excerpt":"This chapter covers • The role of the current or default object, self `self` 作为当前默认对象的角色• Scoping rules for local, global, and class variables 各类变量的作用域• Constant lookup and visibility 常量的查询以及可见性• Method-access rules 方法的可见层级- In describing and discussing computer programs, we often use spatial and, sometimes, human metaphors. We talk about being...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 This chapter covers • The role of the current or default object, self `self` 作为当前默认对象的角色• Scoping rules for local, global, and class variables 各类变量的作用域• Constant lookup and visibility 常量的查询以及可见性• Method-access rules 方法的可见层级- In describing and discussing computer programs, we often use spatial and, sometimes, human...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-5-The-default-object-scope-and-visibility/"
       },{
         "title": "Rubyist-c10-Collection central Enumerable and Enumerator",
-        "excerpt":"This chapter covers Mixing Enumerable into your classes将 Enumerable module 混入 class The use of Enumerable methods in collection objects在collection objects上使用枚举相关的methods Strings as quasi-enumerable objectsstring作为准枚举对象 Sorting enumerables with the Comparable module引入 Comparable module 来对可枚举对象进行内部排序 Enumeratorsenumerator 作为具有枚举知识的对象 - All collection objects aren’t created equal—but an awful lot of them have many...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 This chapter covers Mixing Enumerable into your classes将 Enumerable module 混入 class The use of Enumerable methods in collection objects在collection objects上使用枚举相关的methods Strings as quasi-enumerable objectsstring作为准枚举对象 Sorting enumerables with the Comparable module引入 Comparable module 来对可枚举对象进行内部排序 Enumeratorsenumerator 作为具有枚举知识的对象 - All collection objects aren’t created equal—but an awful...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-10-Collection-central-Enumerable-and-Enumerator/"
       },{
         "title": "Rubyist-c11-Regular expressions and regexp based string operations",
-        "excerpt":"This chapter covers Regular expression syntax Pattern-matching operations The MatchData class Built-in methods based on pattern matching In this chapter, we’ll explore Ruby’s facilities for pattern matching and text processing, centering around the use of regular expressions. A regular expression in Ruby serves the same purposes it does in other...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 This chapter covers Regular expression syntax Pattern-matching operations The MatchData class Built-in methods based on pattern matching In this chapter, we’ll explore Ruby’s facilities for pattern matching and text processing, centering around the use of regular expressions. A regular expression in Ruby serves the same...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-11-Regular-expressions-and-regexp-based-string-operations/"
       },{
         "title": "Rubyist-c6-Control flow techniques",
-        "excerpt":"This chapter covers  Conditional execution条件式执行 Loops and looping techniques循环以及循环技术 Iterators迭代器 Exceptions and error handling例外以及错误处理 Ruby’s control-flow techniques include the following:ruby的分支流程控制技术包括下面这些： Conditional execution —Execution depends on the truth of an expression.基于true of false的条件控制 Looping —A single segment of code is executed repeatedly.循环-重复执行一个代码片段 Iteration —A call to a method is supplemented with a...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 This chapter covers  Conditional execution条件式执行 Loops and looping techniques循环以及循环技术 Iterators迭代器 Exceptions and error handling例外以及错误处理 Ruby’s control-flow techniques include the following:ruby的分支流程控制技术包括下面这些： Conditional execution —Execution depends on the truth of an expression.基于true of false的条件控制 Looping —A single segment of code is executed repeatedly.循环-重复执行一个代码片段 Iteration —A call to a...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-6-Control-flow-techniques/"
       },{
         "title": "Rubyist-c7-Built in essentials",
-        "excerpt":"Part 2. Built-in classes and modules In part 2, we come to the heart of the Ruby language: built-in classes and modules.这部分将进入 Ruby 的核心内容： 内建的 classes 和 modules A great deal of what you’ll do as a Rubyist will involve Ruby’s built-ins. You’ve already seen examples involving many of them:...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 Part 2. Built-in classes and modules In part 2, we come to the heart of the Ruby language: built-in classes and modules.这部分将进入 Ruby 的核心内容： 内建的 classes 和 modules A great deal of what you’ll do as a Rubyist will involve Ruby’s built-ins. You’ve already seen...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-7-Built-in-essentials/"
       },{
         "title": "Rubyist-c8-Strings symbols and other scalar objects",
-        "excerpt":"This chapter covers String object creation and manipulationstring对象的建立和操作 Methods for transforming stringsstring的变换方法 Symbol semanticssymbol 语义 String/symbol comparisonstring 和 symbol 的比较 Integers and floats整数和浮点数 Time and date objects时间相关的对象 The term scalar means one-dimensional. Here, it refers to objects that represent single values, as opposed to collection or container objects that hold...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 This chapter covers String object creation and manipulationstring对象的建立和操作 Methods for transforming stringsstring的变换方法 Symbol semanticssymbol 语义 String/symbol comparisonstring 和 symbol 的比较 Integers and floats整数和浮点数 Time and date objects时间相关的对象 The term scalar means one-dimensional. Here, it refers to objects that represent single values, as opposed to collection...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-8-Strings-symbols-and-other-scalar-objects/"
       },{
         "title": "Rubyist-c9-Collection and container objects",
-        "excerpt":"Chapter 9 Collection and container objects Sequentially ordered collections with arrays作为有序集合体的 array Keyed collections with hashes带有key的hash Inclusion and membership tests with rangesrange 的内含测试 Unique, unordered collections with sets作为唯一的，无序的集合体—— sets Named arguments using hash syntax使用hash 语法的 被命名的参数 — Ruby represents collections of objects by putting them inside container objects. In Ruby,...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 Chapter 9 Collection and container objects Sequentially ordered collections with arrays作为有序集合体的 array Keyed collections with hashes带有key的hash Inclusion and membership tests with rangesrange 的内含测试 Unique, unordered collections with sets作为唯一的，无序的集合体—— sets Named arguments using hash syntax使用hash 语法的 被命名的参数 — Ruby represents collections of objects by putting them...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-9-Collection-and-container-objects/"
       },{
         "title": "Rubyist-c13-Object individuation",
-        "excerpt":"part 3. Ruby dynamics Ruby is dynamic, like human nature. Matz, at RubyConf 2001 The phrase Ruby dynamics is almost redundant: everything about Ruby is dynamic. Variables don’t care what class of object you bind them to, which means you don’t have to (indeed, you can’t) declare their type in...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 part 3. Ruby dynamics Ruby is dynamic, like human nature. Matz, at RubyConf 2001 The phrase Ruby dynamics is almost redundant: everything about Ruby is dynamic. Variables don’t care what class of object you bind them to, which means you don’t have to (indeed, you...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-13-Object-individuation/"
       },{
         "title": "Rubyist-c14-Callable and runnable objects",
-        "excerpt":"This chapter covers Proc objects as anonymous functions 作为匿名函数的 Proc 对象 The lambda method for generating functions 用来生成函数的 lambda 方法 Code blocks { code block } The Symbol#to_proc method Symbol class 中的 to_proc 方法 Method objects 作为方法的对象 Bindings 捆绑 The eval family of methods 方法的 eval 家族 Threads 线程 Executing...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 This chapter covers Proc objects as anonymous functions 作为匿名函数的 Proc 对象 The lambda method for generating functions 用来生成函数的 lambda 方法 Code blocks { code block } The Symbol#to_proc method Symbol class 中的 to_proc 方法 Method objects 作为方法的对象 Bindings 捆绑 The eval family of methods 方法的...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-14-Callable-and-runnable-objects/"
       },{
         "title": "Rubyist-c12-File and IO operations",
-        "excerpt":"This chapter covers  Keyboard input and screen output键盘输入与屏幕输出 The IO and File classesIO 与 File 类 Standard library file facilities, including FileUtils and Pathnamestandard library 中的文件处理功能，包裹 FileUtils 和 Pathname The StringIO and open-uri library featuresStringIO 与 open-uri 库 As you’ll see once you dive in, Ruby keeps even file and...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 This chapter covers  Keyboard input and screen output键盘输入与屏幕输出 The IO and File classesIO 与 File 类 Standard library file facilities, including FileUtils and Pathnamestandard library 中的文件处理功能，包裹 FileUtils 和 Pathname The StringIO and open-uri library featuresStringIO 与 open-uri 库 As you’ll see once you dive in,...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/chapter-12-File-and-I-O-operations/"
       },{
         "title": "Rubyist-c15-Callbacks hooks and runtime introspection",
-        "excerpt":"This chapter covers Runtime callbacks: inherited, included, and more 运行中的回呼方法： inherited included … The respond_to? and method_missing methods Introspection of object and class method lists 对象的反身检视和 class methods 清单 Trapping unresolved constant references 固定未解决的常量引用 Examining in-scope variables and constants in-scope 变量和 常量 Parsing caller and stack trace information 解析堆栈轨迹信息 In...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
+        "excerpt":"注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。 ☛ 点击查看笔记引导页 This chapter covers Runtime callbacks: inherited, included, and more 运行中的回呼方法： inherited included … The respond_to? and method_missing methods Introspection of object and class method lists 对象的反身检视和 class methods 清单 Trapping unresolved constant references 固定未解决的常量引用 Examining in-scope variables and constants in-scope 变量和 常量 Parsing caller and...","categories": ["Ruby/Rails ℗","Learning Notes ℗"],
         "tags": ["Ruby & Rails","Notes of Rubyist"],
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Chapter-15-Callbacks-hooks-and-runtime-introspection/"
       },{

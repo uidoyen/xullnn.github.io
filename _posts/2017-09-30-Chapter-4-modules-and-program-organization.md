@@ -4,6 +4,14 @@ categories: [Ruby/Rails ℗, Learning Notes ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 
+
+
+*注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。*
+
+☛ [点击查看笔记引导页](https://gitcavendish.github.io/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Rubyist-reading-notes-readme/)
+
+---
+
 **A module encapsulating stacklikeness**
 
 As you may know from previous studies," a stack is a data structure that operates on the last in, first out (LIFO) principle. The classic example is a (physical) stack of plates. The first plate to be used is the last one placed on the stack. Stacks are usually discussed paired with queues, which exhibit first in, first out (FIFO) behavior. Think of a cafeteria: the plates are in a stack; the customers are in a queue.

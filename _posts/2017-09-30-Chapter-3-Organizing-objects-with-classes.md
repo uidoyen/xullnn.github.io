@@ -4,6 +4,13 @@ categories: [Ruby/Rails ℗, Learning Notes ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 
+
+*注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。*
+
+☛ [点击查看笔记引导页](https://gitcavendish.github.io/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Rubyist-reading-notes-readme/)
+
+---
+
 Talking about classes doesn’t mean you’re not talking about objects; that’s why this chapter has the title it has, rather than, say, “Ruby classes.” Much of what we’ll look at here pertains to objects and methods—but that’s because classes are, at heart, a way to organize objects and methods. We’ll look at the kinds of things you can and will do inside classes, as well as what classes themselves are.
 
 ruby 中谈论class 并不代表你没有在谈论 object 实际上 class 本身也是 object ，另一方面 class 也是我们组织对象以及methods 的一种方式，这也表明这并不是唯一方式。

@@ -4,8 +4,13 @@ categories: [Ruby/Rails ℗, Learning Notes ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 
-**这一系列文章是《The Well-Grounded Rubyist》的学习笔记。[点击查看笔记引导页]()**
 
+
+*注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。*
+
+☛ [点击查看笔记引导页](https://gitcavendish.github.io/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Rubyist-reading-notes-readme/)
+
+---
 
 Ruby 中不同 scope 的 variable:
 

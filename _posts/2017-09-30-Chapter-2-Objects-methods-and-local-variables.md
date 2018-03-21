@@ -3,7 +3,13 @@ title:  "Rubyist-c2-Objects methods and local variables"
 categories: [Ruby/Rails ℗, Learning Notes ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
-—
+
+
+*注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。*
+
+☛ [点击查看笔记引导页](https://gitcavendish.github.io/ruby/rails%20%E2%84%97/learning%20notes%20%E2%84%97/Rubyist-reading-notes-readme/)
+
+---
 
 But throughout, writing a Ruby program is largely a matter of engineering your objects so that each object plays a clear role and can perform actions related to that role.
 
