@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Basic unit testing with model in Rails | Caven’s</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Basic unit testing with model in Rails" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Rails MVC 构架中model是单元测试较多用到的地方，因为model中可以进行小而独立的操作，可以不依赖view和controller完成一些功能。实际上一个model就是一个ruby class，很多object的新建，数据的计算都可以在class层面在内存中完成。" />
+<meta property="og:description" content="Rails MVC 构架中model是单元测试较多用到的地方，因为model中可以进行小而独立的操作，可以不依赖view和controller完成一些功能。实际上一个model就是一个ruby class，很多object的新建，数据的计算都可以在class层面在内存中完成。" />
+<link rel="canonical" href="http://localhost:4000/test%20%E2%84%97/unit-testing-with-rails-model/" />
+<meta property="og:url" content="http://localhost:4000/test%20%E2%84%97/unit-testing-with-rails-model/" />
+<meta property="og:site_name" content="Caven’s" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-12T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/test%20%E2%84%97/unit-testing-with-rails-model/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/test%20%E2%84%97/unit-testing-with-rails-model/"},"description":"Rails MVC 构架中model是单元测试较多用到的地方，因为model中可以进行小而独立的操作，可以不依赖view和controller完成一些功能。实际上一个model就是一个ruby class，很多object的新建，数据的计算都可以在class层面在内存中完成。","@type":"BlogPosting","headline":"Basic unit testing with model in Rails","dateModified":"2018-03-12T00:00:00+08:00","datePublished":"2018-03-12T00:00:00+08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  basic-unit-testing-with-model-in-rails">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/categories/">Categories</a></li><li><a href="/tags/">Tags</a></li><li><a href="/search/">Search</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Record</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Basic unit testing with model in Rails
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info"><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href=""><i class="fas fa-link fa-lg" title=""></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2018-03-12T00:00:00+08:00"><a class="u-url" href="">March 12, 2018</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Test ℗</li>
+  </ul>
+
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">Rails Tests</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Rails MVC 构架中model是单元测试较多用到的地方，因为model中可以进行小而独立的操作，可以不依赖view和controller完成一些功能。实际上一个model就是一个ruby class，很多object的新建，数据的计算都可以在class层面在内存中完成。</p>
+
+<p>而controller的主要目的就是在model和view之间充当枢纽，很少出现独立在controller中，不关联到view或者model而实现的小功能单元。</p>
+
+<p>Rails guides：</p>
+
+<blockquote>
+  <p>Model tests are used to test the various models of your application.</p>
+</blockquote>
+
+<p>但没有具体的示范，只写了生成测试文件的指令</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bin/rails generate test_unit:model article title:string body:text
+create  test/models/article_test.rb
+create  test/fixtures/articles.yml
+</code></pre></div></div>
+
+<p>下面是一些从其他地方收集到的简单示范：</p>
+
+<h3 id="1-column存在性和格式验证">1 column存在性和格式验证</h3>
+
+<p>这是一个<a href="https://en.wikipedia.org/wiki/Test-driven_development">TDD</a>风格的测试小案例。其测试行为遵循下面这样的循环：</p>
+
+<ul>
+  <li>Add a test</li>
+  <li>Run all tests and see if the new one fails</li>
+  <li>Write some code</li>
+  <li>Run tests</li>
+  <li>Refactor code</li>
+  <li>Repeat</li>
+</ul>
+
+<ol>
+  <li>先在setup中写合法的 model 数据（会在每一个测试block执行前运行setup中的代码），也就是各个column是符合要求的
+比如：
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">setup</span>
+  <span class="vi">@user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Example User"</span><span class="p">,</span> <span class="ss">email: </span><span class="s2">"user@example.com"</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+  <li>写一个测试验证 <code class="highlighter-rouge">@user</code> 在这个背景下的合法性
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">test</span> <span class="s2">"should be valid"</span> <span class="k">do</span>
+  <span class="n">assert</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">valid?</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+  <li>接着将其中某个column改成不合法的，断言这个新model对象合法，让测试不通过</li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">test</span> <span class="s2">"name should be present"</span> <span class="k">do</span>
+  <span class="vi">@user</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"    "</span>
+  <span class="n">assert_not</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">valid?</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>后续修改代码</p>
+
+<ul>
+  <li>到model中写对应的<code class="highlighter-rouge">validates :name, presence: true</code>，这会使上面的assert_not通过</li>
+  <li>最后测试一遍看 <code class="highlighter-rouge">validates</code> 是否能让测试通过。</li>
+  <li>其他column也依照这个模式</li>
+</ul>
+
+<h3 id="2-证某个column的长度">2 证某个column的长度</h3>
+
+<p>测试中先将@user对象需要限制长度的栏位值设置为超过限制长度的值。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">test</span> <span class="s2">"email shoud not &gt; 255 char"</span> <span class="k">do</span>
+  <span class="vi">@user</span><span class="p">.</span><span class="nf">email</span> <span class="o">=</span> <span class="s2">"a"</span> <span class="o">*</span> <span class="mi">244</span> <span class="o">+</span> <span class="s2">"@example.com"</span>
+  <span class="n">assert_not</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">valid?</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>没有添加model层验证前测试会失败，因为没有长度限制，不管多长都是 valid? 都是 true</p>
+
+<p>接着添加验证到model</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">validates</span> <span class="o">...</span> <span class="ss">length: </span><span class="p">{</span> <span class="ss">maximum: </span><span class="mi">255</span> <span class="p">}</span> <span class="o">...</span>
+</code></pre></div></div>
+
+<p>这样超长的email就不合法了。测试通过。</p>
+
+<h3 id="3-column-唯一性验证">3 column 唯一性验证</h3>
+
+<p>思路是先复制setup中new的@user对象赋给variable，然后将@user对象存入数据库，然后看variable中存的那个对象是否合法，正常情况应该失败，因为没有在model层添加验证前是可以存入email相同的user对象的。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">test</span> <span class="s2">"email addresses should be unique"</span> <span class="k">do</span>
+  <span class="n">duplicate_user</span> <span class="o">=</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">dup</span>
+  <span class="vi">@user</span><span class="p">.</span><span class="nf">save</span>
+  <span class="n">assert_not</span> <span class="n">duplicate_user</span><span class="p">.</span><span class="nf">valid?</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>然后到model中给email添加 <code class="highlighter-rouge">uniqueness: { case_sensitive: false }</code>（默认uniqueness: true为前提），限制email重复的情况不合法， 再次测试应该通过，即判定重复email的对象不合法。</p>
+
+        </div>
+
+        <!-- 
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftest%2520%25E2%2584%2597%2Funit-testing-with-rails-model%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Basic+unit+testing+with+model+in+Rails%20http%3A%2F%2Flocalhost%3A4000%2Ftest%2520%25E2%2584%2597%2Funit-testing-with-rails-model%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftest%2520%25E2%2584%2597%2Funit-testing-with-rails-model%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Basic+unit+testing+with+model+in+Rails&url=http%3A%2F%2Flocalhost%3A4000%2Ftest%2520%25E2%2584%2597%2Funit-testing-with-rails-model%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+         -->
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/database%20%E2%84%97/sql_basics/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> SQL Baiscs
+
+      </span>
+    </a>
+  
+
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+  <!--<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div>-->
+
+  <div class="copyright">
+    
+    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+       Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+  </body>
+
+</html>

@@ -223,4 +223,9 @@ var store = [{
         "excerpt":"主要数据库类型 Relational database - 关系型数据库。 SQLite MySQL PostgreSQL Oracle Microsoft SQL … NoSQL 类型数据库。 MongoDB CouchBase Redis … 区别： 关系型数据需要使用 SQL Structured Query Language 进行查询。 NoSQL 可以不使用 SQL 进行查询后者用不同的分类标准又分为很多种类型 From wikipedia: NoSQL systems are also sometimes called “Not only SQL” to emphasize that they may support SQL-like query languages 基本操作类型...","categories": ["Database ℗"],
         "tags": ["SQL","Database"],
         "url": "http://localhost:4000/database%20%E2%84%97/sql_basics/"
+      },{
+        "title": "Basic unit testing with model in Rails",
+        "excerpt":"Rails MVC 构架中model是单元测试较多用到的地方，因为model中可以进行小而独立的操作，可以不依赖view和controller完成一些功能。实际上一个model就是一个ruby class，很多object的新建，数据的计算都可以在class层面在内存中完成。 而controller的主要目的就是在model和view之间充当枢纽，很少出现独立在controller中，不关联到view或者model而实现的小功能单元。 Rails guides： Model tests are used to test the various models of your application. 但没有具体的示范，只写了生成测试文件的指令 $ bin/rails generate test_unit:model article title:string body:textcreate test/models/article_test.rbcreate test/fixtures/articles.yml下面是一些从其他地方收集到的简单示范： 1 column存在性和格式验证 这是一个TDD风格的测试小案例。其测试行为遵循下面这样的循环： Add a test Run all tests and see if the new one fails Write some code Run tests...","categories": ["Test ℗"],
+        "tags": ["Rails Tests"],
+        "url": "http://localhost:4000/test%20%E2%84%97/unit-testing-with-rails-model/"
       }]
