@@ -33,7 +33,7 @@ create  test/fixtures/articles.yml
 - Refactor code
 - Repeat
 
-1. 先在setup中写合法的 model 数据（会在每一个测试block执行前运行setup中的代码），也就是各个column是符合要求的
+1 先在setup中写合法的 model 数据（会在每一个测试block执行前运行setup中的代码），也就是各个column是符合要求的
 比如：
 
 test/models/user_test.rb
@@ -43,7 +43,7 @@ def setup
   @user = User.new(name: "Example User", email: "user@example.com")
 end
 ```
-2. 写一个测试验证 `@user` 在这个背景下的合法性
+2 写一个测试验证 `@user` 在这个背景下的合法性
 
 test/models/user_test.rb
 
@@ -53,7 +53,7 @@ test "should be valid" do
 end
 ```
 
-3. 接着将其中某个column改成不合法的，断言这个新model对象合法，让测试不通过
+3 接着将其中某个column改成不合法的，断言这个新model对象合法，让测试不通过
 
 test/models/user_test.rb
 
@@ -72,7 +72,7 @@ end
 
 ### 2 证某个column的长度
 
-测试中先将@user对象需要限制长度的栏位值设置为超过限制长度的值。
+1 测试中先将@user对象需要限制长度的栏位值设置为超过限制长度的值。
 
 test/models/user_test.rb
 
@@ -85,7 +85,7 @@ end
 
 没有添加model层验证前测试会失败，因为没有长度限制，不管多长都是 valid? 都是 true
 
-接着添加验证到model
+2 接着添加验证到model
 
 user.rb
 
@@ -93,11 +93,11 @@ user.rb
 validates ... length: { maximum: 255 } ...
 ```
 
-这样超长的email就不合法了。测试通过。
+3 这样超长的email就不合法了。测试通过。
 
 ### 3 column 唯一性验证
 
-思路是先复制setup中new的@user对象赋给variable，然后将@user对象存入数据库，然后看variable中存的那个对象是否合法，正常情况应该失败，因为没有在model层添加验证前是可以存入email相同的user对象的。
+1 思路是先复制setup中new的@user对象赋给variable，然后将@user对象存入数据库，然后看variable中存的那个对象是否合法，正常情况应该失败，因为没有在model层添加验证前是可以存入email相同的user对象的。
 
 test/models/user_test.rb
 
@@ -109,7 +109,7 @@ test "email addresses should be unique" do
 end
 ```
 
-然后到model中给email添加 `uniqueness: { case_sensitive: false }`（默认uniqueness: true为前提），限制email重复的情况不合法， 再次测试应该通过，即判定重复email的对象不合法。
+2 然后到model中给email添加 `uniqueness: { case_sensitive: false }`（默认uniqueness: true为前提），限制email重复的情况不合法， 再次测试应该通过，即判定重复email的对象不合法。
 
 ### 关于 valid? 方法
 
