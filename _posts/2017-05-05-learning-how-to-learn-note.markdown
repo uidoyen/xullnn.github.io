@@ -1,6 +1,6 @@
 ---
 title:  "Note of Learning how to learn"
-categories: [Learning Notes]
+categories: [Reading Notes]
 tags: [Metaknowledge]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title:  "Notes of The Brain That Changes Itself"
-categories: [Learning Notes]
+categories: [Reading Notes]
 tags: [Metaknowledge]
 ---
 
