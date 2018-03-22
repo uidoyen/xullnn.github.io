@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c6-Control flow techniques"
-categories: [Ruby/Rails ℗, Learning Notes ℗]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

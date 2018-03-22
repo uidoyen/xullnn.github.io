@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c3-Organizing objects with classes"
-categories: [Ruby/Rails ℗, Learning Notes ℗]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

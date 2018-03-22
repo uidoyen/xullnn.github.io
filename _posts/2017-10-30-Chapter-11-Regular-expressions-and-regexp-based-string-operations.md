@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c11-Regular expressions and regexp based string operations"
-categories: [Ruby/Rails ℗, Learning Notes ℗]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

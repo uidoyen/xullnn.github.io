@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c1: Bootstrapping your ruby literacy"
-categories: [Ruby/Rails ℗, Learning Notes ℗]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

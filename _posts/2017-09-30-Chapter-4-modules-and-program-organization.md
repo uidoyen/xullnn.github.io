@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c4-Modules and program organization"
-categories: [Ruby/Rails ℗, Learning Notes ℗]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c7-Built in essentials"
-categories: [Ruby/Rails ℗, Learning Notes ℗]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

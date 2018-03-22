@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist notes readme"
-categories: [Ruby/Rails ℗, Learning Notes ℗]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title:  "Rubyist-c2-Objects methods and local variables"
-categories: [Ruby/Rails ℗, Learning Notes ℗]
+categories: [Ruby/Rails ℗]
 tags: [Ruby & Rails, Notes of Rubyist]
 ---
 
