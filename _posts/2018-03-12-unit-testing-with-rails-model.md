@@ -35,18 +35,27 @@ create  test/fixtures/articles.yml
 
 1. 先在setup中写合法的 model 数据（会在每一个测试block执行前运行setup中的代码），也就是各个column是符合要求的
 比如：
+
+test/models/user_test.rb
+
 ```ruby
 def setup
   @user = User.new(name: "Example User", email: "user@example.com")
 end
 ```
 2. 写一个测试验证 `@user` 在这个背景下的合法性
+
+test/models/user_test.rb
+
 ```ruby
 test "should be valid" do
   assert @user.valid?
 end
 ```
+
 3. 接着将其中某个column改成不合法的，断言这个新model对象合法，让测试不通过
+
+test/models/user_test.rb
 
 ```ruby
 test "name should be present" do
@@ -65,6 +74,8 @@ end
 
 测试中先将@user对象需要限制长度的栏位值设置为超过限制长度的值。
 
+test/models/user_test.rb
+
 ```ruby
 test "email shoud not > 255 char" do
   @user.email = "a" * 244 + "@example.com"
@@ -76,6 +87,8 @@ end
 
 接着添加验证到model
 
+user.rb
+
 ```ruby
 validates ... length: { maximum: 255 } ...
 ```
@@ -85,6 +98,8 @@ validates ... length: { maximum: 255 } ...
 ### 3 column 唯一性验证
 
 思路是先复制setup中new的@user对象赋给variable，然后将@user对象存入数据库，然后看variable中存的那个对象是否合法，正常情况应该失败，因为没有在model层添加验证前是可以存入email相同的user对象的。
+
+test/models/user_test.rb
 
 ```ruby
 test "email addresses should be unique" do
