@@ -157,22 +157,27 @@ create  test/fixtures/articles.yml
   <li>Repeat</li>
 </ul>
 
-<ol>
-  <li>先在setup中写合法的 model 数据（会在每一个测试block执行前运行setup中的代码），也就是各个column是符合要求的
-比如：
-    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">setup</span>
+<p>1 先在setup中写合法的 model 数据（会在每一个测试block执行前运行setup中的代码），也就是各个column是符合要求的
+比如：</p>
+
+<p>test/models/user_test.rb</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">setup</span>
   <span class="vi">@user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Example User"</span><span class="p">,</span> <span class="ss">email: </span><span class="s2">"user@example.com"</span><span class="p">)</span>
 <span class="k">end</span>
-</code></pre></div>    </div>
-  </li>
-  <li>写一个测试验证 <code class="highlighter-rouge">@user</code> 在这个背景下的合法性
-    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">test</span> <span class="s2">"should be valid"</span> <span class="k">do</span>
+</code></pre></div></div>
+<p>2 写一个测试验证 <code class="highlighter-rouge">@user</code> 在这个背景下的合法性</p>
+
+<p>test/models/user_test.rb</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">test</span> <span class="s2">"should be valid"</span> <span class="k">do</span>
   <span class="n">assert</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">valid?</span>
 <span class="k">end</span>
-</code></pre></div>    </div>
-  </li>
-  <li>接着将其中某个column改成不合法的，断言这个新model对象合法，让测试不通过</li>
-</ol>
+</code></pre></div></div>
+
+<p>3 接着将其中某个column改成不合法的，断言这个新model对象合法，让测试不通过</p>
+
+<p>test/models/user_test.rb</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">test</span> <span class="s2">"name should be present"</span> <span class="k">do</span>
   <span class="vi">@user</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"    "</span>
@@ -190,7 +195,9 @@ create  test/fixtures/articles.yml
 
 <h3 id="2-证某个column的长度">2 证某个column的长度</h3>
 
-<p>测试中先将@user对象需要限制长度的栏位值设置为超过限制长度的值。</p>
+<p>1 测试中先将@user对象需要限制长度的栏位值设置为超过限制长度的值。</p>
+
+<p>test/models/user_test.rb</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">test</span> <span class="s2">"email shoud not &gt; 255 char"</span> <span class="k">do</span>
   <span class="vi">@user</span><span class="p">.</span><span class="nf">email</span> <span class="o">=</span> <span class="s2">"a"</span> <span class="o">*</span> <span class="mi">244</span> <span class="o">+</span> <span class="s2">"@example.com"</span>
@@ -200,16 +207,20 @@ create  test/fixtures/articles.yml
 
 <p>没有添加model层验证前测试会失败，因为没有长度限制，不管多长都是 valid? 都是 true</p>
 
-<p>接着添加验证到model</p>
+<p>2 接着添加验证到model</p>
+
+<p>user.rb</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">validates</span> <span class="o">...</span> <span class="ss">length: </span><span class="p">{</span> <span class="ss">maximum: </span><span class="mi">255</span> <span class="p">}</span> <span class="o">...</span>
 </code></pre></div></div>
 
-<p>这样超长的email就不合法了。测试通过。</p>
+<p>3 这样超长的email就不合法了。测试通过。</p>
 
 <h3 id="3-column-唯一性验证">3 column 唯一性验证</h3>
 
-<p>思路是先复制setup中new的@user对象赋给variable，然后将@user对象存入数据库，然后看variable中存的那个对象是否合法，正常情况应该失败，因为没有在model层添加验证前是可以存入email相同的user对象的。</p>
+<p>1 思路是先复制setup中new的@user对象赋给variable，然后将@user对象存入数据库，然后看variable中存的那个对象是否合法，正常情况应该失败，因为没有在model层添加验证前是可以存入email相同的user对象的。</p>
+
+<p>test/models/user_test.rb</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">test</span> <span class="s2">"email addresses should be unique"</span> <span class="k">do</span>
   <span class="n">duplicate_user</span> <span class="o">=</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">dup</span>
@@ -218,7 +229,52 @@ create  test/fixtures/articles.yml
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>然后到model中给email添加 <code class="highlighter-rouge">uniqueness: { case_sensitive: false }</code>（默认uniqueness: true为前提），限制email重复的情况不合法， 再次测试应该通过，即判定重复email的对象不合法。</p>
+<p>2 然后到model中给email添加 <code class="highlighter-rouge">uniqueness: { case_sensitive: false }</code>（默认uniqueness: true为前提），限制email重复的情况不合法， 再次测试应该通过，即判定重复email的对象不合法。</p>
+
+<h3 id="关于-valid-方法">关于 valid? 方法</h3>
+
+<p>Rails api:</p>
+
+<blockquote>
+  <p>Runs <strong>all the specified validations</strong> and returns true if no errors were added otherwise false.</p>
+</blockquote>
+
+<p>1 valid? 不是ruby自带的方法, 他是rails中的。
+2 valid? 的判定标准是在model中添加的所有 validates 限制。</p>
+
+<p>api中给出的例子：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="kp">include</span> <span class="no">ActiveModel</span><span class="o">::</span><span class="no">Validations</span> <span class="c1"># 引入validates系列方法</span>
+
+  <span class="nb">attr_accessor</span> <span class="ss">:name</span>
+  <span class="n">validates_presence_of</span> <span class="ss">:name</span> <span class="c1"># 限制 :name 栏位不能为空</span>
+<span class="k">end</span>
+
+<span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s1">''</span>              <span class="c1"># 新建person对象并让name为空</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">valid?</span> <span class="c1"># =&gt; false</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s1">'david'</span>         <span class="c1"># 给 :name 赋值然后再测</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">valid?</span> <span class="c1"># =&gt; true</span>
+</code></pre></div></div>
+
+<p>这个方法接受一个可选参数 valid?(content = nil)</p>
+
+<blockquote>
+  <p>Context can optionally be supplied to define which callbacks to test against (the context is defined on the validations using :on).</p>
+</blockquote>
+
+<p>也就是指定在哪个callback点进行验证。</p>
+
+<p>给上面例子中的 `  validates_presence_of :name<code class="highlighter-rouge"> 后加上 </code>  validates_presence_of :name, on: :new`
+然后</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">valid?</span>       <span class="c1"># =&gt; true</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">valid?</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="c1"># =&gt; false</span>
+</code></pre></div></div>
+
+<p>因此 <code class="highlighter-rouge">object.valid?</code> 就是对 object所在model中指定validates进行逐个验证。</p>
 
         </div>
 
@@ -245,6 +301,14 @@ create  test/fixtures/articles.yml
     </a>
   
 
+  
+    <a class="page-next" href="/reading%20notes/power-searching/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Note of Power Searching
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
   
 </nav>
 
