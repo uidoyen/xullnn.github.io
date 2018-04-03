@@ -658,3 +658,61 @@ admin/jobs/:id/resumes 这个页面最下方会出现所有resume的详细信息
 
  </div>
  ```
+
+ ---
+
+ **yml文件中的嵌入式ruby `<%= %>` 句法错误**
+
+错误出现在测试过程中
+
+测试结果
+
+`39 tests, 0 assertions, 0 failures, 39 errors, 0 skips`
+
+全是error, 应该是代码功能上的错误。
+
+错误信息是句法上的
+
+```ruby
+SyntaxError: /Users/caven/Programming/learnruby/sample_app/test/fixtures/users.yml:16: syntax error, unexpected ':', expecting ')'
+malory:
+      ^
+/Users/caven/Programming/learnruby/sample_app/test/fixtures/users.yml:18: syntax error, unexpected ':', expecting ')'
+  email: boss@example.gov
+       ^
+/Users/caven/Programming/learnruby/sample_app/test/fixtures/users.yml:19: syntax error, unexpected ':', expecting ')'
+  password_digest: <%= User.digest("password"))...
+                 ^
+/Users/caven/Programming/learnruby/sample_app/test/fixtures/users.yml:27: unterminated string meets end of file
+); _erbout
+          ^
+/Users/caven/Programming/learnruby/sample_app/test/fixtures/users.yml:27: syntax error, unexpected end-of-input, expecting ')'
+); _erbout
+```
+
+检查了缩进没有问题。
+
+google过也没定位到。
+
+最后发现是 `<%= >` 少了一个 `%`， `_erbout` 是一个提示线索， SyntaxError 也是一个线索。
+
+---
+
+**view中设置的 confirm 信息连续出现两次**
+
+'delete' 按键设置了js的 confirm data
+
+点击后出现一次，确认删除后再次出现
+
+https://stackoverflow.com/questions/4475449/link-to-confirm-displays-popup-twice
+
+原因是 application.js
+
+中重复引入了2次 ujs 相关的 library
+
+```ruby
+...
+//= require jquery-ujs
+//= require rails-ujs
+//= require_tree .
+```
