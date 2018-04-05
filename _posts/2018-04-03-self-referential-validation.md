@@ -26,12 +26,32 @@ table name: relationships
 
 那么到table中拿 user1 的 follower 实际是在找 user1 对应的被动关系，也就是找到右边一栏全是 user1.id的 rows，然后 vice versa。可以理解为
 
-```ruby
-user1.followers = Relationship.where(followed_id: 1)
 
-user1.followings = Relationship.where(follower_id: 1)
+**主动关系的链条示例：**
+
+```ruby
+# user1 会有很多主动关系
+# 找出join table中follower_id 是 1的所有 rows
+(user1.)following_ids = Relationship.where(follower_id: 1).pluck(:followed_id)
+(user1.)following = User.where(id: following_ids)
 ```
 
+来看看这两行对应的 SQL，帮助理解
+
+```sql
+2.5.0 :007 > following_ids = Relationship.where(follower_id: 1).pluck(:followed_id)
+
+   (0.2ms)  SELECT "relationships"."followed_id" FROM "relationships" WHERE "relationships"."follower_id" = ?  [["follower_id", 1]]
+ => [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+
+2.5.0 :008 > following = User.where(id: following_ids)
+
+  User Load (0.5ms)  SELECT  "users".* FROM "users" WHERE "users"."id" IN (3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51) LIMIT ?  [["LIMIT", 11]]
+```
+
+被动关系则是从 followed_id 一端开始定位所有 relationship, 然后再拿到所有的 follower_id，就可以知道 user1 被那users跟随了。
+
+**阻止自己follow自己的情况发生**
 
 但有一种情况是用户自己 follow 自己，虽然在 view 的逻辑中可以屏蔽掉自己follow自己的按键，也可以在 controller层做限制，但最好在 model 层做 validate。
 
