@@ -72,6 +72,8 @@ Running via Spring preloader in process xxxx
 
 ### 4 （可选）安装 spring-commands-respec 加快测试的启动时间
 
+https://github.com/jonleighton/spring-commands-rspec
+
 spring-commands-rspec 是一个针对 Rspec测试运行器的[binstub](https://github.com/rbenv/rbenv/wiki/Understanding-binstubs
 )。
 
@@ -122,5 +124,52 @@ end
 ```
 
 注意没有关掉 controller 和 model 测试文件的自动生成。
+
+### 6 (可选)配合 guard-rspec 简化测试触发
+
+https://github.com/guard/guard-rspec
+
+guard 会在每次 spec 文件改动并存档的时候，自动跑一次刚刚变动到的spec文件中所包含的测试，这样免去了每完成了一次测试都要切到terminal中执行 `rspec` 的重复，可以让 guard 一直 watching 测试文件的变动。可以单开一个窗口跑guard，这样可以即时看到最新测试结果。
+
+![](https://s3-ap-southeast-1.amazonaws.com/image-for-articles/image-bucket-1/guard-demo.gif)
+
+RailsCasts 上的演示: http://railscasts.com/episodes/264-guard
+
+**配置步骤：**
+
+Gemfile
+
+```ruby
+group :development, :test do
+  # ...
+  gem 'guard-rspec'
+end
+```
+
+`bundle`
+
+`bundle exec guard init rspec`
+
+接着就可以开始跑起来了
+
+`bundle exec guard` 或者直接 `guard`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 the end.
