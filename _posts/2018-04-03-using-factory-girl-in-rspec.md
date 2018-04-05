@@ -1,5 +1,5 @@
 ---
-title:  "Rspec on Rails - 3 - Setup"
+title:  "Rspec on Rails - 3 - PORO vs fixtures vs factory_bot"
 categories: [Test ℗]
 tags: [Rails Tests, Rspec]
 ---
@@ -40,7 +40,7 @@ end
 这是Rails自带的功能，通常会在测试文件夹中单独有个 `fixtures/` 目录，里面放很多 `yml` 文件，通常一个文件代表一个 model，里面写测试用的objects
 
 - 优点是，速度快，单个文件清晰易读，而且是Rails自带的，不会有引入第三方工具的额外配置。
-- 缺点是
+- 缺点是灵活性低，应对复杂model关系时需要花较多精力设计和维护。
 
 文件结构
 
@@ -119,8 +119,7 @@ spec/factories/
 ```ruby
 FactoryBot.define do
   factory :user do
-    first_name "Aaron"
-    last_name "Summer"
+    name "caven"
     email "example@gmail.com"
     password "password"
   end
@@ -135,8 +134,6 @@ end
 
 其实到这一步可以发现 factory_girl_rspec 所能实现的和 fixtures 是一样的，只不过是句法上的区别，甚至还更复杂了。
 
-但生成资料是在 `rb` 文件中完成的，那么事情就不会这么简单。
-
 **beyond fixtures**
 
 一个简单的示例，rspec中测试email栏位的presence，看两种方法的区别
@@ -145,7 +142,7 @@ end
 
 1 fixtures style
 
-users.yml
+spec/fixtures/users.yml
 
 ```yml
 one:
@@ -154,12 +151,12 @@ one:
   ...
 
 one_without_email:
-  name: "one"
-  email: ""
+  name: one
+  email:
   ...
 ```
 
-user_spec.rb
+spec/models/user_spec.rb
 
 ```ruby
 require 'rails_helper'
@@ -232,8 +229,8 @@ factory_bot 提供的 `trait` 方法，可以基于一个标准的user object, �
   - 如果是很简单的测试，那么直接在spec文件中现写测试资料是不错的选择，不需要花时间去维护fixtures或第三方工具。
   - 如果很想spec文件看起来很干净，那么简单的app也可以选择 fixtures, 但命名对象的时候最好带点语义。
   - 中等复杂程度的app
-    - 可以考虑使用 fixtures, 但需要规划好object的名称，对应好不同yml文件中对象的关系。
-    - 可以考虑第三方工具，花时间熟悉句法，多读doc。
-  - 复杂的app, 推荐第三方工具
-- 三种方法的使用前提都是明确清楚测试目的，反而来才会知道需要什么样的资料，尤其对于第三方工具来说，需要额外的句法来实现案例特征。
+    - 如果确定app以后不会变得更加复杂，可以考虑使用 fixtures, 但需要规划好object的名称，对应好不同yml文件中对象的关系。
+    - 也可以考虑第三方工具。
+  - 复杂的app, 推荐第三方工具，花时间熟悉句法，多读doc。
+- 三种方法的使用前提都是明确清楚测试目的，反过来才会知道需要什么样的资料，尤其对于第三方工具来说，需要额外的句法来实现案例特征。
 - 熟练简单、基本的用法，再染指复杂的功能。
