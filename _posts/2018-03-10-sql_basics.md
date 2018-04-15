@@ -5,7 +5,7 @@ tags: [SQL, Database]
 ---
 
 
-### 主要数据库类型
+### 1 主要数据库类型
 
 - Relational database - [关系型数据库](https://zh.wikipedia.org/wiki/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93)。
   - SQLite
@@ -40,7 +40,7 @@ Four Main Data Operations
 - Delete
 
 ---
-### Structured Query Language
+### 2 Structured Query Language
 
 > A database can be considered a structure in realization
 of the database language.
@@ -77,7 +77,9 @@ SQL的复杂变化都是基于table这个基本结构构建起来的。
   - DATE
   - TIMESTAMP
 
-### READ - Query类句法
+### 3 Basic CRUD
+
+### 3.1 READ - Query类句法
 
 **Basic Syntax**
 
@@ -126,6 +128,7 @@ Tricks:
 ```sql
 SELECT 1+1;
 ```
+
 |1+1|
 |:-:|
 |2|
@@ -287,7 +290,7 @@ SELECT <columns> FROM <table1>, <table2> WHERE table1.column_x = table2.column_y
 SELECT * FROM books, movies WHERE books.genre = movies.type;
 ```
 
-### Create类句法
+### 3.2 Create类句法
 
 **Keywords**
 
@@ -336,7 +339,7 @@ INSERT INTO <table> (<column 1>, <column 2>, ...) VALUES
 ```
 
 
-### Update 类句法
+### 3.3 Update 类句法
 
 **修改整个一列column的值**
 
@@ -384,7 +387,7 @@ UPDATE <table> SET <column> = <value> WHERE <condition>;
 UPDATE <table> SET <column 1> = <value 1>, <column 2> = <value 2> WHERE <condition1> AND <condition2>;
 ```
 
-### Delete 类句法
+### 3.4 Delete 类句法
 
 **keywords**
 
@@ -403,7 +406,7 @@ DELETE * FROM <table>;
 DELETE FROM <table> WHERE <condition>;
 ```
 
-### 使用 transaction 处理可能出现的错误
+### 4 使用 transaction 处理可能出现的错误
 
 数据库在进行数据的 CRUD 操作时，默认是autocommit。也就是写的statement会默认直接写到存储介质上。但实际情况是出错不可避免会出错，或者在进行多条数据注入时突然断电或死机等情况。
 
@@ -422,7 +425,7 @@ COMMIT;
 
 ![](https://ws2.sinaimg.cn/large/006tNc79gy1fpf0wayc9zj30kw09f0tc.jpg)
 
-### 数据的回滚 - Rolling Back from Transactions
+#### 数据的回滚 - Rolling Back from Transactions
 
 让数据库回到transaction之前的状态
 
@@ -436,9 +439,9 @@ UPDATE ...
 ROLLBACK;
 ```
 
-### Databases with Frameworks
+### 5 Databases with Frameworks
 
-实际开发中不常见直接在程序中使用 SQL 原生语句的情况，多数情况下都使用编程语言专有的针对数据库的libarary，将其转译为SQL，这类库叫 ORM - Object-Relation Mapping，Rails用到的 [ActiveRecord](http://api.rubyonrails.org/classes/ActiveRecord/Base.html) 就是其中一种。
+实际开发中不常见直接在程序中使用 SQL 原生语句的情况，多数情况下都使用编程语言专有的针对数据库的library，将其转译为SQL，这类库叫 ORM - Object-Relation Mapping，Rails用到的 [ActiveRecord](http://api.rubyonrails.org/classes/ActiveRecord/Base.html) 就是其中一种。
 
 [ORM 的维基页面](https://en.wikipedia.org/wiki/Object-relational_mapping)
 
