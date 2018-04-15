@@ -139,7 +139,7 @@ StopIteration (iteration reached an end)
 - `n.times` 这里的 `n` 是一个integer, 实际就是 Integer 这个 class 的一个 instance ，所以可以直接打开 class Integer 在里面写instance method
   - 如果使用`yield`风格，那么定义method名称时后面不用带参数
   - 如果使用`block.call`风格，那么定义method名称时后面带上(&block)
-- loop 开始前初始化一个计数器 variable
+- loop 开始前初始化一个计数器 variable = 0
 - loop 断点设置为 n < self ，也就是最后一次loop执行是 n == self 的时候
 - 用 yield 或 block.call 执行 block，并把当前计数器数字传入 block
 - 每一次loop循环末尾计数器 +1
