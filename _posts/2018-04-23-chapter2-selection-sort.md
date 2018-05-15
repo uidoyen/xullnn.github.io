@@ -168,7 +168,7 @@ print selectionSort([5,3,6,2,10])
 - All elements in the array should be the same type (all ints, all doubles, and so on).
 
 ---
-
+Exercises
 
 2.1
 
