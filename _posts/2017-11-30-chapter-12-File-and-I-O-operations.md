@@ -31,7 +31,7 @@ As you’ll see once you dive in, Ruby keeps even file and I/O operations object
 
 The memory space of a Ruby program is a kind of idealized space, where objects come into existence and talk to each other. Given the fact that I/O and system command execution involve stepping outside this idealized space, Ruby does a lot to keep objects in the mix.
 
-Ruby程式的记忆空间类似一种理想的空间场所，objects可以在这里存在并相互交谈。  但涉及到 I / O 和 系统system 层面的操作，不可避免的要踏出这个理想的空间， ruby 为了在这种情况下保持面向对象性做出了很多努力。
+Ruby程式的内存空间类似一种理想的空间场所，objects可以在这里存在并相互交谈。  但涉及到 I / O 和 系统system 层面的操作，不可避免的要踏出这个理想的空间， ruby 为了在这种情况下保持面向对象性做出了很多努力。
 
 
 You’ll see more discussion of standard library (as opposed to core) packages in this chapter than anywhere else in the book. That’s because the file-handling facilities in the standard library—highlighted by the FileUtils, Pathname, and StringIO packages—are so powerful and so versatile that they’ve achieved a kind of quasi-core status. The odds are that if you do any kind of file-intensive Ruby programming, you’ll get to the point where you load those packages almost without thinking about it.
@@ -61,7 +61,7 @@ The IO class handles all input and output streams either by itself or via its de
 
 IO objects 代表可读或可写的，与磁盘，键盘，屏幕以及其他设备的**连接**。你可以像对待其他 object 那样对待他，向它送出信息，然后他return 值给你。
 
-当一个ruby程序开始运行时， 它就明白什么是 标准输 入与 输出 以及 错误流。 这三种流都被封装在 IO 的实例instances当中。
+当一个ruby程序开始运行时， 它就明白什么是 标准输入 与 输出 以及 错误流。 这三种流都被封装在 IO 的实例instances当中。
 
 ```ruby
 2.5.0 :002 > STDERR.class
