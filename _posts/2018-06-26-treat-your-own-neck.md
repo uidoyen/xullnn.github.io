@@ -108,7 +108,7 @@ a series of vertebrae extending from the skull to the small of the back, enclosi
 ![](https://s3-ap-southeast-1.amazonaws.com/image-for-articles/image-bucket-1/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2018-06-26+%E4%B8%8B%E5%8D%882.39.45.png
 )
 
-这种姿势叫 protruded head 脑部前伸。
+这种姿势叫 protruded head 头部前伸。
 
 #### 2.3 Mechanical pain
 
@@ -190,7 +190,7 @@ Some people experience headaches as a result of neck problems. Often headaches a
 
 #### 3.2 Sitting for prolonged periods
 
-当我们轻快地直立行走时，头部很好地收到脊柱的支撑，因此自然地处于收回状态。但当我们累了坐下时，就很容易处于头部前伸的姿势，因为支撑头部的相关肌肉逐渐感到疲劳。
+当我们轻快地直立行走时，头部很好地受到脊柱的支撑，因此自然地处于收回状态。但当我们累了坐下时，就很容易处于头部前伸的姿势，因为支撑头部的相关肌肉逐渐感到疲劳。
 
 ![](https://s3-ap-southeast-1.amazonaws.com/image-for-articles/image-bucket-1/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2018-06-27+%E4%B8%8B%E5%8D%884.34.46.png
 )
@@ -453,6 +453,11 @@ In order to prevent future neck problems successfully:
 这个动作专门针对只有一侧疼痛并且通过动作1和2的练习并无好转的案例，或者某一侧疼痛比另一侧严重很多的案例。
 
 在症状减轻之前，动作5每组做5次，每天6--8次。
+
+Bend your neck sideways and move your head towards the side on which you feel most of the pain
+
+头部倒向最不舒服那一侧。
+
 
 - 放松而挺直地坐立，重复几次动作1，然后保持住头部回撤状态
 - 缓慢将头部侧向弯至你感觉最痛的一侧，整个过程不要转动头部，保持住耳朵一直朝向肩膀，并且一直保持头部的回撤
