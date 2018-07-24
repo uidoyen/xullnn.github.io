@@ -10,6 +10,7 @@ tags: [Metaknowledge]
 Amazon:
 
 https://www.amazon.com/How-Learn-Foreign-Language-Pimsleur-ebook/dp/B00DX0F2XO/ref=sr_1_1?s=books&ie=UTF8&qid=1532451983&sr=1-1&keywords=how+to+learn+a+foreign+language+pimsleur
+
 ---
 
 ## Paul Pimsleur’s Life & Career
