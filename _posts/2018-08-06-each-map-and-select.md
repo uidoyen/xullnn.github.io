@@ -221,7 +221,10 @@ We talked about a lot about the return value of block, at this level return valu
 
 ### Summary
 
-Now it's more easy to answer the question we mentioned at the beginning, the answer is `[nil, nil, nil]`.
+Now it's more easy to answer the question we mentioned at the beginning, the answer is:
+- `map` => `[nil, nil, nil]`.
+- `each` => `[1,2,3]`
+- `select` => `[]`
 
 Facing various methods about different collection objects. We just need to slow down, think about:
 
