@@ -8,7 +8,7 @@ Since many years ago I've dreamed I were able to read English books. But that ti
 
 About 2 years ago, I began to learn English seriously and constantly, not for reading books, just for TOEFL. I wanted to go abroad. The previous sentence might look like incomplete since I didn't say what's the purpose of going abroad, yet I didn't know. Pathetically in my first 27 years of life I never had a clear target, but fortunately I got one now, and I am so comforted that I stick to my English learning, it gave me a new world.
 
-Although I've read several(about 10) English books this year, but I always feel there's something absent, a ritual, a milestone? I can't tell clearly. But I clearly remember the first TOEFL listening material I tried to follow, a 251 words article, the record lasts about one and an half minutes, but it took me about 6 hours(spread in 3 days) to follow through it. Today I completely followed through - means I follow the reading of audible book while look at the paperback book - <Eyes wide open>, it took me:
+Although I've read several(about 10) English books this year, but I always feel there's something absent, a ritual, a milestone? I can't tell clearly. But I clearly remember the first TOEFL listening material I tried to follow, a 251 words article, the record lasts about one and an half minutes, but it took me about 6 hours(spread in 3 days) to follow through it. Today I completely followed through a whole English book `<Eyes wide open>`, 'follow through' means I follow the audiobook while look at the paperback book -it took me:
 
 - 18 days and approximately 30 hours.
 - Looking up dictionary about 1000 times.
