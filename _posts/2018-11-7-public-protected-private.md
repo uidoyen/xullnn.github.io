@@ -34,7 +34,7 @@ This doesn't help. Let's recall the first statement:
 
 > Public methods are methods that are available to anyone who knows either the class name or the object's name.
 
-When would we involve the **class's name** or the **object's name**? When we done with defining a class like `Dog`, there're many ways we may involve the class name or the object's name. Some of them are:
+When would we involve the **class name** or the **object's name**? When we done with defining a class like `Dog`, there're many ways we may involve the class name or the object's name. Some of them are:
 
 #### 1) call instance method directly on an instance of this class
 
