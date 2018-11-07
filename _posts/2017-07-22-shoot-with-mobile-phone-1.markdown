@@ -1,7 +1,7 @@
 ---
 title:  "Be straight"
 categories: [Photography]
-# tags: [snap]
+tags: [snap]
 ---
 
 
