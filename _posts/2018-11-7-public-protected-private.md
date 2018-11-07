@@ -6,7 +6,7 @@ tags: [Ruby]
 
 *In this post, all discussions are under the context of instance methods. Things may get different when it comes to class methods.*
 
-When being asked the question: "What's the diffrences among public, protected and private method?" We may answer:
+When being asked the question: "What's the differences among public, protected and private method?" We may answer:
 
 - Public methods are methods that are available to anyone who knows either the class name or the object's name.
 - Private methods are not accessible outside of the class definition at all, and are only accessible from inside the class when called without `self`.
@@ -26,7 +26,11 @@ class Dog
 end
 ```
 
-Apparently the area between `class Dog` and `end` is inside. So logically, areas other than inside are all outside, right? Let's recall the first statement:
+Apparently the area between `class Dog` and `end` is inside. So logically, areas other than inside are all outside, right? Maybe like this:
+
+![](https://s3-ap-southeast-1.amazonaws.com/image-for-articles/image-bucket-1/outside.jpg)
+
+This doesn't help. Let's recall the first statement:
 
 > Public methods are methods that are available to anyone who knows either the class name or the object's name.
 
@@ -105,7 +109,7 @@ end
 
 It works too but we'd not likely to do this in practice.
 
-Through these examples we realize that **"outside the class definition"** means a lot. It could mean "other than class definition"; it could mean "inside other classes' definition"; it could mean many other situations. Be aware of what is inside and outside class definition are important to understand the diffrence among public, protected and private method, and thankfully we are clear now.
+Through these examples we realize that **"outside the class definition"** means a lot. It could mean "other than class definition"; it could mean "inside other classes' definition"; it could mean many other situations. Be aware of what is inside and outside class definition are important to understand the difference among public, protected and private method, and thankfully we are clear now.
 
 ### 1 Public methods
 
@@ -345,7 +349,7 @@ Dog.new.sleep_with(Dog.new)
 
 This works too.
 
-Let's incoperate inheritance.
+Let's incorporate inheritance.
 
 ```ruby
 class Dog
@@ -389,7 +393,7 @@ class Dog
 end
 ```
 
-Notice the last two line inside class definition, we first called the publice method `sleep` by using `self.new` as receiver, then did the same thing with protected method `dream`. The message `"I am flying!"` was only printed out one time, then an exception raised.
+Notice the last two line inside class definition, we first called the public method `sleep` by using `self.new` as receiver, then did the same thing with protected method `dream`. The message `"I am flying!"` was only printed out one time, then an exception raised.
 
 We got `NoMethodError (protected method 'dream' called for #<Dog:0x00007fb0f786da08>)`
 
@@ -416,4 +420,4 @@ We wrote so many examples to verify every statement, some of them are not so acc
       - This constriction make private methods only accssible for current calling object, no receiver implies that the implied receiver is an invisible `self`, and this hidden `self` has no ambiguity inside a method definition -- it can only indicates the current object
       - No receiver also eliminate the possiblity of sending private methods to any other object other than current object since we cannot send a message to "nobody".
 
-As we mentioned ealier, *In this post, all discussions are under the context of instance methods. Things may get different when it comes to class methods.*
+As we mentioned earlier, *In this post, all discussions are under the context of instance methods. Things may get different when it comes to class methods.*
