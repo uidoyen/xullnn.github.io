@@ -4,6 +4,8 @@ categories:
 tags: [Programming]
 ---
 
+Recognize basic OO concepts in OO JavaScript
+
 ### 1 Some background
 
 If you are familiar with the concept of OOP and have tasted one or more OO languages before. You should know a class is basically a predefined template which can be used to create objects. And these objects can get some states and behaviors from the class they instantiated from. It's a pretty neat concept that manifests in many OO languages.
@@ -156,25 +158,23 @@ In Javascript, `Person` function is constructor. In fact it shares the concept b
 
 ##### 5.2 Prototype and class
 
-From the capitalization and the syntax we instantiate `Person` object(`new Person(18, "Bob")`), it seems `Person` might be the class. But now we know it's a constructor. Can a constructor also be class? According to the other 3 languages' naming convention, it really looks like a class. Can we just define the `act` method inside `Person` function to make it to become a class?
+According to the other 3 languages' naming convention for a class, `Person` really looks like a class in JavaScript. Plus the syntax we instantiate `Person` object(`new Person(18, "Bob")`), it seems `Person` ought to be the class. But now we know it's a constructor. Maybe a constructor can also be class? Can we just define the `act` method inside `Person` function then it becomes a class?
 
 No. If we did so, it would create a new copy of `act` for every newly instantiated `Person` object. In other words, instead of referencing the `act` defined in the class, every instance get their own version of `act` although the code is actually the same.
 
 If `Person` is not the class, who is? Since we defined some behavior in `Person`'s prototype, it could be the second guess.
 
-In OOP, the topic of class usually entails the topic of inheritance. For example, `class Dog` inherits from `class Mammal` inherits from `class Creature`. And we also talk about this inheritance chain in Javascript.
-
-Taking the example of Ruby code above, we can easily check the inheritance chain:
+In OOP, the topic of class usually entails the topic of inheritance. For example, `class Dog` inherits from `class Mammal` inherits from `class Creature`. Taking the example of Ruby code above, we can easily check the inheritance chain:
 
 ```Ruby
 Person.ancestors # => [Person, Object, Kernel, BasicObject]
 ```
 
-In Javascript, since `Person` is a constructor -- the method used to instantiate instance -- not a class(conceptually speaking). So the inheritance chain is constituted by prototype objects. Note what on the chain are objects, this demonstrates again the `Person` *function* can't be the conceptual class.
+As it comes to the topic of OOP in JavaScript, we also talk about inheritance chain. To construct an inheritance chain, we need objects(or classes), not constructor functions. So JavaScript inheritance chain is constituted by prototype objects. Note what on the chain are objects, this demonstrates again the `Person` *function* can't be the conceptual class.
 
-There is a method called `Object.getPrototypeOf()` which take an object as argument and returns the prototype(class) of it.
+There is a method called `Object.getPrototypeOf()` which takes an object as argument and returns the prototype(class) of it.
 
-If the passed in object is an instance object, for example `new Person(18, 'Bob')`, it returns the prototype(class) object it instantiated from. This returned prototype object is actually a private attribute of the instance, and this attribute is actually a property of the constructor function. This means after instantiating an object, changing the `prototype` property of the constructor won't affect the prototype(class) of the previously created instance.
+If the passed in object is an instance object, for example `new Person(18, 'Bob')`, it returns the prototype(class) object it instantiated from. This returned prototype object is actually a private attribute of the instance, and this private attribute is actually gotten from the constructor's `prototype` property. This means after instantiating an object, changing the `prototype` property of the constructor won't affect the prototype(class) of the previously created instance.
 
 ```js
 var p = new Person(18, 'Bob'); // p is an instance of its class
@@ -185,13 +185,19 @@ Person.prototype = Fish.prototype;
 Object.getPrototypeOf(p) // still:  Person { act: [Function: act] }
 ```
 
-If the passed in object is a prototype object -- object held by a constructor's `prototype` property. Then we are working at the prototypal chain or say the inheritance chain.
+If the passed in object is a prototype object -- object held by a constructor's `prototype` property. Then we are moving at the prototypal chain or say the inheritance chain.
 
 ```js
 Object.getPrototypeOf(Person.prototype) === Object.prototype; // true
 ```
 
-In our simple Js example, `Person.prototype` inherits from `Object.prototype`, both of them are objects. This means `Person.prototype` also inherits all the properties and methods defined in `Object.prototype`. This makes `Person`'s instances have the ability to call [all methods defined on `Object.prototype`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype).
+In our simple Js example, `Person.prototype` inherits from `Object.prototype`, both of them are objects. Precisely speaking, `Person.prototype` is an instance of `Object.prototype`.
+
+```js
+Person.prototype instanceof Object; // true
+```
+
+This means `Person.prototype` also inherits all the properties and methods defined in `Object.prototype`. This makes `Person`'s instances have the ability to call [all methods defined on `Object.prototype`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype).
 
 ### 6 What's unnatural here
 
