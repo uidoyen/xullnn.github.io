@@ -1,7 +1,7 @@
 ---
 title:  "Everything You Thought You Knew About Learning Is Wrong"
 categories: [Translations]
-tags: [Metaknowledge]
+tags: [Metaknowledge, Methodology]
 ---
 
 ---

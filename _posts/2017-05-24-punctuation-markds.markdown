@@ -1,7 +1,7 @@
 ---
 title:  "Translations of Punctuation marks"
-categories: [Computer literacy]
-tags: [Ruby]
+categories: [Learning]
+tags: [Programming]
 ---
 
 

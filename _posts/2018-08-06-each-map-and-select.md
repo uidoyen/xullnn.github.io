@@ -1,7 +1,7 @@
 ---
 title:  "Developing better understanding about the 3 main types of enumerating operation on ruby collection through each, map, and select"
-categories: [Ruby℗]
-tags: [Ruby]
+categories: [Learning]
+tags: [Programming]
 ---
 
 Let's start with some code:

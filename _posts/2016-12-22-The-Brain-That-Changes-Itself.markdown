@@ -1,7 +1,7 @@
 ---
 title:  "Note of The Brain That Changes Itself"
-categories: [Reading Notes]
-tags: [Metaknowledge]
+categories: [Learning]
+tags: [Metaknowledge, Cognition Science]
 ---
 
 中译书名：《重塑大脑 重塑人生》

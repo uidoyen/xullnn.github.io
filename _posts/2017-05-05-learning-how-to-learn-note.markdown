@@ -1,7 +1,7 @@
 ---
 title:  "Note of Learning how to learn"
-categories: [Reading Notes]
-tags: [Metaknowledge]
+categories: [Learning]
+tags: [Metaknowledge, Methodology]
 ---
 
 Learning how to learn 是 Coursera 上的的一门课程，主讲是：Dr. Barbara Oakley 和 Dr. Terrence Sejnowski，特别是Barbara，这是我学习时做的笔记。

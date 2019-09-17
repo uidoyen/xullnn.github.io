@@ -1,7 +1,7 @@
 ---
 title:  "Note of Power Searching"
-categories: [Reading Notes]
-tags: [Metaknowledge]
+categories: [Learning]
+tags: [Metaknowledge, Methodology, Searching]
 ---
 
 

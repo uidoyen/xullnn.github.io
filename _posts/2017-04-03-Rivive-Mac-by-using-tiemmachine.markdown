@@ -1,6 +1,6 @@
 ---
 title:  "Backup Mac with timemachine"
-categories: [Computer literacy]
+categories: [Tools]
 tags: [Timemachine, Mac, Os]
 ---
 

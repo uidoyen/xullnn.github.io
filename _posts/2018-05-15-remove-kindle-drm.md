@@ -1,6 +1,6 @@
 ---
 title:  "Remove drm from kindle"
-categories: [Computer literacy]
+categories: [Tools]
 tags: [ebook, Mac, Os]
 ---
 

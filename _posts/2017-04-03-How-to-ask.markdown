@@ -1,7 +1,7 @@
 ---
 title:  "How to ask(stackoverflow)"
 categories: [Translations]
-tags: [Metaknowledge]
+tags: [Metaknowledge, Communication]
 ---
 Welcome to Stack Overflow!
 

@@ -1,7 +1,7 @@
 ---
 title:  "Treat your own neck"
 categories: [Health]
-tags: [handbook self-saving]
+tags: [Handbook]
 ---
 
 ![](https://s3-ap-southeast-1.amazonaws.com/image-for-articles/image-bucket-1/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2018-06-28+%E4%B8%8B%E5%8D%882.34.09.png

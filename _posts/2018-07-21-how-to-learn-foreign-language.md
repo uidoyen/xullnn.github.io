@@ -1,7 +1,7 @@
 ---
 title:  "How to learn a foreign language"
-categories: [Reading Notes]
-tags: [Metaknowledge]
+categories: [Learning]
+tags: [Metaknowledge, Methodology]
 ---
 
 ---
