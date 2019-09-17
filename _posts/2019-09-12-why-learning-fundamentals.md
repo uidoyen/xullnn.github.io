@@ -60,7 +60,7 @@ If we examine the development of computer and software, what keep unchanging are
 
 This effect manifests on many things in our daily life. For example, [chair](https://en.wikipedia.org/wiki/Chair), if chair has existed for more than 5000 years, then it's likely that chair will continue existing within the next 5000 years. But don't fall into a logic fallacy here, it doesn't mean once a thing exists for 1 day, it would exist forever. We must *gauge both the age and "health" of the thing to determine continued survival*. If a thing, more precisely a concept is robust and useful, then it tends to continue existing for as long as its history. Although there may have thousands of variants of chair, but the fundamentally conceptual "chair" never changes.
 
-https://image-for-articles.s3-ap-southeast-1.amazonaws.com/image-bucket-1/Dining-Chairs-Many-Design-for-Optional.jpg
+![](https://image-for-articles.s3-ap-southeast-1.amazonaws.com/image-bucket-1/Dining-Chairs-Many-Design-for-Optional.jpg)
 
 Apply this effect to programming, I don't mean that all frameworks won't last long, but it does need time to test their robustness. So if one likes chasing after every newly developed framework, it is not only exhausting, but also risky.
 
