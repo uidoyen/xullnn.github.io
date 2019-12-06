@@ -31,3 +31,18 @@ pandoc test1.md -s -o test1.pdf
 ```
 
 https://tug.org/mactex/
+
+#### 纽约大都会博物馆 The Metropolitan Museum of Art
+
+https://www.metmuseum.org/
+
+- audio guide of The Met Fifth Avenue
+  - https://www.metmuseum.org/visit/audio-guide/the-met-fifth-avenue
+
+#### Academy Originals
+
+Youtube 上一个关于创意产业的系列视频频道
+
+https://www.youtube.com/channel/UCzuwS1ll2HuQ1wV-tqf43KQ
+
+https://www.youtube.com/playlist?list=PLsruNZel-SDQj6OIG7M8uFzSGX6SMa3iS
