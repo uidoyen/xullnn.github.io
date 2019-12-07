@@ -1,3 +1,10 @@
+---
+title:  "Monthly summary 2019-11"
+categories: [Learning]
+tags: [Notes]
+---
+
+
 #### 顶级公司的设计指导原则及资源
 
 关于开发者，设计者，或者不需要区分
