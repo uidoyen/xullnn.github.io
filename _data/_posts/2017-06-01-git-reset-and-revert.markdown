@@ -26,8 +26,8 @@ git revert 和 git reset 都可以用来撤销更改，二者间最重要的区�
 #### 1 `git reset HEAD~2 --soft`
 
 ```ruby
-caven@CavendeMacBook-Pro ⮀ ~/demo/demo ⮀ ⭠ branch01 ⮀ git reset HEAD~2 --soft
- caven@CavendeMacBook-Pro ⮀ ~/demo/demo ⮀ ⭠ branch01± ⮀ git status
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo ⮀ ⭠ branch01 ⮀ git reset HEAD~2 --soft
+ Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo ⮀ ⭠ branch01± ⮀ git status
 On branch branch01
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
@@ -35,22 +35,22 @@ Changes to be committed:
 	modified:   file1.html.erb  # 绿色
 	modified:   file2.html.erb  # 绿色
 
- caven@CavendeMacBook-Pro ⮀ ~/demo/demo ⮀ ⭠ branch01± ⮀ git log
+ Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo ⮀ ⭠ branch01± ⮀ git log
 
  commit 6f4624d3e676d815af52b818061ff97f5bbb01a1
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:01:19 2017 +0800
 
     #2
 
 commit 76c535efd499d40185d1a191f80267f03aa4a4f3
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:01:00 2017 +0800
 
     #1
 
 commit d35ab1c888eacc44f296e83526353052d48c49bf
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 09:07:24 2017 +0800
 
     clean
@@ -63,19 +63,19 @@ Date:   Thu Jun 8 09:07:24 2017 +0800
 ```ruby
 
 commit 91cc8b0b5ae62288c57bbcba2addcacdd8942559
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:09:25 2017 +0800
 
     after reset
 
 commit 6f4624d3e676d815af52b818061ff97f5bbb01a1
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:01:19 2017 +0800
 
     #2
 
 commit 76c535efd499d40185d1a191f80267f03aa4a4f3
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:01:00 2017 +0800
 
     #1
@@ -87,11 +87,11 @@ Date:   Thu Jun 8 11:01:00 2017 +0800
 --mixed 是 git reset 的默认设置，不用写直接 git reset HEAD~2 也可以。
 
 ```ruby
-caven@CavendeMacBook-Pro ⮀ ~/demo/demo1 ⮀ ⭠ branch01 ⮀ git reset HEAD~2
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo1 ⮀ ⭠ branch01 ⮀ git reset HEAD~2
 Unstaged changes after reset:
 M	file1.html.erb
 M	file2.html.erb
-caven@CavendeMacBook-Pro ⮀ ~/demo/demo1 ⮀ ⭠ branch01± ⮀ git status
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo1 ⮀ ⭠ branch01± ⮀ git status
 On branch branch01
 Changes not staged for commit:
  (use "git add <file>..." to update what will be committed)
@@ -101,22 +101,22 @@ Changes not staged for commit:
  modified:   file2.html.erb  # 红色
 
 no changes added to commit (use "git add" and/or "git commit -a")
-caven@CavendeMacBook-Pro ⮀ ~/demo/demo1 ⮀ ⭠ branch01± ⮀ git log
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo1 ⮀ ⭠ branch01± ⮀ git log
 
 commit e4c12df6449b01ae6ee96cf87657e16ccb0e3d40
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:16:56 2017 +0800
 
     #2
 
 commit 24cd68d37934b5dac15bdcf52cf21eed5332165f
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:16:23 2017 +0800
 
     #1
 
 commit 515326d25a6ac0aabeb5aa8d7f80f29d676648ec
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:15:51 2017 +0800
 
     clean
@@ -134,29 +134,29 @@ M	file2.html.erb”
 
 ```ruby
 
-caven@CavendeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01 ⮀ git reset HEAD~2 --hard
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01 ⮀ git reset HEAD~2 --hard
 HEAD is now at e4c12df #2
-caven@CavendeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01 ⮀ atom .
-caven@CavendeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01 ⮀ git status
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01 ⮀ atom .
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01 ⮀ git status
 On branch branch01
 nothing to commit, working tree clean
-caven@CavendeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01 ⮀ git log
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01 ⮀ git log
 
 
 commit e4c12df6449b01ae6ee96cf87657e16ccb0e3d40
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:16:56 2017 +0800
 
     #2
 
 commit 24cd68d37934b5dac15bdcf52cf21eed5332165f
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:16:23 2017 +0800
 
     #1
 
 commit 515326d25a6ac0aabeb5aa8d7f80f29d676648ec
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:15:51 2017 +0800
 
     clean
@@ -185,12 +185,12 @@ c.默认情况下 revert 会尝试自动帮你 commit（如果没有冲突）, c
 执行这个命令后 revert 会处于 processing 状态， 提示让解决 conflict 才能继续 revert 进程：
 
 ```ruby
-caven@CavendeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01 ⮀ git revert HEAD~2
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01 ⮀ git revert HEAD~2
 error: could not revert e4c12df... #2
 hint: after resolving the conflicts, mark the corrected paths
 hint: with 'git add <paths>' or 'git rm <paths>'
 hint: and commit the result with 'git commit'
-✘ caven@CavendeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01± ⮀
+✘ Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01± ⮀
 
 ```
 
@@ -205,7 +205,7 @@ git 标注出了file1中冲突部分，需要手动调整代码。但注意一�
 `git status` 查看修改到的文件：
 
 ```ruby
-✘ caven@CavendeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01± ⮀ git status
+✘ Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01± ⮀ git status
 On branch branch01
 You are currently reverting commit e4c12df.
  (fix conflicts and run "git revert --continue")
@@ -218,7 +218,7 @@ Unmerged paths:
  both modified:   file1.html.erb  # 红色， 前面提到 both, 指的应该是 revert 后的状态与当前 HEAD 所在commit 的状态
 
 no changes added to commit (use "git add" and/or "git commit -a")
-caven@CavendeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01± ⮀
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01± ⮀
 
 ```
 
@@ -226,31 +226,31 @@ caven@CavendeMacBook-Pro ⮀ ~/demo/demo2 ⮀ ⭠ branch01± ⮀
 
 ```ruby
 commit 64a8a9b3cb4290d3498782203b244f415a2e9200
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 16:36:04 2017 +0800
 
     revert done
 
 commit 2232024b2103ffb2cb60de5213c1a52ba8300736
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:17:43 2017 +0800
 
     #4
 
 commit 6efebe087a7985a6a274d14e4d29064c69f32bf6
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:17:09 2017 +0800
 
     #3
 
 commit e4c12df6449b01ae6ee96cf87657e16ccb0e3d40
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:16:56 2017 +0800
 
     #2
 
 commit 24cd68d37934b5dac15bdcf52cf21eed5332165f
-Author: Caven <caven@CavendeMacBook-Pro.local>
+Author: Xullnn <Xullnn@XullnndeMacBook-Pro.local>
 Date:   Thu Jun 8 11:16:23 2017 +0800
 
     #1

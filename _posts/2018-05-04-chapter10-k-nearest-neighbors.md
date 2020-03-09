@@ -176,7 +176,7 @@ class User
   end
 end
 
-user1 = User.new("Caven")
+user1 = User.new("Xullnn")
 user2 = User.new("Mark")
 
 user1.category_ratings["comedy"] = 5
@@ -197,7 +197,7 @@ user1.distance_between(user2)
 返回的结果是
 
 ```ruby
-"Distance between Caven and Mark is 5.66"
+"Distance between Xullnn and Mark is 5.66"
 ```
 
 #### 4 Regression

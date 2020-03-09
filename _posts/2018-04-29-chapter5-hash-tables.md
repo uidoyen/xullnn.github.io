@@ -123,7 +123,7 @@ def check_voter(name)
 end
 ```
 
-hash table 可能是这样 `{"caven" => true, "Wix" => true ...}`， 这里不会有 false 的情况。
+hash table 可能是这样 `{"Xullnn" => true, "Wix" => true ...}`， 这里不会有 false 的情况。
 
 原理是这样的：
 

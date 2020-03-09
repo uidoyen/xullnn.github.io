@@ -10,11 +10,11 @@ Ruby 中 gets, gets.chomp, gets.chomp() 的区别。
 ```ruby
 2.3.1 :002 >
 2.3.1 :003 >   name = gets
-caven
- => "caven\n"                      # gets 会将接收到的数据转换为string 并在末尾换行 '\n'
+Xullnn
+ => "Xullnn\n"                      # gets 会将接收到的数据转换为string 并在末尾换行 '\n'
 2.3.1 :004 > name = gets.chomp     
-caven
- => "caven"                        # gets带chomp 则会默认“吃”掉换行符号
+Xullnn
+ => "Xullnn"                        # gets带chomp 则会默认“吃”掉换行符号
 2.3.1 :005 > day = gets
 monday
  => "monday\n"
@@ -31,7 +31,7 @@ monday
  SyntaxError: (irb):8: syntax error, unexpected $undefined
  day.chomp(ay\n)
               ^
- from /Users/caven/.rvm/rubies/ruby-2.3.1/bin/irb:11:in `<main>'
+ from /Users/Xullnn/.rvm/rubies/ruby-2.3.1/bin/irb:11:in `<main>'
  2.3.1 :011 > day.chomp("ay")       # 括号中字串没有完整地加上 "\n", chomp无效
   => "monday\n"
 

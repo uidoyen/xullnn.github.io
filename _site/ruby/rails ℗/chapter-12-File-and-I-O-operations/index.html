@@ -16,7 +16,7 @@
   
     
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Rubyist-c12-File and IO operations | Caven’s</title>
+<title>Rubyist-c12-File and IO operations | Xullnn’s</title>
 <meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="Rubyist-c12-File and IO operations" />
 <meta property="og:locale" content="en_US" />
@@ -24,7 +24,7 @@
 <meta property="og:description" content="注：这一系列文章是《The Well-Grounded Rubyist》的学习笔记。" />
 <link rel="canonical" href="http://localhost:4000/ruby/rails%20%E2%84%97/chapter-12-File-and-I-O-operations/" />
 <meta property="og:url" content="http://localhost:4000/ruby/rails%20%E2%84%97/chapter-12-File-and-I-O-operations/" />
-<meta property="og:site_name" content="Caven’s" />
+<meta property="og:site_name" content="Xullnn’s" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-11-30T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="/assets/css/main.css">
   
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
-  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Xullnn&#39;s" href="/atom.xml">
 <!-- start custom head snippets -->
 
 <!-- insert favicons. use http://realfavicongenerator.net/ -->
@@ -79,7 +79,7 @@
   <div class="wrap">
     
     
-      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <h1 class="site-title animated fadeIn"><a href="/">Xullnn's</a></h1>
       <p class="site-description animated fadeIn" itemprop="description">Record</p>
     
   </div>
@@ -364,7 +364,7 @@ $stderr
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">=&gt;</span> <span class="c1">#&lt;File:./record&gt;   # First stdout after changing path</span>
 <span class="err"></span><span class="p">[</span><span class="mi">1</span><span class="n">mTraceback</span><span class="err"></span><span class="p">[</span><span class="n">m</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-       <span class="mi">3</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">caven</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
+       <span class="mi">3</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
        2: from (irb):4
        1: from (irb):4:in `</span><span class="o">/</span><span class="s1">'
 [1mZeroDivisionError ([4mdivided by 0[0;1m)[m
@@ -374,7 +374,7 @@ Now puts method will not show you anything in terminal.
 So as an error message
 =&gt; nil
 [1mTraceback[m (most recent call last):
-       3: from /Users/caven/.rvm/rubies/ruby-2.5.0/bin/irb:11:in `&lt;main&gt;'</span>
+       3: from /Users/Xullnn/.rvm/rubies/ruby-2.5.0/bin/irb:11:in `&lt;main&gt;'</span>
        <span class="mi">2</span><span class="p">:</span> <span class="n">from</span> <span class="p">(</span><span class="n">irb</span><span class="p">):</span><span class="mi">8</span>
        <span class="mi">1</span><span class="p">:</span> <span class="n">from</span> <span class="p">(</span><span class="n">irb</span><span class="p">):</span><span class="mi">8</span><span class="ss">:in</span> <span class="sb">`/'
 [1mZeroDivisionError ([4mdivided by 0[0;1m)[m
@@ -423,7 +423,7 @@ So as an error message
  <span class="o">=&gt;</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">Using gets to get a line</span><span class="se">\"\n</span><span class="s2">"</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">003</span> <span class="o">&gt;</span> <span class="n">char</span> <span class="o">=</span> <span class="nb">getc</span>
 <span class="no">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-        <span class="mi">2</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">caven</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
+        <span class="mi">2</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
         1: from (irb):3
 NameError (undefined local variable or method `</span><span class="nb">getc</span><span class="err">'</span> <span class="k">for</span> <span class="n">main</span><span class="ss">:Object</span>
 <span class="no">Did</span> <span class="n">you</span> <span class="n">mean?</span>  <span class="nb">gets</span><span class="p">)</span>
@@ -470,7 +470,7 @@ NameError (undefined local variable or method `</span><span class="nb">getc</spa
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">010</span> <span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/rubyist/nonexist.rb'</span><span class="p">)</span>
 <span class="no">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-        <span class="mi">4</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">caven</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
+        <span class="mi">4</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
         3: from (irb):10
         2: from (irb):10:in `</span><span class="n">new</span><span class="s1">'
         1: from (irb):10:in `initialize'</span>
@@ -492,8 +492,8 @@ NameError (undefined local variable or method `</span><span class="nb">getc</spa
 
 <p>(If the file doesn’t exist, an exception will be raised.) At this point, you can use the file instance to read from the file. A number of methods are at your disposal. The absolute simplest is the read method; it reads in the entire file as a single string:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">004</span> <span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb'</span><span class="p">)</span>
- <span class="o">=&gt;</span> <span class="c1">#&lt;File:/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb&gt;</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">004</span> <span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb'</span><span class="p">)</span>
+ <span class="o">=&gt;</span> <span class="c1">#&lt;File:/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">005</span> <span class="o">&gt;</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span>
  <span class="o">=&gt;</span> <span class="s2">"class Ticket</span><span class="se">\n</span><span class="s2">  def initialize(venue, date)</span><span class="se">\n</span><span class="s2">    @venue = venue</span><span class="se">\n</span><span class="s2">    @date = date</span><span class="se">\n</span><span class="s2">  end</span><span class="se">\n\n</span><span class="s2">  def price=(price)</span><span class="se">\n</span><span class="s2">    @price = price</span><span class="se">\n</span><span class="s2">  end</span><span class="se">\n\n</span><span class="s2">  def venue</span><span class="se">\n</span><span class="s2">    @venue</span><span class="se">\n</span><span class="s2">  end</span><span class="se">\n\n</span><span class="s2">  def date</span><span class="se">\n</span><span class="s2">    @date</span><span class="se">\n</span><span class="s2">  end</span><span class="se">\n\n</span><span class="s2">  def price</span><span class="se">\n</span><span class="s2">    @price</span><span class="se">\n</span><span class="s2">  end</span><span class="se">\n</span><span class="s2">end</span><span class="se">\n</span><span class="s2">"</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">006</span> <span class="o">&gt;</span>
@@ -564,7 +564,7 @@ When you’re finished reading from and/or writing to a file, you need to close 
  <span class="o">=&gt;</span> <span class="kp">nil</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">011</span> <span class="o">&gt;</span> <span class="n">f</span><span class="p">.</span><span class="nf">readline</span>
 <span class="no">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-        <span class="mi">3</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">caven</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
+        <span class="mi">3</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
         2: from (irb):11
         1: from (irb):11:in `</span><span class="nb">readline</span><span class="err">'</span>
 <span class="no">EOFError</span> <span class="p">(</span><span class="k">end</span> <span class="n">of</span> <span class="n">file</span> <span class="n">reached</span><span class="p">)</span>
@@ -624,7 +624,7 @@ When you’re finished reading from and/or writing to a file, you need to close 
 <span class="no">Next</span> <span class="n">line</span> <span class="ss">is:     </span><span class="vi">@price</span>
 <span class="no">Next</span> <span class="n">line</span> <span class="ss">is:   </span><span class="k">end</span>
 <span class="no">Next</span> <span class="n">line</span> <span class="ss">is: </span><span class="k">end</span>
- <span class="o">=&gt;</span> <span class="c1">#&lt;File:/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb&gt;</span>
+ <span class="o">=&gt;</span> <span class="c1">#&lt;File:/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">021</span> <span class="o">&gt;</span>
 </code></pre></div></div>
 
@@ -768,11 +768,11 @@ These two class methods exist purely for convenience. They take care of opening 
 
 <p>这个两个方法和之前提到的 read, readlines方法的功能相同，他们的存在只是为了简化操作。使用这个两个 class 层级的方法，我们可以不用先使用 File.new 实例化一个 File 对象，在对其进行读取操作。我们可以直接使用这两个 class methods 进行读取</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">001</span> <span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s2">"/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb"</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">001</span> <span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s2">"/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb"</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="s2">"class Ticket</span><span class="se">\n</span><span class="s2">  def initialize(venue, date)</span><span class="se">\n</span><span class="s2">    @venue = venue</span><span class="se">\n</span><span class="s2">    @date = date</span><span class="se">\n</span><span class="s2">  end</span><span class="se">\n\n</span><span class="s2">  def price=(price)</span><span class="se">\n</span><span class="s2">    @price = price</span><span class="se">\n</span><span class="s2">  end</span><span class="se">\n\n</span><span class="s2">  def venue</span><span class="se">\n</span><span class="s2">    @venue</span><span class="se">\n</span><span class="s2">  end</span><span class="se">\n\n</span><span class="s2">  def date</span><span class="se">\n</span><span class="s2">    @date</span><span class="se">\n</span><span class="s2">  end</span><span class="se">\n\n</span><span class="s2">  def price</span><span class="se">\n</span><span class="s2">    @price</span><span class="se">\n</span><span class="s2">  end</span><span class="se">\n</span><span class="s2">end</span><span class="se">\n</span><span class="s2">"</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">002</span> <span class="o">&gt;</span> <span class="n">f</span><span class="p">.</span><span class="nf">class</span>
  <span class="o">=&gt;</span> <span class="no">String</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">003</span> <span class="o">&gt;</span> <span class="n">ff</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">readlines</span><span class="p">(</span><span class="s2">"/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb"</span><span class="p">)</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">003</span> <span class="o">&gt;</span> <span class="n">ff</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">readlines</span><span class="p">(</span><span class="s2">"/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb"</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"class Ticket</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"  def initialize(venue, date)</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"    @venue = venue</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"    @date = date</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"  end</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"  def price=(price)</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"    @price = price</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"  end</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"  def venue</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"    @venue</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"  end</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"  def date</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"    @date</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"  end</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"  def price</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"    @price</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"  end</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"end</span><span class="se">\n</span><span class="s2">"</span><span class="p">]</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">004</span> <span class="o">&gt;</span> <span class="n">ff</span><span class="p">.</span><span class="nf">class</span>
  <span class="o">=&gt;</span> <span class="no">Array</span>
@@ -923,7 +923,7 @@ As enumerables, File objects can perform many of the same functions that arrays,
 <p>现在有这样一个文件 members.txt</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">David</span> <span class="no">Black</span> <span class="n">male</span> <span class="mi">55</span>
-<span class="no">Caven</span> <span class="no">Xu</span> <span class="n">male</span> <span class="mi">18</span>
+<span class="no">Xullnn</span> <span class="no">Xu</span> <span class="n">male</span> <span class="mi">18</span>
 <span class="no">Lee</span> <span class="no">Hans</span> <span class="n">female</span> <span class="mi">23</span>
 </code></pre></div></div>
 
@@ -985,7 +985,7 @@ As enumerables, File objects can perform many of the same functions that arrays,
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">037</span> <span class="o">&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">"unknown"</span><span class="p">)</span>
 <span class="no">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-        <span class="mi">4</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">caven</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
+        <span class="mi">4</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
         3: from (irb):37
         2: from (irb):37:in `</span><span class="nb">open</span><span class="s1">'
         1: from (irb):37:in `initialize'</span>
@@ -1016,11 +1016,11 @@ As enumerables, File objects can perform many of the same functions that arrays,
 
 <p>The File class also has some query methods. In some cases, you can get the same information about a file several ways:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">003</span> <span class="o">&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="s1">'/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb'</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">003</span> <span class="o">&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="s1">'/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb'</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="mi">223</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">004</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="s1">'/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb'</span><span class="p">)</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">004</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="s1">'/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb'</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="mi">223</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">005</span> <span class="o">&gt;</span> <span class="no">File</span><span class="o">::</span><span class="no">Stat</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb'</span><span class="p">).</span><span class="nf">size</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">005</span> <span class="o">&gt;</span> <span class="no">File</span><span class="o">::</span><span class="no">Stat</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/ticket2.rb'</span><span class="p">).</span><span class="nf">size</span>
  <span class="o">=&gt;</span> <span class="mi">223</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">006</span> <span class="o">&gt;</span>
 </code></pre></div></div>
@@ -1049,22 +1049,22 @@ As enumerables, File objects can perform many of the same functions that arrays,
 
 <p><code class="highlighter-rouge">FileTest.symlink?()</code>  判断给出对象是否是一个 symbolic link (Returns true if the named file is a symbolic link.)</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">007</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">directory?</span><span class="p">(</span><span class="s1">'/users/caven/'</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">007</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">directory?</span><span class="p">(</span><span class="s1">'/users/Xullnn/'</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="kp">true</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">00</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">file?</span><span class="p">(</span><span class="s1">'/users/caven/'</span><span class="p">)</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">00</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">file?</span><span class="p">(</span><span class="s1">'/users/Xullnn/'</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="kp">false</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">00</span><span class="mi">9</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">symlink?</span><span class="p">(</span><span class="s1">'/users/caven/'</span><span class="p">)</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">00</span><span class="mi">9</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">symlink?</span><span class="p">(</span><span class="s1">'/users/Xullnn/'</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="kp">false</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">010</span> <span class="o">&gt;</span>
 </code></pre></div></div>
 
 <p>也可以测试一个文件是否 可读， 可写， 或 可执行</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">011</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">readable?</span><span class="p">(</span><span class="s1">'/users/caven/'</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">011</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">readable?</span><span class="p">(</span><span class="s1">'/users/Xullnn/'</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="kp">true</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">012</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">writable?</span><span class="p">(</span><span class="s1">'/users/caven/'</span><span class="p">)</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">012</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">writable?</span><span class="p">(</span><span class="s1">'/users/Xullnn/'</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="kp">true</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">013</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">executable?</span><span class="p">(</span><span class="s1">'/users/caven/'</span><span class="p">)</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">013</span> <span class="o">&gt;</span> <span class="no">FileTest</span><span class="p">.</span><span class="nf">executable?</span><span class="p">(</span><span class="s1">'/users/Xullnn/'</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="kp">true</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">014</span> <span class="o">&gt;</span>
 </code></pre></div></div>
@@ -1089,7 +1089,7 @@ As enumerables, File objects can perform many of the same functions that arrays,
 
 <p>test  接受两个参数，第一个参数 代表测试的内容，第二个是要测的对象</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">014</span> <span class="o">&gt;</span> <span class="nb">test</span><span class="p">(</span><span class="sc">?e</span><span class="p">,</span> <span class="s1">'/users/caven/'</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">014</span> <span class="o">&gt;</span> <span class="nb">test</span><span class="p">(</span><span class="sc">?e</span><span class="p">,</span> <span class="s1">'/users/Xullnn/'</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="kp">true</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">015</span> <span class="o">&gt;</span>
 </code></pre></div></div>
@@ -1124,9 +1124,9 @@ As enumerables, File objects can perform many of the same functions that arrays,
   </tbody>
 </table>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">01</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="no">File</span><span class="o">::</span><span class="no">Stat</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/users/caven/'</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">01</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="no">File</span><span class="o">::</span><span class="no">Stat</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/users/Xullnn/'</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="c1">#&lt;File::Stat dev=0x1000004, ino=733544, mode=040755, nlink=73, uid=503, gid=20, rdev=0x0, size=2336, blksize=4194304, blocks=0, atime=2018-02-11 14:04:04 +0800, mtime=2018-02-11 14:04:04 +0800, ctime=2018-02-11 14:04:04 +0800, birthtime=2016-12-11 13:17:41 +0800&gt;</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">01</span><span class="mi">9</span> <span class="o">&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s1">'/users/caven/'</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span> <span class="n">d</span><span class="p">.</span><span class="nf">stat</span> <span class="p">}</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">01</span><span class="mi">9</span> <span class="o">&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s1">'/users/Xullnn/'</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span> <span class="n">d</span><span class="p">.</span><span class="nf">stat</span> <span class="p">}</span>
  <span class="o">=&gt;</span> <span class="c1">#&lt;File::Stat dev=0x1000004, ino=733544, mode=040755, nlink=73, uid=503, gid=20, rdev=0x0, size=2336, blksize=4194304, blocks=0, atime=2018-02-11 14:04:04 +0800, mtime=2018-02-11 14:04:04 +0800, ctime=2018-02-11 14:04:04 +0800, birthtime=2016-12-11 13:17:41 +0800&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">020</span> <span class="o">&gt;</span>
 </code></pre></div></div>
@@ -1149,8 +1149,8 @@ As enumerables, File objects can perform many of the same functions that arrays,
 Block 中的 f 指代的是一个 file object ,对他使用了 .stat 方法
 这和先单独赋值，再使用效果相等</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">020</span> <span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s1">'/users/caven/'</span><span class="p">)</span>
- <span class="o">=&gt;</span> <span class="c1">#&lt;File:/users/caven/&gt;</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">020</span> <span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s1">'/users/Xullnn/'</span><span class="p">)</span>
+ <span class="o">=&gt;</span> <span class="c1">#&lt;File:/users/Xullnn/&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">021</span> <span class="o">&gt;</span> <span class="n">f</span><span class="p">.</span><span class="nf">stat</span>
  <span class="o">=&gt;</span> <span class="c1">#&lt;File::Stat dev=0x1000004, ino=733544, mode=040755, nlink=73, uid=503, gid=20, rdev=0x0, size=2336, blksize=4194304, blocks=0, atime=2018-02-11 14:04:04 +0800, mtime=2018-02-11 14:04:04 +0800, ctime=2018-02-11 14:04:04 +0800, birthtime=2016-12-11 13:17:41 +0800&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">022</span> <span class="o">&gt;</span>
@@ -1170,27 +1170,27 @@ Block 中的 f 指代的是一个 file object ,对他使用了 .stat 方法
 
 <p>使用 .new  新建一个 Dir instance</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">02</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/users/caven/rubyist/'</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">02</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/users/Xullnn/rubyist/'</span><span class="p">)</span>
 <span class="no">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-        <span class="mi">4</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">caven</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
+        <span class="mi">4</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
         3: from (irb):28
         2: from (irb):28:in `</span><span class="n">new</span><span class="s1">'
         1: from (irb):28:in `initialize'</span>
-<span class="no">Errno</span><span class="o">::</span><span class="no">ENOENT</span> <span class="p">(</span><span class="no">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span> <span class="err">@</span> <span class="n">dir_initialize</span> <span class="o">-</span> <span class="sr">/users/</span><span class="n">caven</span><span class="o">/</span><span class="n">rubyist</span><span class="o">/</span><span class="p">)</span>
+<span class="no">Errno</span><span class="o">::</span><span class="no">ENOENT</span> <span class="p">(</span><span class="no">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span> <span class="err">@</span> <span class="n">dir_initialize</span> <span class="o">-</span> <span class="sr">/users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="n">rubyist</span><span class="o">/</span><span class="p">)</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">02</span><span class="mi">9</span> <span class="o">&gt;</span>
 </code></pre></div></div>
 
 <p>注意这里的 new 不是 新建路径 的意思，而是根据已有路径建立一个 Dir instance
 如果输入的路径是不存在的会报错</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">caven</span><span class="vi">@caven</span> <span class="err">⮀</span> <span class="o">~</span> <span class="err">⮀</span> <span class="n">pwd</span>
-<span class="sr">/Users/</span><span class="n">caven</span>
-<span class="n">caven</span><span class="vi">@caven</span> <span class="err">⮀</span> <span class="o">~</span> <span class="err">⮀</span> <span class="n">mkdir</span> <span class="n">rubyist</span>
-<span class="n">caven</span><span class="vi">@caven</span> <span class="err">⮀</span> <span class="o">~</span> <span class="err">⮀</span> <span class="n">irb</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">001</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/users/caven/rubyist/'</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="c1">#&lt;Dir:/users/caven/rubyist/&gt;</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Xullnn</span><span class="vi">@Xullnn</span> <span class="err">⮀</span> <span class="o">~</span> <span class="err">⮀</span> <span class="n">pwd</span>
+<span class="sr">/Users/</span><span class="n">Xullnn</span>
+<span class="n">Xullnn</span><span class="vi">@Xullnn</span> <span class="err">⮀</span> <span class="o">~</span> <span class="err">⮀</span> <span class="n">mkdir</span> <span class="n">rubyist</span>
+<span class="n">Xullnn</span><span class="vi">@Xullnn</span> <span class="err">⮀</span> <span class="o">~</span> <span class="err">⮀</span> <span class="n">irb</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">001</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/users/Xullnn/rubyist/'</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;Dir:/users/Xullnn/rubyist/&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">002</span> <span class="o">&gt;</span> <span class="n">d</span>
-<span class="o">=&gt;</span> <span class="c1">#&lt;Dir:/users/caven/rubyist/&gt;</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;Dir:/users/Xullnn/rubyist/&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">003</span> <span class="o">&gt;</span>
 </code></pre></div></div>
 
@@ -1208,13 +1208,13 @@ Block 中的 f 指代的是一个 file object ,对他使用了 .stat 方法
 
 <p>.entries 的使用方法有两种，一种是 instance method 格式，一种是 class method 格式</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">004</span> <span class="o">&gt;</span> <span class="n">dir</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/Users/caven/Notes &amp; Articles/Note of Rubyist'</span><span class="p">)</span>
- <span class="o">=&gt;</span> <span class="c1">#&lt;Dir:/Users/caven/Notes &amp; Articles/Note of Rubyist&gt;</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">004</span> <span class="o">&gt;</span> <span class="n">dir</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'/Users/Xullnn/Notes &amp; Articles/Note of Rubyist'</span><span class="p">)</span>
+ <span class="o">=&gt;</span> <span class="c1">#&lt;Dir:/Users/Xullnn/Notes &amp; Articles/Note of Rubyist&gt;</span>
 
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">005</span> <span class="o">&gt;</span> <span class="n">dir</span><span class="p">.</span><span class="nf">entries</span>
  <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">".."</span><span class="p">,</span> <span class="s2">"Chapter 3 Organizing objects with classes.md"</span><span class="p">,</span> <span class="s2">"Chapter 14. Callable and runnable objects.md"</span><span class="p">,</span> <span class="s2">"Chapter 15. Callbacks, hooks, and runtime introspection.md"</span><span class="p">,</span> <span class="s2">".DS_Store"</span><span class="p">,</span> <span class="s2">"Chapter 2  Objects , methods, and local variables.md"</span><span class="p">,</span> <span class="s2">"chapter 12. File and I O operations.md"</span><span class="p">,</span> <span class="s2">"Chapter 8. Strings, symbols, and other scalar objects.md"</span><span class="p">,</span> <span class="s2">"Chapter 13. Object individuation.md"</span><span class="p">,</span> <span class="s2">"readme.md"</span><span class="p">,</span> <span class="s2">"Chapter 5 The default object (self), scope, and visibility.md"</span><span class="p">,</span> <span class="s2">"Chapter 11. Regular expressions and regexp-based string operations.md"</span><span class="p">,</span> <span class="s2">"Chapter 9 Collection and container objects.md"</span><span class="p">,</span> <span class="s2">"Chapter 7 Built-in essentials.md"</span><span class="p">,</span> <span class="s2">"Chapter 10 Collection central- Enumerable and Enumerator.md"</span><span class="p">,</span> <span class="s2">"Chapter 6 Control-flow techniques.md"</span><span class="p">,</span> <span class="s2">"Chapter 4 modules and program organization.md"</span><span class="p">,</span> <span class="s2">"code examples"</span><span class="p">,</span> <span class="s2">"Chapter 1  Bootstrapping your ruby literacy.md"</span><span class="p">]</span>
 
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">006</span> <span class="o">&gt;</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="s1">'/Users/caven/Notes &amp; Articles/Note of Rubyist'</span><span class="p">)</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">006</span> <span class="o">&gt;</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="s1">'/Users/Xullnn/Notes &amp; Articles/Note of Rubyist'</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">".."</span><span class="p">,</span> <span class="s2">"Chapter 3 Organizing objects with classes.md"</span><span class="p">,</span> <span class="s2">"Chapter 14. Callable and runnable objects.md"</span><span class="p">,</span> <span class="s2">"Chapter 15. Callbacks, hooks, and runtime introspection.md"</span><span class="p">,</span> <span class="s2">".DS_Store"</span><span class="p">,</span> <span class="s2">"Chapter 2  Objects , methods, and local variables.md"</span><span class="p">,</span> <span class="s2">"chapter 12. File and I O operations.md"</span><span class="p">,</span> <span class="s2">"Chapter 8. Strings, symbols, and other scalar objects.md"</span><span class="p">,</span> <span class="s2">"Chapter 13. Object individuation.md"</span><span class="p">,</span> <span class="s2">"readme.md"</span><span class="p">,</span> <span class="s2">"Chapter 5 The default object (self), scope, and visibility.md"</span><span class="p">,</span> <span class="s2">"Chapter 11. Regular expressions and regexp-based string operations.md"</span><span class="p">,</span> <span class="s2">"Chapter 9 Collection and container objects.md"</span><span class="p">,</span> <span class="s2">"Chapter 7 Built-in essentials.md"</span><span class="p">,</span> <span class="s2">"Chapter 10 Collection central- Enumerable and Enumerator.md"</span><span class="p">,</span> <span class="s2">"Chapter 6 Control-flow techniques.md"</span><span class="p">,</span> <span class="s2">"Chapter 4 modules and program organization.md"</span><span class="p">,</span> <span class="s2">"code examples"</span><span class="p">,</span> <span class="s2">"Chapter 1  Bootstrapping your ruby literacy.md"</span><span class="p">]</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">007</span> <span class="o">&gt;</span>
 </code></pre></div></div>
@@ -1225,7 +1225,7 @@ Let’s say we want to add up the sizes of all non-hidden regular files in a dir
 <p>注意返回文件夹array 中，一个点号和 两个点号的项。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">00</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="s1">'/users/'</span><span class="p">)</span>
- <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">".."</span><span class="p">,</span> <span class="s2">".localized"</span><span class="p">,</span> <span class="s2">"Shared"</span><span class="p">,</span> <span class="s2">"caven"</span><span class="p">,</span> <span class="s2">"Guest"</span><span class="p">]</span>
+ <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">".."</span><span class="p">,</span> <span class="s2">".localized"</span><span class="p">,</span> <span class="s2">"Shared"</span><span class="p">,</span> <span class="s2">"Xullnn"</span><span class="p">,</span> <span class="s2">"Guest"</span><span class="p">]</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">00</span><span class="mi">9</span> <span class="o">&gt;</span>
 </code></pre></div></div>
 
@@ -1233,11 +1233,11 @@ Let’s say we want to add up the sizes of all non-hidden regular files in a dir
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">=&gt;</span> <span class="c1">#&lt;Dir:/users&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">023</span> <span class="o">&gt;</span> <span class="n">entries</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="nf">entries</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">".."</span><span class="p">,</span> <span class="s2">".localized"</span><span class="p">,</span> <span class="s2">"Shared"</span><span class="p">,</span> <span class="s2">"caven"</span><span class="p">,</span> <span class="s2">"Guest"</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">".."</span><span class="p">,</span> <span class="s2">".localized"</span><span class="p">,</span> <span class="s2">"Shared"</span><span class="p">,</span> <span class="s2">"Xullnn"</span><span class="p">,</span> <span class="s2">"Guest"</span><span class="p">]</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">024</span> <span class="o">&gt;</span> <span class="n">entries</span><span class="p">.</span><span class="nf">delete_if</span> <span class="p">{</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span> <span class="n">entry</span> <span class="o">=~</span> <span class="sr">/^\./</span> <span class="p">}</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Shared"</span><span class="p">,</span> <span class="s2">"caven"</span><span class="p">,</span> <span class="s2">"Guest"</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Shared"</span><span class="p">,</span> <span class="s2">"Xullnn"</span><span class="p">,</span> <span class="s2">"Guest"</span><span class="p">]</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">025</span> <span class="o">&gt;</span> <span class="n">entries</span><span class="p">.</span><span class="nf">map!</span> <span class="p">{</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="nf">path</span><span class="p">,</span> <span class="n">entry</span><span class="p">)</span> <span class="p">}</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"/users/Shared"</span><span class="p">,</span> <span class="s2">"/users/caven"</span><span class="p">,</span> <span class="s2">"/users/Guest"</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"/users/Shared"</span><span class="p">,</span> <span class="s2">"/users/Xullnn"</span><span class="p">,</span> <span class="s2">"/users/Guest"</span><span class="p">]</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">026</span> <span class="o">&gt;</span> <span class="n">entries</span><span class="p">.</span><span class="nf">delete_if</span> <span class="p">{</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span> <span class="o">!</span><span class="no">File</span><span class="p">.</span><span class="nf">file?</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="p">}</span>
 <span class="o">=&gt;</span> <span class="p">[]</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">027</span> <span class="o">&gt;</span> <span class="nb">puts</span> <span class="n">entries</span><span class="p">.</span><span class="nf">inject</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">acc</span><span class="p">,</span> <span class="n">entry</span><span class="o">|</span> <span class="n">acc</span> <span class="o">+</span> <span class="no">File</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="p">}</span>
@@ -1316,10 +1316,10 @@ map! + File.join是为了让 array 中的每个项都变成绝对路径，方便
 
 <p>因为 Dir相关的方法默认不包含以点号 . 开头的隐藏文件，所以对应到上面提到的使用 entries 计算非隐藏常规文件大小的操作可以简化</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">007</span> <span class="o">&gt;</span> <span class="n">dir</span> <span class="o">=</span> <span class="s1">'/users/caven/'</span>
- <span class="o">=&gt;</span> <span class="s2">"/users/caven/"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">007</span> <span class="o">&gt;</span> <span class="n">dir</span> <span class="o">=</span> <span class="s1">'/users/Xullnn/'</span>
+ <span class="o">=&gt;</span> <span class="s2">"/users/Xullnn/"</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">00</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="n">entries</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">[</span><span class="s2">"</span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">/*"</span><span class="p">].</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">entry</span><span class="o">|</span> <span class="no">File</span><span class="p">.</span><span class="nf">directory?</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="p">}</span>
- <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"/Users/caven//Reading"</span><span class="p">,</span> <span class="s2">"/Users/caven//Music"</span><span class="p">,</span> <span class="s2">"/Users/caven//CavenHome"</span><span class="p">,</span> <span class="s2">"/Users/caven//Calibre 书库"</span><span class="p">,</span> <span class="s2">"/Users/caven//rubyist"</span><span class="p">,</span><span class="o">......</span><span class="p">]</span>
+ <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"/Users/Xullnn//Reading"</span><span class="p">,</span> <span class="s2">"/Users/Xullnn//Music"</span><span class="p">,</span> <span class="s2">"/Users/Xullnn//XullnnHome"</span><span class="p">,</span> <span class="s2">"/Users/Xullnn//Calibre 书库"</span><span class="p">,</span> <span class="s2">"/Users/Xullnn//rubyist"</span><span class="p">,</span><span class="o">......</span><span class="p">]</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">00</span><span class="mi">9</span> <span class="o">&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">010</span> <span class="o">&gt;</span> <span class="nb">puts</span> <span class="n">entries</span><span class="p">.</span><span class="nf">inject</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">acc</span><span class="p">,</span> <span class="n">entry</span><span class="o">|</span> <span class="n">acc</span> <span class="o">+</span> <span class="no">File</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="p">}</span>
 <span class="mi">13504</span>
@@ -1493,9 +1493,9 @@ map! + File.join是为了让 array 中的每个项都变成绝对路径，方便
 
 <p>在执行一个动作前如果你怕引起无法逆转的后果，可以在 FileUtils::NoWrite后执行你想执行的命令，这样你可以看到模拟的结果而不会进行实际的读写</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">060</span> <span class="o">&gt;</span> <span class="no">FileUtils</span><span class="o">::</span><span class="no">NoWrite</span><span class="p">.</span><span class="nf">rm</span><span class="p">(</span><span class="s2">"/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/.INFO"</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">060</span> <span class="o">&gt;</span> <span class="no">FileUtils</span><span class="o">::</span><span class="no">NoWrite</span><span class="p">.</span><span class="nf">rm</span><span class="p">(</span><span class="s2">"/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/.INFO"</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="kp">nil</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">061</span> <span class="o">&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">exist?</span><span class="p">(</span><span class="s2">"/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/.INFO"</span><span class="p">)</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">061</span> <span class="o">&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">exist?</span><span class="p">(</span><span class="s2">"/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/.INFO"</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="kp">true</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">062</span> <span class="o">&gt;</span>
 </code></pre></div></div>
@@ -1516,32 +1516,32 @@ map! + File.join是为了让 array 中的每个项都变成绝对路径，方便
 
 <p>记得先  <code class="highlighter-rouge">require 'pathname'</code></p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">062</span> <span class="o">&gt;</span> <span class="n">path</span> <span class="o">=</span> <span class="no">Pathname</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/.INFO"</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">062</span> <span class="o">&gt;</span> <span class="n">path</span> <span class="o">=</span> <span class="no">Pathname</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/.INFO"</span><span class="p">)</span>
 <span class="no">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-        <span class="mi">2</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">caven</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
+        <span class="mi">2</span><span class="p">:</span> <span class="n">from</span> <span class="sr">/Users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="p">.</span><span class="nf">rvm</span><span class="o">/</span><span class="n">rubies</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">irb</span><span class="p">:</span><span class="mi">11</span><span class="ss">:in</span> <span class="sb">`&lt;main&gt;'
         1: from (irb):62
 NameError (uninitialized constant Pathname)
 2.5.0 :063 &gt; require 'pathname'
  =&gt; true
-2.5.0 :064 &gt; path = Pathname.new("/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/.INFO")
- =&gt; #&lt;Pathname:/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/.INFO&gt;
+2.5.0 :064 &gt; path = Pathname.new("/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/.INFO")
+ =&gt; #&lt;Pathname:/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/.INFO&gt;
 2.5.0 :065 &gt; path.basename
  =&gt; #&lt;Pathname:.INFO&gt;
 2.5.0 :066 &gt; path.dirname
- =&gt; #&lt;Pathname:/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples&gt;
+ =&gt; #&lt;Pathname:/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples&gt;
 2.5.0 :067 &gt; path.extname
  =&gt; ""
 2.5.0 :068 &gt; path
- =&gt; #&lt;Pathname:/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/.INFO&gt;
+ =&gt; #&lt;Pathname:/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples/.INFO&gt;
 2.5.0 :069 &gt;
 </span></code></pre></div></div>
 
 <p>对一个 Pathname 对象使用某些方法 返回的值是一个 新的Pathname 对象， 如果想要看 string 格式的版本，使用 puts 加对象</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">076</span> <span class="o">&gt;</span> <span class="n">path</span>
- <span class="o">=&gt;</span> <span class="c1">#&lt;Pathname:/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples&gt;</span>
+ <span class="o">=&gt;</span> <span class="c1">#&lt;Pathname:/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">077</span> <span class="o">&gt;</span> <span class="nb">puts</span> <span class="n">path</span>
-<span class="sr">/Users/</span><span class="n">caven</span><span class="o">/</span><span class="no">Notes</span> <span class="o">&amp;</span> <span class="no">Articles</span><span class="o">/</span><span class="no">Note</span> <span class="n">of</span> <span class="no">Rubyist</span><span class="o">/</span><span class="n">code</span> <span class="n">examples</span>
+<span class="sr">/Users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="no">Notes</span> <span class="o">&amp;</span> <span class="no">Articles</span><span class="o">/</span><span class="no">Note</span> <span class="n">of</span> <span class="no">Rubyist</span><span class="o">/</span><span class="n">code</span> <span class="n">examples</span>
  <span class="o">=&gt;</span> <span class="kp">nil</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">07</span><span class="mi">8</span> <span class="o">&gt;</span>
 </code></pre></div></div>
@@ -1551,15 +1551,15 @@ NameError (uninitialized constant Pathname)
 <p><code class="highlighter-rouge">ascend</code> 方法可以从当前路径开始，一级一级地向上遍历每一个路径</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mo">07</span><span class="mi">9</span> <span class="o">&gt;</span> <span class="n">path</span>
- <span class="o">=&gt;</span> <span class="c1">#&lt;Pathname:/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples&gt;</span>
+ <span class="o">=&gt;</span> <span class="c1">#&lt;Pathname:/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mi">080</span> <span class="o">&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mi">081</span> <span class="o">&gt;</span> <span class="n">path</span><span class="p">.</span><span class="nf">ascend</span> <span class="k">do</span> <span class="o">|</span><span class="n">dir</span><span class="o">|</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mi">082</span> <span class="o">&gt;</span>     <span class="nb">puts</span> <span class="s2">"Next level up: </span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">"</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mi">083</span><span class="p">?</span><span class="o">&gt;</span>   <span class="k">end</span>
-<span class="no">Next</span> <span class="n">level</span> <span class="ss">up: </span><span class="sr">/Users/</span><span class="n">caven</span><span class="o">/</span><span class="no">Notes</span> <span class="o">&amp;</span> <span class="no">Articles</span><span class="o">/</span><span class="no">Note</span> <span class="n">of</span> <span class="no">Rubyist</span><span class="o">/</span><span class="n">code</span> <span class="n">examples</span>
-<span class="no">Next</span> <span class="n">level</span> <span class="ss">up: </span><span class="sr">/Users/</span><span class="n">caven</span><span class="o">/</span><span class="no">Notes</span> <span class="o">&amp;</span> <span class="no">Articles</span><span class="o">/</span><span class="no">Note</span> <span class="n">of</span> <span class="no">Rubyist</span>
-<span class="no">Next</span> <span class="n">level</span> <span class="ss">up: </span><span class="sr">/Users/</span><span class="n">caven</span><span class="o">/</span><span class="no">Notes</span> <span class="o">&amp;</span> <span class="no">Articles</span>
-<span class="no">Next</span> <span class="n">level</span> <span class="ss">up: </span><span class="sr">/Users/</span><span class="n">caven</span>
+<span class="no">Next</span> <span class="n">level</span> <span class="ss">up: </span><span class="sr">/Users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="no">Notes</span> <span class="o">&amp;</span> <span class="no">Articles</span><span class="o">/</span><span class="no">Note</span> <span class="n">of</span> <span class="no">Rubyist</span><span class="o">/</span><span class="n">code</span> <span class="n">examples</span>
+<span class="no">Next</span> <span class="n">level</span> <span class="ss">up: </span><span class="sr">/Users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="no">Notes</span> <span class="o">&amp;</span> <span class="no">Articles</span><span class="o">/</span><span class="no">Note</span> <span class="n">of</span> <span class="no">Rubyist</span>
+<span class="no">Next</span> <span class="n">level</span> <span class="ss">up: </span><span class="sr">/Users/</span><span class="n">Xullnn</span><span class="o">/</span><span class="no">Notes</span> <span class="o">&amp;</span> <span class="no">Articles</span>
+<span class="no">Next</span> <span class="n">level</span> <span class="ss">up: </span><span class="sr">/Users/</span><span class="n">Xullnn</span>
 <span class="no">Next</span> <span class="n">level</span> <span class="ss">up: </span><span class="sr">/Users
 Next level up: /</span>
  <span class="o">=&gt;</span> <span class="kp">nil</span>
@@ -1571,14 +1571,14 @@ Next level up: /</span>
 <p>关于 Pathname 的一个主要特点是上面提到的他总是返回一个 object 而不是一个 string ，所以我们可以在 block 中连续使用针对 object 的方法</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mi">085</span> <span class="o">&gt;</span> <span class="n">path</span>
- <span class="o">=&gt;</span> <span class="c1">#&lt;Pathname:/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples&gt;</span>
+ <span class="o">=&gt;</span> <span class="c1">#&lt;Pathname:/Users/Xullnn/Notes &amp; Articles/Note of Rubyist/code examples&gt;</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mi">086</span> <span class="o">&gt;</span> <span class="n">path</span><span class="p">.</span><span class="nf">ascend</span> <span class="k">do</span> <span class="o">|</span><span class="n">dir</span><span class="o">|</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mi">087</span> <span class="o">&gt;</span>     <span class="nb">puts</span> <span class="s2">"Ascended to </span><span class="si">#{</span><span class="n">dir</span><span class="p">.</span><span class="nf">basename</span><span class="si">}</span><span class="s2">"</span>
 <span class="mf">2.5</span><span class="o">.</span><span class="mi">0</span> <span class="p">:</span><span class="mi">088</span><span class="p">?</span><span class="o">&gt;</span>   <span class="k">end</span>
 <span class="no">Ascended</span> <span class="n">to</span> <span class="n">code</span> <span class="n">examples</span>
 <span class="no">Ascended</span> <span class="n">to</span> <span class="no">Note</span> <span class="n">of</span> <span class="no">Rubyist</span>
 <span class="no">Ascended</span> <span class="n">to</span> <span class="no">Notes</span> <span class="o">&amp;</span> <span class="no">Articles</span>
-<span class="no">Ascended</span> <span class="n">to</span> <span class="n">caven</span>
+<span class="no">Ascended</span> <span class="n">to</span> <span class="n">Xullnn</span>
 <span class="no">Ascended</span> <span class="n">to</span> <span class="no">Users</span>
 <span class="no">Ascended</span> <span class="n">to</span> <span class="o">/</span>
  <span class="o">=&gt;</span> <span class="kp">nil</span>
@@ -1814,7 +1814,7 @@ I/O操作是基于IO class的，File 是他的subclass. IO 和 File 中的许多
 
   <div class="copyright">
     
-    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+    <p>&copy; 2018  Xullnn.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
        Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
     
   </div>

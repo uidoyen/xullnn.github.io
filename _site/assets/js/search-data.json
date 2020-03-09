@@ -80,7 +80,7 @@ var store = [{
         "url": "http://localhost:4000/ruby/rails%20%E2%84%97/basic-form-1/"
       },{
         "title": "Difference between gets and gets.chomp",
-        "excerpt":"Ruby 中 gets, gets.chomp, gets.chomp() 的区别。 2.3.1 :002 &gt;2.3.1 :003 &gt; name = getscaven =&gt; \"caven\\n\" # gets 会将接收到的数据转换为string 并在末尾换行 '\\n'2.3.1 :004 &gt; name = gets.chomp caven =&gt; \"caven\" # gets带chomp 则会默认“吃”掉换行符号2.3.1 :005 &gt; day = getsmonday =&gt; \"monday\\n\"2.3.1 :006 &gt; day.chomp =&gt; \"monday\"2.3.1 :007 &gt; day.chomp(\"ay\\n\") =&gt; \"mond\" #...","categories": ["Command Line ℗"],
+        "excerpt":"Ruby 中 gets, gets.chomp, gets.chomp() 的区别。 2.3.1 :002 &gt;2.3.1 :003 &gt; name = getsXullnn =&gt; \"Xullnn\\n\" # gets 会将接收到的数据转换为string 并在末尾换行 '\\n'2.3.1 :004 &gt; name = gets.chomp Xullnn =&gt; \"Xullnn\" # gets带chomp 则会默认“吃”掉换行符号2.3.1 :005 &gt; day = getsmonday =&gt; \"monday\\n\"2.3.1 :006 &gt; day.chomp =&gt; \"monday\"2.3.1 :007 &gt; day.chomp(\"ay\\n\") =&gt; \"mond\" #...","categories": ["Command Line ℗"],
         "tags": ["Command Line"],
         "url": "http://localhost:4000/command%20line%20%E2%84%97/diff-btw-gets-wether-chomp/"
       },{

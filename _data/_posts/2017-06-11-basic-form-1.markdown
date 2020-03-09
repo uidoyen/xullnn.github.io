@@ -109,7 +109,7 @@ b. 在<form>基础上，第二级的 `<input>`, `<select>` 这些标签和它们
 
 <br>
 - 当直接点击 "提交表单" 后，网页刷新了下但未跳转，网址后面多了 `?nick_name=Your+Name`
-- 当删掉输入框中的文字后再输入 Caven, 点击 "提交表单"，网址后面变成了 `?nick_name=Caven`
+- 当删掉输入框中的文字后再输入 Xullnn, 点击 "提交表单"，网址后面变成了 `?nick_name=Xullnn`
 - 两种情况下，页面刷新后输入框里的内容都会再次回到原来的 Your Name
 
 网址中的问号 `?` 代表这是一次query( [The query string is everything after "?" in the URL. ](http://edgeguides.rubyonrails.org/action_controller_overview.html#parameters) )。这里用户以hash的形式送出了一组数据，发出了一次 **get** 的request。

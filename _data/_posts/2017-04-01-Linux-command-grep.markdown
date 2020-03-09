@@ -89,14 +89,14 @@ _site/js/main.js:1
 这是使用`heroku logs | grep -i common`的结果
 
 ```ruby
-caven@CavendeMacBook-Pro ⮀ ~/learnruby/shop ⮀ ⭠ caven-fix-error01 ⮀ heroku logs | grep -i common
+Xullnn@XullnndeMacBook-Pro ⮀ ~/learnruby/shop ⮀ ⭠ Xullnn-fix-error01 ⮀ heroku logs | grep -i common
 2017-04-02T02:19:58.390743+00:00 app[web.1]: I, [2017-04-02T02:19:58.390684 #4]  INFO -- : [74cc96c9-326e-4755-aaa4-08f135bcbd1a]   Rendered common/_flashes.html.erb (0.5ms)
 2017-04-02T02:19:58.420455+00:00 app[web.1]: I, [2017-04-02T02:19:58.420407 #4]  INFO -- : [74cc96c9-326e-4755-aaa4-08f135bcbd1a]   Rendered common/_navbar.html.erb (29.3ms)
 2017-04-02T02:19:58.421419+00:00 app[web.1]: I, [2017-04-02T02:19:58.421364 #4]  INFO -- : [74cc96c9-326e-4755-aaa4-08f135bcbd1a]   Rendered common/_footer.html.erb (0.4ms)
 2017-04-02T02:20:02.522177+00:00 app[web.1]: I, [2017-04-02T02:20:02.522118 #4]  INFO -- : [183aff59-999c-4cbc-898a-7407a76b80fd]   Rendered common/_flashes.html.erb (0.1ms)
 2017-04-02T02:20:02.530441+00:00 app[web.1]: I, [2017-04-02T02:20:02.530377 #4]  INFO -- : [183aff59-999c-4cbc-898a-7407a76b80fd]   Rendered common/_navbar.html.erb (8.1ms)
 2017-04-02T02:20:02.530661+00:00 app[web.1]: I, [2017-04-02T02:20:02.530600 #4]  INFO -- : [183aff59-999c-4cbc-898a-7407a76b80fd]   Rendered common/_footer.html.erb (0.0ms)
-caven@CavendeMacBook-Pro ⮀ ~/learnruby/shop ⮀ ⭠ caven-fix-error01 ⮀
+Xullnn@XullnndeMacBook-Pro ⮀ ~/learnruby/shop ⮀ ⭠ Xullnn-fix-error01 ⮀
 ```
 
 `heroku logs | grep -i -E 'error|fatal'` 到log中去找含有error和fatal的行

@@ -33,7 +33,7 @@ blog平台的种类很多，但我们不知道它们能存在多久，如果资�
 2.在terminal中执行 `gem install jekyll bundler` ，会出现类似画面：
 
 ```ruby
-caven@CavendeMacBook-Pro ⮀ ~/demo ⮀ gem install jekyll bundler
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo ⮀ gem install jekyll bundler
 Successfully installed jekyll-3.4.3
 Parsing documentation for jekyll-3.4.3
 Done installing documentation for jekyll after 1 seconds
@@ -46,13 +46,13 @@ Done installing documentation for bundler after 3 seconds
 3.用jekyll生成你的blog文件夹，执行 `jekyll new my-blog`
 
 ```ruby
-caven@CavendeMacBook-Pro ⮀ ~/demo ⮀ jekyll new my-blog
-Running bundle install in /Users/caven/demo/my-blog...
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo ⮀ jekyll new my-blog
+Running bundle install in /Users/Xullnn/demo/my-blog...
  Bundler: The dependency tzinfo-data (>= 0) will be......
  .
  .
  .
-New jekyll site installed in /Users/caven/demo/my-blog.
+New jekyll site installed in /Users/Xullnn/demo/my-blog.
 ```
 
 4.进入你的blog文件夹， `cd my-blog`

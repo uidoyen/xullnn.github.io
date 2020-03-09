@@ -52,8 +52,8 @@ HTTP是不安全的，且攻击者通过监听和中间人攻击等手段，可�
 |    mount 选项 参数     |   将指定加载点挂载到文件系统  | `mount`列出当前挂载的所有内容；`mount /mnt/cdrom` 挂载光驱   |
 |    unmount     |   卸除挂载  | `unmount /mnt/cdrom` 卸除光驱的挂载   |
 |     pwd    |  显示当前所在路径   |  `pwd`  |
-|    cp     |  将一个或多个源文件或者目录复制到指定的目的文件或目录  | `cp demo user/caven/demo-1` 将文件demo复制到/user/caven/目录下并将其更名为demo-1 |
-|    mv     |   移动/重命名当前文件(文件夹)  |`mv demo user/caven/` 将demo移动到user/caven/路径下，`mv user/demo.text user/demo.md`将 user/目录下的demo.text更名为demo.md    |
+|    cp     |  将一个或多个源文件或者目录复制到指定的目的文件或目录  | `cp demo user/Xullnn/demo-1` 将文件demo复制到/user/Xullnn/目录下并将其更名为demo-1 |
+|    mv     |   移动/重命名当前文件(文件夹)  |`mv demo user/Xullnn/` 将demo移动到user/Xullnn/路径下，`mv user/demo.text user/demo.md`将 user/目录下的demo.text更名为demo.md    |
 |   rm      |  删除文件或者文件夹   |  `rm app/views`删除app/views文件夹  |
 |    find     | 寻找文件或文件夹    | `find .`列出当前目录下所有文件（包括子目录）；`find css`找到当前目录下所有包含css的文件夹和文件； `find *.txt` 找到当前目录下所有txt类型的文件； |
 

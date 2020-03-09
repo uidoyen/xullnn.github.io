@@ -5,14 +5,14 @@ categories: [Programming]
 tags: [Heroku, Ruby on Rails, Deploy, aws]
 ---
 
-前面的文章中谈到在development环境下[如何使用carrierwave实现附件的上传和管理](https://gitcavendish.github.io/2017/How-to-upload-multi-files-in-rails/)，在开发环境中我们将文件存储路径设置为 **app/public/uploads/** 下，这个目录下的文件可以不经过rails的处理直接被调用。那么在production产品环境中上传的文件放哪里呢？
+前面的文章中谈到在development环境下[如何使用carrierwave实现附件的上传和管理](https://gitXullnndish.github.io/2017/How-to-upload-multi-files-in-rails/)，在开发环境中我们将文件存储路径设置为 **app/public/uploads/** 下，这个目录下的文件可以不经过rails的处理直接被调用。那么在production产品环境中上传的文件放哪里呢？
 
 同样使用carrierwave我们看下部署到heroku上如何使用Amazon Simple Storage Service (Amazon S3)服务来将上传的文件存在专门的存储服务器。
 > 实际上也可以将上传的文件就留在public文件夹中，但记得不要在 .gitignore 文件中加上 public/uploads。这样做也是凑效的，不过你的app体积会随着文件上传量的增加而快速增加。heroku的免费账户对单个app大小的限制是300MB。
 
 
 
-### 1. [在本地安装好carrierwave](https://gitcavendish.github.io/2017/How-to-upload-multi-files-in-rails/)并测试各项功能是否正常。
+### 1. [在本地安装好carrierwave](https://gitXullnndish.github.io/2017/How-to-upload-multi-files-in-rails/)并测试各项功能是否正常。
 
 ### 2. Amazon S3上存储桶的建立
 

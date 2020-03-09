@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-03-23T20:11:48+08:00</updated><id>http://localhost:4000/</id><title type="html">Caven’s</title><subtitle>Record</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;picture&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;twitter&quot;=&gt;nil, &quot;links&quot;=&gt;[{&quot;title&quot;=&gt;nil, &quot;url&quot;=&gt;nil, &quot;icon&quot;=&gt;nil}]}</name></author><entry><title type="html">Note of Power Searching</title><link href="http://localhost:4000/reading%20notes/power-searching/" rel="alternate" type="text/html" title="Note of Power Searching" /><published>2018-03-20T00:00:00+08:00</published><updated>2018-03-20T00:00:00+08:00</updated><id>http://localhost:4000/reading%20notes/power-searching</id><content type="html" xml:base="http://localhost:4000/reading%20notes/power-searching/">&lt;p&gt;基于 Daniel Russell 的Google education视频课程。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-03-23T20:11:48+08:00</updated><id>http://localhost:4000/</id><title type="html">Xullnn’s</title><subtitle>Record</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;picture&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;twitter&quot;=&gt;nil, &quot;links&quot;=&gt;[{&quot;title&quot;=&gt;nil, &quot;url&quot;=&gt;nil, &quot;icon&quot;=&gt;nil}]}</name></author><entry><title type="html">Note of Power Searching</title><link href="http://localhost:4000/reading%20notes/power-searching/" rel="alternate" type="text/html" title="Note of Power Searching" /><published>2018-03-20T00:00:00+08:00</published><updated>2018-03-20T00:00:00+08:00</updated><id>http://localhost:4000/reading%20notes/power-searching</id><content type="html" xml:base="http://localhost:4000/reading%20notes/power-searching/">&lt;p&gt;基于 Daniel Russell 的Google education视频课程。&lt;/p&gt;
 
 &lt;p&gt;讲授了关于搜索的基本概念和技巧。&lt;/p&gt;
 
@@ -2884,25 +2884,25 @@ something 指代传入匿名函数的参数？ 第3个参数又传回给了第�
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;commit 7aab70fa501268e7ba6e4b9276ab74edc0697407
-Author: Caven &amp;lt;xll290016537@gmail.com&amp;gt;
+Author: Xullnn &amp;lt;xll290016537@gmail.com&amp;gt;
 Date:   Mon Mar 12 16:37:24 2018 +0800
 
     command line basics
 
 commit b787171a532e7b3a8df7eddad61bdf4468ec20ce
-Author: Caven &amp;lt;xll290016537@gmail.com&amp;gt;
+Author: Xullnn &amp;lt;xll290016537@gmail.com&amp;gt;
 Date:   Mon Mar 12 08:50:07 2018 +0800
 
     added some words
 
 commit 78f4b1f1887dd421b12465dd109cf0225a47c3d0
-Author: Caven &amp;lt;xll290016537@gmail.com&amp;gt;
+Author: Xullnn &amp;lt;xll290016537@gmail.com&amp;gt;
 Date:   Fri Feb 23 15:55:54 2018 +0800
 
     altered readme
 
 commit c2b2aab7b244a8211a2ff4609ffe3b17f329eb9f
-Author: Caven &amp;lt;xll290016537@gmail.com&amp;gt;
+Author: Xullnn &amp;lt;xll290016537@gmail.com&amp;gt;
 Date:   Fri Feb 23 15:43:48 2018 +0800
 
     chapter 15

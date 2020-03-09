@@ -261,7 +261,7 @@ end
 search_seller(central_person)
 ```
 
-[将过程注释出来](https://gist.github.com/gitCavendish/f65f36ab990ab805ad53febc435ac558)，可以看到搜索的顺序是按层级展开的
+[将过程注释出来](https://gist.github.com/gitXullnndish/f65f36ab990ab805ad53febc435ac558)，可以看到搜索的顺序是按层级展开的
 
 ![](https://s3-ap-southeast-1.amazonaws.com/image-for-articles/image-bucket-1/Snip20180420_1.png
 )

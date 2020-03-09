@@ -16,7 +16,7 @@ seed是开发过程中一个小而强的工具，避免了每次重置资料库�
 `rails new seed-sample`
 
 ```ruby
-caven@CavendeMacBook-Pro ⮀ ~/demo ⮀ rails new seed-sample
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo ⮀ rails new seed-sample
       create
       create  README.md
       .....
@@ -24,7 +24,7 @@ caven@CavendeMacBook-Pro ⮀ ~/demo ⮀ rails new seed-sample
       run  bundle exec spring binstub --all
 * bin/rake: spring inserted
 * bin/rails: spring inserted
-caven@CavendeMacBook-Pro ⮀ ~/demo ⮀
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo ⮀
 ```
 
 `cd seed-sample`
@@ -85,9 +85,9 @@ puts "--------------------------Successfully created a city---------------------
 使用seed只需 `rake db:seed`
 
 ```ruby
-caven@CavendeMacBook-Pro ⮀ ~/demo/seed-sample ⮀ ⭠ master± ⮀ rake db:seed
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/seed-sample ⮀ ⭠ master± ⮀ rake db:seed
 --------------------------Successfully created a city-----------------------------
-caven@CavendeMacBook-Pro ⮀ ~/demo/seed-sample ⮀ ⭠ master± ⮀
+Xullnn@XullnndeMacBook-Pro ⮀ ~/demo/seed-sample ⮀ ⭠ master± ⮀
 ```
 
 这样我们就用seed建立了一笔city资料。

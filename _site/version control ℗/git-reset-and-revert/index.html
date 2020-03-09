@@ -16,7 +16,7 @@
   
     
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>git reset 与 git revert 用于版本回退 | Caven’s</title>
+<title>git reset 与 git revert 用于版本回退 | Xullnn’s</title>
 <meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="git reset 与 git revert 用于版本回退" />
 <meta property="og:locale" content="en_US" />
@@ -24,7 +24,7 @@
 <meta property="og:description" content="git revert 和 git reset 都可以用来撤销更改，二者间最重要的区别在于：git reset 会更改 commit 历史， git revert 不更改之前的commit 历史， 而是向前新增一个commit 点来记录此次revert的操作。" />
 <link rel="canonical" href="http://localhost:4000/version%20control%20%E2%84%97/git-reset-and-revert/" />
 <meta property="og:url" content="http://localhost:4000/version%20control%20%E2%84%97/git-reset-and-revert/" />
-<meta property="og:site_name" content="Caven’s" />
+<meta property="og:site_name" content="Xullnn’s" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-06-01T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="/assets/css/main.css">
   
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
-  <link rel="alternate" type="application/atom+xml" title="Caven&#39;s" href="/atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Xullnn&#39;s" href="/atom.xml">
 <!-- start custom head snippets -->
 
 <!-- insert favicons. use http://realfavicongenerator.net/ -->
@@ -79,7 +79,7 @@
   <div class="wrap">
     
     
-      <h1 class="site-title animated fadeIn"><a href="/">Caven's</a></h1>
+      <h1 class="site-title animated fadeIn"><a href="/">Xullnn's</a></h1>
       <p class="site-description animated fadeIn" itemprop="description">Record</p>
     
   </div>
@@ -151,8 +151,8 @@
 
 <h4 id="1-git-reset-head2---soft">1 <code class="highlighter-rouge">git reset HEAD~2 --soft</code></h4>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">reset</span> <span class="no">HEAD</span><span class="o">~</span><span class="mi">2</span> <span class="o">--</span><span class="n">soft</span>
- <span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">status</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">reset</span> <span class="no">HEAD</span><span class="o">~</span><span class="mi">2</span> <span class="o">--</span><span class="n">soft</span>
+ <span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">status</span>
 <span class="no">On</span> <span class="n">branch</span> <span class="n">branch01</span>
 <span class="no">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="ss">committed:
   </span><span class="p">(</span><span class="n">use</span> <span class="s2">"git reset HEAD &lt;file&gt;..."</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
@@ -160,22 +160,22 @@
 	<span class="ss">modified:   </span><span class="n">file1</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span>  <span class="c1"># 绿色</span>
 	<span class="ss">modified:   </span><span class="n">file2</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span>  <span class="c1"># 绿色</span>
 
- <span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">log</span>
+ <span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">log</span>
 
  <span class="n">commit</span> <span class="mi">6</span><span class="n">f4624d3e676d815af52b818061ff97f5bbb01a1</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">19</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#2</span>
 
 <span class="n">commit</span> <span class="mi">76</span><span class="n">c535efd499d40185d1a191f80267f03aa4a4f3</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mo">00</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#1</span>
 
 <span class="n">commit</span> <span class="n">d35ab1c888eacc44f296e83526353052d48c49bf</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">09</span><span class="p">:</span><span class="mo">07</span><span class="p">:</span><span class="mi">24</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="n">clean</span>
@@ -187,19 +187,19 @@
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="n">commit</span> <span class="mi">91</span><span class="n">cc8b0b5ae62288c57bbcba2addcacdd8942559</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mi">09</span><span class="p">:</span><span class="mi">25</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="n">after</span> <span class="n">reset</span>
 
 <span class="n">commit</span> <span class="mi">6</span><span class="n">f4624d3e676d815af52b818061ff97f5bbb01a1</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mi">19</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#2</span>
 
 <span class="n">commit</span> <span class="mi">76</span><span class="n">c535efd499d40185d1a191f80267f03aa4a4f3</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mo">00</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#1</span>
@@ -210,11 +210,11 @@
 <h4 id="2-git-reset-head2-mixed">2 git reset HEAD~2 (–mixed)</h4>
 <p>–mixed 是 git reset 的默认设置，不用写直接 git reset HEAD~2 也可以。</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo1</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">reset</span> <span class="no">HEAD</span><span class="o">~</span><span class="mi">2</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo1</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">reset</span> <span class="no">HEAD</span><span class="o">~</span><span class="mi">2</span>
 <span class="no">Unstaged</span> <span class="n">changes</span> <span class="n">after</span> <span class="ss">reset:
 </span><span class="no">M</span>	<span class="n">file1</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span>
 <span class="no">M</span>	<span class="n">file2</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span>
-<span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo1</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo1</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">status</span>
 <span class="no">On</span> <span class="n">branch</span> <span class="n">branch01</span>
 <span class="no">Changes</span> <span class="n">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="ss">commit:
  </span><span class="p">(</span><span class="n">use</span> <span class="s2">"git add &lt;file&gt;..."</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
@@ -224,22 +224,22 @@
  <span class="ss">modified:   </span><span class="n">file2</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span>  <span class="c1"># 红色</span>
 
 <span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">"git add"</span> <span class="n">and</span><span class="o">/</span><span class="n">or</span> <span class="s2">"git commit -a"</span><span class="p">)</span>
-<span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo1</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">log</span>
+<span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo1</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">log</span>
 
 <span class="n">commit</span> <span class="n">e4c12df6449b01ae6ee96cf87657e16ccb0e3d40</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">56</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#2</span>
 
 <span class="n">commit</span> <span class="mi">24</span><span class="n">cd68d37934b5dac15bdcf52cf21eed5332165f</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">23</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#1</span>
 
 <span class="n">commit</span> <span class="mi">515326</span><span class="n">d25a6ac0aabeb5aa8d7f80f29d676648ec</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">51</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="n">clean</span>
@@ -256,29 +256,29 @@ M	file2.html.erb”</p>
 <p>这个命令会直接修改 commit 历史， staging area 以及 本地文件。 它相当于直接删掉了 #3 和 #4 这两个 commit历史，并更改本地文件。你也不需要再进行 commit 操作， staging area 也会是干净的。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">reset</span> <span class="no">HEAD</span><span class="o">~</span><span class="mi">2</span> <span class="o">--</span><span class="n">hard</span>
+<span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">reset</span> <span class="no">HEAD</span><span class="o">~</span><span class="mi">2</span> <span class="o">--</span><span class="n">hard</span>
 <span class="no">HEAD</span> <span class="n">is</span> <span class="n">now</span> <span class="n">at</span> <span class="n">e4c12df</span> <span class="c1">#2</span>
-<span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">atom</span> <span class="p">.</span>
-<span class="nf">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">atom</span> <span class="p">.</span>
+<span class="nf">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">status</span>
 <span class="no">On</span> <span class="n">branch</span> <span class="n">branch01</span>
 <span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
-<span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">log</span>
+<span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">log</span>
 
 
 <span class="n">commit</span> <span class="n">e4c12df6449b01ae6ee96cf87657e16ccb0e3d40</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">56</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#2</span>
 
 <span class="n">commit</span> <span class="mi">24</span><span class="n">cd68d37934b5dac15bdcf52cf21eed5332165f</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">23</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#1</span>
 
 <span class="n">commit</span> <span class="mi">515326</span><span class="n">d25a6ac0aabeb5aa8d7f80f29d676648ec</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">51</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="n">clean</span>
@@ -302,12 +302,12 @@ c.默认情况下 revert 会尝试自动帮你 commit（如果没有冲突）, c
 
 <p>执行这个命令后 revert 会处于 processing 状态， 提示让解决 conflict 才能继续 revert 进程：</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">revert</span> <span class="no">HEAD</span><span class="o">~</span><span class="mi">2</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">revert</span> <span class="no">HEAD</span><span class="o">~</span><span class="mi">2</span>
 <span class="ss">error: </span><span class="n">could</span> <span class="n">not</span> <span class="n">revert</span> <span class="n">e4c12df</span><span class="o">...</span> <span class="c1">#2</span>
 <span class="ss">hint: </span><span class="n">after</span> <span class="n">resolving</span> <span class="n">the</span> <span class="n">conflicts</span><span class="p">,</span> <span class="n">mark</span> <span class="n">the</span> <span class="n">corrected</span> <span class="n">paths</span>
 <span class="ss">hint: </span><span class="n">with</span> <span class="s1">'git add &lt;paths&gt;'</span> <span class="n">or</span> <span class="s1">'git rm &lt;paths&gt;'</span>
 <span class="ss">hint: </span><span class="n">and</span> <span class="n">commit</span> <span class="n">the</span> <span class="n">result</span> <span class="n">with</span> <span class="s1">'git commit'</span>
-<span class="err">✘</span> <span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span>
+<span class="err">✘</span> <span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span>
 
 </code></pre></div></div>
 
@@ -321,7 +321,7 @@ c.默认情况下 revert 会尝试自动帮你 commit（如果没有冲突）, c
 
 <p><code class="highlighter-rouge">git status</code> 查看修改到的文件：</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">✘</span> <span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">status</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">✘</span> <span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span> <span class="n">git</span> <span class="n">status</span>
 <span class="no">On</span> <span class="n">branch</span> <span class="n">branch01</span>
 <span class="no">You</span> <span class="n">are</span> <span class="n">currently</span> <span class="n">reverting</span> <span class="n">commit</span> <span class="n">e4c12df</span><span class="o">.</span>
  <span class="p">(</span><span class="n">fix</span> <span class="n">conflicts</span> <span class="n">and</span> <span class="n">run</span> <span class="s2">"git revert --continue"</span><span class="p">)</span>
@@ -334,38 +334,38 @@ c.默认情况下 revert 会尝试自动帮你 commit（如果没有冲突）, c
  <span class="n">both</span> <span class="ss">modified:   </span><span class="n">file1</span><span class="p">.</span><span class="nf">html</span><span class="p">.</span><span class="nf">erb</span>  <span class="c1"># 红色， 前面提到 both, 指的应该是 revert 后的状态与当前 HEAD 所在commit 的状态</span>
 
 <span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">"git add"</span> <span class="n">and</span><span class="o">/</span><span class="n">or</span> <span class="s2">"git commit -a"</span><span class="p">)</span>
-<span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span>
+<span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span> <span class="err">⮀</span> <span class="o">~</span><span class="sr">/demo/</span><span class="n">demo2</span> <span class="err">⮀</span> <span class="err">⭠</span> <span class="n">branch01</span><span class="err">±</span> <span class="err">⮀</span>
 
 </code></pre></div></div>
 
 <p>去到存在冲突的文件，手动保留需要的代码，然后 commit 保存。之后再查看 commit 历史会发现之前的commit 历史没变， 新增了一个commit 用来记录刚刚的revert操作：</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">commit</span> <span class="mi">64</span><span class="n">a8a9b3cb4290d3498782203b244f415a2e9200</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">16</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mo">04</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="n">revert</span> <span class="n">done</span>
 
 <span class="n">commit</span> <span class="mi">2232024</span><span class="n">b2103ffb2cb60de5213c1a52ba8300736</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mi">43</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#4</span>
 
 <span class="n">commit</span> <span class="mi">6</span><span class="n">efebe087a7985a6a274d14e4d29064c69f32bf6</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span><span class="mi">09</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#3</span>
 
 <span class="n">commit</span> <span class="n">e4c12df6449b01ae6ee96cf87657e16ccb0e3d40</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">56</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#2</span>
 
 <span class="n">commit</span> <span class="mi">24</span><span class="n">cd68d37934b5dac15bdcf52cf21eed5332165f</span>
-<span class="no">Author</span><span class="p">:</span> <span class="no">Caven</span> <span class="o">&lt;</span><span class="n">caven</span><span class="vi">@CavendeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
+<span class="no">Author</span><span class="p">:</span> <span class="no">Xullnn</span> <span class="o">&lt;</span><span class="n">Xullnn</span><span class="vi">@XullnndeMacBook</span><span class="o">-</span><span class="no">Pro</span><span class="p">.</span><span class="nf">local</span><span class="o">&gt;</span>
 <span class="no">Date</span><span class="p">:</span>   <span class="no">Thu</span> <span class="no">Jun</span> <span class="mi">8</span> <span class="mi">11</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">23</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0800</span>
 
     <span class="c1">#1</span>
@@ -428,7 +428,7 @@ c.默认情况下 revert 会尝试自动帮你 commit（如果没有冲突）, c
 
   <div class="copyright">
     
-    <p>&copy; 2018  Caven.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
+    <p>&copy; 2018  Xullnn.</p> <p>Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll. </a>
        Theme: <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
     
   </div>
