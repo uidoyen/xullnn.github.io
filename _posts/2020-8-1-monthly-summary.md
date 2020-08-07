@@ -6,6 +6,8 @@ tags: [Notes]
 
 ### javascripting.com 一个查询js相关库，框架和插件的网站
 
+同时显示某个库当前的流行程度，在学习相关技术前应该查询哪个框架或者库是当前最流行或广泛使用的，再花时间学习。
+
 - https://www.javascripting.com/
 
 > The definitive source of the best
@@ -23,3 +25,38 @@ JavaScript libraries, frameworks, and plugins.
 Github主地址
 
 - https://github.com/jgraph
+
+
+### Google Developer 上介绍浏览器工作原理的系列文章
+
+- https://developers.google.com/web/updates/2018/09/inside-browser-part1
+
+
+### 一个介绍javascript中 Module Design Pattern 的视频
+
+这里的 `Module` 指的不是某些语言中引入module的那个module, 指的是利用javascript中的scope规则和closure机制，使用function创造一个相对独立的scope来定义private states和behavior，同时避免与外层scope相互干扰，最后以return object 的方式(maybe with use of IIFE)暴露部分接口来access内部states或behavior.
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+- https://www.youtube.com/watch?v=SKBmJ9P6OAk
+
+### stackoverflow 上关于如何上手学习 Node.js 的答案
+
+Node.js 为javascript 提供了除浏览器以外的更广阔的应用场景。
+
+- https://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js/5511507#5511507
+
+### Mozilla 上一篇详细介绍javascript的object model的文章
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model
+
+### raster image 位图 和 vector image 向量图 的区别
+
+- https://www.youtube.com/watch?v=-Fs2t6P5AjY
+
+### 一篇关于在 promise 和 async/await 之间取舍的文章
+
+主旨`async/await`能更容易处理stacktrace而不用像promise chain 那样传递记录stacktrace，因此`async/await`更加节约内存。作者推荐使用 `async/await`
+
+> Compared to using promises directly, not only can async and await make code more readable for developers — they enable some interesting optimizations in JavaScript engines, too! 
+
+- https://mathiasbynens.be/notes/async-stack-traces
