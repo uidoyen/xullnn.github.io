@@ -57,6 +57,35 @@ Node.js 为javascript 提供了除浏览器以外的更广阔的应用场景。
 
 主旨`async/await`能更容易处理stacktrace而不用像promise chain 那样传递记录stacktrace，因此`async/await`更加节约内存。作者推荐使用 `async/await`
 
-> Compared to using promises directly, not only can async and await make code more readable for developers — they enable some interesting optimizations in JavaScript engines, too! 
+> Compared to using promises directly, not only can async and await make code more readable for developers — they enable some interesting optimizations in JavaScript engines, too!
 
 - https://mathiasbynens.be/notes/async-stack-traces
+
+### 关于 JavaScript 中 `Promise` 的implementation标准
+
+通常称作 `Promise/A+`。 可以看到很多篇幅都用于`then`的部分，其中的逻辑有点绕，需要慢慢看，慢慢想。
+
+- https://promisesaplus.com/
+
+### 一篇关于 `Promise` 这个 Constructor 中所包含的模式的文章 -- The Revealing Constructor Pattern
+
+首先这篇文章是在 [we have a problem with promise](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html) 中被提到的。
+
+文章中提到 `Promise` 的标准构造方式也就是用 Constructor:
+
+```js
+let promise = new Promise(function(resolve, reject) => {
+  // do something then resolve/reject
+})
+```
+
+`Promise` constructor 接收一个callback作为argument, 这个callkback function又接收两个arguments通常命名为`resolve` 和 `reject`(也可以使用其他名称)。这两个 callback arguments 可以决定新构建的这个`Promise` object的内部状态(state)，而一旦这个`Promise` object的构造执行完成，我们就无法再使用`resolve`或者`reject`来篡改其状态，只能使用`then`来连接后续操作。
+
+> resolve and reject. These arguments have the capability to manipulate the internal state of the newly-constructed Promise instance p.
+
+作者称这个模式为 "The Revealing Constructor Pattern" 是因为 `Promise` constructor 揭示了其内部功能(capabilities), 但仅限于实例的构造过程。
+
+> I call this the revealing constructor pattern because the Promise constructor is revealing its internal capabilities, but only to the code that constructs the promise in question. The ability to resolve or reject the promise is only revealed to the constructing code, and is crucially not revealed to anyone using the promise.
+
+地址：
+- https://blog.domenic.me/the-revealing-constructor-pattern/
