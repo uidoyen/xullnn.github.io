@@ -89,3 +89,16 @@ let promise = new Promise(function(resolve, reject) => {
 
 地址：
 - https://blog.domenic.me/the-revealing-constructor-pattern/
+
+```js
+Promise.resolve("Ohoooo!").then((a) => return a).then("guess what")
+```
+
+### Google 上关于web开发的资源网站
+
+- web fundamentals 部分包含大量web开发的基础以及进阶内容介绍， 文章专业性较强，但慢下来研读收获很多
+  - https://developers.google.com/web/fundamentals
+
+- Progressive Web Apps Training 教程，内容覆盖全，但正在改版中
+  - https://developers.google.com/web/ilt/pwa
+  - This course shows you how to convert web pages to PWAs. A PWA is not an API or a technology, but it is a web development approach that uses a combination of tools and technologies already available to create targeted, ideal user experiences. It shows how to use service workers, APIs, and an application shell architecture for meaningful offline experiences, fast first load, and easy user reengagement upon repeat visits.
