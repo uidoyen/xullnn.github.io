@@ -102,3 +102,14 @@ Promise.resolve("Ohoooo!").then((a) => return a).then("guess what")
 - Progressive Web Apps Training 教程，内容覆盖全，但正在改版中
   - https://developers.google.com/web/ilt/pwa
   - This course shows you how to convert web pages to PWAs. A PWA is not an API or a technology, but it is a web development approach that uses a combination of tools and technologies already available to create targeted, ideal user experiences. It shows how to use service workers, APIs, and an application shell architecture for meaningful offline experiences, fast first load, and easy user reengagement upon repeat visits.
+
+
+### Event, Event Listener, Event Handler 的区别
+
+- Event 比较好理解，直接指代某个事件
+- 比较容易弄混的是 Event Handler, 准确的说指的是事件触发的那个 callback
+- Event Listener 有时和 Event Handler 互换，但是准确的说 Listener 包含事件监听的那部分，而 Handler 只是callback它不关心是什么事件触发了它。
+
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
+
+> Each available event has an event handler, which is a block of code (usually a JavaScript function that you as a programmer create) that runs when the event fires. When such a block of code is defined to run in response to an event, we say we are registering an event handler. Note: Event handlers are sometimes called event listeners — they are pretty much interchangeable for our purposes, although strictly speaking, they work together. The listener listens out for the event happening, and the handler is the code that is run in response to it happening.
